@@ -1,4 +1,5 @@
-baseurl: "https://junghanacs.github.io/junghanacs.com/"
+baseurl: "https://junghanacs.com/"
+# baseurl: "https://junghanacs.github.io/junghanacs.com/"
 languageCode: en-us
 title: Junghanacs.com
 theme: PaperMod
