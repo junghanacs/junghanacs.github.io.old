@@ -1,0 +1,23 @@
+User-agent: *
+
+
+Allow: /menu/
+
+Allow: /
+
+Allow: /contact/
+
+Allow: /posts/
+
+Allow: /categories/
+
+Allow: /notes/
+
+Allow: /refs/
+
+Allow: /series/
+
+Allow: /tags/
+
+Allow: /terms/
+
