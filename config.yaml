@@ -10,7 +10,7 @@ preserveTaxonomyNames: true
 title: Junghanacs
 theme: book
 
-# disqusShortname: benmezger
+disqusShortname: junghanacs
 # googleAnalytics: UA-138318350-1
 
 # Book configuration
@@ -74,8 +74,8 @@ params:
   BookRepo: https://github.com/junghanacs/junghanacs.com
   # BookEditPath: edit/main
   BookTheme: "light"
-  BookComment: false
-  # CommentTheme: 'github-light'
+  BookComment: true
+  CommentTheme: "github-light"
   BookDateFormat: "2006-01-02"
   BookPortableLinks: true
 
