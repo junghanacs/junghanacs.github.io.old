@@ -1,0 +1,27 @@
+{{ $re := $.File.BaseFileName }}
+{{ $backlinks := slice }}
+{{ range .Site.AllPages }}
+   {{ if and (findRE $re .RawContent) (not (eq $re .File.BaseFileName)) }}
+      {{ $backlinks = $backlinks | append . }}
+   {{ end }}
+{{ end }}
+
+<hr>
+{{ if gt (len $backlinks) 0 }}
+  <div class="bl-section">
+    <h3>» Links to this note</h3>
+    <div class="backlinks">
+      <ul>
+       {{ range $backlinks }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              {{- .Summary -}}
+          </li>
+       {{ end }}
+     </ul>
+    </div>
+  </div>
+{{ else  }}
+  <div class="bl-section">
+    <h3>» No notes link to this note</h3>
+  </div>
+{{ end }}

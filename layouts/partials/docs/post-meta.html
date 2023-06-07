@@ -1,0 +1,28 @@
+{{ $datefmt := "" }}
+{{ $set := false }}
+
+{{ with .Date }}
+{{ $datefmt = partial "docs/date" (dict "Date" . "Format" $.Site.Params.BookDateFormat) }}
+{{ end }}
+
+<div>
+{{ $taxonomy := "tags" }} {{ with .Param $taxonomy }}
+  {{ range $index, $tag := . }}
+    {{- with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+
+    {{- if not $set -}}
+      {{ $set = true }}
+      <b>{{- $datefmt }}</b>
+    {{- if $tag }} | {{ end }}
+
+    {{- end -}}
+
+    {{- if $index -}}, {{ end }}
+    <a href="{{ .Permalink }}">{{ $tag }}</a>
+
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+</div>
+
+<hr>

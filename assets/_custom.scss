@@ -1,0 +1,82 @@
+// @import "plugins/_scrollbars";
+
+.org-todo,
+.todo,
+.done {
+  color: #fff;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  background-clip: padding-box;
+  font-size: 70%;
+  line-height: 1;
+}
+
+.TODO {
+  background-color: red;
+}
+
+.DONE {
+  background-color: green;
+}
+
+.w3-tag {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+.markdown {
+  line-height: 1.6em;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 5px;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+}
+
+/*     line-height: 2rem; */
+/*     word-wrap: break-word; */
+/*   } */
+/* } */
+
+//   h1 {
+//     font-weight: bold;
+//   }
+
+//   h2 {
+//     font-weight: bold;
+//     font-size: 2rem;
+//     line-height: 1.4;
+//   }
+
+//   h3 {
+//     font-weight: bold;
+//     font-size: 1.1rem;
+//     padding: $padding-16;
+//     // background: var(--gray-200);
+//     // text-decoration: underline;
+//   }
+
+//   h4 {
+//     padding: 24px;
+//     font-weight: bold;
+//     font-size: 1.1rem;
+//   }
+
+//   h5,
+//   h6 {
+//     font-weight: bold;
+//     line-height: 1;
+//     margin-top: 1.5em;
+//     margin-bottom: $padding-16;
+//   }
+// }

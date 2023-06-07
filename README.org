@@ -1,1 +1,7 @@
-README
+#+TITLE: README
+#+OPTIONS: toc:2
+
+홈페이지 작업 중.
+
+* History
++ 2023-06-07 Hugo-book 테마로 변경 후 오픈

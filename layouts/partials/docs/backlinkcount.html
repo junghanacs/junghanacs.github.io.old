@@ -1,0 +1,13 @@
+{{ $re := $.File.BaseFileName }}
+{{ $backlinks := slice }}
+{{ range .Site.AllPages }}
+{{ if and (findRE $re .RawContent) (not (eq $re .File.BaseFileName)) }}
+{{ $backlinks = $backlinks | append . }}
+{{ end }}
+{{ end }}
+
+{{ if gt (len $backlinks) 0 }}
+    {{ len $backlinks }}
+{{ else  }}
+<span> 0 </span>
+{{ end }}

@@ -1,0 +1,34 @@
+[build]
+# publish = "generated_public"
+# command = "./deploy.sh"
+# deploy.sh 를 지우면서 아래와 같이 동작하게 바꾸었구나.
+publish = "public"
+command = "hugo --destination public/ --gc --minify"
+
+[context.production.environment]
+HUGO_VERSION = "0.74.3"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+
+[context.develop]
+command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.develop.environment]
+HUGO_VERSION = "0.74.3"
+HUGO_ENABLEGITINFO = "true"
+
+# [[redirects]]
+#   from = "/posts/*"
+#   to = "/notes/:splat"
+#   status = 301
+#   force = true
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+  [plugins.inputs.thresholds]
+    performance = 0.9
+    accessibility = 0.8
+    best-practices = 0.9
+    seo = 0.9
+    pwa = 0.7

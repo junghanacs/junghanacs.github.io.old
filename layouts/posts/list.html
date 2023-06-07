@@ -1,0 +1,47 @@
+{{ define "main" }}
+<h2>Articles : Essay / Zettels</h2>
+
+제텔카스텐에서 '제텔'에 해당. 나의 글이다. 노트와 레퍼런스가 엮여서 하나의
+제텔이 되기를 바란다. 이전의 끄적거린 것들을 옮기는 과정이 필요할 것이다.
+<br>
++ Title/Date/Update/Summary
+<br>
+
+<hr>
+
+<section>
+  {{ range sort (.Paginator 5).Pages.ByLastmod.Reverse }}
+  <div>
+    <h3>
+      <a
+        data-toggle={{ partialCached "docs/post-meta" . }}
+        href="{{ .RelPermalink }}">
+        <span>» </span>
+        {{- .Title -}}
+      </a>
+    </h3>
+
+    {{- .Date.Format "2006-01-02" -}}
+
+    <i
+      style="color: rgba(0, 0, 0, 0.60);">
+      <span> ({{ .Lastmod.Format "2006-01-02" -}}) </span>
+    </i>
+
+    <p>
+      {{- .Summary -}}
+    </p>
+  </div>
+
+  <hr>
+
+  {{ end }}
+</section>
+
+{{ template "_internal/pagination.html" . }}
+{{ end }}
+
+{{ define "toc" }}
+{{ partialCached "docs/taxonomy" . }}
+{{ end }}
+

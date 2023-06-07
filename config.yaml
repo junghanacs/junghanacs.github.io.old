@@ -1,5 +1,84 @@
 baseurl: "https://junghanacs.com/"
-# baseurl: "https://junghanacs.github.io/junghanacs.com/"
-languageCode: en-us
-title: Junghanacs.com
-theme: PaperMod
+defaultContentLanguage: ko
+languageCode: ko-kr
+languageName: Korean
+languageCodeCountry: kr
+timeZone: Asia/Seoul
+hasCJKLanguage: true
+preserveTaxonomyNames: true
+
+title: Junghanacs
+theme: book
+
+# disqusShortname: benmezger
+# googleAnalytics: UA-138318350-1
+
+# Book configuration
+disablePathToLower: true
+enableGitInfo: true
+enableRobotsTXT: true
+enableEmoji: true
+
+# You can remove related files with config below
+# disableKinds: 'taxonomy', 'taxonomyTerm'
+
+# paginate: 5
+
+# 논리적인 구분이다. 즉, notes 폴더에 다 들어있어도 된다. 다 때려박아도 된다.
+taxonomies:
+  series: series
+  category: categories
+  tag: tags
+
+# 0 Comments - powered by utteranc.es
+# Needed for mermaid/katex shortcodes
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+
+# Multi-lingual mode config
+# There are different options to translate files
+# See https://gohugo.io/content-management/multilingual/#translation-by-filename
+# And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
+languages:
+  ko:
+    languageName: Korean
+    contentDir: content
+    weight:
+      1
+      #  en:
+      # languageName: English
+      # contentDir: content.en
+      # weight: 2
+
+menu:
+  # before: []
+  after:
+    - name: "Github Link"
+      url: "https://github.com/junghanacs"
+      weight: 90
+    # - name: "Hugo Themes"
+    #   url: "https://themes.gohugo.io/hugo-book/"
+    #   weight: 91
+
+params:
+  BookServiceWorker: true
+  BookToC: true
+  BookMenuBundle: /menu
+  # BookSection: posts
+  # BookSection: "*"
+  BookSearch: false
+  BookRepo: https://github.com/junghanacs/junghanacs.com
+  # BookEditPath: edit/main
+  BookTheme: "light"
+  BookComment: false
+  # CommentTheme: 'github-light'
+  BookDateFormat: "2006-01-02"
+  BookPortableLinks: true
+
+  # (Optional, default none) Set the path to a logo for the book. If the logo is
+  # /static/logo.png then the path would be logo.png
+  # BookLogo: /logo.png

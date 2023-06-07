@@ -1,0 +1,42 @@
+{{ define "main" }}
+<h2>References : Bibliography </h2>
+레퍼런스 노트. 주로 원문 번역 자료. BIB 파일에 등록 된 여러 서지 정보 중에 일부.
+<br>
++ Author/Title/Date/Type
+<br>
+<hr>
+  <section>
+    <br>
+    {{ range sort (.Paginator 20).Pages.ByLastmod.Reverse }}
+    <div>
+      <li style="padding: 3px; position:relative;">
+        <a
+          data-toggle={{ partialCached "docs/post-meta" . }}
+          href="{{ .RelPermalink }}">
+          <!-- <time class="w3-tag"
+               style="color: rgba(0, 0, 0, 0.9);"
+               {{- printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr -}}>
+               {{- .Date.Format "2006-01-02" -}}
+               </time> -->
+          <!-- <span>» </span> -->
+          {{- .Title -}}
+        </a>
+        <i
+          style="color: rgba(0, 0, 0, 0.60);">
+          ({{ .Lastmod.Format "2006-01-02" -}})
+        </i>
+      </li>
+    </div>
+
+    {{ end }}
+  </section>
+
+  {{ template "_internal/pagination.html" . }}
+
+{{ end }}
+
+{{ define "toc" }}
+   
+  {{ partialCached "docs/taxonomy" . }}
+
+{{ end }}
