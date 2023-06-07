@@ -3,6 +3,10 @@ User-agent: *
 
 Allow: /menu/
 
+Allow: /posts/open_my_lovely_blog/
+
+Allow: /notes/org_org_roam_hugo_meta_format/
+
 Allow: /
 
 Allow: /contact/

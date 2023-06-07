@@ -6,5 +6,17 @@
     <description>Recent content in Index on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language><atom:link href="https://junghanacs.com/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들</title>
+      <link>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</link>
+      <pubDate>Mon, 05 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Org-Roam 에서 작성한 문서를 Hugo Markdown 으로 변환하기는 쉽다. 근데 각주, 인용,
+태그, 요약, 코드, 일부 내용 감추기 등을 어떻게 하는가? 여기에 대한 답을 찾는다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
   </channel>
 </rss>

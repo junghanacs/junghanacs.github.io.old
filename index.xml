@@ -7,5 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움 (Draft)</title>
+      <link>https://junghanacs.com/posts/open_my_lovely_blog/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/posts/open_my_lovely_blog/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  드디어 블로그를 오픈했다. 아무것도 아닌 이 일이 나에게 왜 이렇게 큰 기쁨을 주는
+것일까? 아직 아무것도 없는 이 공간을 만들기까지 많은 고민이 있었다. 이제 글쓰는
+기쁨을 온전히 그리고 멋지게 나누어 보고 싶다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들</title>
+      <link>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</link>
+      <pubDate>Mon, 05 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Org-Roam 에서 작성한 문서를 Hugo Markdown 으로 변환하기는 쉽다. 근데 각주, 인용,
+태그, 요약, 코드, 일부 내용 감추기 등을 어떻게 하는가? 여기에 대한 답을 찾는다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
   </channel>
 </rss>
