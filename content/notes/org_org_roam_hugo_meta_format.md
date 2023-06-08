@@ -2,7 +2,7 @@
 title = "Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들"
 author = ["Junghan Kim"]
 date = 2023-06-05
-lastmod = 2023-06-07
+lastmod = 2023-06-08
 keywords = ["blogging"]
 draft = false
 +++
@@ -140,29 +140,146 @@ Below, the "References" heading will be auto-inserted.
 ```
 
 
-## Short-code {#short-code}
+## Shotcodes 지원 {#shotcodes-지원}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2023-06-08 Thu 12:19]</span></span>
+Hugo Book 데모 페이지를 확인한다.&nbsp;[^fn:2]
+
+여기에 보면 문서 편집하기 위한 여러 코드들을 제공하고 있다. 나는 마크다운으로
+편집하지 않기 때문에 각각 기능 검증이 필요하다. ox-hugo 가 있으니 문제 될 것은
+없다. 오히려 이맥스의 확장성을 제한하기 때문에 선택과 집중이 필요하다.
+
+
+### hint and details {#hint-and-details}
 
 <span class="timestamp-wrapper"><span class="timestamp">[2023-06-05 Mon 13:44]</span></span>
 org 파일에서 제공하는 기능은 아니지만 블로그에서 보다 정보를 깔끔하게 정리하기
 위해서 short-code 를 사용할 수 있다. 스니펫으로 만들어 놓으니 아주
 편리하다.
 
+이맥스의 기본 Quote 변환
+
+> Quote
+
+hint 에서 레벨에 맞는 컬러 효과가 가능하다.
+
 {{< hint info >}}
-Something
+hint info
 {{< /hint >}}
 
 {{< hint warning >}}
-Something
+hint warning
 {{< /hint >}}
 
 {{< hint danger >}}
-Error
+hint error
 {{< /hint >}}
 
-{{< expand "Custom Label" >}}
+expand 도 가능하다. (details)
+
+{{< details "Custom Label" >}}
 ****Markdown content****
 Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
 stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-{{< /expand >}}
+{{< /details >}}
+
+
+### mermaid diagram {#mermaid-diagram}
+
+
+
+{{< hint info >}}
+벡터 포멧을 지원하지 않지만 PNG 로 바로 결과를 확인하고 내보내기가 가능한
+ob-mermaid 를 활용하는게 더 편하다. 보는 입장에서도 이미지가 더 활용하기 쉽다.
+{{< /hint >}}
+
+mermaid 다이어그램을 생성하는 방법은 2 가지다.
+
+1.  org-babel : ox-mermaid
+2.  Short-code : mermaid
+
+아래와 같은 코드를 변환한다고 하자.
+
+{{< details "Details" >}}
+stateDiagram-v2
+    State1: The state with a note
+    note right of State1
+        Important information! You can write
+        notes.
+    end note
+    State1 --&gt; State2
+    note left of State2 : This is the note to the left.
+{{< /details >}}
+
+org-babel 의 이점은 org 문서에서 바로 결과를 확인할 수 있다는 점이다. 편집하면서
+바로 보고 블로그로 바로 내보내면 된다. 물론 로컬에 mermaid 를 설치해 놓아야
+한다. 물론 ob-mermaid 로 설정은 기본이다.&nbsp;[^fn:3]
+
+```text
+npm install -g @mermaid-js/mermaid-cli
+```
+
+단점은 명확하다. png 만 지원 된다.
+
+Ob-Mermaid 이용한 결과다. png 파일의 한계.
+
+{{< figure src="/imgs/org-babel-mermaid.png" >}}
+
+Short-code 를 이용한 결과. 벡터 포멧의 장점
+
+{{< mermaid "Caption" >}}
+stateDiagram-v2
+    State1: The state with a note
+    note right of State1
+        Important information! You can write
+        notes.
+    end note
+    State1 --&gt; State2
+    note left of State2 : This is the note to the left.
+{{< /mermaid >}}
+
+적절히 사용하면 된다. 다만 캡션이 왜 안들어가는지 확인이 필요하다.
+
+
+### <span class="org-todo todo TODO">TODO</span> katex and math typesetting {#katex-and-math-typesetting}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2023-06-08 Thu 12:18]</span></span>
+Emacs 가지는 옵션도 많이 있다. 가장 범용적이고 쉬운 방법을 선택할 것이다.
+org 모드로 편집하기 때문에 여기서 preview 가 되는 것이 가장 중요하다.
+
+
+### <span class="org-todo todo TODO">TODO</span> 결과에 <kbd>caption</kbd> 넣는 방법 {#결과에-caption-넣는-방법}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2023-06-08 Thu 12:25]</span></span>
+변환 된 코드 블록의 결과 이미지에 캡션을 넣어야 한다.
+
+
+## Org-translate 블록 번역 {#org-translate-블록-번역}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2023-06-08 Thu 12:52]</span></span>
+블록 번역 테스트.
+
+```text
+,#+BEGIN_SRC translate :src en :dest ko :noexport
+```
+
+코드 블록을 번역 하여 하단에 삽입한다.
+
+```translate
+  Doom is a configuration framework for GNU Emacs tailored for Emacs bankruptcy
+  veterans who want less framework in their frameworks, a modicum of stability
+  (and reproducibility) from their package manager, and the performance of a
+  hand rolled config (or better). It can be a foundation for your own config or
+  a resource for Emacs enthusiasts to learn more about our favorite operating
+  system.
+```
+
+Doom 은 프레임워크에 적은 프레임워크, 패키지 관리자의 약간의 안정성(및 재현성),
+수동 구성의 성능(또는 그 이상)을 원하는 Emacs 파산 베테랑을 위해 맞춤화된 GNU
+Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 될 수도 있고 Emacs
+애호가가 선호하는 운영 체제에 대해 자세히 알아볼 수 있는 리소스가 될 수도
+있습니다.
 
 [^fn:1]: [How I Take Notes with Org-roam](https://jethrokuan.github.io/org-roam-guide/)
+[^fn:2]: <https://hugo-book-demo.netlify.app/docs/shortcodes/katex/>
+[^fn:3]: <https://github.com/arnm/ob-mermaid>
