@@ -12,7 +12,10 @@
 <title>Tags | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.8ba804f25b664c16ee337ac74558e982ba5c6b5c6ece256e1eb06082a4b567e0.css" integrity="sha256-i6gE8ltmTBbuM3rHRVjpgrpca1xuziVuHrBggqS1Z&#43;A=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.772264a00cf3b24b3a3a53548b2283c8a9d9ce4bcb8488532240ab83fe690c60.css" integrity="sha256-dyJkoAzzsks6OlNUiyKDyKnZzkvLhIhTIkCrg/5pDGA=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/ko.search.min.aaab861a284cb2b6b88c276efe7c42e2c44ae12f2c650e6ba5ab26b9e9387e73.js" integrity="sha256-qquGGihMsra4jCdu/nxC4sRK4S8sZQ5rpasmuek4fnM=" crossorigin="anonymous"></script>
+
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://junghanacs.com/tags/index.xml" title="Junghanacs" />
 <!--
@@ -36,6 +39,12 @@ https://github.com/alex-shpak/hugo-book
   </a>
 </h2>
 
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
 
 
 
