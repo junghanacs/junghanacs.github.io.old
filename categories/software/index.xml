@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Index on Junghanacs</title>
-    <link>https://junghanacs.com/refs/</link>
-    <description>Recent content in Index on Junghanacs</description>
+    <title>software on Junghanacs</title>
+    <link>https://junghanacs.com/categories/software/</link>
+    <description>Recent content in software on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language><atom:link href="https://junghanacs.com/refs/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 02 Jun 2023 16:55:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/categories/software/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Giovanni Crisalfi :: Start Qutebrowser Now (2022)</title>
       <link>https://junghanacs.com/refs/giovannicrisalfiStartQutebrowserNow2022/</link>

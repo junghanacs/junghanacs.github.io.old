@@ -5,6 +5,16 @@
     <link>https://junghanacs.com/categories/</link>
     <description>Recent content in Categories on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language><atom:link href="https://junghanacs.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 02 Jun 2023 16:55:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>software</title>
+      <link>https://junghanacs.com/categories/software/</link>
+      <pubDate>Fri, 02 Jun 2023 16:55:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/categories/software/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
