@@ -73,8 +73,8 @@ params:
   BookSearch: true
   BookRepo: https://github.com/junghanacs/junghanacs.com
   # BookEditPath: edit/main
-  # BookTheme: "light"
-  BookTheme: "auto"
+  BookTheme: "light"
+  # BookTheme: "auto"
   BookComment: true
   CommentTheme: "github-light"
   BookDateFormat: "2006-01-02"
