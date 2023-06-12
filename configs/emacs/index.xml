@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>configs/emacs : Index on Junghanacs</title>
+    <link>https://junghanacs.com/configs/emacs/</link>
+    <description>Recent content in configs/emacs : Index on Junghanacs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 11 Jun 2023 00:00:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/configs/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs: jh-project layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-project/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-project/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  스페이스맥스의 Git, Version-Control, Spacemacs-Project 를 기반으로 레이어 구성.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Index on Junghanacs</title>
+    <title>Notes on Junghanacs</title>
     <link>https://junghanacs.com/notes/</link>
-    <description>Recent content in Index on Junghanacs</description>
+    <description>Recent content in Notes on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language><atom:link href="https://junghanacs.com/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Junghanacs 와의 대화</title>
+      <link>https://junghanacs.com/notes/talk_with_junghanacs/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/talk_with_junghanacs/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Junghan 와 Junghanacs 와의 대화.
+&lt;/blockquote&gt;</description>
+    </item>
+    
     <item>
       <title>Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들</title>
       <link>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</link>

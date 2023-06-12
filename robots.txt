@@ -3,21 +3,27 @@ User-agent: *
 
 Allow: /menu/
 
+Allow: /configs/emacs/jh-project/
+
+Allow: /notes/talk_with_junghanacs/
+
+Allow: /configs/emacs/
+
+Allow: /configs/
+
 Allow: /posts/open_my_lovely_blog/
 
 Allow: /notes/org_org_roam_hugo_meta_format/
 
-Allow: /categories/
-
 Allow: /refs/giovannicrisalfiStartQutebrowserNow2022/
-
-Allow: /categories/software/
 
 Allow: /
 
 Allow: /contact/
 
 Allow: /posts/
+
+Allow: /categories/
 
 Allow: /notes/
 

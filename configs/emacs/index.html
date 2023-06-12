@@ -4,22 +4,15 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  드디어 블로그를 오픈했다. 아무것도 아닌 이 일이 나에게 왜 이렇게 큰 기쁨을 주는
-것일까? 아직 아무것도 없는 이 공간을 만들기까지 많은 고민이 있었다. 이제 글쓰는
-기쁨을 온전히 그리고 멋지게 나누어 보고 싶다.
+  나의 Literate Emacs Dotfiles. 전체를 소개하는 README 파일에 해당 합니다. 각각
+설정 파일은 아래 링크를 참고 하세요!
 ">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움 (Draft)" />
-<meta property="og:description" content="
-  드디어 블로그를 오픈했다. 아무것도 아닌 이 일이 나에게 왜 이렇게 큰 기쁨을 주는
-것일까? 아직 아무것도 없는 이 공간을 만들기까지 많은 고민이 있었다. 이제 글쓰는
-기쁨을 온전히 그리고 멋지게 나누어 보고 싶다.
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://junghanacs.com/posts/open_my_lovely_blog/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-06-07T00:00:00+09:00" />
-<meta property="article:modified_time" content="2023-06-12T17:34:39+09:00" />
-<title>블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움 (Draft) | Junghanacs</title>
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="configs/emacs : Index" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://junghanacs.com/configs/emacs/" />
+<title>configs/emacs : Index | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.149f28f72c48274dc008982458421ca77ecfff05aee22d35af0707050bc3de60.css" integrity="sha256-FJ8o9yxIJ03ACJgkWEIcp37P/wWu4i01rwcHBQvD3mA=" crossorigin="anonymous">
@@ -27,6 +20,7 @@
   <script defer src="/ko.search.min.197d3105bc8888c32b5b590b010757cc5b90174ee57e6d6c3e5b9af661fcbd01.js" integrity="sha256-GX0xBbyIiMMrW1kLAQdXzFuQF07lfm1sPlua9mH8vQE=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://junghanacs.com/configs/emacs/index.xml" title="Junghanacs" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -77,7 +71,7 @@ https://github.com/alex-shpak/hugo-book
   <a href="/configs/">Dotfiles</a>
 <ul>
 <li>
-  <a href="/configs/emacs/">+ Emacs</a></li>
+  <a href="/configs/emacs/"class=active>+ Emacs</a></li>
 </ul>
 </li>
 <li>
@@ -129,7 +123,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움 (Draft)</strong>
+  <strong>configs/emacs : Index</strong>
 
   <label for="toc-control">
     
@@ -147,7 +141,9 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
-        <li><a href="#질문-왜-오래-걸렸는가">질문: 왜 오래 걸렸는가?</a></li>
+        <li><a href="#나의-emacs-구성의-목표">나의 Emacs 구성의 목표</a></li>
+        <li><a href="#spacemacs">Spacemacs</a></li>
+        <li><a href="#custom-layer">Custom Layer</a></li>
       </ul>
     </li>
   </ul>
@@ -162,87 +158,76 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-<article class="markdown">
-  <h1>
-    <a href="/posts/open_my_lovely_blog/">블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움 (Draft)</a>
-  </h1>
-  
-
-
-
-
-
-
-<div>
- </div>
-
-<hr>
-
-  <p><blockquote class="book-hint info">
-  드디어 블로그를 오픈했다. 아무것도 아닌 이 일이 나에게 왜 이렇게 큰 기쁨을 주는
-것일까? 아직 아무것도 없는 이 공간을 만들기까지 많은 고민이 있었다. 이제 글쓰는
-기쁨을 온전히 그리고 멋지게 나누어 보고 싶다.
+  <article class="markdown"><blockquote class="book-hint info">
+  나의 Literate Emacs Dotfiles. 전체를 소개하는 README 파일에 해당 합니다. 각각
+설정 파일은 아래 링크를 참고 하세요!
 </blockquote>
 
-<h2 id="질문-왜-오래-걸렸는가">
-  질문: 왜 오래 걸렸는가?
-  <a class="anchor" href="#%ec%a7%88%eb%ac%b8-%ec%99%9c-%ec%98%a4%eb%9e%98-%ea%b1%b8%eb%a0%b8%eb%8a%94%ea%b0%80">#</a>
+<h2 id="나의-emacs-구성의-목표">
+  나의 Emacs 구성의 목표
+  <a class="anchor" href="#%eb%82%98%ec%9d%98-emacs-%ea%b5%ac%ec%84%b1%ec%9d%98-%eb%aa%a9%ed%91%9c">#</a>
 </h2>
-<p>쓰고 픈 말이 많다고 다 쓸 수 있는 것은 아니다.
-필요한 기능 부터 검증하고, 필요할 글을 채워 나가자.
-이 글을 틈틈히 써야 한다. 쓰고 싶다. 도대체 왜 이렇게 오래 걸렸을까?</p></p>
-  
-
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-
-<hr>
-
-  <div class="bl-section">
-    <h3>» No notes link to this note</h3>
-  </div>
-
-
-</article>
+<ul>
+<li>최대한 쉽게! Spacemacs 사용 경험 그대로!</li>
+<li>VSpaceCode, SpaceVIM 과 함께 갈 수 있도록!
+Spacemacs 를 사용하는 이유이기도 하다. 하나의 사용자 경험으로 가져가면 좋다!</li>
+<li>마우스를 옵션으로 활용 하도록 지원!
+입문자가 멘붕이 오지 않도록 마우스의 사용자 경험을 최대한 살려준다. (옵션)</li>
+<li>EVIL 모달 편집 기반!</li>
+<li>가능한 많은 기능!
+다양한 용도로 활용할 수 있도록 커스텀 레이어 관리</li>
+<li>Emacs 내장 패키지 우선!</li>
+<li>테마 모드라인 폰트 이모지 등 예쁘게 단 기능 우선!</li>
+<li>화려한데 성능 잡아먹는 패키지는 아웃!</li>
+<li>CJK 를 사랑하는 패키지는 우선 선택! (한글 중심)</li>
+<li>여러 번 입력을 하더라도 과정에서 배움이 있도록 매크로 자제!
+훈련이 되야 한다. 키보드를 입력하는 자체가 배움이고 즐거움이다.</li>
+</ul>
+<h2 id="spacemacs">
+  Spacemacs
+  <a class="anchor" href="#spacemacs">#</a>
+</h2>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2023-06-12 Mon 15:50]</span></span>
+Spacemacs 설정 파일 입니다.</p>
+<ul>
+<li>spacemacs</li>
+</ul>
+<h2 id="custom-layer">
+  Custom Layer
+  <a class="anchor" href="#custom-layer">#</a>
+</h2>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2023-06-11 Sun 12:48] </span></span> 기본 레이어에서 제공하는 기능과 키바인딩을 그대로
+가져가면서 최신 기능 지원 및 성능 개선을 하고자 각 레이어 설정을 별도로
+나누었습니다.</p>
+<p>다음은 각 설정 파일의 링크. 아직 정리가 안 되서 차차 반영 할 예정입니다.</p>
+<ul>
+<li>jh-base</li>
+<li>jh-completion</li>
+<li>jh-visual</li>
+<li>jh-workspace</li>
+<li>jh-editing</li>
+<li>jh-navigation</li>
+<li>jh-writing</li>
+<li>jh-checker</li>
+<li>
+  <a href="/configs/emacs/jh-project/">jh-project</a></li>
+<li>jh-utility</li>
+<li>jh-coding</li>
+<li>jh-org</li>
+<li>jh-org-workflow</li>
+<li>jh-pkm</li>
+<li>jh-misc</li>
+<li>jh-reading</li>
+<li>jh-javascript</li>
+<li>jh-clojure</li>
+<li>jh-python</li>
+</ul></article>
  
       <center>
   
   
   
-  <h3>Go to <a href="/refs/giovannicrisalfiStartQutebrowserNow2022/">random</a> page</h3>
+  <h3>Go to <a href="/posts/open_my_lovely_blog/">random</a> page</h3>
   
   
 </center>
@@ -310,7 +295,9 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
-        <li><a href="#질문-왜-오래-걸렸는가">질문: 왜 오래 걸렸는가?</a></li>
+        <li><a href="#나의-emacs-구성의-목표">나의 Emacs 구성의 목표</a></li>
+        <li><a href="#spacemacs">Spacemacs</a></li>
+        <li><a href="#custom-layer">Custom Layer</a></li>
       </ul>
     </li>
   </ul>

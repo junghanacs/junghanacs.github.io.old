@@ -8,6 +8,28 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Emacs: jh-project layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-project/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-project/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  스페이스맥스의 Git, Version-Control, Spacemacs-Project 를 기반으로 레이어 구성.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Junghanacs 와의 대화</title>
+      <link>https://junghanacs.com/notes/talk_with_junghanacs/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/talk_with_junghanacs/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Junghan 와 Junghanacs 와의 대화.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
       <title>블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움 (Draft)</title>
       <link>https://junghanacs.com/posts/open_my_lovely_blog/</link>
       <pubDate>Wed, 07 Jun 2023 00:00:00 +0900</pubDate>
