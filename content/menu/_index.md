@@ -12,6 +12,8 @@ weight = 10
 -   [Articles](/posts)
 -   [Notes](/notes)
 -   [References](/refs)
+-   [Dotfiles](/configs)
+    -   [+ Emacs](/configs/emacs)
 -   [Terms](/terms)
 
 <!-- -   [Contact](/contact) -->

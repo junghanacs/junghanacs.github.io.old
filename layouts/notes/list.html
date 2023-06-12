@@ -1,41 +1,44 @@
 {{ define "main" }}
+
 <h2>Notes : Braindump / Digital Garden</h2>
 
-  'Feelting Note' 보다는 'Permanent Note'가 좋다. 기존에 여러 곳에 나뉘어 있는
-  메모들을 정리 정돈 할 때까지는 지저분할 것이다. Org-Roam 기반 브레인덤프는 기본.
-  디지털 가든이 되기를 희망한다. 
-  <br>
-  + Date/Title/Update
-  <br>
-  <hr>
-  <section>
-    <br>
-    {{ range sort (.Paginator 20).Pages.ByLastmod.Reverse }}
-    <div>
-      <li style="padding: 3px; position:relative;">
-        <a
-          data-toggle={{ partialCached "docs/post-meta" . }}
-          href="{{ .RelPermalink }}">
-          <time class="w3-tag"
-                style="color: rgba(0, 0, 0, 0.9);"
-                {{- printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr -}}>
-            {{- .Date.Format "2006-01-02" -}}
-          </time>
-          <span>» </span>
-          {{- .Title -}}
-        </a>
-        <i
-          style="color: rgba(0, 0, 0, 0.60);">
-          ({{ .Lastmod.Format "2006-01-02" -}})
-        </i>
-      </li>
-    </div>
-    {{ end }}
-  </section>
+'Feelting Note' 보다는 'Permanent Note'가 좋다. 기존에 여러 곳에 나뉘어 있는
+메모들을 정리 정돈 할 때까지는 지저분할 것이다. Org-Roam 기반 브레인덤프는 기본.
+디지털 가든이 되기를 희망한다. 
+<br>
++ Date/Title/Update
+<br>
+<hr>
 
-  {{ template "_internal/pagination.html" . }}
+<section>
+  <br>
+  {{ range sort (.Paginator 20).Pages.ByLastmod.Reverse }}
+  <div>
+    <li style="padding: 3px; position:relative;">
+      <a
+        data-toggle={{ partialCached "docs/post-meta" . }}
+        href="{{ .RelPermalink }}">
+        <time class="w3-tag"
+              style="color: rgba(0, 0, 0, 0.9);"
+              {{- printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr -}}>
+          {{- .Date.Format "2006-01-02" -}}
+        </time>
+        <span>» </span>
+        {{- .Title -}}
+      </a>
+      <i
+        style="color: rgba(0, 0, 0, 0.60);">
+        ({{ .Lastmod.Format "2006-01-02" -}})
+      </i>
+    </li>
+  </div>
+
+  {{ end }}
+</section>
+
+{{ template "_internal/pagination.html" . }}
 {{ end }}
 
 {{ define "toc" }}
-  {{ partialCached "docs/taxonomy" . }}
+{{ partialCached "docs/taxonomy" . }}
 {{ end }}

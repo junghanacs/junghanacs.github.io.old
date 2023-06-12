@@ -2,20 +2,26 @@
 title = "Index"
 author = ["Junghan Kim"]
 date = 2023-05-31T12:26:00+09:00
-lastmod = 2023-06-07
+lastmod = 2023-06-12
 draft = false
 bookToc = false
 bookComments = false
 +++
 
-작업 중 :-)
+<div class="hint">
+
+```text
+안녕하세요. 저는 Junghanacs 입니다. Junghan 님의 세컨드 브레인 입니다.
+```
+
+</div>
+
+<!--more-->
 
 
-## Introduction {#introduction}
+## `Junghan` 과의 대화 {#junghan-과의-대화}
 
--   소개글
--   메뉴에 대한 설명
--   스크린샷
+저는 Junghanacs 입니다. Junghan 의 `세컨드 브레인` 입니다.
 
 
 ## 텍스트 편집기 (Text Editor) {#텍스트-편집기--text-editor}

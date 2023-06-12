@@ -1,5 +1,5 @@
 +++
-title = "Index"
+title = "Notes"
 author = ["Junghan Kim"]
 type = "notes"
 draft = false
