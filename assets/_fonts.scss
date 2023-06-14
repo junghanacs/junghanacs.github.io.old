@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
 
-/* Time-stamp: <2023-06-14 13:51:43 junghan> */
+/* Time-stamp: <2023-06-14 21:37:59 junghan> */
 
 /* Iosevka */
 /* https://css-tricks.com/snippets/css/using-font-face/ */
@@ -104,7 +104,6 @@ body {
 /* .todo, */
 /* .done, */
 /* kbd, */
-/* mono, */
 /* pre, */
 /* tt { */
 /*   font-family: "D2 coding", monospace; */
@@ -124,27 +123,6 @@ body {
 .underline {
   text-decoration: underline;
 }
-
-/* Tue Sep 26 12:32:04 EDT 2017 - kmodi*/
-/* Override the background-color for pre blocks.. overrides the Hugo theme, and Pygments/Chroma CSS. */
-// pre,
-// pre code,
-// .chroma {
-//   /* background-color: inherit; */
-//   background-color: #eee;
-// }
-
-/* Very little padding on the left and right margins of code blocks */
-// li pre,
-// pre {
-//   padding-left: 5px;
-//   padding-right: 5px;
-// }
-
-/* Do not show list bullets for checkbox list items */
-// ul.task-list {
-//   list-style-type: none;
-// }
 
 /* Org timestamps */
 /* Example: In Changelog */
@@ -227,8 +205,3 @@ dt {
 dd {
   margin-bottom: 0.5rem;
 }
-
-/* No list bullets in task lists */
-// ul.task-list {
-//   list-style-type: none;
-// }

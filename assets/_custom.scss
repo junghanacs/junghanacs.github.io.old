@@ -47,6 +47,13 @@ h6 {
   font-size: $font-size-16;
 }
 
+kbd {
+  // font-family: "Iosevka", "Noto Sans KR", sans-serif;
+  color: #000000;
+  background-color: #fff576;
+  border-radius: $border-radius;
+}
+
 .markdown {
   h1,
   h2,
@@ -69,6 +76,9 @@ h6 {
   code {
     font-family: "D2 coding", "Consolas", "Menlo", "Deja Vu Sans Mono",
       "Bitstream Vera Sans Mono", monospace;
-    font-size: 0.9em;
+    font-size: 0.95em;
+    color: #000000;
+    // color: #8f0075;
+    // background-color: #ffffff;
   }
 }

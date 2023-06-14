@@ -2,7 +2,7 @@
 title = "DotSpacemacs"
 author = ["Junghan Kim"]
 date = 2023-05-17
-lastmod = 2023-06-14T16:31:00+09:00
+lastmod = 2023-06-14T21:48:00+09:00
 keywords = ["configs"]
 draft = false
 +++
@@ -27,11 +27,11 @@ section flags org-babel to make sure that the <kbd>.emacs.d/</kbd> directory exi
 the `:mkdirp yes` argument.
 
 ```elisp
-  ;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-
+;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-
 ;; This file was generated using literate programming.
 ;; Please see the spacemacs.org file.
 
-  ;;; Load paths
+;;; Load paths
 ;; optimize: force "lisp"" and "site-lisp" at the head to reduce the startup time.
 ;; (add-to-list 'load-path (concat dotspacemacs-directory "lisp"))
 (dolist (dir '("site-lisp" "lisp"))
@@ -51,15 +51,15 @@ the `:mkdirp yes` argument.
 ;; (setq default-frame-alist (push '(right-divider-width . 20) default-frame-alist))
 ;; (setq default-frame-alist (push '(scroll-bar-with . 12) default-frame-alist))
 
-  ;;; Load 'Spacemacs'
+;;; Load 'Spacemacs'
 (load-file (concat dotspacemacs-directory "spacemacs.el"))
 
-  ;;; Show 'Startup-Time'
+;;; Show 'Startup-Time'
 (defun display-startup-echo-area-message ()
   "Display startup message."
   (message (concat "Startup time: " (emacs-init-time))))
 
-  ;;; init.el ends here
+;;; init.el ends here
 ```
 
 
@@ -105,7 +105,7 @@ the `:mkdirp yes` argument.
  '(wcheck-default-face ((t (:foreground "HotPink1" :underline (:color foreground-color :style wave :position nil)))))
  '(sideline-blame ((t (:foreground "#7a88cf" :background unspecified :height 1.0 :italic t))))
  )
-  ;;; emacs-custom.el ends here
+;;; emacs-custom.el ends here
 ```
 
 
@@ -3554,7 +3554,7 @@ good idea.
   :body
   ;; (find-file "~/sync/org/roam")
   (spacemacs/window-split-single-column)
-  (find-file "~/sync/org/roam/index.org") ; main index
+  (find-file "~/sync/org/roam/_index.org") ; Blog Index
 
   (split-window-right-and-focus)
   (org-roam-node-random)

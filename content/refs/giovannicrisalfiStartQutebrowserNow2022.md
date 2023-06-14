@@ -2,8 +2,8 @@
 title = "Giovanni Crisalfi :: Start Qutebrowser Now (2022)"
 author = ["Junghan Kim"]
 date = 2023-06-02T16:55:00+09:00
-lastmod = 2023-06-10
-keywords = ["draft", "references"]
+lastmod = 2023-06-14
+keywords = ["references"]
 draft = false
 +++
 
@@ -15,8 +15,10 @@ draft = false
 
 <!--more-->
 
-> 레퍼런스 노트는 1. 나의 생각 2. 원문 번역 으로 구성 됩니다. 번역은 기계 번역 후
-> 간단한 수정을 한 것 입니다. 번역은 제가 이해 가능한 수준 입니다.
+```text
+레퍼런스 노트는 1. 나의 생각 2. 원문 번역 으로 구성 됩니다. 번역은 기계 번역 후
+간단한 수정을 한 것 입니다. 번역은 제가 이해 가능한 수준 입니다.
+```
 
 
 ## `나의 생각` : 키보드 기반 웹 브라우저를 향하여! {#나의-생각-키보드-기반-웹-브라우저를-향하여}
