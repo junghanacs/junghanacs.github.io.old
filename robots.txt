@@ -3,7 +3,43 @@ User-agent: *
 
 Allow: /menu/
 
+Allow: /configs/emacs/jh-base/
+
+Allow: /configs/emacs/jh-checker/
+
+Allow: /configs/emacs/jh-clojure/
+
+Allow: /configs/emacs/jh-coding/
+
+Allow: /configs/emacs/jh-completion/
+
+Allow: /configs/emacs/jh-editing/
+
+Allow: /configs/emacs/jh-javascript/
+
+Allow: /configs/emacs/jh-misc/
+
+Allow: /configs/emacs/jh-navigation/
+
+Allow: /configs/emacs/jh-org/
+
+Allow: /configs/emacs/jh-org-workflow/
+
+Allow: /configs/emacs/jh-pkm/
+
 Allow: /configs/emacs/jh-project/
+
+Allow: /configs/emacs/jh-python/
+
+Allow: /configs/emacs/jh-reading/
+
+Allow: /configs/emacs/jh-utility/
+
+Allow: /configs/emacs/jh-visual/
+
+Allow: /configs/emacs/jh-workspace/
+
+Allow: /configs/emacs/jh-writing/
 
 Allow: /notes/talk_with_junghanacs/
 
@@ -18,6 +54,8 @@ Allow: /notes/org_org_roam_hugo_meta_format/
 Allow: /refs/giovannicrisalfiStartQutebrowserNow2022/
 
 Allow: /
+
+Allow: /configs/emacs/spacemacs/
 
 Allow: /contact/
 

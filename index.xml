@@ -8,7 +8,139 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Emacs: jh-project layer</title>
+      <title>jh-base layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-base/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-base/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-base
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-checker layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-checker/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-checker/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-checker
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-clojure layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-clojure/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-clojure/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-clojure
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-coding layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-coding/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-coding/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-coding
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-completion layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-completion/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-completion/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-completion
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-editing layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-editing/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-editing/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-editing
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-javascript layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-javascript/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-javascript/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-javascript
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-misc layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-misc/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-misc/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-misc
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-navigation layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-navigation/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-navigation/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-navigation
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-org layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-org/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-org/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-org
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-org-workflow</title>
+      <link>https://junghanacs.com/configs/emacs/jh-org-workflow/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-org-workflow/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  노랑님의 워크플로우 기반 커스텀
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-pkm layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-pkm/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-pkm/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  PKM (Personal Knowledge Manager)
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-project layer</title>
       <link>https://junghanacs.com/configs/emacs/jh-project/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -19,13 +151,79 @@
     </item>
     
     <item>
-      <title>Junghanacs 와의 대화</title>
+      <title>jh-python layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-python/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-python/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-python
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-reading layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-reading/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-reading/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-reading
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-utility layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-utility/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-utility/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-utility
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-visual layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-visual/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-visual/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-visual
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-workspace layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-workspace/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-workspace/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-workspace
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>jh-writing layer</title>
+      <link>https://junghanacs.com/configs/emacs/jh-writing/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/jh-writing/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  jh-writing
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Junghan 과 Junghanacs 의 대화</title>
       <link>https://junghanacs.com/notes/talk_with_junghanacs/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
       <guid>https://junghanacs.com/notes/talk_with_junghanacs/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
-  Junghan 와 Junghanacs 와의 대화.
+  Junghanacs 의 가르침을 받들다.
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -48,10 +246,7 @@
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0900</pubDate>
       
       <guid>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</guid>
-      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
-  Org-Roam 에서 작성한 문서를 Hugo Markdown 으로 변환하기는 쉽다. 근데 각주, 인용,
-태그, 요약, 코드, 일부 내용 감추기 등을 어떻게 하는가? 여기에 대한 답을 찾는다.
-&lt;/blockquote&gt;</description>
+      <description>Summary 블록 # 요약문은 한글, 컬럼 80 으로 2.5 줄 정도 가능하다. 간단히 쓰는게 항상 답이다. 간단히 요약하기란 쉽지 않다. 하지만 중요하다. 아래와 같이 포스팅 맨 위에 짧</description>
     </item>
     
     <item>
@@ -64,6 +259,17 @@
   저자에게 파이어폭스는 마우스를 사용하게 만드는 유일한 소프트웨어였다. 빔 관련
 플러그인만으로는 만족할 수 없었다. 그래서 결국 정착한 녀석이 Qutebrowser 이다.
 그에게 배워보자.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>DotSpacemacs</title>
+      <link>https://junghanacs.com/configs/emacs/spacemacs/</link>
+      <pubDate>Wed, 17 May 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/configs/emacs/spacemacs/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Spacemacs 닷 파일
 &lt;/blockquote&gt;</description>
     </item>
     

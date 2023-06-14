@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="ko-kr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  PKM (Personal Knowledge Manager)
+">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="jh-pkm layer" />
+<meta property="og:description" content="
+  PKM (Personal Knowledge Manager)
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://junghanacs.com/configs/emacs/jh-pkm/" /><meta property="article:section" content="configs" />
+<meta property="article:published_time" content="2023-06-12T00:00:00+09:00" />
+<meta property="article:modified_time" content="2023-06-14T18:08:46+09:00" />
+<title>jh-pkm layer | Junghanacs</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.942a8ef356a0de9c788dad4417d0a7999183609501ee9b0a834b12b166dca657.css" integrity="sha256-lCqO81ag3px4ja1EF9CnmZGDYJUB7psKg0sSsWbcplc=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/ko.search.min.467b72fdac3f24f40ba6afc31a114ed48c5707c177c680fec283962f352621f1.js" integrity="sha256-Rnty/aw/JPQLpq/DGhFO1IxXB8F3xoD&#43;woOWLzUmIfE=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Junghanacs</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/posts/">Articles</a></li>
+<li>
+  <a href="/notes/">Notes</a></li>
+<li>
+  <a href="/refs/">References</a></li>
+<li>
+  <a href="/configs/">Configs</a>
+<ul>
+<li>
+  <a href="/configs/emacs/">emacs.d</a></li>
+</ul>
+</li>
+</ul>
+<!-- -   [Terms](/terms) -->
+<!-- -   [Contact](/contact) -->
+<!-- -   [RSS](/index.xml) -->
+<!-- -   [All my links](https://links.seds.nl/) -->
+<!-- -   [All tags](/tags) -->
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/junghanacs"  target="_blank" rel="noopener">
+        Github Link
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>jh-pkm layer</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#layer">Layer</a></li>
+        <li><a href="#packages">Packages</a>
+          <ul>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#deft-browser"><code>deft</code> browser</a></li>
+            <li><a href="#citar-org-roam">Citar-org-roam</a></li>
+            <li><a href="#custom-org-roam"><kbd>Custom</kbd> Org-roam</a>
+              <ul>
+                <li><a href="#start-configuration">Start Configuration <span class="tag"><span class="donotmove">donotmove</span></span></a></li>
+                <li><a href="#org-roam-node-type">Org-roam-node-type</a></li>
+                <li><a href="#embark-org-roam">Embark-org-roam</a></li>
+                <li><a href="#tag-and-filter-search"><kbd>tag</kbd> and <kbd>filter</kbd> search</a></li>
+                <li><a href="#filter-org-roam-node-find-by-subdirectories">Filter org-roam-node-find by subdirectories</a></li>
+                <li><a href="#org-roam-capture-templates"><code>Org-roam-capture-templates</code></a></li>
+                <li><a href="#org-roam-hacks-for-better-productivity">Org roam hacks for better productivity</a></li>
+                <li><a href="#citation-and-bibliography-management">Citation and Bibliography management</a></li>
+                <li><a href="#private-draft-and-noexport-management"><code>Private Draft and Noexport</code> management</a></li>
+                <li><a href="#export-management"><span class="org-todo todo TODO">TODO</span> <code>Export</code> management</a></li>
+                <li><a href="#hydra-and-transient-for-easy-access"><kbd>HYDRA</kbd> and <kbd>Transient</kbd> for easy access</a></li>
+                <li><a href="#end-configuration">End Configuration <span class="tag"><span class="donotmove">donotmove</span></span></a></li>
+              </ul>
+            </li>
+            <li><a href="#consult-org-roam">Consult-org-roam</a></li>
+          </ul>
+        </li>
+        <li><a href="#funcs">Funcs</a>
+          <ul>
+            <li><a href="#org-insert-link-dwim">org-insert-link-dwim</a></li>
+            <li><a href="#assistance-rogue-s-tips">assistance <code>rogue's tips</code></a></li>
+            <li><a href="#org-hide-properties">org-hide-properties</a></li>
+          </ul>
+        </li>
+        <li><a href="#keybindings">Keybindings</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/configs/emacs/jh-pkm/">jh-pkm layer</a>
+  </h1>
+  
+
+
+
+
+
+
+<div>
+ </div>
+
+<hr>
+
+  <p><blockquote class="book-hint info">
+  PKM (Personal Knowledge Manager)
+</blockquote>
+
+<h2 id="goals">
+  Goals
+  <a class="anchor" href="#goals">#</a>
+</h2>
+<p>org-roam 기반 제텔카스텐 지신 관리 시스템. 워크플로우와
+나누어서 지식 관리 측면 만 다룬다. 같은 Org 모드를 사용하기에 섞어서 사용하기
+쉽다. 그렇게 하면 꼬인다.</p>
+<h2 id="layer">
+  Layer
+  <a class="anchor" href="#layer">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Copyright (c) 2012-2023 Sylvain Benner &amp; Contributors</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Author: Junghan Kim &lt;junghanacs@gmail.com&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; URL: https://github.com/junghanacs</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; This file is not part of GNU Emacs.</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; License: GPLv3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Commentary:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Code:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">configuration-layer/declare-layer-dependencies</span>
+</span></span><span style="display:flex;"><span> <span style="color:#666">&#39;</span>(
+</span></span><span style="display:flex;"><span>   <span style="color:#b8860b">deft</span>
+</span></span><span style="display:flex;"><span>   ))
+</span></span></code></pre></div><h2 id="packages">
+  Packages
+  <a class="anchor" href="#packages">#</a>
+</h2>
+<h3 id="packages">
+  Packages
+  <a class="anchor" href="#packages">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Copyright (c) 2012-2023 Sylvain Benner &amp; Contributors</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Author: Junghan Kim &lt;junghanacs@gmail.com&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; URL: https://github.com/junghanacs</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; This file is not part of GNU Emacs.</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; License: GPLv3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Commentary:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Code:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defconst</span> <span style="color:#b8860b">jh-pkm-packages</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#666">&#39;</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-roam</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">deft</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">citar-org-roam</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">consult-org-roam</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (delve :location (recipe :fetcher github</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;                          :repo &#34;publicimageltd/delve&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;                          :files (&#34;*.el&#34; &#34;*.org&#34;)))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (triples :location (recipe :fetcher github :branch &#34;main&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;                            :repo &#34;ahyatt/triples&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;                            :files (&#34;*.el&#34; &#34;*.org&#34;)))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (ekg :location (recipe :fetcher github :branch &#34;main&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;                        :repo &#34;ahyatt/ekg&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;                        :files (&#34;*.el&#34; &#34;*.org&#34; &#34;doc/*.*&#34;))) ; emacs knowledge graph</span>
+</span></span><span style="display:flex;"><span>    ))
+</span></span></code></pre></div><h3 id="deft-browser">
+  <code>deft</code> browser
+  <a class="anchor" href="#deft-browser">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; deft layer configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; https://github.com/jrblevin/deft</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-pkm/post-init-deft</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">global-set-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-x D&#34;</span>) <span style="color:#b8860b">&#39;deft-find-file</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (global-set-key (kbd &#34;&lt;f2&gt;&#34;) &#39;spacemacs/deft)</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">deft-directory</span> (<span style="color:#b8860b">file-truename</span> (<span style="color:#00a000">concat</span> <span style="color:#b8860b">org-directory</span> <span style="color:#b44">&#34;/logseq/&#34;</span>)))
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (setq deft-directory &#34;~/sync/org/&#34;)</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">deft-recursive</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; auto-safe 를 꺼야 지겹게 저장 안된다. 아니면 시간을 넉넉하게 잡던가</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; 기본은 1초였다. 이게 말이되나! 0은 끄는 것!</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">deft-auto-save-interval</span> <span style="color:#666">0</span>) <span style="color:#080;font-style:italic">;; must turn off auto-safe!!</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (setq deft-file-naming-rules &#39;((noslash . &#34;_&#34;)))</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (nospace . &#34;-&#34;)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (case-fn . downcase))</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">deft-extensions</span> <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;org&#34;</span> <span style="color:#b44">&#34;md&#34;</span>))
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">deft-use-filter-string-for-filename</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">deft-org-mode-title-prefix</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">deft-recursive-ignore-dir-regexp</span> (<span style="color:#b8860b">regexp-opt</span> <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;.&#34;</span> <span style="color:#b44">&#34;..&#34;</span> <span style="color:#b44">&#34;attic&#34;</span>)))
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">deft-use-filename-as-title</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">deft-strip-summary-regexp</span>
+</span></span><span style="display:flex;"><span>        (<span style="color:#00a000">concat</span> <span style="color:#b44">&#34;\\(&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#b44">&#34;[\n\t]&#34;</span> <span style="color:#080;font-style:italic">;; blank</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#b44">&#34;\\|^#\\+[[:upper:]_]+:.*$&#34;</span> <span style="color:#080;font-style:italic">;; org-mode metadata</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#b44">&#34;\\|^#\\+[[:alnum:]_]+:.*$&#34;</span> <span style="color:#080;font-style:italic">;; org-mode metadata</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#b44">&#34;\\)&#34;</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (setq-default deft-strip-summary-regexp &#34;:PROPERTIES:\n\\(.+\n\\)+:END:\n&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;               deft-use-filename-as-title t)</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div><h3 id="citar-org-roam">
+  Citar-org-roam
+  <a class="anchor" href="#citar-org-roam">#</a>
+</h3>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2023-03-24 Fri 15:25] </span></span> The citar-open-notes and citar-open commands will work as
+normal, but will use org-roam to open notes. To define a sub-file node as a
+bibliographic note (ref node), use citar-org-roam-ref-add to add the ROAM_REF to
+the node at point. Beyond that, the only interactive command this package
+provides is: citar-org-roam-cited: presents a list of notes that cite the
+selected references</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-pkm/init-citar-org-roam</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">citar-org-roam</span> <span style="color:#a2f">:after</span> <span style="color:#b8860b">citar</span>))
+</span></span></code></pre></div><h3 id="custom-org-roam">
+  <kbd>Custom</kbd> Org-roam
+  <a class="anchor" href="#custom-org-roam">#</a>
+</h3>
+<h4 id="start-configuration">
+  Start Configuration <span class="tag"><span class="donotmove">donotmove</span></span>
+  <a class="anchor" href="#start-configuration">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Org-roam</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-pkm/post-init-org-roam</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">when</span> (<span style="color:#00a000">&gt;</span> <span style="color:#b8860b">emacs-major-version</span> <span style="color:#666">28</span>) <span style="color:#080;font-style:italic">; Emacs-29 use builtin pkgs</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-roam-database-connector</span> <span style="color:#b8860b">&#39;sqlite-builtin</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (setq org-roam-ui-open-on-start nil) ; default t</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-roam-index-file</span> (<span style="color:#00a000">concat</span> <span style="color:#b8860b">org-roam-directory</span> <span style="color:#b44">&#34;index.org&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">org-roam-db-autosync-mode</span> <span style="color:#666">+1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (setq org-hugo-base-dir (file-truename &#34;~/git/blog/&#34;))</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-hugo-base-dir</span> <span style="color:#b8860b">blog-admin-dir</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-roam-db-gc-threshold</span> <span style="color:#b8860b">most-positive-fixnum</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-roam-v2-ack</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (setq org-roam-mode-sections</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;  (list #&#39;org-roam-backlinks-section</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;        #&#39;org-roam-reflinks-section</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;        #&#39;org-roam-unlinked-references-section))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-roam-mode-sections</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#666">&#39;</span>((<span style="color:#b8860b">org-roam-backlinks-section</span> <span style="color:#a2f">:unique</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#b8860b">org-roam-reflinks-section</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; 켜지면 입력 할 때 계속 Completion 리스트가 나타난다. 수동으로 하자.</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-roam-completion-everywhere</span> <span style="color:#800">nil</span>)
+</span></span></code></pre></div><h4 id="org-roam-node-type">
+  Org-roam-node-type
+  <a class="anchor" href="#org-roam-node-type">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; https://jethrokuan.github.io/org-roam-guide/</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (cl-defmethod org-roam-node-type ((node org-roam-node))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   &#34;Return the TYPE of NODE.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (condition-case nil</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       (file-name-nondirectory</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;        (directory-file-name</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;         (file-name-directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;          (file-relative-name (org-roam-node-file node) org-roam-directory))))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (error &#34;&#34;)))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; 모든 새로운 제텔에는 Draft 를 붙인다. HUGO_DRAFT 가 있는데 이게</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; 어떻게 활용 될 수 있나? 이미 보낸 글도 수정 할 수 있으니까</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; 그때는 draft 라고 하는게 맞겠다.</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span>  <span style="color:#b8860b">jethro/tag-new-node-as-draft</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">org-roam-tag-add</span>  <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;draft&#34;</span>)))
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;org-roam-capture-new-node-hook</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">jethro/tag-new-node-as-draft</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-roam-node-display-template</span> (<span style="color:#00a000">concat</span>
+</span></span><span style="display:flex;"><span>                                      (<span style="color:#00a000">propertize</span> <span style="color:#b44">&#34;${directories:10} &#34;</span> <span style="color:#b8860b">&#39;face</span> <span style="color:#b8860b">&#39;org-checkbox</span>)
+</span></span><span style="display:flex;"><span>                                      (<span style="color:#00a000">propertize</span> <span style="color:#b44">&#34;${hierarchy:80} &#34;</span> <span style="color:#b8860b">&#39;face</span> <span style="color:#b8860b">&#39;org-roam-title</span>)
+</span></span><span style="display:flex;"><span>                                      (<span style="color:#00a000">propertize</span> <span style="color:#b44">&#34;${backlinkscount:5} &#34;</span> <span style="color:#b8860b">&#39;face</span> <span style="color:#b8860b">&#39;org-formula</span>)
+</span></span><span style="display:flex;"><span>                                      (<span style="color:#00a000">propertize</span> <span style="color:#b44">&#34;${tags:40}&#34;</span> <span style="color:#b8860b">&#39;face</span> <span style="color:#b8860b">&#39;org-tag</span>))
+</span></span><span style="display:flex;"><span>      <span style="color:#b8860b">org-roam-node-annotation-function</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">node</span>) (<span style="color:#b8860b">marginalia--time</span> (<span style="color:#b8860b">org-roam-node-file-mtime</span> <span style="color:#b8860b">node</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; https://github.com/org-roam/org-roam/wiki/User-contributed-Tricks#showing-node-hierarchy</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">cl-defmethod</span> <span style="color:#b8860b">org-roam-node-hierarchy</span> ((<span style="color:#b8860b">node</span> <span style="color:#b8860b">org-roam-node</span>))
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">level</span> (<span style="color:#b8860b">org-roam-node-level</span> <span style="color:#b8860b">node</span>)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">concat</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#a2f">when</span> (<span style="color:#00a000">&gt;</span> <span style="color:#b8860b">level</span> <span style="color:#666">0</span>) (<span style="color:#00a000">concat</span> (<span style="color:#b8860b">org-roam-node-file-title</span> <span style="color:#b8860b">node</span>) <span style="color:#b44">&#34; &gt; &#34;</span>))
+</span></span><span style="display:flex;"><span>     (<span style="color:#a2f">when</span> (<span style="color:#00a000">&gt;</span> <span style="color:#b8860b">level</span> <span style="color:#666">1</span>) (<span style="color:#00a000">concat</span> (<span style="color:#b8860b">string-join</span> (<span style="color:#b8860b">org-roam-node-olp</span> <span style="color:#b8860b">node</span>) <span style="color:#b44">&#34; &gt; &#34;</span>) <span style="color:#b44">&#34; &gt; &#34;</span>))
+</span></span><span style="display:flex;"><span>     (<span style="color:#b8860b">org-roam-node-title</span> <span style="color:#b8860b">node</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">cl-defmethod</span> <span style="color:#b8860b">org-roam-node-directories</span> ((<span style="color:#b8860b">node</span> <span style="color:#b8860b">org-roam-node</span>))
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">if-let</span> ((<span style="color:#b8860b">dirs</span> (<span style="color:#00a000">file-name-directory</span> (<span style="color:#b8860b">file-relative-name</span> (<span style="color:#b8860b">org-roam-node-file</span> <span style="color:#b8860b">node</span>) <span style="color:#b8860b">org-roam-directory</span>))))
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">format</span> <span style="color:#b44">&#34;(%s)&#34;</span> (<span style="color:#00a000">car</span> (<span style="color:#b8860b">split-string</span> <span style="color:#b8860b">dirs</span> <span style="color:#b44">&#34;/&#34;</span>)))
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">cl-defmethod</span> <span style="color:#b8860b">org-roam-node-backlinkscount</span> ((<span style="color:#b8860b">node</span> <span style="color:#b8860b">org-roam-node</span>))
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">let*</span> ((<span style="color:#b8860b">count</span> (<span style="color:#b8860b">caar</span> (<span style="color:#b8860b">org-roam-db-query</span>
+</span></span><span style="display:flex;"><span>                       [<span style="color:#a2f">:select</span> (<span style="color:#00a000">funcall</span> <span style="color:#b8860b">count</span> <span style="color:#b8860b">source</span>)
+</span></span><span style="display:flex;"><span>                                <span style="color:#a2f">:from</span> <span style="color:#b8860b">links</span>
+</span></span><span style="display:flex;"><span>                                <span style="color:#a2f">:where</span> (<span style="color:#00a000">=</span> <span style="color:#b8860b">dest</span> <span style="color:#b8860b">$s1</span>)
+</span></span><span style="display:flex;"><span>                                <span style="color:#a2f">:and</span> (<span style="color:#00a000">=</span> <span style="color:#b8860b">type</span> <span style="color:#b44">&#34;id&#34;</span>)]
+</span></span><span style="display:flex;"><span>                       (<span style="color:#b8860b">org-roam-node-id</span> <span style="color:#b8860b">node</span>)))))
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">format</span> <span style="color:#b44">&#34;[%d]&#34;</span> <span style="color:#b8860b">count</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-roam-open-refs</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Open REFs of the node at point.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">save-excursion</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">goto-char</span> (<span style="color:#b8860b">org-roam-node-point</span> (<span style="color:#b8860b">org-roam-node-at-point</span> <span style="color:#b8860b">&#39;assert</span>)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">when-let*</span> ((<span style="color:#b8860b">p</span> (<span style="color:#b8860b">org-entry-get</span> (<span style="color:#00a000">point</span>) <span style="color:#b44">&#34;ROAM_REFS&#34;</span>))
+</span></span><span style="display:flex;"><span>                (<span style="color:#b8860b">refs</span> (<span style="color:#a2f">when</span> <span style="color:#b8860b">p</span> (<span style="color:#b8860b">split-string-and-unquote</span> <span style="color:#b8860b">p</span>)))
+</span></span><span style="display:flex;"><span>                (<span style="color:#b8860b">refs</span> (<span style="color:#a2f">if</span> (<span style="color:#b8860b">length&gt;</span> <span style="color:#b8860b">refs</span> <span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>                          (<span style="color:#b8860b">completing-read-multiple</span> <span style="color:#b44">&#34;Open: &#34;</span> <span style="color:#b8860b">refs</span>)
+</span></span><span style="display:flex;"><span>                        <span style="color:#b8860b">refs</span>))
+</span></span><span style="display:flex;"><span>                (<span style="color:#d2413a;font-weight:bold">user-error</span> <span style="color:#b44">&#34;No ROAM_REFS found&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">when-let</span> ((<span style="color:#b8860b">oc-cites</span> (<span style="color:#b8860b">seq-map</span>
+</span></span><span style="display:flex;"><span>                            (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">ref</span>) (<span style="color:#00a000">substring</span> <span style="color:#b8860b">ref</span> <span style="color:#666">1</span>))
+</span></span><span style="display:flex;"><span>                            (<span style="color:#b8860b">seq-filter</span> (<span style="color:#b8860b">apply-partially</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">string-prefix-p</span> <span style="color:#b44">&#34;@&#34;</span>) <span style="color:#b8860b">refs</span>))))
+</span></span><span style="display:flex;"><span>        (<span style="color:#b8860b">citar-run-default-action</span> <span style="color:#b8860b">oc-cites</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#a2f">dolist</span> (<span style="color:#b8860b">ref</span> <span style="color:#b8860b">refs</span>)
+</span></span><span style="display:flex;"><span>        (<span style="color:#a2f">unless</span> (<span style="color:#b8860b">string-prefix-p</span> <span style="color:#b44">&#34;@&#34;</span> <span style="color:#b8860b">ref</span>)
+</span></span><span style="display:flex;"><span>          (<span style="color:#b8860b">browse-url</span> <span style="color:#b8860b">ref</span>))))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">force-org-rebuild-cache</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Rebuild the </span><span style="color:#b8860b">`org-mode&#39;</span><span style="color:#b44"> and </span><span style="color:#b8860b">`org-roam&#39;</span><span style="color:#b44"> cache.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">org-id-update-id-locations</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">org-roam-db-sync</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">org-roam-update-org-id-locations</span>))
+</span></span></code></pre></div><h4 id="embark-org-roam">
+  Embark-org-roam
+  <a class="anchor" href="#embark-org-roam">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">with-eval-after-load</span> <span style="color:#b8860b">&#39;embark</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-roam-backlinks-query</span> (<span style="color:#b8860b">node</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;Gets the backlinks of NODE with </span><span style="color:#b8860b">`org-roam-db-query&#39;</span><span style="color:#b44">.&#34;</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">org-roam-db-query</span>
+</span></span><span style="display:flex;"><span>     [<span style="color:#a2f">:select</span> [<span style="color:#b8860b">source</span> <span style="color:#b8860b">dest</span>]
+</span></span><span style="display:flex;"><span>              <span style="color:#a2f">:from</span> <span style="color:#b8860b">links</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a2f">:where</span> (<span style="color:#00a000">=</span> <span style="color:#b8860b">dest</span> <span style="color:#b8860b">$s1</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#a2f">:and</span> (<span style="color:#00a000">=</span> <span style="color:#b8860b">type</span> <span style="color:#b44">&#34;id&#34;</span>)]
+</span></span><span style="display:flex;"><span>     (<span style="color:#b8860b">org-roam-node-id</span> <span style="color:#b8860b">node</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-roam-backlinks-p</span> (<span style="color:#b8860b">source</span> <span style="color:#b8860b">node</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;Predicate function that checks if NODE is a backlink of SOURCE.&#34;</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">let*</span> ((<span style="color:#b8860b">source-id</span> (<span style="color:#b8860b">org-roam-node-id</span> <span style="color:#b8860b">source</span>))
+</span></span><span style="display:flex;"><span>           (<span style="color:#b8860b">backlinks</span> (<span style="color:#b8860b">org-roam-backlinks-query</span> <span style="color:#b8860b">source</span>))
+</span></span><span style="display:flex;"><span>           (<span style="color:#b8860b">id</span> (<span style="color:#b8860b">org-roam-node-id</span> <span style="color:#b8860b">node</span>))
+</span></span><span style="display:flex;"><span>           (<span style="color:#b8860b">id-list</span> (<span style="color:#00a000">list</span> <span style="color:#b8860b">id</span> <span style="color:#b8860b">source-id</span>)))
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">member</span> <span style="color:#b8860b">id-list</span> <span style="color:#b8860b">backlinks</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-roam-backlinks--read-node-backlinks</span> (<span style="color:#b8860b">source</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;Runs </span><span style="color:#b8860b">`org-roam-node-read&#39;</span><span style="color:#b44"> on the backlinks of SOURCE.
+</span></span></span><span style="display:flex;"><span><span style="color:#b44"> The predicate used as </span><span style="color:#b8860b">`org-roam-node-read&#39;</span><span style="color:#b44">&#39;s filter-fn is
+</span></span></span><span style="display:flex;"><span><span style="color:#b44"> </span><span style="color:#b8860b">`org-roam-backlinks-p&#39;</span><span style="color:#b44">.&#34;</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">org-roam-node-read</span> <span style="color:#800">nil</span> (<span style="color:#b8860b">apply-partially</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-roam-backlinks-p</span> <span style="color:#b8860b">source</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-roam-backlinks-node-read</span> (<span style="color:#b8860b">entry</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;Read a NODE and run </span><span style="color:#b8860b">`org-roam-backlinks--read-node-backlinks&#39;</span><span style="color:#b44">.&#34;</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">let*</span> ((<span style="color:#b8860b">node</span> (<span style="color:#00a000">get-text-property</span> <span style="color:#666">0</span> <span style="color:#b8860b">&#39;node</span> <span style="color:#b8860b">entry</span>))
+</span></span><span style="display:flex;"><span>           (<span style="color:#b8860b">backlink</span> (<span style="color:#b8860b">org-roam-backlinks--read-node-backlinks</span> <span style="color:#b8860b">node</span>)))
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">find-file</span> (<span style="color:#b8860b">org-roam-node-file</span> <span style="color:#b8860b">backlink</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">defvar-keymap</span> <span style="color:#b8860b">embark-org-roam-map</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:doc</span> <span style="color:#b44">&#34;Keymap for Embark org roam node actions.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:parent</span> <span style="color:#b8860b">embark-general-map</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;i&#34;</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-roam-node-insert</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;b&#34;</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-roam-backlinks-node-read</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;r&#34;</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-roam-node-random</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">add-to-list</span> <span style="color:#b8860b">&#39;embark-keymap-alist</span> <span style="color:#666">&#39;</span>(<span style="color:#b8860b">org-roam-node</span> <span style="color:#666">.</span> <span style="color:#b8860b">embark-org-roam-map</span>)))
+</span></span></code></pre></div><h4 id="tag-and-filter-search">
+  <kbd>tag</kbd> and <kbd>filter</kbd> search
+  <a class="anchor" href="#tag-and-filter-search">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-get-all-tags</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Save all roam tags to a buffer visting the file ~/Test.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">with-current-buffer</span> (<span style="color:#00a000">get-buffer-create</span> <span style="color:#b44">&#34;*Tags*&#34;</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">erase-buffer</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">mapc</span> <span style="color:#00a000">#&#39;</span>(<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">n</span>) (<span style="color:#00a000">insert</span> (<span style="color:#00a000">car</span> <span style="color:#b8860b">n</span>) <span style="color:#b44">&#34;\n&#34;</span>))
+</span></span><span style="display:flex;"><span>          (<span style="color:#b8860b">org-roam-db-query</span> [<span style="color:#a2f">:select</span> <span style="color:#a2f">:distinct</span> [<span style="color:#b8860b">tag</span>] <span style="color:#a2f">:from</span> <span style="color:#b8860b">tags</span> ]))
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">pop-to-buffer</span> (<span style="color:#00a000">current-buffer</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/roam-tag-filter</span> (<span style="color:#b8860b">tag</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Return function that filters based on TAG.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">n</span>) (<span style="color:#00a000">member</span> <span style="color:#b8860b">tag</span> (<span style="color:#b8860b">org-roam-node-tags</span> <span style="color:#b8860b">n</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; To be used in `org-roam-dailies-capture-template&#39;.</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/problem-org-output</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Return org structure for each org-roam problem.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">mapconcat</span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">node</span>) (<span style="color:#00a000">format</span> <span style="color:#b44">&#34;- [[id:%s][%s]]: &#34;</span> (<span style="color:#b8860b">org-roam-node-id</span> <span style="color:#b8860b">node</span>) (<span style="color:#b8860b">org-roam-node-title</span> <span style="color:#b8860b">node</span>)))
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">-filter</span> (<span style="color:#b8860b">my/roam-tag-filter</span> <span style="color:#b44">&#34;problem&#34;</span>) (<span style="color:#b8860b">org-roam-node-list</span>))
+</span></span><span style="display:flex;"><span>   <span style="color:#b44">&#34;\n&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Set up a new link type for org</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;ol</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">org-link-set-parameters</span> <span style="color:#b44">&#34;roam&#34;</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#a2f">:follow</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">my/org-roam-open-link</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#a2f">:store</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">my/org-roam-store-link</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-open-link</span> (<span style="color:#b8860b">id</span> <span style="color:#b8860b">_</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Visit the org-roam page TITLE.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">org-roam-node-visit</span> (<span style="color:#b8860b">org-roam-node-from-id</span> <span style="color:#b8860b">id</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-store-link</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">when</span> (<span style="color:#b8860b">org-roam-buffer-p</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">node</span> (<span style="color:#b8860b">org-roam-node-at-point</span>)))
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">org-link-store-props</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#a2f">:type</span> <span style="color:#b44">&#34;roam&#34;</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#a2f">:link</span> (<span style="color:#00a000">format</span> <span style="color:#b44">&#34;roam:%s&#34;</span> (<span style="color:#b8860b">org-roam-node-id</span> <span style="color:#b8860b">node</span>))
+</span></span><span style="display:flex;"><span>       <span style="color:#a2f">:description</span> (<span style="color:#b8860b">org-roam-node-title</span> <span style="color:#b8860b">node</span>)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-tag-search</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">org-roam-node-display-template</span> <span style="color:#b44">&#34;${tags:25} ${title}&#34;</span>))
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">org-roam-node-open</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b8860b">org-roam-node-read</span> <span style="color:#800">nil</span> <span style="color:#800">nil</span> <span style="color:#800">nil</span> <span style="color:#800">t</span> <span style="color:#b44">&#34;Tag: &#34;</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-complete-tag</span> (<span style="color:#b8860b">tag</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">org-roam-node-open</span> (<span style="color:#b8860b">org-roam-node-read</span> <span style="color:#800">nil</span> (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">n</span>) (<span style="color:#00a000">member</span> <span style="color:#b8860b">tag</span> (<span style="color:#b8860b">org-roam-node-tags</span> <span style="color:#b8860b">n</span>))) <span style="color:#800">nil</span> <span style="color:#800">t</span> (<span style="color:#00a000">concat</span> (<span style="color:#b8860b">s-upcase</span> <span style="color:#b8860b">tag</span>) <span style="color:#b44">&#34;: &#34;</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; term</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-node-find-terms</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-complete-tag</span> <span style="color:#b44">&#34;terms&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; main</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-node-find-notes</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-complete-tag</span> <span style="color:#b44">&#34;notes&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; reference</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-node-find-references</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-complete-tag</span> <span style="color:#b44">&#34;references&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; article</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-node-find-articles</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-complete-tag</span> <span style="color:#b44">&#34;articles&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; person</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-node-find-person</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-complete-tag</span> <span style="color:#b44">&#34;person&#34;</span>))
+</span></span></code></pre></div><h4 id="filter-org-roam-node-find-by-subdirectories">
+  Filter org-roam-node-find by subdirectories
+  <a class="anchor" href="#filter-org-roam-node-find-by-subdirectories">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-find-posts-dir</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-node-find-in-selected-dirs</span> (<span style="color:#00a000">list</span> <span style="color:#b44">&#34;posts&#34;</span> )))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-find-terms-dir</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-node-find-in-selected-dirs</span> (<span style="color:#00a000">list</span> <span style="color:#b44">&#34;terms&#34;</span> )))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-find-notes-dir</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-node-find-in-selected-dirs</span> (<span style="color:#00a000">list</span> <span style="color:#b44">&#34;notes&#34;</span> )))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-find-refs-dir</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-node-find-in-selected-dirs</span> (<span style="color:#00a000">list</span> <span style="color:#b44">&#34;refs&#34;</span> )))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-find-configs-dir</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-node-find-in-selected-dirs</span> (<span style="color:#00a000">list</span> <span style="color:#b44">&#34;configs&#34;</span> )))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-find-in-only-subset</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-node-find-in-selected-dirs</span> (<span style="color:#00a000">list</span> <span style="color:#b44">&#34;posts&#34;</span> <span style="color:#b44">&#34;terms&#34;</span> <span style="color:#b44">&#34;notes&#34;</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-find-except-daily</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">my/org-roam-node-find-in-selected-dirs</span> (<span style="color:#00a000">list</span> <span style="color:#b44">&#34;terms&#34;</span>) <span style="color:#b8860b">&#39;EXCLUDE</span>))
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; you can pass t instead of &#39;EXCLUDE</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Below is an adjusted version of the main command to achieve the preset functions like those above</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-node-find-in-selected-dirs</span> (<span style="color:#a2f">&amp;optional</span> <span style="color:#b8860b">dirs</span> <span style="color:#b8860b">exclude</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Show list of </span><span style="color:#b8860b">`org-roam-node-find&#39;</span><span style="color:#b44"> only in selected directories.
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">You will get a completion in minibuffer to choose one or more
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">directories from a pre-defined candidate list.
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">Optionally You can pass EXCLUDE to exclude files in the selected directories
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">with using </span><span style="color:#b8860b">`universal-argument&#39;</span><span style="color:#b44"> (\\[universal-argument]).
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">Optionally in Elisp, you can pass DIRS, a list of
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">directories. In this case, you do not get the completion in
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">minibuffer.
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">This command assumes that the subdirectories in the list are
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">relative to `org-roam-directory`.
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">Directly change the list in the program.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">let*</span> ((<span style="color:#b8860b">exclude</span> (<span style="color:#a2f">or</span> <span style="color:#b8860b">exclude</span> <span style="color:#b8860b">current-prefix-arg</span>))
+</span></span><span style="display:flex;"><span>         (<span style="color:#b8860b">dirs-selected</span>
+</span></span><span style="display:flex;"><span>          (<span style="color:#a2f">if</span> <span style="color:#b8860b">dirs</span> <span style="color:#b8860b">dirs</span>
+</span></span><span style="display:flex;"><span>            (<span style="color:#b8860b">completing-read-multiple</span> <span style="color:#b44">&#34;Select dir(s): &#34;</span>
+</span></span><span style="display:flex;"><span>                                      (<span style="color:#00a000">list</span> <span style="color:#b44">&#34;notes&#34;</span> <span style="color:#b44">&#34;posts&#34;</span> <span style="color:#b44">&#34;refs&#34;</span>))))
+</span></span><span style="display:flex;"><span>         (<span style="color:#b8860b">abs-dir-names</span> (<span style="color:#00a000">mapcar</span> (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">dir</span>)
+</span></span><span style="display:flex;"><span>                                  (<span style="color:#00a000">expand-file-name</span> <span style="color:#b8860b">dir</span> <span style="color:#b8860b">org-roam-directory</span>))
+</span></span><span style="display:flex;"><span>                                <span style="color:#b8860b">dirs-selected</span>)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">org-roam-node-find</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#800">nil</span> <span style="color:#800">nil</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">node</span>)
+</span></span><span style="display:flex;"><span>       (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">file</span> (<span style="color:#b8860b">org-roam-node-file</span> <span style="color:#b8860b">node</span>))
+</span></span><span style="display:flex;"><span>             (<span style="color:#b8860b">result</span> <span style="color:#800">nil</span>))
+</span></span><span style="display:flex;"><span>         (<span style="color:#a2f">dolist</span> (<span style="color:#b8860b">dir</span> <span style="color:#b8860b">abs-dir-names</span> <span style="color:#b8860b">result</span>)
+</span></span><span style="display:flex;"><span>           <span style="color:#080;font-style:italic">;; Ensure to do all the dirs in</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#080;font-style:italic">;; abs-dir-names, but once result is t,</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#080;font-style:italic">;; don&#39;t override it.</span>
+</span></span><span style="display:flex;"><span>           (<span style="color:#a2f">unless</span> <span style="color:#b8860b">result</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#080;font-style:italic">;; `file-in-directory-p&#39; seems work to when the file is</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#080;font-style:italic">;; directly under the directory. It returns nil when the</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#080;font-style:italic">;; file is a farther descendant. `string-prefix-p&#39; can be</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#080;font-style:italic">;; used instead if both dir and file are absolute file</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#080;font-style:italic">;; names, and see if file is a farther descendant of dir</span>
+</span></span><span style="display:flex;"><span>             (<span style="color:#a2f">setq</span> <span style="color:#b8860b">result</span> (<span style="color:#b8860b">string-prefix-p</span> <span style="color:#b8860b">dir</span> <span style="color:#b8860b">file</span>))))
+</span></span><span style="display:flex;"><span>         <span style="color:#080;font-style:italic">;; When exclude, the result needs to be reversed: t-&gt;nil,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#080;font-style:italic">;; nil-&gt;t Note `not&#39; is not suitable because nil returns nil.</span>
+</span></span><span style="display:flex;"><span>         (<span style="color:#a2f">when</span> <span style="color:#b8860b">exclude</span>
+</span></span><span style="display:flex;"><span>           (<span style="color:#a2f">if</span> <span style="color:#b8860b">result</span> (<span style="color:#a2f">setq</span> <span style="color:#b8860b">result</span> <span style="color:#800">nil</span>) (<span style="color:#a2f">setq</span> <span style="color:#b8860b">result</span> <span style="color:#800">t</span>)))
+</span></span><span style="display:flex;"><span>         <span style="color:#b8860b">result</span>)))))
+</span></span></code></pre></div><h4 id="org-roam-capture-templates">
+  <code>Org-roam-capture-templates</code>
+  <a class="anchor" href="#org-roam-capture-templates">#</a>
+</h4>
+<p>캡처 정책을 어떻게 가져갈 것인가? 이런게 정말 어려운 문제다.</p>
+<blockquote>
+<p>
+  <a href="https://jethrokuan.github.io/org-roam-guide/">How I Take Notes with Org-roam</a>
+이 글에 중요한 핵심이 있다. 제텔카스텐 이야기다.
+아. 이 친구 이야기에 놀랍다. 이게 모든 기능이 다 있다고 해서 좋은게 아니다.
+가볍게 쓰고 핵심에 다가서는게 가장 중요하다는 말이다. 이거 내가
+사용하는 시스템도 무슨 의미인가 깔끔하게 정돈이 안되어 있다. 이게
+문제다. 저널은 사실 없어야 한다. 단일 파일로 관리하고 어젠다에
+집중해야 한다. 이 글 마저도 분산되어 있어서 뭘 봐야 할지 모르게된다.</p>
+</blockquote>
+<p>캡처 코드는 아래와 같다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; org-roam-capture-templates</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-roam-capture-templates</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#666">&#39;</span>(
+</span></span><span style="display:flex;"><span>        (<span style="color:#b44">&#34;t&#34;</span> <span style="color:#b44">&#34;terms&#34;</span> <span style="color:#b8860b">plain</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#b44">&#34;%?&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#a2f">:if-new</span>
+</span></span><span style="display:flex;"><span>         (<span style="color:#b8860b">file+head</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#b44">&#34;terms/${slug}.org&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#b44">&#34;#+title: ${title}\n#+DATE: %T\n#+Time-stamp: &lt;&gt;\n#+filetags: :terms:\n\n&#34;</span>)
+</span></span><span style="display:flex;"><span>         <span style="color:#a2f">:immediate-finish</span> <span style="color:#800">t</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#a2f">:unnarrowed</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        (<span style="color:#b44">&#34;n&#34;</span> <span style="color:#b44">&#34;notes&#34;</span> <span style="color:#b8860b">plain</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#b44">&#34;%?&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#a2f">:if-new</span>
+</span></span><span style="display:flex;"><span>         (<span style="color:#b8860b">file+head</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#b44">&#34;notes/${slug}.org&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#b44">&#34;#+title: ${title}\n#+DATE: %T\n#+Time-stamp: &lt;&gt;\n#+filetags: 🎶\n\n&#34;</span>)
+</span></span><span style="display:flex;"><span>         <span style="color:#a2f">:immediate-finish</span> <span style="color:#800">t</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#a2f">:unnarrowed</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        (<span style="color:#b44">&#34;a&#34;</span> <span style="color:#b44">&#34;articles&#34;</span> <span style="color:#b8860b">plain</span> <span style="color:#b44">&#34;%?&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#a2f">:if-new</span>
+</span></span><span style="display:flex;"><span>         (<span style="color:#b8860b">file+head</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#b44">&#34;posts/${slug}.org&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#b44">&#34;#+title: ${title}\n#+DATE: %T\n#+Time-stamp: &lt;&gt;\n#+filetags: :articles:\n\n&#34;</span>)
+</span></span><span style="display:flex;"><span>         <span style="color:#a2f">:immediate-finish</span> <span style="color:#800">t</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#a2f">:unnarrowed</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>        ))
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;         (&#34;r&#34; &#34;reference&#34; plain &#34;%?&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;          :if-new</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;          (file+head &#34;notes/${slug}.org&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;                     &#34;#+title: ${title}\n#+DATE: %T\n#+filetags: :reference:\n\n&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;          :immediate-finish t</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;          :unnarrowed t)</span>
+</span></span></code></pre></div><h4 id="org-roam-hacks-for-better-productivity">
+  Org roam hacks for better productivity
+  <a class="anchor" href="#org-roam-hacks-for-better-productivity">#</a>
+</h4>
+<p>
+  <a href="https://systemcrafters.net/build-a-second-brain-in-emacs/5-org-roam-hacks/">https://systemcrafters.net/build-a-second-brain-in-emacs/5-org-roam-hacks/</a></p>
+<p>위 글과 영상을 보면 다 필요할 것 같다. 있으면 좋을까? 그게 아니더라.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-roam-node-insert-immediate</span> (<span style="color:#b8860b">arg</span> <span style="color:#a2f">&amp;rest</span> <span style="color:#b8860b">args</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span> <span style="color:#b44">&#34;P&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">args</span> (<span style="color:#a2f">push</span> <span style="color:#b8860b">arg</span> <span style="color:#b8860b">args</span>))
+</span></span><span style="display:flex;"><span>        (<span style="color:#b8860b">org-roam-capture-templates</span> (<span style="color:#00a000">list</span> (<span style="color:#00a000">append</span> (<span style="color:#00a000">car</span> <span style="color:#b8860b">org-roam-capture-templates</span>)
+</span></span><span style="display:flex;"><span>                                                  <span style="color:#666">&#39;</span>(<span style="color:#a2f">:immediate-finish</span> <span style="color:#800">t</span>)))))
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">apply</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-roam-node-insert</span> <span style="color:#b8860b">args</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-filter-by-tag</span> (<span style="color:#b8860b">tag-name</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">node</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">member</span> <span style="color:#b8860b">tag-name</span> (<span style="color:#b8860b">org-roam-node-tags</span> <span style="color:#b8860b">node</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-roam-list-notes-by-tag</span> (<span style="color:#b8860b">tag-name</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">mapcar</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-roam-node-file</span>
+</span></span><span style="display:flex;"><span>          (<span style="color:#b8860b">seq-filter</span>
+</span></span><span style="display:flex;"><span>           (<span style="color:#b8860b">my/org-roam-filter-by-tag</span> <span style="color:#b8860b">tag-name</span>)
+</span></span><span style="display:flex;"><span>           (<span style="color:#b8860b">org-roam-node-list</span>))))
+</span></span></code></pre></div><h4 id="citation-and-bibliography-management">
+  Citation and Bibliography management
+  <a class="anchor" href="#citation-and-bibliography-management">#</a>
+</h4>
+<!--list-separator-->
+<ul>
+<li>
+<p>Enable <code>citar-org-roam</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;citar-org-roam</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">setq</span> <span style="color:#b8860b">citar-org-roam-subdir</span> <span style="color:#b44">&#34;refs&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; enable citar-org-roam</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">citar-org-roam-mode</span> <span style="color:#666">1</span>)
+</span></span></code></pre></div></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>citar-org-roam&ndash;create-capture-note</p>
+<p>결국 이렇게 정착했다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (require &#39;bibtex)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; citar-org-roam only offers the citar-org-roam-note-title-template variable</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; for customizing the contents of a new note and no way to specify a custom</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; capture template. And the title template uses citar&#39;s own format, which means</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; we can&#39;t run arbitrary functions in it.</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Left with no other options, we override the</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; citar-org-roam--create-capture-note function and use our own template in it.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">dh/citar-org-roam--create-capture-note</span> (<span style="color:#b8860b">citekey</span> <span style="color:#b8860b">entry</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Open or create org-roam node for CITEKEY and ENTRY.&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; adapted from https://jethrokuan.github.io/org-roam-guide/#orgc48eb0d</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">title</span> (<span style="color:#b8860b">citar-format--entry</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#b8860b">citar-org-roam-note-title-template</span> <span style="color:#b8860b">entry</span>)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">org-roam-capture-</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a2f">:templates</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#666">&#39;</span>((<span style="color:#b44">&#34;r&#34;</span> <span style="color:#b44">&#34;references&#34;</span> <span style="color:#b8860b">plain</span> <span style="color:#b44">&#34;%?&#34;</span> <span style="color:#a2f">:if-new</span>
+</span></span><span style="display:flex;"><span>        (<span style="color:#b8860b">file+head</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#b44">&#34;%(concat
+</span></span></span><span style="display:flex;"><span><span style="color:#b44"> (when citar-org-roam-subdir (concat citar-org-roam-subdir \&#34;/\&#34;)) \&#34;${citekey}.org\&#34;)&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#b44">&#34;#+title: ${title}\n#+date: %T\n#+Time-stamp: &lt;&gt;\n#+filetags: :references:\n\n&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a2f">:immediate-finish</span> <span style="color:#800">t</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a2f">:unnarrowed</span> <span style="color:#800">t</span>))
+</span></span><span style="display:flex;"><span>     <span style="color:#a2f">:info</span> (<span style="color:#00a000">list</span> <span style="color:#a2f">:citekey</span> <span style="color:#b8860b">citekey</span>)
+</span></span><span style="display:flex;"><span>     <span style="color:#a2f">:node</span> (<span style="color:#b8860b">org-roam-node-create</span> <span style="color:#a2f">:title</span> <span style="color:#b8860b">title</span>)
+</span></span><span style="display:flex;"><span>     <span style="color:#a2f">:props</span> <span style="color:#666">&#39;</span>(<span style="color:#a2f">:finalize</span> <span style="color:#b8860b">find-file</span>))
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">org-roam-ref-add</span> (<span style="color:#00a000">concat</span> <span style="color:#b44">&#34;@&#34;</span> <span style="color:#b8860b">citekey</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">advice-add</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">citar-org-roam--create-capture-note</span> <span style="color:#a2f">:override</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">dh/citar-org-roam--create-capture-note</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">dh/org-cite-export-bibliography-advice</span> (<span style="color:#b8860b">fn</span> <span style="color:#b8860b">keyword</span> <span style="color:#b8860b">_</span> <span style="color:#b8860b">info</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">if</span> (<span style="color:#b8860b">org-cite-list-keys</span> <span style="color:#b8860b">info</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">funcall</span> <span style="color:#b8860b">fn</span> <span style="color:#b8860b">keyword</span> <span style="color:#800">nil</span> <span style="color:#b8860b">info</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; The CSL style we use causes an error when trying to export an empty bibliography. Wrap the relevant function to</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; prevent that from happening.</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">advice-add</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-cite-export-bibliography</span> <span style="color:#a2f">:around</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">dh/org-cite-export-bibliography-advice</span>)
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="private-draft-and-noexport-management">
+  <code>Private Draft and Noexport</code> management
+  <a class="anchor" href="#private-draft-and-noexport-management">#</a>
+</h4>
+<!--list-separator-->
+<ul>
+<li>
+<p><code>org-hugo-link</code> with org-link-advice and org-link-by-id</p>
+<ul>
+<li>
+<p>noexport 태그를 헤딩에 넣으면 해당 헤딩은 md 로 출력하지 않는다.
+즉 해당 글은 완전히 공개 되지 않는 것이다.</p>
+</li>
+<li>
+<p>:PRIVATE: 를 프로퍼티 넣으면 링크 연결을 제거한다. 파일은 md 로 변환 되었기
+때문에 사실 의미가 없다.</p>
+</li>
+<li>
+<p>:EXPORT_FILE_NAME: excluded-post
+는 파일 전체를 Export 하지 않는다. 이건 문제가 될 수 있다.</p>
+</li>
+</ul>
+ <!--listend-->
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">dh/org-link-advice</span> (<span style="color:#b8860b">fn</span> <span style="color:#b8860b">link</span> <span style="color:#b8860b">desc</span> <span style="color:#a2f">&amp;rest</span> <span style="color:#b8860b">rest</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">if</span> (<span style="color:#b8860b">string=</span> <span style="color:#b44">&#34;id&#34;</span> (<span style="color:#b8860b">org-element-property</span> <span style="color:#a2f">:type</span> <span style="color:#b8860b">link</span>))
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">dh/org-link-by-id</span> <span style="color:#b8860b">fn</span> <span style="color:#b8860b">link</span> <span style="color:#b8860b">desc</span> <span style="color:#b8860b">rest</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">apply</span> <span style="color:#b8860b">fn</span> <span style="color:#b8860b">link</span> <span style="color:#b8860b">desc</span> <span style="color:#b8860b">rest</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">dh/org-link-by-id</span> (<span style="color:#b8860b">fn</span> <span style="color:#b8860b">link</span> <span style="color:#b8860b">desc</span> <span style="color:#b8860b">rest</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">node</span> (<span style="color:#b8860b">org-roam-node-from-id</span> (<span style="color:#b8860b">org-element-property</span> <span style="color:#a2f">:path</span> <span style="color:#b8860b">link</span>)))
+</span></span><span style="display:flex;"><span>        (<span style="color:#b8860b">protocols</span> <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;http://&#34;</span> <span style="color:#b44">&#34;https://&#34;</span> <span style="color:#b44">&#34;ftp://&#34;</span>)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">if</span> (<span style="color:#00a000">assoc-string</span> <span style="color:#b44">&#34;PRIVATE&#34;</span> (<span style="color:#b8860b">org-roam-node-properties</span> <span style="color:#b8860b">node</span>))
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; The linked-to note is private. If it has a ROAM_REFS property with a URL in it, link to that URL, otherwise</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; only insert the link description, but no target.</span>
+</span></span><span style="display:flex;"><span>        (<span style="color:#b8860b">if-let</span> ((<span style="color:#b8860b">url</span> (<span style="color:#b8860b">seq-find</span> (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">arg</span>) (<span style="color:#b8860b">cl-some</span> (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">p</span>) (<span style="color:#b8860b">string-prefix-p</span> <span style="color:#b8860b">p</span> <span style="color:#b8860b">arg</span>)) <span style="color:#b8860b">protocols</span>))
+</span></span><span style="display:flex;"><span>                                (<span style="color:#b8860b">split-string-and-unquote</span> (<span style="color:#a2f">or</span> (<span style="color:#00a000">cdr</span> (<span style="color:#00a000">assoc-string</span> <span style="color:#b44">&#34;ROAM_REFS&#34;</span> (<span style="color:#b8860b">org-roam-node-properties</span> <span style="color:#b8860b">node</span>))) <span style="color:#b44">&#34;&#34;</span>)))))
+</span></span><span style="display:flex;"><span>            (<span style="color:#00a000">format</span> <span style="color:#b44">&#34;[%s](%s)&#34;</span> <span style="color:#b8860b">desc</span> <span style="color:#b8860b">url</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#b8860b">desc</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; Note isn&#39;t private, use original FN.</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">apply</span> <span style="color:#b8860b">fn</span> <span style="color:#b8860b">link</span> <span style="color:#b8860b">desc</span> <span style="color:#b8860b">rest</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">advice-add</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-hugo-link</span> <span style="color:#a2f">:around</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">dh/org-link-advice</span>)
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="export-management">
+  <span class="org-todo todo TODO">TODO</span> <code>Export</code> management
+  <a class="anchor" href="#export-management">#</a>
+</h4>
+<p>수정이 필요하다. 일단 나는 수동으로 한다. 지식 관리하는데 자동화를
+다하려고 한다?! 하나 씩 귀하게 여겨야 한다.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p>website generation</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">dh/org-roam-node-directory</span> (<span style="color:#b8860b">node</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">string-remove-suffix</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#b44">&#34;/&#34;</span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">string-remove-prefix</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;/&#34;</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">string-remove-prefix</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">org-roam-directory</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#00a000">file-name-directory</span> (<span style="color:#b8860b">org-roam-node-file</span> <span style="color:#b8860b">node</span>))))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">dh/org-roam-articles</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">cl-remove-if-not</span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">node</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b8860b">string=</span> <span style="color:#b44">&#34;articles&#34;</span> (<span style="color:#00a000">cdr</span> (<span style="color:#00a000">assoc-string</span> <span style="color:#b44">&#34;KIND&#34;</span> (<span style="color:#b8860b">org-roam-node-properties</span> <span style="color:#b8860b">node</span>)))))
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">org-roam-node-list</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">dh/org-roam-to-hugo</span> (<span style="color:#b8860b">section</span> <span style="color:#b8860b">files</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Call </span><span style="color:#b8860b">`org-hugo-export-to-md&#39;</span><span style="color:#b44"> on all Org FILES.
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">All files have to be in </span><span style="color:#b8860b">`org-roam-directory&#39;</span><span style="color:#b44">. Output is written
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">relative to SECTION in </span><span style="color:#b8860b">`org-hugo-base-dir&#39;</span><span style="color:#b44">. Org files in
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">subdirectories of </span><span style="color:#b8860b">`org-roam-directory&#39;</span><span style="color:#b44"> will get matching
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">subdirectories underneath SECTION.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">mapcar</span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">node</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#a2f">with-current-buffer</span> (<span style="color:#b8860b">find-file-noselect</span> (<span style="color:#b8860b">org-roam-node-file</span> <span style="color:#b8860b">node</span>))
+</span></span><span style="display:flex;"><span>       (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">org-hugo-section</span> (<span style="color:#b8860b">file-name-concat</span> <span style="color:#b8860b">section</span> (<span style="color:#b8860b">dh/org-roam-node-directory</span> <span style="color:#b8860b">node</span>))))
+</span></span><span style="display:flex;"><span>         (<span style="color:#b8860b">org-hugo-export-to-md</span>))))
+</span></span><span style="display:flex;"><span>   <span style="color:#b8860b">files</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">dh/org-insert-date-keyword</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">org-roam-set-keyword</span> <span style="color:#b44">&#34;date&#34;</span> (<span style="color:#00a000">format-time-string</span> <span style="color:#b44">&#34;[%Y-%m-%d %a]&#34;</span> (<span style="color:#00a000">current-time</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;org-roam-capture-new-node-hook</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">dh/org-insert-date-keyword</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">dh/org-export-before-parsing</span> (<span style="color:#b8860b">backend</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">when</span> (<span style="color:#b8860b">string=</span> <span style="color:#b8860b">backend</span> <span style="color:#b44">&#34;hugo&#34;</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">org-roam-set-keyword</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b44">&#34;hugo_lastmod&#34;</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#00a000">format-time-string</span> <span style="color:#b44">&#34;%Y-%m-%d&#34;</span> (<span style="color:#b8860b">file-attribute-modification-time</span> (<span style="color:#00a000">file-attributes</span> (<span style="color:#00a000">buffer-file-name</span>)))))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (dh/org-roam-to-hugo &#34;posts&#34; (dh/org-roam-articles))</span>
+</span></span></code></pre></div></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p><code>PRIVATE</code> org-roam-public-notes :: export</p>
+<p>article 또는 PRIVATE 이 붙어 있지 않는 모든 노트는 notes 섹션으로
+보냅니다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">dh/org-roam-public-notes</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">cl-remove-if</span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">node</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#a2f">or</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">cdr</span> (<span style="color:#00a000">assoc-string</span> <span style="color:#b44">&#34;PRIVATE&#34;</span> (<span style="color:#b8860b">org-roam-node-properties</span> <span style="color:#b8860b">node</span>)))
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">string=</span> <span style="color:#b44">&#34;articles&#34;</span> (<span style="color:#00a000">cdr</span> (<span style="color:#00a000">assoc-string</span> <span style="color:#b44">&#34;KIND&#34;</span> (<span style="color:#b8860b">org-roam-node-properties</span> <span style="color:#b8860b">node</span>))))))
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">org-roam-node-list</span>)))
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (dh/org-roam-to-hugo &#34;notes&#34; (dh/org-roam-public-notes))</span>
+</span></span></code></pre></div></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>export and update org-id</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">custom-org-protocol-focus-advice</span> (<span style="color:#b8860b">orig</span> <span style="color:#a2f">&amp;rest</span> <span style="color:#b8860b">args</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">x-focus-frame</span> <span style="color:#800">nil</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">apply</span> <span style="color:#b8860b">orig</span> <span style="color:#b8860b">args</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">advice-add</span> <span style="color:#b8860b">&#39;org-roam-protocol-open-ref</span> <span style="color:#a2f">:around</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">custom-org-protocol-focus-advice</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">advice-add</span> <span style="color:#b8860b">&#39;org-roam-protocol-open-file</span> <span style="color:#a2f">:around</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">custom-org-protocol-focus-advice</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (defun my/org-roam-export-all ()</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   &#34;Re-exports all Org-roam files to Hugo markdown.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (interactive)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (dolist (f (org-roam-list-files))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (with-current-buffer (find-file f)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       (when (s-contains? &#34;SETUPFILE&#34; (buffer-string))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;         (org-hugo-export-wim-to-md)))))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (remove-hook &#39;find-file-hook #&#39;+org-roam-open-buffer-maybe-h)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (defun my/org-update-org-ids ()</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     &#34;Update all org ids.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (interactive)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (org-id-update-id-locations</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;      (directory-files-recursively</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       org-roam-directory &#34;.org$\\|.org.gpg$&#34;)))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-id-update-org-roam-files</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Update Org-ID locations for all Org-roam files.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">org-id-update-id-locations</span> (<span style="color:#b8860b">org-roam-list-files</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-id-update-id-current-file</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Scan the current buffer for Org-ID locations and update them.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">org-id-update-id-locations</span> (<span style="color:#00a000">list</span> (<span style="color:#00a000">buffer-file-name</span> (<span style="color:#00a000">current-buffer</span>)))))
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="hydra-and-transient-for-easy-access">
+  <kbd>HYDRA</kbd> and <kbd>Transient</kbd> for easy access
+  <a class="anchor" href="#hydra-and-transient-for-easy-access">#</a>
+</h4>
+<!--list-separator-->
+<ul>
+<li>
+<p><span class="org-todo todo TODO">TODO</span>  <code>transient</code> :: org-roam <code>dh-do-stuff</code></p>
+<p>흠. 하이드라로 통합 예정. 나는 마짓 스타일이 잘 안맞는다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#b8860b">transient-define-prefix</span> <span style="color:#b8860b">dh-do-stuff</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#b44">&#34;Org-roam&#34;</span>
+</span></span><span style="display:flex;"><span>   [(<span style="color:#b44">&#34;oc&#34;</span> <span style="color:#b44">&#34;org-capture&#34;</span> <span style="color:#b8860b">org-capture</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b44">&#34;ol&#34;</span> <span style="color:#b44">&#34;org-store-link&#34;</span> <span style="color:#b8860b">org-store-link</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b44">&#34;ornf&#34;</span> <span style="color:#b44">&#34;org-roam-node-find&#34;</span> <span style="color:#b8860b">org-roam-node-find</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b44">&#34;orni&#34;</span> <span style="color:#b44">&#34;org-roam-node-insert&#34;</span> <span style="color:#b8860b">org-roam-node-insert</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b44">&#34;ornc&#34;</span> <span style="color:#b44">&#34;org-roam-note-from-cite&#34;</span> <span style="color:#b8860b">my/org-roam-node-from-cite</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b44">&#34;co&#34;</span> <span style="color:#b44">&#34;citar-open&#34;</span> <span style="color:#b8860b">citar-open</span>)]])
+</span></span></code></pre></div></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p><code>hydra</code> org-roam-hydra-dir</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;hydra</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">defhydra</span> <span style="color:#b8860b">my/org-roam-hydra-dir</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">:color</span> <span style="color:#b8860b">amaranth</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Org-roam find nodes in subdirs&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#b44">&#34;t&#34;</span> <span style="color:#b8860b">my/org-roam-find-terms-dir</span> <span style="color:#b44">&#34;[terms]&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b44">&#34;m&#34;</span> <span style="color:#b8860b">my/org-roam-find-posts-dir</span> <span style="color:#b44">&#34;[posts]&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b44">&#34;r&#34;</span> <span style="color:#b8860b">my/org-roam-find-refs-dir</span> <span style="color:#b44">&#34;[refs]&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b44">&#34;a&#34;</span> <span style="color:#b8860b">my/org-roam-find-notes-dir</span> <span style="color:#b44">&#34;[notes]&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b44">&#34;q&#34;</span> <span style="color:#800">nil</span> <span style="color:#b44">&#34;Quit&#34;</span> <span style="color:#a2f">:color</span> <span style="color:#b8860b">blue</span>))
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="end-configuration">
+  End Configuration <span class="tag"><span class="donotmove">donotmove</span></span>
+  <a class="anchor" href="#end-configuration">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="consult-org-roam">
+  Consult-org-roam
+  <a class="anchor" href="#consult-org-roam">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-pkm/init-consult-org-roam</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">consult-org-roam</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">org-roam</span> <span style="color:#b8860b">consult</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq consult-org-roam-buffer-after-buffers t) ; ?</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">consult-org-roam-grep-func</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">consult-ripgrep</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">consult-customize</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; Eventually suppress previewing for certain functions</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-org-roam-file-find</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-org-roam-search</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-org-roam-backlinks</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-org-roam-forward-links</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a2f">:preview-key</span> <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;M-.&#34;</span> <span style="color:#b44">&#34;C-SPC&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#080;font-style:italic">;; :debounce 0.3 &#34;C-M-j&#34; &#34;C-M-k&#34; ; conflict puni</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a2f">:debounce</span> <span style="color:#666">0.3</span> <span style="color:#b44">&#34;&lt;up&gt;&#34;</span> <span style="color:#b44">&#34;&lt;down&gt;&#34;</span> <span style="color:#b44">&#34;C-n&#34;</span> <span style="color:#b44">&#34;C-p&#34;</span>
+</span></span><span style="display:flex;"><span>                    ))
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Activate the minor-mode</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">consult-org-roam-mode</span> <span style="color:#666">1</span>)))
+</span></span></code></pre></div><h2 id="funcs">
+  Funcs
+  <a class="anchor" href="#funcs">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+</span></span></code></pre></div><h3 id="org-insert-link-dwim">
+  org-insert-link-dwim
+  <a class="anchor" href="#org-insert-link-dwim">#</a>
+</h3>
+<p>I cribbed the following function from 
+  <a href="https://xenodium.com/emacs-dwim-do-what-i-mean/">Emacs DWIM: do what ✨I✨ mean</a>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-insert-link-dwim</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Like </span><span style="color:#b8860b">`org-insert-link&#39;</span><span style="color:#b44"> but with personal dwim preferences.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">let*</span> ((<span style="color:#b8860b">point-in-link</span> (<span style="color:#b8860b">org-in-regexp</span> <span style="color:#b8860b">org-link-any-re</span> <span style="color:#666">1</span>))
+</span></span><span style="display:flex;"><span>         (<span style="color:#b8860b">clipboard-url</span> (<span style="color:#a2f">when</span> (<span style="color:#b8860b">string-match-p</span> <span style="color:#b44">&#34;^http&#34;</span> (<span style="color:#b8860b">current-kill</span> <span style="color:#666">0</span>))
+</span></span><span style="display:flex;"><span>                          (<span style="color:#b8860b">current-kill</span> <span style="color:#666">0</span>)))
+</span></span><span style="display:flex;"><span>         (<span style="color:#b8860b">region-content</span> (<span style="color:#a2f">when</span> (<span style="color:#b8860b">region-active-p</span>)
+</span></span><span style="display:flex;"><span>                           (<span style="color:#00a000">buffer-substring-no-properties</span> (<span style="color:#00a000">region-beginning</span>)
+</span></span><span style="display:flex;"><span>                                                           (<span style="color:#00a000">region-end</span>)))))
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">cond</span> ((<span style="color:#a2f">and</span> <span style="color:#b8860b">region-content</span> <span style="color:#b8860b">clipboard-url</span> (<span style="color:#b8860b">not</span> <span style="color:#b8860b">point-in-link</span>))
+</span></span><span style="display:flex;"><span>           (<span style="color:#00a000">delete-region</span> (<span style="color:#00a000">region-beginning</span>) (<span style="color:#00a000">region-end</span>))
+</span></span><span style="display:flex;"><span>           (<span style="color:#00a000">insert</span> (<span style="color:#b8860b">org-make-link-string</span> <span style="color:#b8860b">clipboard-url</span> <span style="color:#b8860b">region-content</span>)))
+</span></span><span style="display:flex;"><span>          ((<span style="color:#a2f">and</span> <span style="color:#b8860b">clipboard-url</span> (<span style="color:#b8860b">not</span> <span style="color:#b8860b">point-in-link</span>))
+</span></span><span style="display:flex;"><span>           (<span style="color:#00a000">insert</span> (<span style="color:#b8860b">org-make-link-string</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#b8860b">clipboard-url</span>
+</span></span><span style="display:flex;"><span>                    (<span style="color:#00a000">read-string</span> <span style="color:#b44">&#34;Title: &#34;</span>
+</span></span><span style="display:flex;"><span>                                 (<span style="color:#a2f">with-current-buffer</span> (<span style="color:#b8860b">url-retrieve-synchronously</span> <span style="color:#b8860b">clipboard-url</span>)
+</span></span><span style="display:flex;"><span>                                   (<span style="color:#b8860b">dom-text</span> (<span style="color:#00a000">car</span>
+</span></span><span style="display:flex;"><span>                                              (<span style="color:#b8860b">dom-by-tag</span> (<span style="color:#00a000">libxml-parse-html-region</span>
+</span></span><span style="display:flex;"><span>                                                           (<span style="color:#00a000">point-min</span>)
+</span></span><span style="display:flex;"><span>                                                           (<span style="color:#00a000">point-max</span>))
+</span></span><span style="display:flex;"><span>                                                          <span style="color:#b8860b">&#39;title</span>))))))))
+</span></span><span style="display:flex;"><span>          (<span style="color:#800">t</span>
+</span></span><span style="display:flex;"><span>           (<span style="color:#00a000">call-interactively</span> <span style="color:#b8860b">&#39;org-insert-link</span>)))))
+</span></span></code></pre></div><h3 id="assistance-rogue-s-tips">
+  assistance <code>rogue's tips</code>
+  <a class="anchor" href="#assistance-rogue-s-tips">#</a>
+</h3>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2023-04-22 Sat 10:52]</span></span>
+/home/junghan/sync/man/dotsamples/spacemacs/rogue-dot-spacemacs/funcs.el</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">range</span> (<span style="color:#b8860b">n</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Python like range function returning list.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">cl-loop</span> <span style="color:#b8860b">for</span> <span style="color:#b8860b">i</span> <span style="color:#b8860b">from</span> <span style="color:#666">0</span> <span style="color:#b8860b">to</span> (<span style="color:#00a000">-</span> <span style="color:#b8860b">n</span> <span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>           <span style="color:#b8860b">collect</span> <span style="color:#b8860b">i</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">shuffle-list</span> (<span style="color:#b8860b">its</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Destructive but inefficient list shuffling.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">cl-loop</span> <span style="color:#b8860b">for</span> <span style="color:#b8860b">i</span> <span style="color:#b8860b">downfrom</span> (<span style="color:#00a000">-</span> (<span style="color:#00a000">length</span> <span style="color:#b8860b">its</span>) <span style="color:#666">1</span>) <span style="color:#b8860b">to</span> <span style="color:#666">1</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#a2f">do</span> (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">i-val</span> (<span style="color:#00a000">nth</span> <span style="color:#b8860b">i</span> <span style="color:#b8860b">its</span>))
+</span></span><span style="display:flex;"><span>                    (<span style="color:#b8860b">j</span> (<span style="color:#00a000">random</span> (<span style="color:#00a000">+</span> <span style="color:#b8860b">i</span> <span style="color:#666">1</span>))))
+</span></span><span style="display:flex;"><span>                (<span style="color:#a2f">setf</span> (<span style="color:#00a000">nth</span> <span style="color:#b8860b">i</span> <span style="color:#b8860b">its</span>) (<span style="color:#00a000">nth</span> <span style="color:#b8860b">j</span> <span style="color:#b8860b">its</span>))
+</span></span><span style="display:flex;"><span>                (<span style="color:#a2f">setf</span> (<span style="color:#00a000">nth</span> <span style="color:#b8860b">j</span> <span style="color:#b8860b">its</span>) <span style="color:#b8860b">i-val</span>)))
+</span></span><span style="display:flex;"><span>  <span style="color:#b8860b">its</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">shuffle-org-list</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Shuffle list at point.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">save-excursion</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">org-list</span> (<span style="color:#b8860b">org-list-to-lisp</span> <span style="color:#800">t</span>)))
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">insert</span> (<span style="color:#b8860b">org-list-to-org</span> (<span style="color:#00a000">cons</span> (<span style="color:#00a000">car</span> <span style="color:#b8860b">org-list</span>) (<span style="color:#b8860b">shuffle-list</span> (<span style="color:#00a000">cdr</span> <span style="color:#b8860b">org-list</span>)))))
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">org-list-repair</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">reading-time</span> (<span style="color:#a2f">&amp;optional</span> <span style="color:#b8860b">wpm</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">/</span> (<span style="color:#b8860b">count-words</span> (<span style="color:#00a000">point-min</span>) (<span style="color:#00a000">point-max</span>)) (<span style="color:#a2f">or</span> <span style="color:#b8860b">wpm</span> <span style="color:#666">200</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">firefox-profile-directory</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Return profile directory for firefox.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">-find</span> (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">d</span>) (<span style="color:#00a000">string-match</span> <span style="color:#b44">&#34;default$&#34;</span> <span style="color:#b8860b">d</span>)) (<span style="color:#b8860b">f-directories</span> <span style="color:#b44">&#34;~/.mozilla/firefox&#34;</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defmacro</span> <span style="color:#b8860b">--with-temp-copy</span> (<span style="color:#b8860b">file-path</span> <span style="color:#a2f">&amp;rest</span> <span style="color:#b8860b">body</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Run BODY after making a temporary copy of given FILE-PATH.
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">  In the BODY forms, </span><span style="color:#b8860b">`it&#39;</span><span style="color:#b44"> provides the path for the copy.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">declare</span> (<span style="color:#b8860b">indent</span> <span style="color:#a2f">defun</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#666">`</span>(<span style="color:#a2f">let</span> ((<span style="color:#b8860b">it</span> (<span style="color:#b8860b">make-temp-file</span> (<span style="color:#b8860b">f-base</span> <span style="color:#666">,</span><span style="color:#b8860b">file-path</span>))))
+</span></span><span style="display:flex;"><span>     (<span style="color:#a2f">unwind-protect</span>
+</span></span><span style="display:flex;"><span>         (<span style="color:#a2f">progn</span>
+</span></span><span style="display:flex;"><span>           (<span style="color:#00a000">copy-file</span> <span style="color:#666">,</span><span style="color:#b8860b">file-path</span> <span style="color:#b8860b">it</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>           <span style="color:#666">,@</span><span style="color:#b8860b">body</span>)
+</span></span><span style="display:flex;"><span>       (<span style="color:#b8860b">f-delete</span> <span style="color:#b8860b">it</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">youtube-history</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Return youtube history.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">--with-temp-copy</span> (<span style="color:#b8860b">f-join</span> (<span style="color:#b8860b">firefox-profile-directory</span>) <span style="color:#b44">&#34;places.sqlite&#34;</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">json-parse-string</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b8860b">shell-command-to-string</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">format</span> <span style="color:#b44">&#34;sqlite3 -json %s %s&#34;</span>
+</span></span><span style="display:flex;"><span>              (<span style="color:#b8860b">shell-quote-argument</span> <span style="color:#b8860b">it</span>)
+</span></span><span style="display:flex;"><span>              (<span style="color:#b8860b">shell-quote-argument</span> <span style="color:#b44">&#34;SELECT url, title FROM moz_places WHERE title IS NOT NULL AND rev_host LIKE &#39;%utuoy%&#39; AND url LIKE &#39;%watch%&#39; ORDER BY last_visit_date DESC&#34;</span>)))
+</span></span><span style="display:flex;"><span>     <span style="color:#a2f">:array-type</span> <span style="color:#b8860b">&#39;list</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a2f">:object-type</span> <span style="color:#b8860b">&#39;alist</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defvar</span> <span style="color:#b8860b">youtube-process</span> <span style="color:#800">nil</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Process for keeping youtube player.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (defun youtube-play-url (url)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (when (and youtube-process (process-live-p youtube-process))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (kill-process youtube-process))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (setq youtube-process (start-process &#34;youtube-play&#34; nil &#34;mpv&#34; &#34;--no-video&#34; url)))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (defun youtube-history-play ()</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (interactive)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (helm :sources (helm-build-sync-source &#34;youtube-history&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;                                          :candidates (mapcar (lambda (it) (cons (alist-get &#39;title it) (alist-get &#39;url it))) (youtube-history))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;                                          :action `((&#34;Play audio&#34; . youtube-play-url)))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;         :buffer &#34;*helm youtube history*&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;         :prompt &#34;Title: &#34;))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">aleatory-assitance</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Give a random strategy to get unstuck.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">strategies</span> (<span style="color:#b8860b">s-split</span> <span style="color:#b44">&#34;\n&#34;</span> (<span style="color:#b8860b">s-trim</span> <span style="color:#b44">&#34;1. Take the braver decision
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    2. Take a nap
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    3. What&#39;s the title of this book?
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    4. What&#39;s the choice between?
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    5. Ask ChatGPT for the final decision
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    6. What will make you proud of yourself?
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    7. Choose freedom
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    8. Start reading a new book
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    9. Be kind to people involved
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    10. Name this
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    11. Start a repository
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    12. Where&#39;s the money coming from?
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    13. Close everything, start again
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    14. Connect with an expert in the area
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    15. How would you have done it?
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    16. Combine two unrelated concepts
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    17. Toss a coin
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    18. Explain it to a business person
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    19. How much time will it take? Take 3 times more
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    20. Talk to the nearest human
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    21. What are the ingredients? What&#39;s missing?
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    22. Search old notes
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    23. How will this look like in the future?
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    24. Find an equivalent problem
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    25. Work in a different domain
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    26. Take out another card
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    27. What&#39;s the most ambitious option?
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    28. List risks
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    29. Run an experiment
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    30. Record a video on current status
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    31. Ship right now!
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    32. What&#39;s the strongest feeling right now?
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    33. What&#39;s one bias you can remove right now?
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    34. Write an email
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    35. What&#39;s the weather trend these days?
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    36. Use a new animal
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    37. Make a plot
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    38. Collect data
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    39. Make it efficient
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    40. Remove the most meaningless portion
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    41. Make a mistake
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    42. What do you need other than time? Ask for it.
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    &#34;</span>))))
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">print</span> (<span style="color:#00a000">car</span> (<span style="color:#b8860b">shuffle-list</span> <span style="color:#b8860b">strategies</span>)))))
+</span></span></code></pre></div><h3 id="org-hide-properties">
+  org-hide-properties
+  <a class="anchor" href="#org-hide-properties">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-hide-properties</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Hide all org-mode headline property drawers in buffer. Could be slow if it has a lot of overlays.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">save-excursion</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">goto-char</span> (<span style="color:#00a000">point-min</span>))
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">while</span> (<span style="color:#00a000">re-search-forward</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#b44">&#34;^ *:properties:\n\\( *:.+?:.*\n\\)+ *🔚\n&#34;</span> <span style="color:#800">nil</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">ov_this</span> (<span style="color:#00a000">make-overlay</span> (<span style="color:#00a000">match-beginning</span> <span style="color:#666">0</span>) (<span style="color:#00a000">match-end</span> <span style="color:#666">0</span>))))
+</span></span><span style="display:flex;"><span>        (<span style="color:#00a000">overlay-put</span> <span style="color:#b8860b">ov_this</span> <span style="color:#b8860b">&#39;display</span> <span style="color:#b44">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>        (<span style="color:#00a000">overlay-put</span> <span style="color:#b8860b">ov_this</span> <span style="color:#b8860b">&#39;hidden-prop-drawer</span> <span style="color:#800">t</span>))))
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">put</span> <span style="color:#b8860b">&#39;org-toggle-properties-hide-state</span> <span style="color:#b8860b">&#39;state</span> <span style="color:#b8860b">&#39;hidden</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-show-properties</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Show all org-mode property drawers hidden by org-hide-properties.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">remove-overlays</span> (<span style="color:#00a000">point-min</span>) (<span style="color:#00a000">point-max</span>) <span style="color:#b8860b">&#39;hidden-prop-drawer</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">put</span> <span style="color:#b8860b">&#39;org-toggle-properties-hide-state</span> <span style="color:#b8860b">&#39;state</span> <span style="color:#b8860b">&#39;shown</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-toggle-properties</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Toggle visibility of property drawers.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">if</span> (<span style="color:#00a000">eq</span> (<span style="color:#00a000">get</span> <span style="color:#b8860b">&#39;org-toggle-properties-hide-state</span> <span style="color:#b8860b">&#39;state</span>) <span style="color:#b8860b">&#39;hidden</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">org-show-properties</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">org-hide-properties</span>)))
+</span></span></code></pre></div><h2 id="keybindings">
+  Keybindings
+  <a class="anchor" href="#keybindings">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   &#34;o&#34; &#39;link-hint-open-link</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   &#34;r&#34; &#39;org-roam-buffer-refresh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; &#39;C-c n&#39; my-org-roam-map</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#00a000">define-prefix-command</span> <span style="color:#b8860b">&#39;my-org-roam-map</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#00a000">define-key</span> <span style="color:#b8860b">global-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-c n&#34;</span>) <span style="color:#b8860b">&#39;my-org-roam-map</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#00a000">define-key</span> <span style="color:#b8860b">org-mode-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-M-i&#34;</span>) <span style="color:#b8860b">&#39;completion-at-point</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; 2023-05-28 project, agenda 관련 부분은 org-roam 에서 제거한다.</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">let</span> ((<span style="color:#b8860b">map</span> <span style="color:#b8860b">my-org-roam-map</span>))
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;a&#34;</span>) <span style="color:#b8860b">&#39;org-roam-alias-add</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;A&#34;</span>) <span style="color:#b8860b">&#39;my/org-roam-get-all-tags</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;c&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-roam-capture</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;d&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">dh-do-stuff</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;f&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">consult-org-roam-file-find</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;h&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">my/org-roam-hydra-dir/body</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;g&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-roam-graph</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;G&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-id-get-create</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;i&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-roam-node-insert</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;I&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-roam-node-insert-immediate</span>) <span style="color:#080;font-style:italic">; ADD</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;l&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">org-roam-buffer-toggle</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; org-projectile 을 프로젝트 관리로 사용한다. 프로젝트 산출물 (코드, 문서)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; 가 모여있는 git 리포지토리에 대한 전역 투두 관리이다.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; org-roam 은 글을 쓰고 연결하는 곳이다. 프로젝트 세부 내용은 매우</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; 가변적이다. 흘러갈 내용이다.</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;p&#34;</span>) <span style="color:#b8860b">&#39;org-projectile-project-todo-completing-read</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;r&#34;</span>) <span style="color:#b8860b">&#39;org-roam-ref-find</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;R&#34;</span>) <span style="color:#b8860b">&#39;org-roam-ref-add</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;S&#34;</span>) <span style="color:#b8860b">&#39;org-roam-db-sync</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;T&#34;</span>) <span style="color:#b8860b">&#39;my/org-roam-tag-search</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;L&#34;</span>) <span style="color:#b8860b">&#39;my/org-insert-link-dwim</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;,&#34;</span>) <span style="color:#b8860b">&#39;aleatory-assitance</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;.&#34;</span>) <span style="color:#b8860b">&#39;consult-org-roam-search</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;[&#34;</span>) <span style="color:#b8860b">&#39;consult-org-roam-backlinks</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;]&#34;</span>) <span style="color:#b8860b">&#39;consult-org-roam-forward-links</span>)
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">spacemacs/set-leader-keys-for-major-mode</span> <span style="color:#b8860b">&#39;org-mode</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;rI&#34;</span> <span style="color:#b8860b">&#39;org-roam-node-insert-immediate</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;rS&#34;</span> <span style="color:#b8860b">&#39;org-roam-db-sync</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;rT&#34;</span> <span style="color:#b8860b">&#39;my/org-roam-tag-search</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;rL&#34;</span> <span style="color:#b8860b">&#39;my/org-insert-link-dwim</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div></p>
+  
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+<hr>
+
+  <div class="bl-section">
+    <h3>» Links to this note</h3>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/configs/emacs/">[INDEX] Junghanacs Emacs README</a><blockquote class="book-hint info">
+  Emacs 구성의 목표와 전체적인 소개. 상세 내용은 링크에서 확인 바랍니다.
+</blockquote></li>
+       
+     </ul>
+    </div>
+  </div>
+
+
+</article>
+ 
+      <center>
+  
+  
+  
+  <h3>Go to <a href="/configs/emacs/jh-misc/">random</a> page</h3>
+  
+  
+</center>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/a718b36dd8e2a8034bef06c15c659493ed2b02a8" title='Last modified by junghan0611 | 2023-06-14' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2023-06-14</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <footer class="footer">
+  <br>
+  <br>
+  <span>&copy; 2023 <a href="https://junghanacs.com/">Junghanacs</a></span>
+  <span>
+    published with
+    <a href="https://www.gnu.org/software/emacs" rel="noopener noreferrer">Emacs</a> +
+    <a href="https://orgmode.org" rel="noopener noreferrer">Org-Mode</a> +
+    <a href="https://ox-hugo.scripter.co" rel="noopener noreferrer">Ox-Hugo</a> 
+  </span>
+</footer>
+
+      </footer>
+
+      
+  
+  <div class="book-comments"><script src="https://utteranc.es/client.js"
+        repo="junghanacs/junghanacs.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#layer">Layer</a></li>
+        <li><a href="#packages">Packages</a>
+          <ul>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#deft-browser"><code>deft</code> browser</a></li>
+            <li><a href="#citar-org-roam">Citar-org-roam</a></li>
+            <li><a href="#custom-org-roam"><kbd>Custom</kbd> Org-roam</a>
+              <ul>
+                <li><a href="#start-configuration">Start Configuration <span class="tag"><span class="donotmove">donotmove</span></span></a></li>
+                <li><a href="#org-roam-node-type">Org-roam-node-type</a></li>
+                <li><a href="#embark-org-roam">Embark-org-roam</a></li>
+                <li><a href="#tag-and-filter-search"><kbd>tag</kbd> and <kbd>filter</kbd> search</a></li>
+                <li><a href="#filter-org-roam-node-find-by-subdirectories">Filter org-roam-node-find by subdirectories</a></li>
+                <li><a href="#org-roam-capture-templates"><code>Org-roam-capture-templates</code></a></li>
+                <li><a href="#org-roam-hacks-for-better-productivity">Org roam hacks for better productivity</a></li>
+                <li><a href="#citation-and-bibliography-management">Citation and Bibliography management</a></li>
+                <li><a href="#private-draft-and-noexport-management"><code>Private Draft and Noexport</code> management</a></li>
+                <li><a href="#export-management"><span class="org-todo todo TODO">TODO</span> <code>Export</code> management</a></li>
+                <li><a href="#hydra-and-transient-for-easy-access"><kbd>HYDRA</kbd> and <kbd>Transient</kbd> for easy access</a></li>
+                <li><a href="#end-configuration">End Configuration <span class="tag"><span class="donotmove">donotmove</span></span></a></li>
+              </ul>
+            </li>
+            <li><a href="#consult-org-roam">Consult-org-roam</a></li>
+          </ul>
+        </li>
+        <li><a href="#funcs">Funcs</a>
+          <ul>
+            <li><a href="#org-insert-link-dwim">org-insert-link-dwim</a></li>
+            <li><a href="#assistance-rogue-s-tips">assistance <code>rogue's tips</code></a></li>
+            <li><a href="#org-hide-properties">org-hide-properties</a></li>
+          </ul>
+        </li>
+        <li><a href="#keybindings">Keybindings</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5/dist/gumshoe.polyfills.min.js"></script>
+<script>new Gumshoe('.book-toc a', { nested: true });</script>
+<style>
+ .book-toc li.active > a {
+   font-weight: bold;
+ }
+</style>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

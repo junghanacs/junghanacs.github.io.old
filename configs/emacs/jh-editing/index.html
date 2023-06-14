@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ko-kr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  jh-editing
+">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="jh-editing layer" />
+<meta property="og:description" content="
+  jh-editing
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://junghanacs.com/configs/emacs/jh-editing/" /><meta property="article:section" content="configs" />
+<meta property="article:published_time" content="2023-06-12T00:00:00+09:00" />
+<meta property="article:modified_time" content="2023-06-14T18:08:46+09:00" />
+<title>jh-editing layer | Junghanacs</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.942a8ef356a0de9c788dad4417d0a7999183609501ee9b0a834b12b166dca657.css" integrity="sha256-lCqO81ag3px4ja1EF9CnmZGDYJUB7psKg0sSsWbcplc=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/ko.search.min.467b72fdac3f24f40ba6afc31a114ed48c5707c177c680fec283962f352621f1.js" integrity="sha256-Rnty/aw/JPQLpq/DGhFO1IxXB8F3xoD&#43;woOWLzUmIfE=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Junghanacs</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/posts/">Articles</a></li>
+<li>
+  <a href="/notes/">Notes</a></li>
+<li>
+  <a href="/refs/">References</a></li>
+<li>
+  <a href="/configs/">Configs</a>
+<ul>
+<li>
+  <a href="/configs/emacs/">emacs.d</a></li>
+</ul>
+</li>
+</ul>
+<!-- -   [Terms](/terms) -->
+<!-- -   [Contact](/contact) -->
+<!-- -   [RSS](/index.xml) -->
+<!-- -   [All my links](https://links.seds.nl/) -->
+<!-- -   [All tags](/tags) -->
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/junghanacs"  target="_blank" rel="noopener">
+        Github Link
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>jh-editing layer</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#layer">Layer</a></li>
+        <li><a href="#packages">Packages</a>
+          <ul>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#xref-built-in">xref  built-in</a></li>
+            <li><a href="#undo-fu-and-vundo">Undo-fu and Vundo</a></li>
+            <li><a href="#let-s-be-evil">Let&rsquo;s Be Evil</a></li>
+            <li><a href="#evil-escape">evil-escape</a></li>
+            <li><a href="#search-symbol">Search/Symbol</a>
+              <ul>
+                <li><a href="#rg-ripgrep-and-wgrep"><code>rg</code> ripgrep and wgrep</a></li>
+                <li><a href="#deadgrep">deadgrep</a></li>
+                <li><a href="#find-file-in-project">find-file-in-project</a></li>
+                <li><a href="#affe">affe</a></li>
+              </ul>
+            </li>
+            <li><a href="#visual-regexp">Visual regexp</a></li>
+            <li><a href="#puni-for-replacing-smartparens"><code>puni</code>  for replacing <code>smartparens</code></a>
+              <ul>
+                <li><a href="#puni-configurations">Puni Configurations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#keybindings">Keybindings</a>
+          <ul>
+            <li><a href="#redefine-global-key">Redefine <code>global-key</code></a></li>
+            <li><a href="#rebind-c-u">Rebind C-u</a></li>
+            <li><a href="#xref-keybindings"><span class="org-todo todo TODO">TODO</span> Xref keybindings</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/configs/emacs/jh-editing/">jh-editing layer</a>
+  </h1>
+  
+
+
+
+
+
+
+<div>
+ </div>
+
+<hr>
+
+  <p><blockquote class="book-hint info">
+  jh-editing
+</blockquote>
+
+<h2 id="goals">
+  Goals
+  <a class="anchor" href="#goals">#</a>
+</h2>
+<p>편집은 쓰고, 찾고, 수정하고, 나아가 퍼블리시까지 포함한다. 단계를 나눠서
+정리하면 좋겠다. 퍼블은 지식 관리자에서 한다</p>
+<ul>
+<li>spacemacs-editing</li>
+<li>spacemacs-editing-visual</li>
+<li>spacemacs-evil</li>
+<li>evil-snipe</li>
+<li>multi-cursors</li>
+<li>copy-as-format</li>
+</ul>
+<h2 id="layer">
+  Layer
+  <a class="anchor" href="#layer">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Copyright (c) 2012-2023 Sylvain Benner &amp; Contributors</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Author: Junghan Kim &lt;junghanacs@gmail.com&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; URL: https://github.com/junghanacs</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; This file is not part of GNU Emacs.</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; License: GPLv3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Commentary:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Code:</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">configuration-layer/declare-layer-dependencies</span>
+</span></span><span style="display:flex;"><span> <span style="color:#666">&#39;</span>(
+</span></span><span style="display:flex;"><span>   <span style="color:#b8860b">copy-as-format</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#080;font-style:italic">;; `g r&#39; menu in Emacs normal state</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#080;font-style:italic">;; &#39;evil-mc&#39; vs. &#39;mc&#39;</span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">multiple-cursors</span> <span style="color:#a2f">:variables</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#b8860b">multiple-cursors-backend</span> <span style="color:#b8860b">&#39;mc</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#b8860b">mc/cmds-to-run-once</span> <span style="color:#666">&#39;</span>(<span style="color:#00a000">upcase-region</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">xclipboard</span> <span style="color:#a2f">:variables</span> <span style="color:#b8860b">xclipboard-enable-cliphist</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">spacemacs-editing</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; not  password-generator drag-stuff undo-tree</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:packages</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">aggressive-indent</span> <span style="color:#b8860b">dired-quick-sort</span> <span style="color:#b8860b">editorconfig</span> <span style="color:#b8860b">eval-sexp-fu</span>
+</span></span><span style="display:flex;"><span>                       <span style="color:#b8860b">smartparens</span> <span style="color:#b8860b">spacemacs-whitespace-cleanup</span> <span style="color:#b8860b">pcre2el</span>
+</span></span><span style="display:flex;"><span>                       <span style="color:#b8860b">string-edit-at-point</span> <span style="color:#b8860b">uuidgen</span> <span style="color:#b8860b">evil-easymotion</span>
+</span></span><span style="display:flex;"><span>                       <span style="color:#b8860b">expand-region</span> <span style="color:#b8860b">hexl</span> <span style="color:#b8860b">ws-butler</span> <span style="color:#b8860b">unkillable-scratch</span>
+</span></span><span style="display:flex;"><span>                       <span style="color:#b8860b">hungry-delete</span> <span style="color:#b8860b">persistent-scratch</span> <span style="color:#b8860b">string-inflection</span>
+</span></span><span style="display:flex;"><span>                       <span style="color:#b8860b">avy</span> <span style="color:#b8860b">link-hint</span> <span style="color:#b8860b">lorem-ipsum</span> <span style="color:#b8860b">evil-swap-keys</span>
+</span></span><span style="display:flex;"><span>                       ))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">spacemacs-editing-visual</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:packages</span> (<span style="color:#b8860b">hide-comnt</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#b8860b">rainbow-delimiters</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#b8860b">volatile-highlights</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#b8860b">writeroom-mode</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#b8860b">term-cursor</span>
+</span></span><span style="display:flex;"><span>               ))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">spacemacs-evil</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:packages</span> (<span style="color:#b8860b">evil-anzu</span> <span style="color:#b8860b">evil-args</span> <span style="color:#b8860b">evil-collection</span> <span style="color:#b8860b">evil-escape</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#b8860b">evil-exchange</span> <span style="color:#b8860b">evil-iedit-state</span> <span style="color:#b8860b">evil-indent-plus</span> <span style="color:#b8860b">evil-lion</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#b8860b">evil-nerd-commenter</span> <span style="color:#b8860b">evil-matchit</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#b8860b">evil-numbers</span> <span style="color:#b8860b">evil-surround</span> <span style="color:#b8860b">evil-textobj-line</span> <span style="color:#b8860b">evil-unimpaired</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#b8860b">evil-visual-mark-mode</span> <span style="color:#b8860b">evil-visualstar</span> <span style="color:#b8860b">evil-tutor</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#080;font-style:italic">;; evil-lisp-state evil-cleverparens</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#080;font-style:italic">;; evil-goggles</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#b8860b">eldoc</span> <span style="color:#b8860b">hs-minor-mode</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:variables</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">spacemacs-evil-collection-allowed-list</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">&#39;</span>(<span style="color:#b8860b">dired</span> <span style="color:#b8860b">wdired</span> <span style="color:#b8860b">quickrun</span> <span style="color:#b8860b">ediff</span>  <span style="color:#080;font-style:italic">; delete &#39;eww&#39;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#b8860b">xref</span> <span style="color:#b8860b">eglot</span> <span style="color:#b8860b">flymake</span> <span style="color:#b8860b">tar-mode</span> <span style="color:#b8860b">speedbar</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#b8860b">tab-bar</span> <span style="color:#b8860b">man</span> <span style="color:#b8860b">outline</span> <span style="color:#b8860b">dashboard</span> <span style="color:#b8860b">shortdoc</span> <span style="color:#b8860b">info</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#b8860b">tar-mode</span> <span style="color:#b8860b">thread</span> <span style="color:#080;font-style:italic">;; BUILT-IN</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#b8860b">devdocs</span> <span style="color:#b8860b">corfu</span> <span style="color:#b8860b">youtube-dl</span> <span style="color:#b8860b">rg</span> <span style="color:#b8860b">deadgrep</span> <span style="color:#b8860b">leetcode</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#b8860b">dired-sidebar</span> <span style="color:#b8860b">disk-usage</span> <span style="color:#080;font-style:italic">;; wgrep</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#b8860b">emms</span> <span style="color:#b8860b">ebuku</span> ))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">evil-snipe</span> <span style="color:#a2f">:variables</span> <span style="color:#b8860b">evil-snipe-enable-alternate-f-and-t-behaviors</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#080;font-style:italic">;; vim-empty-lines ; Never!</span>
+</span></span><span style="display:flex;"><span>   ))
+</span></span></code></pre></div><h2 id="packages">
+  Packages
+  <a class="anchor" href="#packages">#</a>
+</h2>
+<h3 id="packages">
+  Packages
+  <a class="anchor" href="#packages">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Copyright (c) 2012-2023 Sylvain Benner &amp; Contributors</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Author: Junghan Kim &lt;junghanacs@gmail.com&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; URL: https://github.com/junghanacs</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; This file is not part of GNU Emacs.</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; License: GPLv3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Commentary:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Code:</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defconst</span> <span style="color:#b8860b">jh-editing-packages</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#666">&#39;</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; 재정의 패키지</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">xref</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">evil-escape</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; evil-visualstar</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; 새로 등록하는 패키지</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">visual-regexp</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">rg</span> <span style="color:#080;font-style:italic">; ripgrep tool with wgrep</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">affe</span> <span style="color:#080;font-style:italic">; async fuzzy finder</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">deadgrep</span> <span style="color:#080;font-style:italic">; ripgrep tool</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">find-file-in-project</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">unfill</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">undo-fu</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">puni</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; fd-dired</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; undo-fu-session</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; vundo</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (holymotion :location (recipe :fecther github :repo &#34;Overdr0ne/holymotion&#34;))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; evil-multiedit</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; pulsar</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; paren-face</span>
+</span></span><span style="display:flex;"><span>    ))
+</span></span></code></pre></div><h3 id="xref-built-in">
+  xref  built-in
+  <a class="anchor" href="#xref-built-in">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-editing/post-init-xref</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">xref-file-name-display</span> <span style="color:#b8860b">&#39;project-relative</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">xref-search-program</span> <span style="color:#b8860b">&#39;ripgrep</span>)) <span style="color:#080;font-style:italic">; default grep</span>
+</span></span></code></pre></div><h3 id="undo-fu-and-vundo">
+  Undo-fu and Vundo
+  <a class="anchor" href="#undo-fu-and-vundo">#</a>
+</h3>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2022-12-14 Wed 09:37]</span></span>
+undo-tree 가 성능의 문제를 주기에 undo-fu 를 기본으로 하고 undo-fu-session 을 고려
+하고자 한다.</p>
+<ul>
+<li>built-in undo/redo (28 ~)</li>
+<li>undo-fu</li>
+<li>undo-tree</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-editing/init-undo-fu</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; Increase undo history limits even more</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">undo-fu</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:ensure</span> <span style="color:#800">t</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; C-r 은 isearch-backward 가 기본</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">evil-normal-state-map</span> <span style="color:#b44">&#34;u&#34;</span> <span style="color:#b8860b">&#39;undo-fu-only-undo</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">evil-normal-state-map</span> <span style="color:#b44">&#34;\C-r&#34;</span> <span style="color:#b8860b">&#39;undo-fu-only-redo</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Undo-fu customization options</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Undoing with a selection will use undo within that region.</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">undo-fu-allow-undo-in-region</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Use the `undo-fu-disable-checkpoint&#39; command instead of Ctrl-G `keyboard-quit&#39; for non-linear behavior.</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">undo-fu-ignore-keyboard-quit</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; By default while in insert all changes are one big blob. Be more granular</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">evil-want-fine-undo</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (use-package undo-fu-session :after undo-fu</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     :functions undo-fu-session-global-mode</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     :config (undo-fu-session-global-mode))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; visualize undo-tree</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (use-package vundo</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   :defer t</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   :init</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (defconst +vundo-unicode-symbols</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     &#39;((selected-node   . ?●)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       (node            . ?○)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       (vertical-stem   . ?│)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       (branch          . ?├)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       (last-branch     . ?╰)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       (horizontal-stem . ?─)))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   :config</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (setq vundo-glyph-alist +vundo-unicode-symbols</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;         vundo-compact-display t</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;         vundo-window-max-height 6)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (spacemacs/set-leader-keys &#34;tV&#34; &#39;vundo)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   )</span>
+</span></span></code></pre></div><h3 id="let-s-be-evil">
+  Let&rsquo;s Be Evil
+  <a class="anchor" href="#let-s-be-evil">#</a>
+</h3>
+<p>수정해보자.  <span class="timestamp-wrapper"><span class="timestamp">[2022-12-16 Fri 07:26]</span></span></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-editing/init-unfill</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;unfill</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">global-set-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-M-q&#34;</span>) <span style="color:#b8860b">&#39;unfill-paragraph</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; DONE isearch minibuffer 에서 이동할 방법이 없어서 끈다.</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Emacs 기본 C-f/b forward-char backward-char 가 가능한지 검토 바람</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; copy from DW</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (defun dw/dont-arrow-me-bro ()</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (interactive)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (message &#34;Arrow keys are bad, you know?&#34;))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; ;; Disable arrow keys in normal and visual modes</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (define-key evil-normal-state-map (kbd &#34;&lt;left&gt;&#34;) &#39;dw/dont-arrow-me-bro)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (define-key evil-normal-state-map (kbd &#34;&lt;right&gt;&#34;) &#39;dw/dont-arrow-me-bro)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (define-key evil-normal-state-map (kbd &#34;&lt;down&gt;&#34;) &#39;dw/dont-arrow-me-bro)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (define-key evil-normal-state-map (kbd &#34;&lt;up&gt;&#34;) &#39;dw/dont-arrow-me-bro)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (evil-global-set-key &#39;motion (kbd &#34;&lt;left&gt;&#34;) &#39;dw/dont-arrow-me-bro)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (evil-global-set-key &#39;motion (kbd &#34;&lt;right&gt;&#34;) &#39;dw/dont-arrow-me-bro)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (evil-global-set-key &#39;motion (kbd &#34;&lt;down&gt;&#34;) &#39;dw/dont-arrow-me-bro)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (evil-global-set-key &#39;motion (kbd &#34;&lt;up&gt;&#34;) &#39;dw/dont-arrow-me-bro)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; C-g 기본 함수는 keyboard-quit</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; C-g back to normal state</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (define-key evil-insert-state-map (kbd &#34;C-g&#34;) &#39;evil-normal-state)</span>
+</span></span></code></pre></div><h3 id="evil-escape">
+  evil-escape
+  <a class="anchor" href="#evil-escape">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-editing/post-init-evil-escape</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; evil-escape - switch between insert and normal state</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; fd는 ㄹㅇ일 때 적용이 안되니 ,.을 입력 시 escape하도록 바꿈.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; unordered로 해보니 minor-mode를 열기도 해서 아예 논란이 없도록 바꿈.</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq-default</span> <span style="color:#b8860b">evil-escape-key-sequence</span> <span style="color:#b44">&#34;,.&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq-default</span> <span style="color:#b8860b">evil-escape-unordered-key-sequence</span> <span style="color:#800">nil</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq-default</span> <span style="color:#b8860b">evil-escape-delay</span> <span style="color:#666">1.0</span>) <span style="color:#080;font-style:italic">;; 0.5, default 0.1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (setq-default evil-escape-inhibit-functions nil)</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">evil-escape-mode</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (add-to-list &#39;evil-escape-excluded-major-modes &#39;code-review-mode)</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div><h3 id="search-symbol">
+  Search/Symbol
+  <a class="anchor" href="#search-symbol">#</a>
+</h3>
+<h4 id="rg-ripgrep-and-wgrep">
+  <code>rg</code> ripgrep and wgrep
+  <a class="anchor" href="#rg-ripgrep-and-wgrep">#</a>
+</h4>
+<p>URL: 
+  <a href="https://github.com/dajva/rg.el">https://github.com/dajva/rg.el</a>
+
+  <a href="https://rgel.readthedocs.io/en/latest/usage.html#installation">Usage — rg.el 2.3.0 documentation</a></p>
+<p>설정은 간단하게</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; ripgrep + wgrep</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-editing/init-rg</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">rg</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">consult</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">rg-enable-default-bindings</span>) <span style="color:#080;font-style:italic">;; use =C-c s=</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">global-set-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;M-s r&#34;</span>) <span style="color:#b8860b">&#39;rg-menu</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">global-set-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;M-s g&#34;</span>) <span style="color:#b8860b">&#39;consult-ripgrep</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;sr&#34;</span> <span style="color:#b8860b">&#39;rg-menu</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;sg&#34;</span> <span style="color:#b8860b">&#39;consult-ripgrep</span>)
+</span></span><span style="display:flex;"><span>    ))
+</span></span></code></pre></div><!--list-separator-->
+<ul>
+<li>
+<p>READ Usages</p>
+<p>메뉴로 가서 따라 해본다. -h 입력하면 hidden 폴더 검색한다.
+.emacs.d 는 hidden 폴더니까 옵션 없으면 검색 안된다. .git 폴더는
+기본 제외 된다. 옵션이 있다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>-*- mode: rg; default-directory: &#34;~/sync/man/dotsamples/vanilla/&#34; -*-
+</span></span><span style="display:flex;"><span>rg started at Wed Apr 19 17:46:19
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>/usr/bin/rg --color=always --colors=match:fg:red --colors=path:fg:magenta --colors=line:fg:green --colors=column:none -n --column -i --hidden --heading --no-config --type=elisp -e ekg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>File: ahyatt-dotfiles/.emacs.d/init.el
+</span></span><span style="display:flex;"><span> 430  30   (pretty-hydra-define hydra-ekg ()
+</span></span><span style="display:flex;"><span> 432  12      ((&#34;t&#34; ekg-show-notes-for-today &#34;today&#34; :exit t)
+</span></span><span style="display:flex;"><span> 433  12       (&#34;g&#34; ekg-show-notes-with-tag &#34;tag&#34; :exit t)
+</span></span><span style="display:flex;"><span> 434  12       (&#34;r&#34; ekg-show-notes-latest-captured &#34;latest&#34; :exit t)
+</span></span><span style="display:flex;"><span> 435  12       (&#34;b&#34; ekg-embedding-show-similar-to-current-buffer &#34;similar to buffer&#34; :exit t)
+</span></span><span style="display:flex;"><span> 436  12       (&#34;s&#34; ekg-embedding-search &#34;search&#34; :exit t))
+</span></span><span style="display:flex;"><span> 438  12      ((&#34;c&#34; ekg-capture)
+</span></span><span style="display:flex;"><span> 516  18       (&#34;k&#34; hydra-ekg/body &#34;ekg&#34; :exit t)
+</span></span><span style="display:flex;"><span> 828  14 (use-package ekg
+</span></span><span style="display:flex;"><span> 829  15   :straight &#39;(ekg :type git :host github :repo &#34;ahyatt/ekg&#34;)
+</span></span><span style="display:flex;"><span> 831  13   (&#34;&lt;f11&gt;&#34; &#39;ekg-capture)
+</span></span><span style="display:flex;"><span> 835   6     (ekg-capture-url (ash/get-current-url) (ash/get-current-title))))
+</span></span><span style="display:flex;"><span>1147  24   (tab-bar-rename-tab &#34;ekg&#34; 2)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rg finished (15 matches found) at Wed Apr 19 17:46:19
+</span></span></code></pre></div></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Edit and apply (wgrep)</p>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2023-05-03 Wed 14:02]</span></span>
+rg 로 검색한 다음에 수정을 어떻게 하는가?</p>
+<p><code>C-c C-p</code> wgrep-mode 로 바꿔주고나서 수정하고 <code>Z Z</code> 입력하면 적용된다.
+엄청난 팁이다. 아마도 Embark 등 시나리오에서도 가능할 것 같다.
+개념을 몰라서 못했던 것이다.</p>
+<p>Edit and apply (wgrep)
+: The results buffer supports inline editing via the
+wgrep package. This is setup automatically when rg is loaded. e
+(wgrep-change-to-wgrep-mode) Make the search results editable by enabling
+wgrep mode. When done press C-c C-c to commit your changes to the underlying
+files or C-c C-k to drop the changes.</p>
+</li>
+</ul>
+<h4 id="deadgrep">
+  deadgrep
+  <a class="anchor" href="#deadgrep">#</a>
+</h4>
+<p>보다 커스텀이 가능한 ripgrep 이 필요하다.
+예를 들어 . 폴더를 제외하거나 특정 폴더를 제외하는 검색이 되어야 한다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-editing/init-deadgrep</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">deadgrep</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">consult</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;sR&#34;</span> <span style="color:#b8860b">&#39;deadgrep</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">global-set-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;M-s R&#34;</span>) <span style="color:#b8860b">&#39;deadgrep</span>))
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div><h4 id="find-file-in-project">
+  find-file-in-project
+  <a class="anchor" href="#find-file-in-project">#</a>
+</h4>
+<p>find files with &lsquo;fd&rsquo;</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-editing/init-find-file-in-project</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; In emacs, run M-x find-file-in-project-by-selected to find matching files.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; Alternatively, run M-x find-file-in-project to list all available files in</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; the project.</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;find-file-in-project</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">ffip-use-rust-fd</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">spacemacs/declare-prefix</span> <span style="color:#b44">&#34;sP&#34;</span>  <span style="color:#b44">&#34;find-file✩&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;sPc&#34;</span> <span style="color:#b8860b">&#39;find-file-in-current-directory-by-selected</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;sPp&#34;</span> <span style="color:#b8860b">&#39;find-file-in-project-by-selected</span>)
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div><h4 id="affe">
+  affe
+  <a class="anchor" href="#affe">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;;; async fuzzy finder</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-editing/init-affe</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">affe</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">consult</span> <span style="color:#b8860b">orderless</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span> <span style="color:#800">t</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Use orderless to compile regexps</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">defun</span> <span style="color:#b8860b">+affe-orderless-regexp-compiler</span> (<span style="color:#b8860b">input</span> <span style="color:#b8860b">_type</span> <span style="color:#b8860b">_ignorecase</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#a2f">setq</span> <span style="color:#b8860b">input</span> (<span style="color:#b8860b">orderless-pattern-compiler</span> <span style="color:#b8860b">input</span>))
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">cons</span> <span style="color:#b8860b">input</span> (<span style="color:#a2f">lambda</span> (<span style="color:#b8860b">str</span>) (<span style="color:#b8860b">orderless--highlight</span> <span style="color:#b8860b">input</span> <span style="color:#b8860b">str</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">affe-regexp-compiler</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">+affe-orderless-regexp-compiler</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">global-set-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;M-s a&#34;</span>) <span style="color:#b8860b">&#39;affe-grep</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">global-set-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;M-s A&#34;</span>) <span style="color:#b8860b">&#39;affe-find</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;sa&#34;</span> <span style="color:#b8860b">&#39;affe-grep</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;sA&#34;</span> <span style="color:#b8860b">&#39;affe-find</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Manual preview keys</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">consult-customize</span> <span style="color:#b8860b">affe-grep</span> <span style="color:#b8860b">affe-find</span>
+</span></span><span style="display:flex;"><span>                       <span style="color:#a2f">:preview-key</span> <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;M-n&#34;</span> <span style="color:#b44">&#34;M-p&#34;</span>))
+</span></span><span style="display:flex;"><span>    ))
+</span></span></code></pre></div><h3 id="visual-regexp">
+  Visual regexp
+  <a class="anchor" href="#visual-regexp">#</a>
+</h3>
+<p>정규식 관련 패키지. 연습하라!
+
+  <a href="https://irreal.org/blog/?p=11041&amp;utm_source=pocket_reader">Regex Search and Replace in Emacs | Irreal</a>
+위 글을 보고 고민하던 차에 추가해놓는다.
+(참고 영상) 
+  <a href="https://youtu.be/Zm0XjD1sA_Q">Learn two ways to perform a string replacement with visual feedback - YouTube</a></p>
+<ul>
+<li>visual-regexp</li>
+</ul>
+<p>
+  <a href="https://github.com/benma/visual-regexp.el">GitHub - benma/visual-regexp.el: A regexp/replace command for Emacs with inte&hellip;</a></p>
+<ul>
+<li>visual-regexp-steroids</li>
+</ul>
+<p>
+  <a href="https://github.com/benma/visual-regexp-steroids.el/">GitHub - benma/visual-regexp-steroids.el: Extends visual-regexp to support ot&hellip;</a></p>
+<ul>
+<li>helm-regex : 설치되어 있네?!</li>
+<li>35.3 Regular Expressions (EMACS Manual)
+
+  <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Regular-Expressions.html">Regular Expressions (GNU Emacs Lisp Reference Manual)</a></li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-editing/init-visual-regexp</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; EMACS-style regex support</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;visual-regexp</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">global-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-c v r&#34;</span>) <span style="color:#b8860b">&#39;vr/replace</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">global-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-c v q&#34;</span>) <span style="color:#b8860b">&#39;vr/query-replace</span>)
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (setq vr/match-separator-use-custom-face t)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; if you use multiple-cursors, this is for you:</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (define-key global-map (kbd &#34;C-c v m&#34;) &#39;vr/mc-mark)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; C-M-r isearch-backward-regexp : default binding</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; C-M-s isearch-forward-regexp</span>
+</span></span></code></pre></div><h3 id="puni-for-replacing-smartparens">
+  <code>puni</code>  for replacing <code>smartparens</code>
+  <a class="anchor" href="#puni-for-replacing-smartparens">#</a>
+</h3>
+<h4 id="puni-configurations">
+  Puni Configurations
+  <a class="anchor" href="#puni-configurations">#</a>
+</h4>
+<p>There’s a lot of really good editing tools. Puni is a more simple and modern
+approach to structured editing, so let&rsquo;s use that. I used to use <code>smartparens</code>,
+but it had a lot of issues where expressions becoming unbalanced in strict mode,
+which is annoying, because then you have to get out of strict-mode to fix it.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-editing/init-puni</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">puni</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:diminish</span> <span style="color:#b44">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:hook</span> (((<span style="color:#b8860b">calc-mode</span> <span style="color:#b8860b">term-mode</span> <span style="color:#b8860b">vterm-mode</span>) <span style="color:#666">.</span> <span style="color:#b8860b">puni-disable-puni-mode</span>) <span style="color:#080;font-style:italic">; org-mode</span>
+</span></span><span style="display:flex;"><span>           (<span style="color:#b8860b">puni-mode</span>  <span style="color:#666">.</span> <span style="color:#b8860b">electric-pair-mode</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:init</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; The default `puni-mode-map&#39; respects &#34;Emacs conventions&#34;.  We don&#39;t, so</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; it&#39;s better to simply clear and rewrite it.</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">setcdr</span> <span style="color:#b8860b">puni-mode-map</span> <span style="color:#800">nil</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">bind-keys</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a2f">:map</span> <span style="color:#b8860b">puni-mode-map</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-a&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-beginning-of-sexp</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-e&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-end-of-sexp</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-&#34; . sp-down-sexp)</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-&#34;   . sp-up-sexp)</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;M-&#34; . sp-backward-down-sexp)</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;M-&#34;   . sp-backward-up-sexp)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-f&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-forward-sexp</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-b&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-backward-sexp</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-M-n&#34; . sp-next-sexp)</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-M-p&#34; . sp-previous-sexp)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-S-f&#34; . sp-forward-symbol)</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-S-b&#34; . sp-backward-symbol)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-&lt;right&gt;&#34;</span>  <span style="color:#666">.</span>  <span style="color:#b8860b">puni-slurp-forward</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-&lt;right&gt;&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-slurp-backward</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-&lt;left&gt;&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-barf-forward</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-&lt;left&gt;&#34;</span> <span style="color:#666">.</span>  <span style="color:#b8860b">puni-barf-backward</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-?&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-convolute</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; puni-transpose</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-t&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">transpose-sexp</span>)
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-x C-t&#34; . sp-transpose-hybrid-sexp)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-k&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">kill-sexp</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;M-k&#34;</span>   <span style="color:#666">.</span> <span style="color:#b8860b">backward-kill-sexp</span>)
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-&#34; . puni-backward-kill-word)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;M-)&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-syntactic-forward-punct</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;M-(&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-syntactic-backward-punct</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; splicing</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-&lt;delete&gt;&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-splice-killing-forward</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-&lt;backspace&gt;&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-splice-killing-backword</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-c DEL&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-force-delete</span>)
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-M-d&#34; . puni-forward-delete-char)</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-M-k&#34; . puni-kill-line)</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-M-K&#34; . puni-backward-kill-line)</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;;  (&#34;C-M-w&#34; . puni-kill-region)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-M-w&#34; . sp-copy-sexp)</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; (&#34;C-M-d&#34; . delete-sexp)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; ([remap puni-backward-kill-word] . backward-kill-word)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-M-z&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-squeeze</span>) <span style="color:#080;font-style:italic">; unwrap</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-c (&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-wrap-round</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-c [&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-wrap-square</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b44">&#34;C-c {&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">puni-wrap-curly</span>)
+</span></span><span style="display:flex;"><span>     )
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">puni-global-mode</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   :config</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (defun puni-kill-thing-at-point (&amp;optional arg)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     &#34;Kill the next puni based thing at point&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (interactive)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (unless buffer-read-only</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       (puni-expand-region)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       (kill-region (region-beginning) (region-end))))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (defun puni-clone-thing-at-point (&amp;optional arg)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     &#34;Clone the next puni based thing at point&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (interactive)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (save-excursion</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       (puni-expand-region)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;       (kill-ring-save (region-beginning) (region-end)))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (yank)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (default-indent-new-line))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; ;;;; Better Killing And Yanking</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (setq rectangle-mark-mode nil)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (setq *last-kill-was-rectangle* rectangle-mark-mode)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (defun remember-last-kill-type (&amp;rest d)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (setq *last-kill-was-rectangle* rectangle-mark-mode))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   ;; (advice-add &#39;kill-region :before #&#39;remember-last-kill-type)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   ;; (advice-add &#39;kill-ring-save :before #&#39;remember-last-kill-type)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   ;; (advice-add &#39;kill-rectangle :before #&#39;remember-last-kill-type)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (defun my/kill-region (BEG END &amp;optional REGION)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (interactive (list (mark) (point) &#39;region))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (cond</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;      (rectangle-mark-mode (kill-rectangle</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;                            (region-beginning) (region-end)))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;      (mark-active (kill-region</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;                    (region-beginning) (region-end)))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;      (t (backward-kill-sexp 1))))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (defun my/yank (&amp;optional arg) (interactive)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;          (if *last-kill-was-rectangle*</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;              (yank-rectangle)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;            (yank arg)))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Avoid terminal binding conflict</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (unless my/is-termux</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (bind-key (kbd &#34;M-[&#34;) #&#39;puni-splice &#39;puni-mode-map)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (bind-key (kbd &#34;M-]&#34;) #&#39;puni-split &#39;puni-mode-map))</span>
+</span></span></code></pre></div><h2 id="keybindings">
+  Keybindings
+  <a class="anchor" href="#keybindings">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+</span></span></code></pre></div><h3 id="redefine-global-key">
+  Redefine <code>global-key</code>
+  <a class="anchor" href="#redefine-global-key">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Info 모드 Node 이동</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (evil-define-key &#39;(motion normal visual) Info-mode-map</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   &#34;^&#34; &#39;Info-up</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   &#34;C-n&#34; &#39;Info-prev</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   &#34;C-p&#34; &#39;Info-next</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   &#34;M-n&#34; &#39;Info-forward-node</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   &#34;M-p&#34; &#39;Info-backward-node</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   )</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; o :: ace-link-info 이거면 충분하다.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; /home/junghan/sync/man/dotsamples/spacemacs/spacemacs-thanhvg/doc/DOCUMENTATION.org</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (define-key evil-insert-state-map (kbd &#34;C-]&#34;) &#39;forward-char)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Replace Emacs Tabs key bindings with Workspace key bindings</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">with-eval-after-load</span> <span style="color:#b8860b">&#39;evil-maps</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; 편집 창 포커스 이동을 간단하게</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">evil-normal-state-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;&lt;SPC&gt; &lt;right&gt; &#34;</span>) <span style="color:#b8860b">&#39;evil-window-right</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">evil-normal-state-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;&lt;SPC&gt; &lt;left&gt; &#34;</span>) <span style="color:#b8860b">&#39;evil-window-left</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">evil-normal-state-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;&lt;SPC&gt; &lt;up&gt; &#34;</span>) <span style="color:#b8860b">&#39;evil-window-up</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">evil-normal-state-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;&lt;SPC&gt; &lt;down&gt; &#34;</span>) <span style="color:#b8860b">&#39;evil-window-down</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; replace &#34;.&#34; search with consul-line in Evil normal state</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; use default &#34;/&#34; evil search</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">evil-global-set-key</span> <span style="color:#b8860b">&#39;normal</span> <span style="color:#b44">&#34;.&#34;</span> <span style="color:#b8860b">&#39;consult-line</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (evil-global-set-key &#39;normal &#34;.&#34; &#39;spacemacs/consult-line)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; TODO disable evil-mc key-binding with meta</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; 내 커스텀 키로 이용한다. evil-mc 를 어떻게 할지 고민</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (with-eval-after-load &#39;evil-mc</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (evil-define-key &#39;(insert normal visual) evil-mc-key-map (kbd &#34;M-n&#34;) nil)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (evil-define-key &#39;(insert normal visual) evil-mc-key-map (kbd &#34;M-p&#34;) nil)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (evil-define-key &#39;(normal visual) evil-mc-key-map (kbd &#34;C-n&#34;) nil)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (evil-define-key &#39;(normal visual) evil-mc-key-map (kbd &#34;C-p&#34;) nil)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (evil-define-key &#39;(normal visual) evil-mc-key-map (kbd &#34;C-t&#34;) nil)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (evil-define-key &#39;(normal visual) evil-mc-key-map (kbd &#34;C-M-j&#34;) nil)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (evil-define-key &#39;(normal visual) evil-mc-key-map (kbd &#34;C-M-k&#34;) nil)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; )</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">evil-normal-state-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-a&#34;</span>) <span style="color:#b8860b">&#39;evil-beginning-of-line</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">evil-normal-state-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-e&#34;</span>) <span style="color:#b8860b">&#39;evil-end-of-line-or-visual-line</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">evil-insert-state-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-a&#34;</span>) <span style="color:#b8860b">&#39;evil-beginning-of-line</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">evil-insert-state-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-e&#34;</span>) <span style="color:#b8860b">&#39;evil-end-of-line-or-visual-line</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; =C-w= &#39;insert &#39;evil-delete-backward-word</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; =C-w= &#39;visual &#39;evil-window-map</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div><h3 id="rebind-c-u">
+  Rebind C-u
+  <a class="anchor" href="#rebind-c-u">#</a>
+</h3>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2022-12-16 Fri 07:23]</span></span>
+Since I let <code>evil-mode</code> take over <code>C-u</code> for buffer
+scrolling, I need to re-bind the <code>universal-argument</code> command to another key
+sequence. I&rsquo;m choosing <code>C-M-u</code> for this purpose.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#b8860b">global-set-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-M-u&#34;</span>) <span style="color:#b8860b">&#39;universal-argument</span>)
+</span></span></code></pre></div><h3 id="xref-keybindings">
+  <span class="org-todo todo TODO">TODO</span> Xref keybindings
+  <a class="anchor" href="#xref-keybindings">#</a>
+</h3>
+<p>
+  <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Xref.html">Xref (GNU Emacs Manual)</a>
+From a development perspective, moving to core allows us to work on Eglot in
+tandem with other related packages already in Emacs, such as Flymake, ElDoc,
+Xref, Project. <span class="timestamp-wrapper"><span class="timestamp">[2022-12-27 Tue 15:03]</span></span></p>
+<p>위는 eglot 리포에서 가져온 것이다. 이 부분도 파악이 필요하다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (spacemacs/set-leader-keys &#34;jd&#34; &#39;xref-find-definitions)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (spacemacs/set-leader-keys &#34;jD&#34; &#39;xref-pop-marker-stack)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (spacemacs/set-leader-keys &#34;j?&#34; &#39;xref-find-references)</span>
+</span></span></code></pre></div></p>
+  
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+<hr>
+
+  <div class="bl-section">
+    <h3>» Links to this note</h3>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/configs/emacs/">[INDEX] Junghanacs Emacs README</a><blockquote class="book-hint info">
+  Emacs 구성의 목표와 전체적인 소개. 상세 내용은 링크에서 확인 바랍니다.
+</blockquote></li>
+       
+     </ul>
+    </div>
+  </div>
+
+
+</article>
+ 
+      <center>
+  
+  
+  
+  <h3>Go to <a href="/configs/emacs/jh-workspace/">random</a> page</h3>
+  
+  
+</center>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/a718b36dd8e2a8034bef06c15c659493ed2b02a8" title='Last modified by junghan0611 | 2023-06-14' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2023-06-14</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <footer class="footer">
+  <br>
+  <br>
+  <span>&copy; 2023 <a href="https://junghanacs.com/">Junghanacs</a></span>
+  <span>
+    published with
+    <a href="https://www.gnu.org/software/emacs" rel="noopener noreferrer">Emacs</a> +
+    <a href="https://orgmode.org" rel="noopener noreferrer">Org-Mode</a> +
+    <a href="https://ox-hugo.scripter.co" rel="noopener noreferrer">Ox-Hugo</a> 
+  </span>
+</footer>
+
+      </footer>
+
+      
+  
+  <div class="book-comments"><script src="https://utteranc.es/client.js"
+        repo="junghanacs/junghanacs.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#layer">Layer</a></li>
+        <li><a href="#packages">Packages</a>
+          <ul>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#xref-built-in">xref  built-in</a></li>
+            <li><a href="#undo-fu-and-vundo">Undo-fu and Vundo</a></li>
+            <li><a href="#let-s-be-evil">Let&rsquo;s Be Evil</a></li>
+            <li><a href="#evil-escape">evil-escape</a></li>
+            <li><a href="#search-symbol">Search/Symbol</a>
+              <ul>
+                <li><a href="#rg-ripgrep-and-wgrep"><code>rg</code> ripgrep and wgrep</a></li>
+                <li><a href="#deadgrep">deadgrep</a></li>
+                <li><a href="#find-file-in-project">find-file-in-project</a></li>
+                <li><a href="#affe">affe</a></li>
+              </ul>
+            </li>
+            <li><a href="#visual-regexp">Visual regexp</a></li>
+            <li><a href="#puni-for-replacing-smartparens"><code>puni</code>  for replacing <code>smartparens</code></a>
+              <ul>
+                <li><a href="#puni-configurations">Puni Configurations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#keybindings">Keybindings</a>
+          <ul>
+            <li><a href="#redefine-global-key">Redefine <code>global-key</code></a></li>
+            <li><a href="#rebind-c-u">Rebind C-u</a></li>
+            <li><a href="#xref-keybindings"><span class="org-todo todo TODO">TODO</span> Xref keybindings</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5/dist/gumshoe.polyfills.min.js"></script>
+<script>new Gumshoe('.book-toc a', { nested: true });</script>
+<style>
+ .book-toc li.active > a {
+   font-weight: bold;
+ }
+</style>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

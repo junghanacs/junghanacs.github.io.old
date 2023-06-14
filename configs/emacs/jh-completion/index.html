@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="ko-kr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  jh-completion
+">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="jh-completion layer" />
+<meta property="og:description" content="
+  jh-completion
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://junghanacs.com/configs/emacs/jh-completion/" /><meta property="article:section" content="configs" />
+<meta property="article:published_time" content="2023-06-12T00:00:00+09:00" />
+<meta property="article:modified_time" content="2023-06-14T18:08:46+09:00" />
+<title>jh-completion layer | Junghanacs</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.942a8ef356a0de9c788dad4417d0a7999183609501ee9b0a834b12b166dca657.css" integrity="sha256-lCqO81ag3px4ja1EF9CnmZGDYJUB7psKg0sSsWbcplc=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/ko.search.min.467b72fdac3f24f40ba6afc31a114ed48c5707c177c680fec283962f352621f1.js" integrity="sha256-Rnty/aw/JPQLpq/DGhFO1IxXB8F3xoD&#43;woOWLzUmIfE=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Junghanacs</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/posts/">Articles</a></li>
+<li>
+  <a href="/notes/">Notes</a></li>
+<li>
+  <a href="/refs/">References</a></li>
+<li>
+  <a href="/configs/">Configs</a>
+<ul>
+<li>
+  <a href="/configs/emacs/">emacs.d</a></li>
+</ul>
+</li>
+</ul>
+<!-- -   [Terms](/terms) -->
+<!-- -   [Contact](/contact) -->
+<!-- -   [RSS](/index.xml) -->
+<!-- -   [All my links](https://links.seds.nl/) -->
+<!-- -   [All tags](/tags) -->
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/junghanacs"  target="_blank" rel="noopener">
+        Github Link
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>jh-completion layer</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#layer">Layer</a></li>
+        <li><a href="#packages">Packages</a>
+          <ul>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#vectico-with-orderless-and-marginalia"><code>vectico</code> with orderless and marginalia</a>
+              <ul>
+                <li><a href="#actions-via-embark">Actions via embark</a></li>
+              </ul>
+            </li>
+            <li><a href="#consult">Consult</a>
+              <ul>
+                <li><a href="#turn-off-auto-preview-using-consult">Turn off <code>auto-preview</code> using Consult</a></li>
+              </ul>
+            </li>
+            <li><a href="#completion-ui">Completion UI</a>
+              <ul>
+                <li><a href="#corfu-completion-ui"><code>Corfu</code> Completion UI</a></li>
+                <li><a href="#cape-completion-at-point-extensions"><code>Cape</code> Completion At Point Extensions</a></li>
+                <li><a href="#tempel-simple-templates-for-emacs"><code>Tempel</code> Simple templates for Emacs</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/configs/emacs/jh-completion/">jh-completion layer</a>
+  </h1>
+  
+
+
+
+
+
+
+<div>
+ </div>
+
+<hr>
+
+  <p><blockquote class="book-hint info">
+  jh-completion
+</blockquote>
+
+<h2 id="goals">
+  Goals
+  <a class="anchor" href="#goals">#</a>
+</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> compleseus layer</li>
+<li><input checked="" disabled="" type="checkbox"> corfu</li>
+<li><input checked="" disabled="" type="checkbox"> misc</li>
+<li><input checked="" disabled="" type="checkbox"> reload emacs and test</li>
+</ul>
+<h2 id="layer">
+  Layer
+  <a class="anchor" href="#layer">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Copyright (c) 2012-2023 Sylvain Benner &amp; Contributors</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Author: Junghan Kim &lt;junghanacs@gmail.com&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; URL: https://github.com/junghanacs</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; This file is not part of GNU Emacs.</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; License: GPLv3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Commentary:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Code:</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">configuration-layer/declare-layer-dependencies</span>
+</span></span><span style="display:flex;"><span> <span style="color:#666">&#39;</span>(
+</span></span><span style="display:flex;"><span>   <span style="color:#080;font-style:italic">;; auto-yasnippet yasnippet yasnippet-snippets))</span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">auto-completion</span> <span style="color:#a2f">:packages</span> (<span style="color:#b8860b">hippie-exp</span> <span style="color:#b8860b">smartparens</span> <span style="color:#b8860b">yasnippet</span>))
+</span></span><span style="display:flex;"><span>   (<span style="color:#b8860b">compleseus</span> <span style="color:#a2f">:variables</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#b8860b">compleseus-engine</span> <span style="color:#b8860b">&#39;vertico</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#b8860b">vertico-resize</span> <span style="color:#b8860b">&#39;grow-only</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#b8860b">marginalia-align</span> <span style="color:#b8860b">&#39;left</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#b8860b">completion-ignore-case</span> <span style="color:#800">nil</span> <span style="color:#080;font-style:italic">; default nil</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#b8860b">read-file-name-completion-ignore-case</span> <span style="color:#800">nil</span> <span style="color:#080;font-style:italic">; default nil</span>
+</span></span><span style="display:flex;"><span>               )
+</span></span><span style="display:flex;"><span>   ))
+</span></span></code></pre></div><h2 id="packages">
+  Packages
+  <a class="anchor" href="#packages">#</a>
+</h2>
+<h3 id="packages">
+  Packages
+  <a class="anchor" href="#packages">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Copyright (c) 2012-2023 Sylvain Benner &amp; Contributors</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Author: Junghan Kim &lt;junghanacs@gmail.com&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; URL: https://github.com/junghanacs</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; This file is not part of GNU Emacs.</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; License: GPLv3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Commentary:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Code:</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defconst</span> <span style="color:#b8860b">jh-completion-packages</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#666">&#39;</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; 재정의 패키지</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">embark</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">consult</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; 새로 등록하는 패키지</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; consult-eglot</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; consult-dir</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">corfu</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">cape</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">tempel</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">cape-yasnippet</span> <span style="color:#a2f">:location</span> (<span style="color:#b8860b">recipe</span> <span style="color:#a2f">:fetcher</span> <span style="color:#b8860b">github</span>
+</span></span><span style="display:flex;"><span>                                      <span style="color:#a2f">:repo</span> <span style="color:#b44">&#34;elken/cape-yasnippet&#34;</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (tabnine-capf :location (recipe :fetcher github</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;                                 :repo &#34;50ways2sayhard/tabnine-capf&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;                                 :files (&#34;*.el&#34; &#34;*.sh&#34;)))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (vertico-buffer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;   :location (recipe :fetcher url</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;                     :url &#34;https://raw.githubusercontent.com/minad/vertico/main/extensions/vertico-buffer.el&#34;))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (mini-popup :location (recipe :fetcher github :repo &#34;minad/mini-popup&#34;))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (vertico-posframe :location (recipe :fetcher github :repo &#34;tumashu/vertico-posframe&#34;))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (vertico-multiform</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;  :location (recipe :fetcher url</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;                    :url &#34;https://raw.githubusercontent.com/minad/vertico/main/extensions/vertico-multiform.el&#34;))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ))
+</span></span></code></pre></div><h3 id="vectico-with-orderless-and-marginalia">
+  <code>vectico</code> with orderless and marginalia
+  <a class="anchor" href="#vectico-with-orderless-and-marginalia">#</a>
+</h3>
+<p>이거 모르면 자동완성 덕분에(?) 애먹는다. 자동완성 무시하고 입력 값만 사용!
+<code>M-RET</code>          vertico-exit-input</p>
+<p>Compleseus 레이어 문서를 보면 vectico 패밀리 패키지가 잘 정리되어 있다. 몇 가지
+수정 사항만 여기에 다룬다.</p>
+<p>
+  <a href="https://github.com/minad/vertico">GitHub - minad/vertico: vertico.el - VERTical Interactive COmpletion</a>
+이만한 패키지가 어디 있겠나!</p>
+<ul>
+<li>vertico-buffer: vertico-buffer-mode to display Vertico in a separate buffer.</li>
+<li>vertico-directory: Commands for Ido-like directory navigation.</li>
+<li>vertico-indexed: vertico-indexed-mode to select indexed candidates with prefix arguments.</li>
+<li>vertico-mouse: vertico-mouse-mode to support for scrolling and candidate selection.</li>
+<li>vertico-multiform: Configure Vertico modes per command or completion category.</li>
+<li>vertico-quick: Commands to select using Avy-style quick keys.</li>
+<li>vertico-repeat: The command vertico-repeat repeats the last completion session.</li>
+<li>vertico-reverse: vertico-reverse-mode to reverse the display.</li>
+<li>vertico-unobtrusive: vertico-unobtrusive-mode displays only the topmost candidate.</li>
+<li>vertico-flat: vertico-flat-mode to enable a flat, horizontal display.</li>
+<li>vertico-grid: vertico-grid-mode to enable a grid display.</li>
+</ul>
+<h4 id="actions-via-embark">
+  Actions via embark
+  <a class="anchor" href="#actions-via-embark">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/post-init-embark</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;embark</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; By default, embark doesn&#39;t know how to handle org-links.  Let&#39;s provide a way.</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">defun</span> <span style="color:#b8860b">ash/org-link</span> ()
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;Get the link from an org-link.&#34;</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;s</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">context</span> (<span style="color:#b8860b">org-element-context</span>)))
+</span></span><span style="display:flex;"><span>      (<span style="color:#a2f">cond</span> ((<span style="color:#a2f">and</span> (<span style="color:#00a000">eq</span> (<span style="color:#00a000">car</span> <span style="color:#b8860b">context</span>) <span style="color:#b8860b">&#39;link</span>)
+</span></span><span style="display:flex;"><span>                  (<span style="color:#00a000">equal</span> (<span style="color:#00a000">plist-get</span> (<span style="color:#b8860b">cadr</span> <span style="color:#b8860b">context</span>) <span style="color:#a2f">:type</span>) <span style="color:#b44">&#34;file&#34;</span>))
+</span></span><span style="display:flex;"><span>             (<span style="color:#00a000">cons</span> <span style="color:#b8860b">&#39;file</span> (<span style="color:#00a000">plist-get</span> (<span style="color:#b8860b">cadr</span> <span style="color:#b8860b">context</span>) <span style="color:#a2f">:path</span>)))
+</span></span><span style="display:flex;"><span>            ((<span style="color:#a2f">and</span> (<span style="color:#00a000">eq</span> (<span style="color:#00a000">car</span> <span style="color:#b8860b">context</span>) <span style="color:#b8860b">&#39;link</span>)
+</span></span><span style="display:flex;"><span>                  (<span style="color:#00a000">member</span> (<span style="color:#00a000">plist-get</span> (<span style="color:#b8860b">cadr</span> <span style="color:#b8860b">context</span>) <span style="color:#a2f">:type</span>) <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;http&#34;</span> <span style="color:#b44">&#34;https&#34;</span>)))
+</span></span><span style="display:flex;"><span>             (<span style="color:#00a000">cons</span> <span style="color:#b8860b">&#39;url</span> (<span style="color:#00a000">concat</span> (<span style="color:#00a000">plist-get</span> (<span style="color:#b8860b">cadr</span> <span style="color:#b8860b">context</span>) <span style="color:#a2f">:type</span>) <span style="color:#b44">&#34;:&#34;</span> (<span style="color:#b8860b">s-trim-right</span> (<span style="color:#00a000">plist-get</span> (<span style="color:#b8860b">cadr</span> <span style="color:#b8860b">context</span>) <span style="color:#a2f">:path</span>)))))
+</span></span><span style="display:flex;"><span>            (<span style="color:#800">t</span> <span style="color:#800">nil</span>))))
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">add-to-list</span> <span style="color:#b8860b">&#39;embark-target-finders</span> <span style="color:#b8860b">&#39;ash/org-link</span>)
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div><h3 id="consult">
+  Consult
+  <a class="anchor" href="#consult">#</a>
+</h3>
+<h4 id="turn-off-auto-preview-using-consult">
+  Turn off <code>auto-preview</code> using Consult
+  <a class="anchor" href="#turn-off-auto-preview-using-consult">#</a>
+</h4>
+<p>preview 설정을 변경하려고 한다. 애용하는 consult-line 의 경우
+자동 preview 때문에 반응이 늦다. preview-key 를 누를 경우만 보이도록 하자.
+다음 키를 이용하면 훨씬 효율적으로 탐색할 수 있다.</p>
+<p>2023-02-01 consult-preview 엄청난 문제가 있었다. invalid-key 가
+발생하는데 해결은 minad 패키지를 모두 gnu 버전으로 pinned 했다.
+업데이트 자주 하는 게 정답이 아니다.</p>
+<p>2023-02-08 버전 업을 하면 문제가 발생했다. 아래 키 바인딩이 문제였다.
+아래와 같이 설정해서 해결했다.</p>
+<p>2023-03-06 compleseus 설정이 바뀌었다. 나의 키바인딩이 더 나은 것 같다.
+아래와 같이 일부 수정한다.</p>
+<p>2023-04-30 커스텀을 바쿤다. 기본으로</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/pre-init-consult</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">spacemacs|use-package-add-hook</span> <span style="color:#b8860b">consult</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:post-config</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">consult-customize</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-theme</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a2f">:preview-key</span> <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;M-.&#34;</span> <span style="color:#b44">&#34;C-SPC&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a2f">:debounce</span> <span style="color:#666">3.0</span> <span style="color:#b8860b">any</span>) <span style="color:#080;font-style:italic">; 2 seconds</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; For `consult-line&#39; change the prompt and specify multiple preview</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; keybindings. Note that you should bind &lt;S-up&gt; and &lt;S-down&gt; in the</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; `minibuffer-local-completion-map&#39; or `vertico-map&#39; to the commands which</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; select the previous or next candidate.</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-buffer</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-ripgrep</span> <span style="color:#b8860b">consult-git-grep</span> <span style="color:#b8860b">consult-grep</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-bookmark</span> <span style="color:#b8860b">consult-yank-pop</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; add more consult functions</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-recent-file</span> <span style="color:#b8860b">consult-xref</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-org-heading</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-outline</span> <span style="color:#080;font-style:italic">; 2023-05-23</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; consult--source-recent-file consult--source-project-recent-file consult--source-bookmark</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">spacemacs/compleseus-search-auto</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">spacemacs/compleseus-search-dir</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">spacemacs/compleseus-find-file</span> <span style="color:#080;font-style:italic">; 2023-05-14 추가</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; spacemacs/compleseus-search-project-el ; 2023-05-23</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; spacemacs/compleseus-search-project-el-auto ; 2023-05-23</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">spacemacs/embark-preview</span> <span style="color:#080;font-style:italic">; 2023-05-23</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">spacemacs/compleseus-search-default</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#b8860b">consult-line</span> <span style="color:#080;font-style:italic">; :prompt &#34;Consult-line: &#34;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a2f">:preview-key</span> <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;M-.&#34;</span> <span style="color:#b44">&#34;C-SPC&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#080;font-style:italic">;; :debounce 0.3 &#34;C-M-j&#34; &#34;C-M-k&#34; ; conflict puni</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a2f">:debounce</span> <span style="color:#666">0.3</span> <span style="color:#b44">&#34;&lt;up&gt;&#34;</span> <span style="color:#b44">&#34;&lt;down&gt;&#34;</span> <span style="color:#b44">&#34;C-n&#34;</span> <span style="color:#b44">&#34;C-p&#34;</span>
+</span></span><span style="display:flex;"><span>                    ))
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div><h3 id="completion-ui">
+  Completion UI
+  <a class="anchor" href="#completion-ui">#</a>
+</h3>
+<h4 id="corfu-completion-ui">
+  <code>Corfu</code> Completion UI
+  <a class="anchor" href="#corfu-completion-ui">#</a>
+</h4>
+<p>2023-05-04 전체적으로 튜닝
+/home/junghan/sync/man/dotsamples/vanilla/chrisbarrett-dotfiles/config.org</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/init-corfu</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">corfu</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">evil-collection</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span> <span style="color:#800">t</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:bind</span> (<span style="color:#a2f">:map</span> <span style="color:#b8860b">corfu-map</span>
+</span></span><span style="display:flex;"><span>                (<span style="color:#b44">&#34;M-.&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">corfu-move-to-minibuffer</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#080;font-style:italic">;; (&#34;M-d&#34; . corfu-show-documentation)</span>
+</span></span><span style="display:flex;"><span>                (<span style="color:#b44">&#34;M-l&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">&#39;corfu-show-location</span>)
+</span></span><span style="display:flex;"><span>                )
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:custom</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">corfu-auto</span> <span style="color:#800">t</span>) <span style="color:#080;font-style:italic">; Enable auto completion</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">corfu-cycle</span> <span style="color:#800">t</span>)            <span style="color:#080;font-style:italic">;; Enable cycling for `corfu-next/previous&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (corfu-min-width 25) ; default 15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">corfu-auto-prefix</span> <span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">corfu-auto-delay</span> <span style="color:#666">0.20</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (corfu-count 14)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (corfu-scroll-margin 4)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Also here to be extra-safe that this is set when `corfu-popupinfo&#39; is</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; loaded. I do not want documentation shown in both the echo area and in</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; the `corfu-popupinfo&#39; popup.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (corfu-echo-documentation nil)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (corfu-bar-width 0.5)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; /home/junghan/sync/man/dotsamples/vanilla/jwiegley-dot-files/init.org</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (corfu-separator ?\s)          ;; Orderless field separator : SPC</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (corfu-quit-no-match &#39;separator) ;; or t</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; ;; (corfu-preview-current nil)    ;; Disable current candidate preview</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; ;; (corfu-preselect &#39;prompt)      ;; Preselect the prompt</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:init</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; TAB cycle if there are only few candidates</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq completion-cycle-threshold 3)</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">completion-cycle-threshold</span> <span style="color:#800">nil</span>)      <span style="color:#080;font-style:italic">; Always show candidates in menu</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Enable indentation+completion using the TAB key.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; `completion-at-point&#39; is often bound to M-TAB.</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">tab-always-indent</span> <span style="color:#b8860b">&#39;complete</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq completion-ignore-case t)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq read-buffer-completion-ignore-case t)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq read-file-name-completion-ignore-case t)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq-default case-fold-search t)   ; For general regexp</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">read-file-name-completion-ignore-case</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;corfu-history</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;corfu-popupinfo</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">set-face-attribute</span> <span style="color:#b8860b">&#39;corfu-popupinfo</span> <span style="color:#800">nil</span> <span style="color:#a2f">:height</span> <span style="color:#666">0.95</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq corfu-echo-documentation nil)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">corfu-popupinfo-delay</span> <span style="color:#666">0.2</span>) <span style="color:#080;font-style:italic">; 0.5</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq corfu-popupinfo-max-width 70)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq corfu-popupinfo-max-height 20)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">with-eval-after-load</span> <span style="color:#b8860b">&#39;evil</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">corfu-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-j&#34;</span>) <span style="color:#b8860b">&#39;corfu-next</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">corfu-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-k&#34;</span>) <span style="color:#b8860b">&#39;corfu-previous</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; C-n and C-p are defaults next/previous</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">corfu-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;M-n&#34;</span>) <span style="color:#b8860b">&#39;corfu-popupinfo-scroll-up</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">corfu-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;M-p&#34;</span>)  <span style="color:#b8860b">&#39;corfu-popupinfo-scroll-down</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">corfu-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;M-h&#34;</span>) <span style="color:#b8860b">&#39;corfu-popupinfo-toggle</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">corfu-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-SPC&#34;</span>) <span style="color:#b8860b">&#39;corfu-insert-separator</span>) <span style="color:#080;font-style:italic">; also use M-SPC</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">corfu-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-g&#34;</span>) <span style="color:#b8860b">&#39;corfu-quit</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">corfu-popupinfo-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-v&#34;</span>) <span style="color:#b8860b">&#39;corfu-popupinfo-scroll-up</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">corfu-popupinfo-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;M-v&#34;</span>) <span style="color:#b8860b">&#39;corfu-popupinfo-scroll-down</span>)
+</span></span><span style="display:flex;"><span>      )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">evil-define-key</span> <span style="color:#b8860b">&#39;insert</span> <span style="color:#b8860b">corfu-map</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-v&#34;</span>) <span style="color:#b8860b">&#39;corfu-popupinfo-scroll-up</span> <span style="color:#080;font-style:italic">; remap</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;M-v&#34;</span>) <span style="color:#b8860b">&#39;corfu-popupinfo-scroll-down</span>
+</span></span><span style="display:flex;"><span>      )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (defun corfu-move-to-minibuffer ()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;   (interactive)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;   (let (completion-cycle-threshold completion-cycling)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;     (apply #&#39;consult-completion-in-region completion-in-region--data)))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (defun corfu-enable-in-minibuffer ()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;   &#34;Enable Corfu in the minibuffer if `completion-at-point&#39; is bound.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;   (when (where-is-internal #&#39;completion-at-point (list (current-local-map)))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;     ;; (setq-local corfu-auto nil) Enable/disable auto completion</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;     (corfu-mode 1)))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (add-hook &#39;minibuffer-setup-hook #&#39;corfu-enable-in-minibuffer)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Show &#34;eldoc&#34; documentation immediately after the user confirms a candidate</span>
+</span></span><span style="display:flex;"><span>                                        <span style="color:#080;font-style:italic">; with &#34;corfu&#34; https://github.com/minad/corfu/issues/80</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">with-eval-after-load</span> <span style="color:#b8860b">&#39;eldoc</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">eldoc-add-command</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">corfu-insert</span>)
+</span></span><span style="display:flex;"><span>      )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">global-corfu-mode</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">corfu-history-mode</span> <span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; define @ jh-base.org / pre-init-savehist</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (add-to-list &#39;savehist-additional-variables &#39;corfu-history)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">corfu-popupinfo-mode</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (with-eval-after-load &#39;evil-collection</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;   (advice-add &#39;evil-collection-corfu-setup :after</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;               (defun resert-corfu-esc ()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;                 (general-def &#39;insert corfu-map &#34;&lt;escape&gt;&#34; &#39;nil))))</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Setup lsp to use corfu for lsp completion</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (defun kb/corfu-setup-lsp ()</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     &#34;Use orderless completion style with lsp-capf instead of the</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; default lsp-passthrough.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (setf (alist-get &#39;styles (alist-get &#39;lsp-capf completion-category-defaults))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;           &#39;(orderless)))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (add-hook &#39;lsp-completion-mode-hook #&#39;kb/corfu-setup-lsp) ; use corfu for lsp completion</span>
+</span></span></code></pre></div><h4 id="cape-completion-at-point-extensions">
+  <code>Cape</code> Completion At Point Extensions
+  <a class="anchor" href="#cape-completion-at-point-extensions">#</a>
+</h4>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2023-02-13 Mon 02:48]</span></span>
+work with company backend
+
+  <a href="https://github.com/minad/cape#company-adapter">GitHub - minad/cape: 🦸cape.el - Completion At Point Exten&hellip;</a></p>
+<p>2023-05-05 동작한다.
+2023-05-04 여기에 사전 다루는게 다 들어 있다.
+/agzam-dot-doom/modules/custom/completion/autoload/minad-capf.el
+/agzam-dot-doom/modules/custom/completion/config.el</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; TODO cape with Dictionary test</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/init-cape-yasnippet</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">cape-yasnippet</span>)
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/init-cape</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">cape</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span> <span style="color:#800">t</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;cape-yasnippet</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Enhances speed on large projects, for which many buffers may be open.</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">cape-dabbrev-check-other-buffers</span> <span style="color:#800">nil</span>) <span style="color:#080;font-style:italic">; default t</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; 최소한으로 열어 두고 필요할 때 호출해서 확인한다.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Add `completion-at-point-functions&#39;, used by `completion-at-point&#39;.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (add-to-list &#39;completion-at-point-functions #&#39;cape-line) ; useless</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (add-to-list &#39;completion-at-point-functions #&#39;cape-abbrev)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">defun</span> <span style="color:#b8860b">cape-common-setup</span> ()
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-to-list</span> <span style="color:#b8860b">&#39;completion-at-point-functions</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">cape-dabbrev</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-to-list</span> <span style="color:#b8860b">&#39;completion-at-point-functions</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">cape-file</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-to-list</span> <span style="color:#b8860b">&#39;completion-at-point-functions</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">cape-history</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-to-list</span> <span style="color:#b8860b">&#39;completion-at-point-functions</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">cape-yasnippet</span>)
+</span></span><span style="display:flex;"><span>      )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">defun</span> <span style="color:#b8860b">cape-text-mode-setup</span> ()
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-to-list</span> <span style="color:#b8860b">&#39;completion-at-point-functions</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">cape-ispell</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; (add-to-list &#39;completion-at-point-functions #&#39;cape-dict) ; useless</span>
+</span></span><span style="display:flex;"><span>      )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">defun</span> <span style="color:#b8860b">cape-prog-mode-setup</span> ()
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-to-list</span> <span style="color:#b8860b">&#39;completion-at-point-functions</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">cape-symbol</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-to-list</span> <span style="color:#b8860b">&#39;completion-at-point-functions</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">cape-keyword</span>)
+</span></span><span style="display:flex;"><span>      )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; 2023-05-05 로컬 후크가 아니라 바로 모드 훅으로 잡아 놔야 한다.</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">dolist</span> (<span style="color:#b8860b">mode-hook</span> <span style="color:#666">&#39;</span>(<span style="color:#b8860b">prog-mode-hook</span> <span style="color:#b8860b">text-mode-hook</span> <span style="color:#b8860b">conf-mode-hook</span>))
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">mode-hook</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">cape-common-setup</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;text-mode-hook</span> <span style="color:#b8860b">&#39;cape-text-mode-setup</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;prog-mode-hook</span> <span style="color:#b8860b">&#39;cape-prog-mode-setup</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">define-prefix-command</span> <span style="color:#b8860b">&#39;my-cape-map</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">global-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-c u&#34;</span>) <span style="color:#b8860b">&#39;my-cape-map</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">map</span> <span style="color:#b8860b">my-cape-map</span>))
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;p&#34;</span>) <span style="color:#b8860b">&#39;completion-at-point</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;t&#34;</span>) <span style="color:#b8860b">&#39;complete-tag</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;d&#34;</span>) <span style="color:#b8860b">&#39;cape-dabbrev</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;h&#34;</span>) <span style="color:#b8860b">&#39;cape-history</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;y&#34;</span>) <span style="color:#b8860b">&#39;cape-yasnippet</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;f&#34;</span>) <span style="color:#b8860b">&#39;cape-file</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;k&#34;</span>) <span style="color:#b8860b">&#39;cape-keyword</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;s&#34;</span>) <span style="color:#b8860b">&#39;cape-symbol</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;a&#34;</span>) <span style="color:#b8860b">&#39;cape-abbrev</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;l&#34;</span>) <span style="color:#b8860b">&#39;cape-line</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;w&#34;</span>) <span style="color:#b8860b">&#39;cape-dict</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;r&#34;</span>) <span style="color:#b8860b">&#39;cape-rfc1345</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;\\&#34;</span>) <span style="color:#b8860b">&#39;cape-tex</span>)
+</span></span><span style="display:flex;"><span>      )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;;;; https://github.com/minad/cape#company-adapter</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; The advices are only needed on Emacs 28 and older.</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">when</span> (<span style="color:#00a000">&lt;</span> <span style="color:#b8860b">emacs-major-version</span> <span style="color:#666">29</span>) <span style="color:#080;font-style:italic">; emacs 28</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; Silence the pcomplete capf, no errors or messages!</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">advice-add</span> <span style="color:#b8860b">&#39;pcomplete-completions-at-point</span> <span style="color:#a2f">:around</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">cape-wrap-silent</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; Ensure that pcomplete does not write to the buffer</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; and behaves as a pure `completion-at-point-function&#39;.</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">advice-add</span> <span style="color:#b8860b">&#39;pcomplete-completions-at-point</span> <span style="color:#a2f">:around</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">cape-wrap-purify</span>))
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div><!--list-separator-->
+<ul>
+<li>
+<p>History</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>이제야 제대로 붙었다.
+</span></span><span style="display:flex;"><span>(cape-yasnippet
+</span></span><span style="display:flex;"><span> cape-history
+</span></span><span style="display:flex;"><span> cape-file
+</span></span><span style="display:flex;"><span> cape-dabbrev
+</span></span><span style="display:flex;"><span> cape-keyword
+</span></span><span style="display:flex;"><span> cape-symbol
+</span></span><span style="display:flex;"><span> elisp-completion-at-point
+</span></span><span style="display:flex;"><span> t)
+</span></span></code></pre></div></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p><span class="org-todo todo TODO">TODO</span>  <code>cape-yasnippet</code></p>
+<table>
+<thead>
+<tr>
+<th><kbd>M-/</kbd></th>
+<th>Expand a snippet if text before point &hellip;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>SPC i s</kbd></td>
+<td>List all current yasnippets</td>
+</tr>
+</tbody>
+</table>
+<p>스니펫이 제대로 동작하는가 확인해봐라.
+<em>yasnippet-snippets-1.0</em>
+<em>clojure-snippets-20220914.950</em></p>
+<p><code>auto-coimpletion</code> 레이어에 스니펫을 다 빼고 따로 넣어야 한다.
+그리고 Tempel 로 넘어가자.</p>
+<p>Deprecate in favour of tempel.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; yasnippet globally on and check yas-snippet-dirs</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (&#34;/home/junghan/.spacemacs.d/snippets&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; &#34;/home/junghan/spacemacs/core/../private/snippets/&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; &#34;/home/junghan/spacemacs/layers/+completion/auto-completion/local/snippets&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; &#34;/home/junghan/spacemacs/elpa/29.0/develop/clojure-snippets-20220914.950/snippets&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; yasnippet-snippets-dir)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (use-package yasnippet</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   :config</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (yas-reload-all)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (add-to-list &#39;yas-snippet-dirs &#34;~/.config/emacs-vanilla/snippets&#34;)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (yas-global-mode 1))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/init-cape-yasnippet</span> ()
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">cape-yasnippet</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a2f">:after</span> <span style="color:#b8860b">cape</span> <span style="color:#b8860b">yasnippet</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#a2f">defun</span> <span style="color:#b8860b">cape-yasnippet-setup-capf</span> ()
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; Add the Tempel Capf to `completion-at-point-functions&#39;.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; `tempel-expand&#39; only triggers on exact matches. Alternatively use</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; `tempel-complete&#39; if you want to see all matches, but then you</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; should also configure `tempel-trigger-prefix&#39;, such that Tempel</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; does not trigger too often when you don&#39;t expect it. NOTE: We add</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; `tempel-expand&#39; *before* the main programming mode Capf, such</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; that it will be tried first.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; Tempel Capf를 `completion-at-point-functions&#39;에 추가하십시오. `tempel-expand&#39;는</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; 정확히 일치하는 경우에만 트리거됩니다. 또는 모든 일치 항목을 보려면</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; `tempel-complete&#39;를 사용하지만 예상하지 못한 경우 Tempel이 너무 자주 트리거되지</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; 않도록 `tempel-trigger-prefix&#39;도 구성해야 합니다. 참고: 기본 프로그래밍 모드인</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">;; Capf *앞에* `tempel-expand&#39;를 추가하여 먼저 시도되도록 합니다.</span>
+</span></span><span style="display:flex;"><span>        (<span style="color:#a2f">setq-local</span> <span style="color:#b8860b">completion-at-point-functions</span>
+</span></span><span style="display:flex;"><span>                    (<span style="color:#00a000">cons</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">cape-yasnippet</span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#b8860b">completion-at-point-functions</span>)))
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; Setup completion at point - 먼저 실행 되게 해야하는구나. 끈다.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; (defun tempel-setup-capf ()</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;;   (add-to-list &#39;completion-at-point-functions #&#39;tempel-expand))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;text-mode-hook</span> <span style="color:#b8860b">&#39;cape-yasnippet-setup-capf</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;prog-mode-hook</span> <span style="color:#b8860b">&#39;cape-yasnippet-setup-capf</span>)
+</span></span><span style="display:flex;"><span>      ))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; To avoid auto-expanding snippets</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (plist-put cape-yasnippet--properties :exit-function #&#39;always)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (defun +cape-yasnippet--setup-h ()</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (when (and (bound-and-true-p yas-minor-mode))</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;     (add-to-list &#39;completion-at-point-functions #&#39;cape-yasnippet t)))</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (dolist (mode-hook &#39;(prog-mode-hook text-mode-hook conf-mode-hook))</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (add-hook mode-hook #&#39;+cape-yasnippet--setup-h)))</span>
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="tempel-simple-templates-for-emacs">
+  <code>Tempel</code> Simple templates for Emacs
+  <a class="anchor" href="#tempel-simple-templates-for-emacs">#</a>
+</h4>
+<p>재미있는 템플릿 활용법을 알게되었다.
+
+  <a href="https://github.com/minad/tempel">GitHub - minad/tempel: TempEl - Simple templates for Emacs</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Template-based in-buffer completion (tempel.el)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; NOTE 2023-01-19: Check the `templates&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/init-tempel</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">tempel</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">cape</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:bind</span> ((<span style="color:#b44">&#34;M-+&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">tempel-complete</span>) <span style="color:#080;font-style:italic">;; Alternative tempel-expand</span>
+</span></span><span style="display:flex;"><span>           (<span style="color:#b44">&#34;M-*&#34;</span> <span style="color:#666">.</span> <span style="color:#b8860b">tempel-insert</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:init</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq tempel-trigger-prefix &#34;&lt;&#34;) ; conflits with evil-shift</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">tempel-path</span> (<span style="color:#00a000">expand-file-name</span> <span style="color:#b44">&#34;tempel-templates.eld&#34;</span> <span style="color:#b8860b">dotspacemacs-directory</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Setup completion at point</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">defun</span> <span style="color:#b8860b">tempel-setup-capf</span> ()
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; Add the Tempel Capf to `completion-at-point-functions&#39;.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; `tempel-expand&#39; only triggers on exact matches. Alternatively use</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; `tempel-complete&#39; if you want to see all matches, but then you</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; should also configure `tempel-trigger-prefix&#39;, such that Tempel</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; does not trigger too often when you don&#39;t expect it. NOTE: We add</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; `tempel-expand&#39; *before* the main programming mode Capf, such</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; that it will be tried first.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; Tempel Capf를 `completion-at-point-functions&#39;에 추가하십시오. `tempel-expand&#39;는</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; 정확히 일치하는 경우에만 트리거됩니다. 또는 모든 일치 항목을 보려면</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; `tempel-complete&#39;를 사용하지만 예상하지 못한 경우 Tempel이 너무 자주 트리거되지</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; 않도록 `tempel-trigger-prefix&#39;도 구성해야 합니다. 참고: 기본 프로그래밍 모드인</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#080;font-style:italic">;; Capf *앞에* `tempel-expand&#39;를 추가하여 먼저 시도되도록 합니다.</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#a2f">setq-local</span> <span style="color:#b8860b">completion-at-point-functions</span>
+</span></span><span style="display:flex;"><span>                  (<span style="color:#00a000">cons</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">tempel-expand</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#b8860b">completion-at-point-functions</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Setup completion at point - 먼저 실행 되게 해야하는구나. 끈다.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (defun tempel-setup-capf ()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;;   (add-to-list &#39;completion-at-point-functions #&#39;tempel-expand))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;text-mode-hook</span> <span style="color:#b8860b">&#39;tempel-setup-capf</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;prog-mode-hook</span> <span style="color:#b8860b">&#39;tempel-setup-capf</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">defun</span> <span style="color:#b8860b">tempel-hippie-try-expand</span> (<span style="color:#b8860b">old</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#b44">&#34;Integrate with hippie expand.
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    Just put this function in </span><span style="color:#b8860b">`hippie-expand-try-functions-list&#39;</span><span style="color:#b44">.&#34;</span>
+</span></span><span style="display:flex;"><span>      (<span style="color:#a2f">if</span> (<span style="color:#b8860b">not</span> <span style="color:#b8860b">old</span>)
+</span></span><span style="display:flex;"><span>          (<span style="color:#b8860b">tempel-expand</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>        (<span style="color:#b8860b">undo</span> <span style="color:#666">1</span>)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">add-to-list</span> <span style="color:#b8860b">&#39;hippie-expand-try-functions-list</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">tempel-hippie-try-expand</span> <span style="color:#800">t</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; Use concrete keys because of org mode</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; &#34;M-RET&#34; #&#39;tempel-done</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; &#34;M-{&#34; #&#39;tempel-previous</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; &#34;M-}&#34; #&#39;tempel-next</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; &#34;M-&lt;up&gt;&#34; #&#39;tempel-previous</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; &#34;M-&lt;down&gt;&#34; #&#39;tempel-next</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">tempel-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;RET&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">tempel-done</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">tempel-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-j&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">tempel-next</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">define-key</span> <span style="color:#b8860b">tempel-map</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-k&#34;</span>) <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">tempel-previous</span>)
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div></p>
+  
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+<hr>
+
+  <div class="bl-section">
+    <h3>» Links to this note</h3>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/configs/emacs/">[INDEX] Junghanacs Emacs README</a><blockquote class="book-hint info">
+  Emacs 구성의 목표와 전체적인 소개. 상세 내용은 링크에서 확인 바랍니다.
+</blockquote></li>
+       
+     </ul>
+    </div>
+  </div>
+
+
+</article>
+ 
+      <center>
+  
+  
+  
+  <h3>Go to <a href="/configs/emacs/jh-checker/">random</a> page</h3>
+  
+  
+</center>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/a718b36dd8e2a8034bef06c15c659493ed2b02a8" title='Last modified by junghan0611 | 2023-06-14' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2023-06-14</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <footer class="footer">
+  <br>
+  <br>
+  <span>&copy; 2023 <a href="https://junghanacs.com/">Junghanacs</a></span>
+  <span>
+    published with
+    <a href="https://www.gnu.org/software/emacs" rel="noopener noreferrer">Emacs</a> +
+    <a href="https://orgmode.org" rel="noopener noreferrer">Org-Mode</a> +
+    <a href="https://ox-hugo.scripter.co" rel="noopener noreferrer">Ox-Hugo</a> 
+  </span>
+</footer>
+
+      </footer>
+
+      
+  
+  <div class="book-comments"><script src="https://utteranc.es/client.js"
+        repo="junghanacs/junghanacs.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#layer">Layer</a></li>
+        <li><a href="#packages">Packages</a>
+          <ul>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#vectico-with-orderless-and-marginalia"><code>vectico</code> with orderless and marginalia</a>
+              <ul>
+                <li><a href="#actions-via-embark">Actions via embark</a></li>
+              </ul>
+            </li>
+            <li><a href="#consult">Consult</a>
+              <ul>
+                <li><a href="#turn-off-auto-preview-using-consult">Turn off <code>auto-preview</code> using Consult</a></li>
+              </ul>
+            </li>
+            <li><a href="#completion-ui">Completion UI</a>
+              <ul>
+                <li><a href="#corfu-completion-ui"><code>Corfu</code> Completion UI</a></li>
+                <li><a href="#cape-completion-at-point-extensions"><code>Cape</code> Completion At Point Extensions</a></li>
+                <li><a href="#tempel-simple-templates-for-emacs"><code>Tempel</code> Simple templates for Emacs</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5/dist/gumshoe.polyfills.min.js"></script>
+<script>new Gumshoe('.book-toc a', { nested: true });</script>
+<style>
+ .book-toc li.active > a {
+   font-weight: bold;
+ }
+</style>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
