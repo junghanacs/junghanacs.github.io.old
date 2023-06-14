@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Index on Junghanacs</title>
+    <title>[INDEX] Home on Junghanacs</title>
     <link>https://junghanacs.com/</link>
-    <description>Recent content in Index on Junghanacs</description>
+    <description>Recent content in [INDEX] Home on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/index.xml" rel="self" type="application/rss+xml" />
@@ -246,7 +246,7 @@
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0900</pubDate>
       
       <guid>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</guid>
-      <description>Summary 블록 # 요약문은 한글, 컬럼 80 으로 2.5 줄 정도 가능하다. 간단히 쓰는게 항상 답이다. 간단히 요약하기란 쉽지 않다. 하지만 중요하다. 아래와 같이 포스팅 맨 위에 짧</description>
+      <description>Markup # org-mode 마크업은 다음의 주소에서 확인 바람. 1 ox-hugo 관련 내용은 다음 주소에서 확인.2 결과를 비교하면 org-code 와 verbatim 이 다르다. 맞춰줘야 한다. verbatim 은 맞추기가 까다롭다. kbd</description>
     </item>
     
     <item>
