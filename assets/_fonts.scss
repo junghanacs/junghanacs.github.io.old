@@ -1,8 +1,7 @@
-// @import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
 
-/* Time-stamp: <2023-06-09 23:10:23 junghan> */
+/* Time-stamp: <2023-06-14 13:51:43 junghan> */
 
 /* Iosevka */
 /* https://css-tricks.com/snippets/css/using-font-face/ */
@@ -45,21 +44,23 @@
 /*
  * Pretendard (Korean) https://creativestudio.kr/3179
  */
-@font-face {
-  font-family: "Pretendard";
-  font-style: normal;
-  src: local(""), url("fonts/Pretendard-Regular.woff") format("woff");
-  font-weight: 400;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "Pretendard";
+//   font-style: normal;
+//   src: local(""), url("fonts/Pretendard-Regular.woff") format("woff");
+//   font-weight: 400;
+//   font-display: swap;
+// }
 
-@font-face {
-  font-family: "Pretendard";
-  font-style: normal;
-  src: local(""), url("fonts/Pretendard-Bold.woff") format("woff");
-  font-weight: 700;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "Pretendard";
+//   font-style: normal;
+//   src: local(""), url("fonts/Pretendard-Bold.woff") format("woff");
+//   font-weight: 700;
+//   font-display: swap;
+// }
+// @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css");
 
 /*
  * D2 coding (Korean) http://dev.naver.com/projects/d2coding/
@@ -81,7 +82,10 @@
 }
 
 body {
-  font-family: "Iosevka", "Noto Sans KR", sans-serif;
+  font-family: "Iosevka", "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    sans-serif;
 }
 
 // p {
@@ -89,38 +93,12 @@ body {
 // }
 
 .book-toc-content {
-  font-family: "Iosevka", "Noto Sans KR", sans-serif;
-  // font-family: "D2 coding", "Consolas", "Menlo", "Deja Vu Sans Mono",
-  //   "Bitstream Vera Sans Mono", monospace;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Pretendard", sans-serif;
-  font-weight: bold;
-}
-
-blockquote {
-  font-family: "Pretendard", sans-serif;
   // font-family: "Iosevka", "Noto Sans KR", sans-serif;
-  /* font-size: 0.9em; */
-}
-
-.book-menu {
-  font-family: "Pretendard", sans-serif;
-  font-size: $font-size-16;
-}
-
-/* copy from ox-hugo */
-
-code {
   font-family: "D2 coding", "Consolas", "Menlo", "Deja Vu Sans Mono",
     "Bitstream Vera Sans Mono", monospace;
 }
+
+/* copy from ox-hugo */
 
 /* .org-todo, */
 /* .todo, */
@@ -149,24 +127,24 @@ code {
 
 /* Tue Sep 26 12:32:04 EDT 2017 - kmodi*/
 /* Override the background-color for pre blocks.. overrides the Hugo theme, and Pygments/Chroma CSS. */
-pre,
-pre code,
-.chroma {
-  /* background-color: inherit; */
-  background-color: #eee;
-}
+// pre,
+// pre code,
+// .chroma {
+//   /* background-color: inherit; */
+//   background-color: #eee;
+// }
 
 /* Very little padding on the left and right margins of code blocks */
-li pre,
-pre {
-  padding-left: 5px;
-  padding-right: 5px;
-}
+// li pre,
+// pre {
+//   padding-left: 5px;
+//   padding-right: 5px;
+// }
 
 /* Do not show list bullets for checkbox list items */
-ul.task-list {
-  list-style-type: none;
-}
+// ul.task-list {
+//   list-style-type: none;
+// }
 
 /* Org timestamps */
 /* Example: In Changelog */
@@ -251,6 +229,6 @@ dd {
 }
 
 /* No list bullets in task lists */
-ul.task-list {
-  list-style-type: none;
-}
+// ul.task-list {
+//   list-style-type: none;
+// }

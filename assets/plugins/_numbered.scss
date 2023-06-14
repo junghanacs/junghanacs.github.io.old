@@ -1,6 +1,6 @@
 // Heading Number
 $startLevel: 2;
-$endLevel: 4;
+$endLevel: 5;
 
 .book-page .markdown {
   @for $currentLevel from $startLevel through $endLevel {

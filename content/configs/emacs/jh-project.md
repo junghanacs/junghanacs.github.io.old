@@ -1,8 +1,9 @@
 +++
-title = "Emacs: jh-project layer"
+title = "jh-project layer"
 author = ["Junghan Kim"]
 date = 2023-06-12T00:00:00+09:00
-keywords = ["draft", "configs"]
+lastmod = 2023-06-14T16:51:00+09:00
+keywords = ["configs"]
 draft = false
 +++
 
@@ -15,45 +16,7 @@ draft = false
 
 ## Goals {#goals}
 
-
-### Git {#git}
-
-This layers adds extensive support for [git](http://git-scm.com/) to Spacemacs.
-
-Features:
-
--   git repository management the indispensable [magit](http://magit.vc/) package
--   [forge](https://github.com/magit/forge/) add-on for magit.
--   [git-flow](https://github.com/jtatarik/magit-gitflow) add-on for magit.
--   quick in buffer history browsing with [git-timemachine](https://melpa.org/#/git-timemachine).
--   quick in buffer last commit message per line with [git-messenger](https://github.com/syohex/emacs-git-messenger)
--   colorize buffer line by age of commit with [smeargle](https://github.com/syohex/emacs-smeargle)
--   git grep with [helm-git-grep](https://github.com/yasuyk/helm-git-grep)
--   org integration with magit via [orgit](https://github.com/magit/orgit)
-
-New to Magit? Checkout the [official intro](https://magit.vc/about/) and [Practicalli Spacemacs](https://practical.li/spacemacs/source-control/)
-guide to configuring and using the Git and version control layers.
-
-
-### Version-Control {#version-control}
-
-This layers adds general configuration for [Emacs VC](http://www.gnu.org/software/emacs/manual/html_node/emacs/Version-Control.html).
-It should work with all VC backends such as Git, Mercurial, Bazaar, SVN, etc...
-
-Features:
-
--   highlights uncommitted changes in the fringe or margin with [diff-hl](https://github.com/dgutov/diff-hl), [git-gutter](https://github.com/syohex/emacs-git-gutter), or [git-gutter+](https://github.com/nonsequitur/git-gutter-plus)
--   adds vcs transient-state <kbd>SPC g.</kbd> to allow quick navigation and modification of buffer hunks.
-
-
-### Spacemacs-project {#spacemacs-project}
-
-This layer tweaks `projectile` to integrate nicely into Spacemacs.
-
-Features:
-
--   Setup of `projectile` key bindings, including functions for project search, switching, version control and compilation.
--   Additional path helper functions, to copy the location of a buffer relative to the project root.
+Git, Version-Control, Spacemacs-project 레이어 및 관련 추가 패키지 구성
 
 
 ## Layer {#layer}
@@ -69,7 +32,9 @@ Features:
 ;; This file is not part of GNU Emacs.
 ;;
 ;; License: GPLv3
+
 ;;; Commentary:
+
 ;;; Code:
 
 (configuration-layer/declare-layer-dependencies
@@ -78,7 +43,8 @@ Features:
    ;; SPC g s opens Magit git client full screen (q restores previous layout)
    ;; show word-granularity differences in current diff hunk
    ;;      git-enable-magit-gitflow-plugin t
-   (git :variables
+   (git
+    :variables
         magit-diff-refine-hunk t
         git-enable-magit-delta-plugin t
         git-enable-magit-todos-plugin t)
@@ -123,6 +89,7 @@ Features:
     forge
     git-commit
     git-timemachine
+    ;; code-review
 
     ;; additional packages
     magit-imerge
@@ -133,37 +100,10 @@ Features:
 ```
 
 
-### consult-log-grep {#consult-log-grep}
-
-projectile 쓰고 싶은데 기능이 너무 많아서 엄두가 안 나더라.
-아래는 기본 키 바인딩이다.
-which-key-max-description-length
-
-```elisp
-;; 프로젝트 prefix p
-;; f find :: projectile-find-file
-;; p switch project :: projectile-switch-project
-;; k kill buffers :: projectile-kill-buffers
-;; s search in project :: counsel-git-grep ==> consult-git-grep
-;; S consult-git-log-grep
-;; b switch to project buffer :: projectile-switch-to-buffer
-
-(defun jh-project/init-consult-git-log-grep ()
-  (use-package consult-git-log-grep :defer ))
-
-;; (defun jh-project/post-init-projectile ()
-;;   (require 'consult-git-log-grep)
-;;   (require 'consult-projectile)
-;;   )
-
-```
-
-
 ### Magit {#magit}
 
 magit - forge configuration
 git 레이어에 대한 추가 설정
-
 [Difftastic diffing with Magit](https://tsdh.org/posts/2022-08-01-difftastic-diffing-with-magit.html) 를 반영하여 my-magit.el 추가
 
 ```elisp
@@ -195,7 +135,7 @@ git 레이어에 대한 추가 설정
 ```
 
 
-### git-commit {#git-commit}
+### Git-commit {#git-commit}
 
 <span class="timestamp-wrapper"><span class="timestamp">[2023-06-12 Mon 15:28]</span></span>
 conventional commit support
@@ -232,7 +172,7 @@ conventional commit support
 ```
 
 
-### git-timemachine {#git-timemachine}
+### Git-timemachine {#git-timemachine}
 
 
 
@@ -242,13 +182,12 @@ conventional commit support
 ```
 
 
-### forge {#forge}
+### Forge {#forge}
 
 
 
 ```elisp
 (defun jh-project/post-init-forge ()
-
   (when (> emacs-major-version 28) ; Emacs-29 use builtin pkgs
     (setq forge-database-connector 'sqlite-builtin))
 
@@ -262,19 +201,17 @@ conventional commit support
   ;; GitHub user and organization accounts owned
   ;; used by @ c f  to create a fork
   (setq forge-owned-accounts
-        '(("junghan0611")))
-  ;;       '(("practicalli" "practicalli-john"
-  ;;          "reclojure")))
+        '(("junghan0611" "junghanacs")))
+  )
 
   ;; ;; To blacklist specific accounts,
   ;; ;; over-riding forge-owned-accounts
   ;; ;; (setq forge-owned-blacklist
   ;; ;;       '(("bad-hacks" "really-bad-hacks")))
-  )
 ```
 
 
-### magit-imerge {#magit-imerge}
+### Magit-imerge {#magit-imerge}
 
 
 
@@ -284,7 +221,7 @@ conventional commit support
 ```
 
 
-### sideline-blame {#sideline-blame}
+### Sideline-blame {#sideline-blame}
 
 [GitHub - emacs-sideline/sideline-blame: Show blame messag...](https://github.com/emacs-sideline/sideline-blame)
 
@@ -303,7 +240,32 @@ conventional commit support
 ```
 
 
-### consult-projectile {#consult-projectile}
+### Consult-log-grep {#consult-log-grep}
+
+projectile 쓰고 싶은데 기능이 너무 많아서 엄두가 안 나더라.
+아래는 기본 키 바인딩이다.
+which-key-max-description-length
+
+```elisp
+;; 프로젝트 prefix p
+;; f find :: projectile-find-file
+;; p switch project :: projectile-switch-project
+;; k kill buffers :: projectile-kill-buffers
+;; s search in project :: counsel-git-grep ==> consult-git-grep
+;; S consult-git-log-grep
+;; b switch to project buffer :: projectile-switch-to-buffer
+
+(defun jh-project/init-consult-git-log-grep ()
+  (use-package consult-git-log-grep :defer ))
+
+;; (defun jh-project/post-init-projectile ()
+;;   (require 'consult-git-log-grep)
+;;   (require 'consult-projectile)
+;;   )
+```
+
+
+### Consult-projectile {#consult-projectile}
 
 jeremyf
 
@@ -323,56 +285,12 @@ jeremyf
 ```
 
 
-### <span class="org-todo done OFF">OFF</span> `blamer.el` <span class="tag"><span class="OFF">OFF</span></span> {#blamer-dot-el}
-
-<span class="timestamp-wrapper"><span class="timestamp">[2023-04-27 Thu 09:15]</span></span>
-[GitHub - Artawower/blamer.el: A git blame plugin for emac...](https://github.com/Artawower/blamer.el)
-A git blame plugin for emacs inspired by VS Code’s GitLens plugin and Vim plugin
-
-```elisp
-;; (defun jh-project/init-blamer ()
-;;   (use-package blamer
-;;     :ensure t
-;;     :defer 20
-;;     :custom
-;;     (blamer-idle-time 0.5)
-;;     (blamer-min-offset 70)
-;;     (blamer-force-truncate-long-line nil) ; t
-;;     (blamer-show-avatar-p nil)
-;;     (blamer-prettify-time-p t)
-;;     ;; (blamer-view 'overlay)
-;;     :custom-face
-;;     (blamer-face ((t :foreground "#7a88cf"
-;;                      :height 1.0
-;;                      :italic t)))
-;;     :config
-;;     (global-blamer-mode 1)
-;;     ))
-```
-
-
-## Funcs {#funcs}
-
-```elisp
-;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-
-```
-
-
 ## Keybindings {#keybindings}
 
-
-### Global Bindings {#global-bindings}
-
 ```elisp
 ;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-
+
 (global-set-key (kbd "C-x g") 'magit-status)
-```
-
-
-### Spacemacs Bindings {#spacemacs-bindings}
-
-```elisp
-;; git vc
 (spacemacs/set-leader-keys "gg" 'consult-git-grep)
 (spacemacs/set-leader-keys "gG" 'consult-git-log-grep)
 ```

@@ -1,21 +1,20 @@
 +++
-title = "configs/emacs : Index"
+title = "[INDEX] Junghanacs Emacs README"
 author = ["Junghan Kim"]
 date = 2023-06-11T00:00:00+09:00
-lastmod = 2023-06-12
-keywords = ["draft", "configs"]
+lastmod = 2023-06-14
+keywords = ["configs"]
 draft = false
 +++
 
 {{< hint info >}}
-나의 Literate Emacs Dotfiles. 전체를 소개하는 README 파일에 해당 합니다. 각각
-설정 파일은 아래 링크를 참고 하세요!
+Emacs 구성의 목표와 전체적인 소개. 상세 내용은 링크에서 확인 바랍니다.
 {{< /hint >}}
 
 <!--more-->
 
 
-## 나의 Emacs 구성의 목표 {#나의-emacs-구성의-목표}
+## Junghanacs: Emacs 목표 {#junghanacs-emacs-목표}
 
 -   최대한 쉽게! Spacemacs 사용 경험 그대로!
 -   VSpaceCode, SpaceVIM 과 함께 갈 수 있도록!
@@ -33,38 +32,77 @@ draft = false
     훈련이 되야 한다. 키보드를 입력하는 자체가 배움이고 즐거움이다.
 
 
-## Spacemacs {#spacemacs}
+## [Dot-Spacemacs]({{< relref "./spacemacs.md" >}}) {#d41d8c}
 
-<span class="timestamp-wrapper"><span class="timestamp">[2023-06-12 Mon 15:50]</span></span>
-Spacemacs 설정 파일 입니다.
+[Dot-Spacemacs]({{< relref "./spacemacs.md" >}}) 는 Spacemacs 설정 파일
+입니다. 물론 이 파일 하나에 모든 커스텀 설정을 넣을 수 있습니다. 저도 그렇게
+사용 했습니다. 아쉽게도 조금씩 튜닝을 하다 보면 감당이 안되는 지점에 이르게
+됩니다. 다른 배포판이나 바닐라로 넘어 가는 게 일반적인 수순일 것입니다. 그러나
+구성의 목표에서 언급한 바, 가장 쉬운 길을 만들고 싶었습니다. 쉬운 길이 최선의
+길은 아닙니다. 각자 자신의 길을 가기 전 까지 동반자가 되었으면 합니다.
 
-- spacemacs
+
+## <kbd>Custom</kbd> Layers {#custom-layers}
+
+위 Spacemacs 설정 파일에서 로딩하는 레이어 목록 입니다. 위의 설정 파일까지 하면
+양이 적지 않습니다. 왜 별도로 나누었는 지에 대한 이야기를 하려면 상당히 길어 질
+것 같습니다. 일단 설정 파일을 올립니다. 마음 같아서는 조금 더 정리를 하고
+싶으나... 천천히 할 예정입니다. 일단 공개함으로써 저의 정리 작업은 시작이 된 것
+입니다.
 
 
-## Custom Layer {#custom-layer}
+### [jh-base layer]({{< relref "configs/emacs/jh-base.md" >}}) {#d41d8c}
 
-<span class="timestamp-wrapper"><span class="timestamp">[2023-06-11 Sun 12:48] </span></span> 기본 레이어에서 제공하는 기능과 키바인딩을 그대로
-가져가면서 최신 기능 지원 및 성능 개선을 하고자 각 레이어 설정을 별도로
-나누었습니다.
 
-다음은 각 설정 파일의 링크. 아직 정리가 안 되서 차차 반영 할 예정입니다.
+### [jh-completion layer]({{< relref "jh-completion.md" >}}) {#d41d8c}
 
-- jh-base
-- jh-completion
-- jh-visual
-- jh-workspace
-- jh-editing
-- jh-navigation
-- jh-writing
-- jh-checker
-- [jh-project]({{< relref "jh-project.md" >}})
-- jh-utility
-- jh-coding
-- jh-org
-- jh-org-workflow
-- jh-pkm
-- jh-misc
-- jh-reading
-- jh-javascript
-- jh-clojure
-- jh-python
+
+### [jh-visual layer]({{< relref "jh-visual.md" >}}) {#d41d8c}
+
+
+### [jh-workspace layer]({{< relref "jh-workspace.md" >}}) {#d41d8c}
+
+
+### [jh-editing layer]({{< relref "jh-editing.md" >}}) {#d41d8c}
+
+
+### [jh-navigation layer]({{< relref "jh-navigation.md" >}}) {#d41d8c}
+
+
+### [jh-writing layer]({{< relref "jh-writing.md" >}}) {#d41d8c}
+
+
+### [jh-checker layer]({{< relref "jh-checker.md" >}}) {#d41d8c}
+
+
+### [jh-project layer]({{< relref "jh-project.md" >}}) {#d41d8c}
+
+
+### [jh-utility layer]({{< relref "jh-utility.md" >}}) {#d41d8c}
+
+
+### [jh-coding layer]({{< relref "jh-coding.md" >}}) {#d41d8c}
+
+
+### [jh-org layer]({{< relref "jh-org.md" >}}) {#d41d8c}
+
+
+### [jh-org-workflow layer]({{< relref "jh-org-workflow.md" >}}) {#d41d8c}
+
+
+### [jh-pkm layer]({{< relref "jh-pkm.md" >}}) {#d41d8c}
+
+
+### [jh-misc layer]({{< relref "jh-misc.md" >}}) {#d41d8c}
+
+
+### [jh-reading layer]({{< relref "jh-reading.md" >}}) {#d41d8c}
+
+
+### [jh-python layer]({{< relref "jh-python.md" >}}) {#d41d8c}
+
+
+### [jh-javascript layer]({{< relref "jh-javascript.md" >}}) {#d41d8c}
+
+
+### [jh-clojure layer]({{< relref "jh-clojure.md" >}}) {#d41d8c}

@@ -2,18 +2,10 @@
 title = "Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들"
 author = ["Junghan Kim"]
 date = 2023-06-05
-lastmod = 2023-06-08
-keywords = ["blogging"]
+lastmod = 2023-06-14
+keywords = ["notes", "ox-hugo", "org-roam", "template", "export"]
 draft = false
 +++
-
-{{< hint info >}}
-Org-Roam 에서 작성한 문서를 Hugo Markdown 으로 변환하기는 쉽다. 근데 각주, 인용,
-태그, 요약, 코드, 일부 내용 감추기 등을 어떻게 하는가? 여기에 대한 답을 찾는다.
-{{< /hint >}}
-
-<!--more-->
-
 
 ## Summary 블록 {#summary-블록}
 
@@ -31,7 +23,7 @@ My post content.
 ```
 
 
-## Citation 서지 정보 자동화 {#citation-서지-정보-자동화}
+## Citation 서지 정보 {#citation-서지-정보}
 
 다음과 같이 상/하단에 넣어야 한다. 레퍼런스를 달아 봅니다.
 `SPC B i` 로 바인딩을 해 놓았다. <a href="#citeproc_bib_item_1">[1]</a> <a href="#citeproc_bib_item_2">[2]</a>
@@ -44,7 +36,7 @@ citar 사용법을 여기서 다룰 것은 아니다. 아무튼 깔끔하게 들
 Below, the "References" heading will be auto-inserted.
 ```
 
-여기 아래에 들어갑니다. 헤딩이 붙습니다.
+현재 라인 다음에 References 이 추가 된다.
 
 ## References
 
@@ -66,12 +58,12 @@ Below, the "References" heading will be auto-inserted.
 
 ## 코드, 인용, 예시 블록 {#코드-인용-예시-블록}
 
--   ':' 을 애용한다.
+-   ':' 을 애용한다. 1 라인 블록.
 
     ```text
     안녕하세요. 간단해서 좋습니다.
     ```
--   example
+-   example : 앞에 탭 사이즈 공백이 들어 간다.
     ```text
       위에 요약문의 분량입니다. 대략 2.5 줄 정도 입니다. 한글로.
     ```
@@ -157,22 +149,22 @@ org 파일에서 제공하는 기능은 아니지만 블로그에서 보다 정�
 위해서 short-code 를 사용할 수 있다. 스니펫으로 만들어 놓으니 아주
 편리하다.
 
-이맥스의 기본 Quote 변환
+이맥스의 기본 Quote 변환. 나는 serif 폰트로 변경했다.
 
-> Quote
+> Quote 인용문
 
 hint 에서 레벨에 맞는 컬러 효과가 가능하다.
 
 {{< hint info >}}
-hint info
+hint info 인포
 {{< /hint >}}
 
 {{< hint warning >}}
-hint warning
+hint warning 경고
 {{< /hint >}}
 
 {{< hint danger >}}
-hint error
+hint error 에러
 {{< /hint >}}
 
 expand 도 가능하다. (details)
@@ -239,6 +231,25 @@ stateDiagram-v2
 {{< /mermaid >}}
 
 적절히 사용하면 된다. 다만 캡션이 왜 안들어가는지 확인이 필요하다.
+
+
+### Details and Summary {#details-and-summary}
+
+details
+
+{{< details >}}
+<summary>Why is this in <b>green</b>?</summary>
+
+You will learn that later below css section.
+{{< /details >}}
+
+summary 블록을 사용하면 다음과 같다. 헤딩을 무시
+
+<summary>Why is this in <b>green</b>?</summary>
+
+일반 리스트는 헤딩 아래에 들어간다. 다음과 같다.
+
+-   Why is this in **green**?
 
 
 ### <span class="org-todo todo TODO">TODO</span> katex and math typesetting {#katex-and-math-typesetting}

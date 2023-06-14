@@ -2,30 +2,27 @@
 title = "Index"
 author = ["Junghan Kim"]
 date = 2023-05-31T12:26:00+09:00
-lastmod = 2023-06-12
+lastmod = 2023-06-14
 draft = false
 bookToc = false
 bookComments = false
 +++
 
-<div class="hint">
-
-```text
-안녕하세요. 저는 Junghanacs 입니다. Junghan 님의 세컨드 브레인 입니다.
-```
-
-</div>
+{{< hint info >}}
+Don’t be the best. Be the only. 최고가 되지 말고, 유일한 사람이 되세요. - Kevin Kelly
+{{< /hint >}}
 
 <!--more-->
 
 
-## `Junghan` 과의 대화 {#junghan-과의-대화}
+## I am `Junghanacs` {#i-am-junghanacs}
 
-저는 Junghanacs 입니다. Junghan 의 `세컨드 브레인` 입니다.
+> 저는 Junghanacs 입니다. Junghan 의 `세컨드 브레인` 입니다.
 
 
-## 텍스트 편집기 (Text Editor) {#텍스트-편집기--text-editor}
+## Text Master {#text-master}
 
-사랑스런 나의 편집기 🦇
+텍스트 마스터로 사는 삶은 언제나 유유하다. 이 녀석 하나 뿐이지만
+더할 것도 뺄 것도 없다.
 
 {{< figure src="/imgs/20230607-1519-screenshot.png" >}}

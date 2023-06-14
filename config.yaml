@@ -22,7 +22,7 @@ enableEmoji: true
 # You can remove related files with config below
 # disableKinds: 'taxonomy', 'taxonomyTerm'
 
-# paginate: 5
+# paginate: 10
 
 # 논리적인 구분이다. 즉, notes 폴더에 다 들어있어도 된다. 다 때려박아도 된다.
 taxonomies:
@@ -32,17 +32,30 @@ taxonomies:
 
 # 0 Comments - powered by utteranc.es
 # Needed for mermaid/katex shortcodes
+# https://gohugo.io/getting-started/configuration-markup/#highlight
 markup:
   goldmark:
     renderer:
       unsafe: true
   tableOfContents:
+    endLevel: 4
     startLevel: 1
+  highlight:
+    noClasses: true
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ""
+    lineNoStart: 1
+    tabWidth: 2
+    lineNos: false
+    lineNumbersInTable: false
+    style: emacs
+    # style: tango
+    # style: modus-operandi
 
 # Multi-lingual mode config
 # There are different options to translate files
 # See https://gohugo.io/content-management/multilingual/#translation-by-filename
-# And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
 languages:
   ko:
     languageName: Korean
