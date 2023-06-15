@@ -2,7 +2,7 @@
 title = "[INDEX] Junghanacs Emacs README"
 author = ["Junghan Kim"]
 date = 2023-06-11T00:00:00+09:00
-lastmod = 2023-06-14
+lastmod = 2023-06-15
 keywords = ["configs"]
 draft = false
 +++
@@ -16,6 +16,7 @@ Emacs 구성의 목표와 전체적인 소개. 상세 내용은 링크에서 확
 
 ## Junghanacs: Emacs 목표 {#junghanacs-emacs-목표}
 
+{{< hint warning >}}
 -   최대한 쉽게! Spacemacs 사용 경험 그대로!
 -   VSpaceCode, SpaceVIM 과 함께 갈 수 있도록!
     Spacemacs 를 사용하는 이유이기도 하다. 하나의 사용자 경험으로 가져가면 좋다!
@@ -31,6 +32,7 @@ Emacs 구성의 목표와 전체적인 소개. 상세 내용은 링크에서 확
 -   CJK 를 사랑하는 패키지는 우선 선택! (한글 중심)
 -   여러 번 입력을 하더라도 과정에서 배움이 있도록 매크로 자제!
     훈련이 되야 한다. 키보드를 입력하는 자체가 배움이고 즐거움이다.
+{{< /hint >}}
 
 
 ## [Dot-Spacemacs]({{< relref "./spacemacs.md" >}}) {#d41d8c}

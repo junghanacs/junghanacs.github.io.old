@@ -48,10 +48,10 @@ h6 {
 }
 
 kbd {
-  // font-family: "Iosevka", "Noto Sans KR", sans-serif;
+  font-family: "Iosevka", "Noto Sans KR", sans-serif;
   color: #000000;
   background-color: #fff576;
-  border-radius: $border-radius;
+  // 약간 효과를 더 주고 싶은데!?
 }
 
 .markdown {

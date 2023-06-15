@@ -2,7 +2,7 @@
 title = "Giovanni Crisalfi :: Start Qutebrowser Now (2022)"
 author = ["Junghan Kim"]
 date = 2023-06-02T16:55:00+09:00
-lastmod = 2023-06-14
+lastmod = 2023-06-15
 keywords = ["references"]
 draft = false
 +++
@@ -17,11 +17,11 @@ draft = false
 
 ```text
 레퍼런스 노트는 1. 나의 생각 2. 원문 번역 으로 구성 됩니다. 번역은 기계 번역 후
-간단한 수정을 한 것 입니다. 번역은 제가 이해 가능한 수준 입니다.
+제가 이해할 만한 수준으로 수정한 것 입니다.
 ```
 
 
-## `나의 생각` : 키보드 기반 웹 브라우저를 향하여! {#나의-생각-키보드-기반-웹-브라우저를-향하여}
+## <span class="underline">나의 생각</span> : 키보드 기반 웹 브라우저를 향하여! {#키보드-기반-웹-브라우저를-향하여}
 
 레퍼런스 노트는 원문 번역과 나의 생각으로 구성 된다. 오늘 다룰 글은 연습 삼아
 짧은 글을 선택했다. 웹브라우저 관련 글인데 그의 설정 파일은 나에게 매우 도움이
@@ -67,7 +67,7 @@ EWW, EAF 등을 사용하지는 않는다. 참 웹 브라우저는 기존 사용
 {{< figure src="/imgs/20230610-0012-screenshot.png" >}}
 
 
-## `원문 번역` : Start Qutebrowser Now (2022) {#원문-번역-start-qutebrowser-now--2022}
+## <span class="underline">원문 번역</span> : Start Qutebrowser Now (2022) {#start-qutebrowser-now--2022}
 
 며칠 전 Qutebrowser 를 사용하기 시작했습니다. 실 사용을 의미합니다. 처음으로
 설치한 것은 아니었습니다. 이전에 여러 번 시도해 보았지만 Firefox 를 떠날 생각은
