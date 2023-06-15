@@ -3,6 +3,8 @@ User-agent: *
 
 Allow: /menu/
 
+Allow: /refs/LearningEmacs/
+
 Allow: /configs/emacs/jh-base/
 
 Allow: /configs/emacs/jh-checker/

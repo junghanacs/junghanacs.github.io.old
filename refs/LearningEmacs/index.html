@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko-kr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  이맥스는 단순한 텍스트 편집기 그 이상이다. 배움에 왕도는 따로 없다. 장기적으로
+보자면 도구가 지닌 가치는 시작하며 드는 노력을 능가한다.
+">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Daw-Ran Liou :: On Learning Emacs (2020)" />
+<meta property="og:description" content="
+  이맥스는 단순한 텍스트 편집기 그 이상이다. 배움에 왕도는 따로 없다. 장기적으로
+보자면 도구가 지닌 가치는 시작하며 드는 노력을 능가한다.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://junghanacs.com/refs/LearningEmacs/" /><meta property="article:section" content="refs" />
+<meta property="article:published_time" content="2023-06-15T00:00:00+09:00" />
+<meta property="article:modified_time" content="2023-06-15T13:20:02+09:00" />
+<title>Daw-Ran Liou :: On Learning Emacs (2020) | Junghanacs</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.1e8523627779bf40bdfacd7ec92368422607aae87b0da0570776f6509180ed7a.css" integrity="sha256-HoUjYnd5v0C9&#43;s1&#43;ySNoQiYHquh7DaBXB3b2UJGA7Xo=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/ko.search.min.a16495c94bd7702d47a90efecb6513880d07eeb7db656626bea4e2c2d7d3de87.js" integrity="sha256-oWSVyUvXcC1HqQ7&#43;y2UTiA0H7rfbZWYmvqTiwtfT3oc=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Junghanacs</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/posts/">Articles</a></li>
+<li>
+  <a href="/notes/">Notes</a></li>
+<li>
+  <a href="/refs/">References</a></li>
+<li>
+  <a href="/configs/">Configs</a>
+<ul>
+<li>
+  <a href="/configs/emacs/">emacs.d</a></li>
+</ul>
+</li>
+</ul>
+<!-- -   [Terms](/terms) -->
+<!-- -   [Contact](/contact) -->
+<!-- -   [RSS](/index.xml) -->
+<!-- -   [All my links](https://links.seds.nl/) -->
+<!-- -   [All tags](/tags) -->
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/junghanacs"  target="_blank" rel="noopener">
+        Github Link
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Daw-Ran Liou :: On Learning Emacs (2020)</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#on-learning-emacs"><span class="underline">원문 번역</span> : On Learning Emacs <a href="#citeproc_bib_item_1">[1]</a></a></li>
+        <li><a href="#동의-plus-조금-더-하자면-dot-dot-dot"><span class="underline">나의 생각</span> : 동의 + 조금 더 하자면&hellip;</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/refs/LearningEmacs/">Daw-Ran Liou :: On Learning Emacs (2020)</a>
+  </h1>
+  
+
+
+
+
+
+
+<div>
+ </div>
+
+<hr>
+
+  <p><blockquote class="book-hint info">
+  이맥스는 단순한 텍스트 편집기 그 이상이다. 배움에 왕도는 따로 없다. 장기적으로
+보자면 도구가 지닌 가치는 시작하며 드는 노력을 능가한다.
+</blockquote>
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>레퍼런스 노트는 1. 원문 번역, 2. 나의 생각 으로 구성 됩니다. 번역은 기계 번역 후
+</span></span><span style="display:flex;"><span>제가 이해할 만한 수준으로 수정한 것 입니다.
+</span></span></code></pre></div><h2 id="on-learning-emacs">
+  <span class="underline">원문 번역</span> : On Learning Emacs <a href="#citeproc_bib_item_1">[1]</a>
+  <a class="anchor" href="#on-learning-emacs">#</a>
+</h2>
+<p>Published: 2020-11-13</p>
+<figure><img src="/imgs/20230615-0609-screenshot.png"
+         alt="Figure 1: Classical learning curves for some common editors"/><figcaption>
+            <p><span class="figure-number">Figure 1: </span>Classical learning curves for some common editors</p>
+        </figcaption>
+</figure>
+
+<p>나는 사람들에게 Emacs 를 다음과 같이 사용하는 방법을 알려주는 트윗을 본 적이
+있습니다. 1 단계: Emacs 다운로드; 2 단계: 향후 10 년을 설정/구성하며 보내기.
+처음에는 이것이 꽤 어리석은 것처럼 보이지만 그 안에는 몇 가지 진실이 있습니다.
+나는 소프트웨어 개발에서 Emacs 를 매일 타는 자가용(driving horse)으로 사용하는
+데 익숙해지기까지 10 년을 보내지 않았습니다. 그러나 나는 10 년 후에도 여전히
+만족스럽게 내 Emacs 구성을 만지작거리고 있을 것이라고 아주 잘 상상할 수
+있었습니다.</p>
+<p>돌이켜보면 소프트웨어 개발에서 내가 가장 좋아하는 두 가지 도구인 Clojure 와
+Emacs 가 초보자를 위한 친근함에 별로 신경을 쓰지 않는 것 같다는 것이 재미있다는
+것을 알았습니다. 예, 커뮤니티는 매우 환영합니다. 그러나 도구 자체는 초보자에게
+상당히 까다롭습니다. Clojure 는 대부분의 이전 OOP 경험을 잊기 위해 엄청난 믿음의
+도약이 필요했지만 Emacs 는 처음부터 나만의 텍스트 편집기를 설계하고 ELisp
+프로그래밍 언어를 어느 정도 이해해야 했습니다. 어느 쪽도 새로 온 이들에게 &ldquo;일단
+시작해봐!&rdquo; 라고 하거나 &ldquo;주말에 배우게나!&rdquo; 고 약속하지 않습니다.</p>
+<p>내가 관찰한 바에 따르면 전체 소프트웨어 산업은 &ldquo;최신 그리고 가장 위대한&rdquo; 것에
+너무 많은 관심을 기울이고 있습니다. 놓치는 것에 대한 두려움인 FOMO 는 속도를
+바라는 문화에 기름을 부었습니다. 학습 용이성(easiness of learning)은 라이브러리
+및 언어와 같은 많은 소프트웨어 도구에 대한 광고 용어가 되었습니다. 그러나 <strong>도구의
+효과(the effectiveness of a tool)는 결국 그것을 배우는 어려움을 능가할 것입니다</strong>.
+내가 직장에서 매일 Emacs 를 사용하여 15 분을 절약했다면 작년에 이미 65 시간을
+절약했습니다. 그것은 1 년에 거의 3 일을 더 얻은 셈입니다. 처음에 일주일 내내
+Emacs 를 배우는 것 외에는 아무 일도 하지 않았더라도 3 년치의 성취와 더불어 남은
+인생에서 지속적인 성과를 만들어 낼 것 입니다. 여기서 수학은 그다지 중요하지
+않습니다. 솔직히 말해서 Emacs 를 사용하여 하루에 15 분만 절약했다고 ​​생각하지
+않습니다. 중요한 것은 이것 입니다. 새로운 도구를 배우는 ROI 는 장기전입니다.
+오래 사용할수록 초기 투자가 덜 중요합니다. 더 중요한 것은 도구 자체의 기능(the
+capability of the tool itself)입니다.</p>
+<p>그것은 다음 핵심 사항으로 이어집니다. <strong>Emacs 는 단순한 텍스트 편집기가 아닙니다.</strong>
+어떤 사람들은 Emacs 를 운영 체제로 생각합니다. 저는 Emacs 를 통합 개발 환경으로
+생각하고 싶습니다. 최신 소프트웨어 개발에는 일반적으로 텍스트 편집기, 컴파일러,
+인터프리터, repl, 테스트 러너, 버전 제어 시스템, 데이터베이스 클라이언트 또는
+브라우저와 같은 여러 도구가 포함됩니다. 모든 프로젝트는 다르며 모든 요구 사항을
+충족하는 단일 IDE 는 없습니다. 우리는 서로 다른 목적을 위해 서로 다른 도구에
+도달하고 불가피하게 컨텍스트 전환을 수행해야 합니다. 이러한 컨텍스트 전환은 개발
+흐름을 끊습니다. 키 바인딩 다른 도구를 사용하면서 계속 마우스로 손이 갈 수 밖에
+없는 상황은 저를 힘 빠지게 합니다. 저는 항상 동일한 범용 키 바인딩이 있는 하나의
+도구 안에 머무르는 것을 선호합니다.</p>
+<p>내가 Emacs 를 배우기 시작했을 때, 나는 Emacs 를 설정하는 가장 좋고 가장 일반적인
+방법을 찾으려고 노력했습니다. 나는 또한 기본 Emacs 키 바인딩이 아닌 Vim 키
+바인딩을 사용하는 것에 대해 잘못된 느낌을 받았습니다. Emacs 를 사용하는 진정한
+방법이란 것은 존재하지 않기 때문에 이와 같은 저의 예전 생각은 지금 나에게는
+어리석게 보입니다. 모두가 다른 배경과 다른 맥락에서 Emacs 를 다르게 사용하고
+있습니다. 나는 내가 아는 대부분의 사람들과 다른 키보드를 사용합니다. 키가 50
+개밖에 없는 
+  <a href="https://ergodox-ez.com/pages/planck">Planck</a> 키보드가 있습니다. 이미 수정자(Modifier) 키 없이는 입력할 수
+없는 많은 특수 문자가 있습니다. 여러 수정자 키와 특수 문자를 눌러야 하는 키
+코드를 칠 여유가 없었습니다. =C-M-$=와 같은 것은 한 손으로 누르기가 인간적으로는
+거의 불가능합니다. Emacs 가 제 요구에 맞을 만큼 충분히 유연하다는 것이 기쁩니다.</p>
+<p>요점을 요약하면 다음과 같습니다. 1. 도구의 효율성(the effectiveness of a tool)은
+장기적으로 학습의 어려움을 능가합니다. 2. Emacs 는 텍스트 편집기가 아닌 통합
+개발 환경입니다. 3. Emacs 를 사용하는 진정한 방법(true way)은 없습니다.</p>
+<h2 id="동의-plus-조금-더-하자면-dot-dot-dot">
+  <span class="underline">나의 생각</span> : 동의 + 조금 더 하자면&hellip;
+  <a class="anchor" href="#%eb%8f%99%ec%9d%98-plus-%ec%a1%b0%ea%b8%88-%eb%8d%94-%ed%95%98%ec%9e%90%eb%a9%b4-dot-dot-dot">#</a>
+</h2>
+<p>이 글을 읽은 것은 1 년 전일 것이다. 아무튼 Org-Roam 끄적여 놓은 기록이 오늘 새벽
+문득 찾아 왔다. 지금도 여전히 사용자 수준이고 앞으로도 크게 바뀔 것 같지
+않지만 정말 지나고 보니 동의하게 된다. 무엇을? 요약 3 가지 말이다.</p>
+<p>나는 조금 더 이야기를 더 하자면 통합 개발 환경이라는 단어는 이맥스를 틀 안에
+가두는 말이라고 생각한다. 개발자가 아니어도 글쓰는 사람들도 종종 사용을 한다
+(정리해서 포스팅 할 예정). 개발 환경 이외에도 Planner, Email, Web, SNS,
+RSS, File Manager, PDF, Project manager, Presentation, Sheet &hellip; 내가 이걸 왜
+적고 있지? 텍스트를 다루는 일 전부 다가 아닐까?</p>
+<p>이와 같이 모든 일을 하나의 방식으로 다 해낼 수 있는 텍스트 환경은 나에게 가장 큰
+선물을 주었다. 바로 Digital Minimalism, Indistractable 이다
+<a href="#citeproc_bib_item_2">[2]</a> <a href="#citeproc_bib_item_3">[3]</a>. 즉 딴 짓에 나의
+주의력을 빼앗기지 않으면서 온전하고 충만하게 하루를 보낼 수 있게 된 것이다.
+자연스럽게 SNS 에서 멀어지게 되었다. 억지로 힘들게 한 것도 아니고 자연스레
+그렇게 된 것이다. 왜 일까? 주의를 전환 할 필요 없이 모든 워크플로우가 하나로
+연결되었기 때문인 것 같다. 그리고 키보드를 신나게 두드리다 보면 약간 게임의
+연속기 기술을 쓰는 것 같은 재미를 준다. 외워서 하는 게 아니라 그냥 몸이 알게 되는
+배움이다. 뇌는 이런 재미를 좋아한다. 아이들 게임하는 것과 같다.</p>
+<p>하나 더 말하자면 평생 함께 가는 친구라는 점이다. 이맥스가 40 년 되었나? LISP
+머신은 마치 유기체와 같다. 고정 된 것도 없으며 특정 기술에 종속 되지도 않는다.
+100 세 생일에도 나는 이맥스를 사용하고 있을 것이라는 말이다. 100 세가 무슨 일을
+하려고?라고 생각한다면 텍스트 에디터를 업무용으로 오해하는 것이다. 살아 있는
+동안에는 텍스트를 다루는 무언가를 할 것이란 말이다 (물론 신체가 허락한다면).
+나이가 들어도 나는 이 오래된 친구만 있다면 자신 있고 살아 숨쉬는 방식으로 해나갈
+것이다. 다른 관점에서 내 아이에게 내가 줄 수 있는 선물이 있다면 무엇일까? 텍스트
+에디터를 알려 주는 것이다 (지식 도구로써).</p>
+<p>참 놀라운 도구로써 할 이야기는 끝이 없다. 요즘 많이 이야기 하는 제텔카스텐
+스타일의 지식 관리 측면은 이야기를 시작도 못했다. LLM (Large Language Model)
+관점의 이야기도 마찬가지다. 원문 글의 주소는 다음과 같다. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<figure><img src="/imgs/20230615-1312-screenshot.png"
+         alt="Figure 2: modus-operadi-tinted 테마와 logos-focus-mode 아름다운 조합"/><figcaption>
+            <p><span class="figure-number">Figure 2: </span>modus-operadi-tinted 테마와 logos-focus-mode 아름다운 조합</p>
+        </figcaption>
+</figure>
+
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<style>.csl-left-margin{float: left; padding-right: 0em;}
+ .csl-right-inline{margin: 0 0 0 1em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>
+    <div class="csl-left-margin">[1]</div><div class="csl-right-inline">Daw-Ran Liou, “On Learning Emacs,” 2020. <a href="https://dawranliou.com">https://dawranliou.com</a> (accessed Jun. 14, 2023).</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>
+    <div class="csl-left-margin">[2]</div><div class="csl-right-inline">C. Newport, <i>Digital Minimalism</i>. New York: Portfolio/Penguin, 2019. Available: <a href="https://www.amazon.com/Digital-Minimalism-Choosing-Focused-Noisy/dp/0525536515">https://www.amazon.com/Digital-Minimalism-Choosing-Focused-Noisy/dp/0525536515</a></div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>
+    <div class="csl-left-margin">[3]</div><div class="csl-right-inline">N. Eyal, <i>Indistractable</i>. Dallas, TX: BenBella Books, Inc, 2019.</div>
+  </div>
+</div>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>
+  <a href="https://dawranliou.com/blog/on-learning-emacs/">On Learning Emacs</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div></p>
+  
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+<hr>
+
+  <div class="bl-section">
+    <h3>» No notes link to this note</h3>
+  </div>
+
+
+</article>
+ 
+      <center>
+  
+  
+  
+  <h3>Go to <a href="/refs/giovannicrisalfiStartQutebrowserNow2022/">random</a> page</h3>
+  
+  
+</center>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/5a3b23a8f97485032827ac78fe94c13c7a6ef14e" title='Last modified by junghan0611 | 2023-06-15' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2023-06-15</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <footer class="footer">
+  <br>
+  <br>
+  <span>&copy; 2023 <a href="https://junghanacs.com/">Junghanacs</a></span>
+  <span>
+    published with
+    <a href="https://www.gnu.org/software/emacs" rel="noopener noreferrer">Emacs</a> +
+    <a href="https://orgmode.org" rel="noopener noreferrer">Org-Mode</a> +
+    <a href="https://ox-hugo.scripter.co" rel="noopener noreferrer">Ox-Hugo</a> 
+  </span>
+</footer>
+
+      </footer>
+
+      
+  
+  <div class="book-comments"><script src="https://utteranc.es/client.js"
+        repo="junghanacs/junghanacs.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#on-learning-emacs"><span class="underline">원문 번역</span> : On Learning Emacs <a href="#citeproc_bib_item_1">[1]</a></a></li>
+        <li><a href="#동의-plus-조금-더-하자면-dot-dot-dot"><span class="underline">나의 생각</span> : 동의 + 조금 더 하자면&hellip;</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5/dist/gumshoe.polyfills.min.js"></script>
+<script>new Gumshoe('.book-toc a', { nested: true });</script>
+<style>
+ .book-toc li.active > a {
+   font-weight: bold;
+ }
+</style>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
