@@ -2,10 +2,15 @@
 title = "Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들"
 author = ["Junghan Kim"]
 date = 2023-06-05
-lastmod = 2023-06-14
+lastmod = 2023-06-16
 keywords = ["notes", "ox-hugo", "org-roam", "template", "export"]
 draft = false
 +++
+
+## <span class="org-todo todo TODO">TODO</span> <code>[0/1]</code> Check Lists {#check-lists}
+
+-   [ ] mermaid caption 이 안 들어 간다.
+
 
 ## Markup {#markup}
 
@@ -111,6 +116,13 @@ Below, the "References" heading will be auto-inserted.
     위에 요약문의 분량입니다. 대략 2.5 줄 정도 입니다. 한글로.
 
     </div>
+-   verse
+
+    <div class="verse">
+
+    위에 요약문의 분량입니다. 대략 2.5 줄 정도 입니다. 한글로.<br />
+
+    </div>
 
 
 ## 일부 내용 숨기기 (noexport) {#일부-내용-숨기기--noexport}
@@ -199,7 +211,7 @@ stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
 {{< /details >}}
 
 
-### mermaid diagram {#mermaid-diagram}
+### <span class="underline">mermaid</span> diagram {#diagram}
 
 
 
@@ -238,11 +250,30 @@ npm install -g @mermaid-js/mermaid-cli
 
 Ob-Mermaid 이용한 결과다. png 파일의 한계.
 
+<kbd>:exports</kbd> 옵션은 code, results,  both, none&nbsp;[^fn:6]
+
+```mermaid { width="80%" align="center" }
+stateDiagram-v2
+    State1: The state with a note
+    note right of State1
+        Important information! You can write
+        notes.
+    end note
+    State1 --> State2
+    note left of State2 : This is the note to the left.
+```
+<div class="src-block-caption">
+  <span class="src-block-number">Code Snippet 1:</span>
+  My class diagram (code and png)
+</div>
+
 {{< figure src="/imgs/org-babel-mermaid.png" >}}
 
 Short-code 를 이용한 결과. 벡터 포멧의 장점
+적절히 사용하면 된다. 다만 캡션이 왜 안들어가는지 확인이 필요하다.
+위의 방식과 다르게 해야 한다.
 
-{{< mermaid "Caption" >}}
+{{< mermaid >}}
 stateDiagram-v2
     State1: The state with a note
     note right of State1
@@ -253,7 +284,11 @@ stateDiagram-v2
     note left of State2 : This is the note to the left.
 {{< /mermaid >}}
 
-적절히 사용하면 된다. 다만 캡션이 왜 안들어가는지 확인이 필요하다.
+
+### <span class="org-todo todo TODO">TODO</span> <span class="underline">d2</span> diagram {#diagram}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2023-06-16 Fri 12:52]</span></span>
+동작은 되는데 설정하는 방법을 좀 봐야겠다. 억지로 꼳 가져갈 필요 없다.
 
 
 ### Details and Summary {#details-and-summary}
@@ -319,3 +354,4 @@ Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 
 [^fn:3]: [How I Take Notes with Org-roam](https://jethrokuan.github.io/org-roam-guide/)
 [^fn:4]: <https://hugo-book-demo.netlify.app/docs/shortcodes/katex/>
 [^fn:5]: <https://github.com/arnm/ob-mermaid>
+[^fn:6]: <https://orgmode.org/manual/Exporting-Code-Blocks.html>

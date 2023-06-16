@@ -12,13 +12,12 @@ weight = 10
 -   [Articles](/posts)
 -   [Notes](/notes)
 -   [References](/refs)
+-   [Terms](/terms)
 -   [Configs](/configs)
     -   [emacs.d](/configs/emacs)
+<!-- -   [All tags](/tags) -->
 
-<!-- -   [Terms](/terms) -->
 
 <!-- -   [Contact](/contact) -->
 <!-- -   [RSS](/index.xml) -->
 <!-- -   [All my links](https://links.seds.nl/) -->
-
-<!-- -   [All tags](/tags) -->
