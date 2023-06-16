@@ -3,6 +3,8 @@ User-agent: *
 
 Allow: /menu/
 
+Allow: /notes/emacselementsEnhancedImageFeatures2023/
+
 Allow: /posts/building_my_first_emacs_configs_for_writing_and_publishing/
 
 Allow: /refs/LearningEmacs/

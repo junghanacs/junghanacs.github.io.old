@@ -8,6 +8,20 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About Emacs Elements (Draft)</title>
+      <link>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</link>
+      <pubDate>Sat, 17 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Emacs Elements is a channel that focuses on getting Vanilla Emacs to work
+powerfully for you. How can I get things done in Emacs? Emacs is the world&amp;rsquo;s
+most powerful text editor, and can be overwhelming for beginners. I show you how
+you can be up and running in a moment without too much difficulty.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
       <title>Building my first Emacs for Writing and Publishing (TODO)</title>
       <link>https://junghanacs.com/posts/building_my_first_emacs_configs_for_writing_and_publishing/</link>
       <pubDate>Fri, 16 Jun 2023 00:00:00 +0900</pubDate>
