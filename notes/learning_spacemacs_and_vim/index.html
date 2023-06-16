@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Articles Notes References Terms Configs emacs.d ">
+<meta name="description" content="
+  좋은 문서를 만났다. 잘 되었다. 스타일로 바꿔야 하는 것은 배움이 있다는 말이다.
+">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Menu" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://junghanacs.com/menu/" />
-<title>Menu | Junghanacs</title>
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Learning Vim and Evil on Spacemacs" />
+<meta property="og:description" content="
+  좋은 문서를 만났다. 잘 되었다. 스타일로 바꿔야 하는 것은 배움이 있다는 말이다.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://junghanacs.com/notes/learning_spacemacs_and_vim/" /><meta property="article:section" content="notes" />
+<meta property="article:published_time" content="2023-06-15T00:00:00+09:00" />
+<meta property="article:modified_time" content="2023-06-16T18:30:17+09:00" />
+<title>Learning Vim and Evil on Spacemacs | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1e8523627779bf40bdfacd7ec92368422607aae87b0da0570776f6509180ed7a.css" integrity="sha256-HoUjYnd5v0C9&#43;s1&#43;ySNoQiYHquh7DaBXB3b2UJGA7Xo=" crossorigin="anonymous">
@@ -17,7 +23,6 @@
   <script defer src="/ko.search.min.150c844dd9dc3c4b4ac5b9a6392a50fffa18f90f6fc051f79ddc3b4bb75b1084.js" integrity="sha256-FQyETdncPEtKxbmmOSpQ//oY&#43;Q9vwFH3ndw7S7dbEIQ=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://junghanacs.com/menu/index.xml" title="Junghanacs" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -118,7 +123,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Menu</strong>
+  <strong>Learning Vim and Evil on Spacemacs</strong>
 
   <label for="toc-control">
     
@@ -132,7 +137,15 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#goal">Goal</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -143,30 +156,133 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><ul>
-<li>
-  <a href="/posts/">Articles</a></li>
-<li>
-  <a href="/notes/">Notes</a></li>
-<li>
-  <a href="/refs/">References</a></li>
-<li>
-  <a href="/terms/">Terms</a></li>
-<li>
-  <a href="/configs/">Configs</a>
-<ul>
-<li>
-  <a href="/configs/emacs/">emacs.d</a></li>
-</ul>
-</li>
-</ul>
-<!-- -   [All tags](/tags) -->
-<!-- -   [Contact](/contact) -->
-<!-- -   [RSS](/index.xml) -->
-<!-- -   [All my links](https://links.seds.nl/) -->
+<article class="markdown">
+  <h1>
+    <a href="/notes/learning_spacemacs_and_vim/">Learning Vim and Evil on Spacemacs</a>
+  </h1>
+  
+
+
+
+
+
+
+<div>
+ </div>
+
+<hr>
+
+  <p><blockquote class="book-hint info">
+  좋은 문서를 만났다. 잘 되었다. 스타일로 바꿔야 하는 것은 배움이 있다는 말이다.
+</blockquote>
+
+<p>
+  <a href="/terms/evil-mode/">Evil-mode</a> 를 기반으로 조작 하는 방법을 알아야 한다.
+You know what improves productivity? <strong>Mastering motions and operators.</strong></p>
+<h2 id="goal">
+  Goal
+  <a class="anchor" href="#goal">#</a>
+</h2>
+<p>텍스트 마스터로서 자유를 얻으려면 일단 편집 모드를 이해해야 한다. 이맥스에서
+제공하는 편집 모드를 섞어 쓰는 것도 좋지만 EVIL 은 경험을 해야 한다.</p></p>
+  
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+<hr>
+
+  <div class="bl-section">
+    <h3>» No notes link to this note</h3>
+  </div>
+
+
 </article>
  
       <center>
+  
+  
+  
+  <h3>Go to <a href="/notes/talk_with_junghanacs/">random</a> page</h3>
   
   
 </center>
@@ -230,7 +346,15 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#goal">Goal</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  

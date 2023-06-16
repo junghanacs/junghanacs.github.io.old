@@ -3,7 +3,11 @@ User-agent: *
 
 Allow: /menu/
 
+Allow: /posts/building_my_first_emacs_configs_for_writing_and_publishing/
+
 Allow: /refs/LearningEmacs/
+
+Allow: /notes/learning_spacemacs_and_vim/
 
 Allow: /configs/emacs/jh-base/
 
@@ -58,6 +62,8 @@ Allow: /refs/giovannicrisalfiStartQutebrowserNow2022/
 Allow: /
 
 Allow: /configs/emacs/spacemacs/
+
+Allow: /terms/evil-mode/
 
 Allow: /contact/
 

@@ -8,6 +8,18 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Building my first Emacs for Writing and Publishing (TODO)</title>
+      <link>https://junghanacs.com/posts/building_my_first_emacs_configs_for_writing_and_publishing/</link>
+      <pubDate>Fri, 16 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/posts/building_my_first_emacs_configs_for_writing_and_publishing/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  이맥스 미니멀리즘. 한 자리에서 이맥스 설치부터 블로깅까지 한 번에. 설정도 다
+걷어 내고 직접 다룰 수 있는 수준의 것만 본인이 직접 다 해보도록. 따라해보기!
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
       <title>Daw-Ran Liou :: On Learning Emacs (2020)</title>
       <link>https://junghanacs.com/refs/LearningEmacs/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
@@ -16,6 +28,17 @@
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   이맥스는 단순한 텍스트 편집기 그 이상이다. 배움에 왕도는 따로 없다. 장기적으로
 보자면 도구가 지닌 가치는 시작하며 드는 노력을 능가한다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Learning Vim and Evil on Spacemacs</title>
+      <link>https://junghanacs.com/notes/learning_spacemacs_and_vim/</link>
+      <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/learning_spacemacs_and_vim/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  좋은 문서를 만났다. 잘 되었다. 스타일로 바꿔야 하는 것은 배움이 있다는 말이다.
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -240,7 +263,7 @@
     </item>
     
     <item>
-      <title>블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움 (Draft)</title>
+      <title>블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움 (TODO)</title>
       <link>https://junghanacs.com/posts/open_my_lovely_blog/</link>
       <pubDate>Wed, 07 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -258,7 +281,7 @@
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0900</pubDate>
       
       <guid>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</guid>
-      <description>Markup # org-mode 마크업은 다음의 주소에서 확인 바람. 1 ox-hugo 관련 내용은 다음 주소에서 확인.2 결과를 비교하면 org-code 와 verbatim 이 다르다. 맞춰줘야 한다. verbatim 은 맞추기가 까다롭다. kbd</description>
+      <description>TODO [0/1] Check Lists # mermaid caption 이 안 들어 간다. Markup # org-mode 마크업은 다음의 주소에서 확인 바람. 1 ox-hugo 관련 내용은 다음 주소에서 확인.2 결과를 비교하면 org-code 와 verbatim 이 다르다. 맞춰줘야 한</description>
     </item>
     
     <item>
@@ -282,6 +305,17 @@
       <guid>https://junghanacs.com/configs/emacs/spacemacs/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Spacemacs 닷 파일
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Evil-mode</title>
+      <link>https://junghanacs.com/terms/evil-mode/</link>
+      <pubDate>Sat, 15 Oct 2022 05:40:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/terms/evil-mode/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  evil-mode 편집 방법
 &lt;/blockquote&gt;</description>
     </item>
     
