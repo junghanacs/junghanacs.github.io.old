@@ -12,6 +12,7 @@ theme: book
 
 disqusShortname: junghanacs
 # googleAnalytics: UA-138318350-1
+googleAnalytics: G-GYRB327HE6
 
 # Book configuration
 disablePathToLower: true
