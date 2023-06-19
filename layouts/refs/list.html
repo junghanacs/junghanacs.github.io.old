@@ -19,12 +19,16 @@
       </a>
     </h3>
 
-    {{- .Date.Format "2006-01-02" -}}
-
-    <i
-      style="color: rgba(0, 0, 0, 0.60);">
-      <span> ({{ .Lastmod.Format "2006-01-02" -}}) </span>
-    </i>
+    <div class="date">
+      {{ $dateFormat := $.Site.Params.dateFormat | default "2006-01-02" }}
+      {{ $publishDate := .PublishDate }}
+      {{ $Date := .Date }}
+      Created {{ $Date.Format $dateFormat }}
+      {{ with .Lastmod }}
+      {{ if gt . $publishDate }}
+      (Lastmod {{ .Format $dateFormat }})
+      {{ end }}
+      {{ end }}
 
     <p>
       {{- .Summary -}}
