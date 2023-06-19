@@ -1,0 +1,41 @@
+/* Overrides on top of the theme and Chroma CSS */
+/* Chroma-based lines highlighting in code blocks */
+
+/* GenericHeading, GenericSubheading */
+.chroma .gh, .code-inline .gh,
+.chroma .gu, .code-inline .gu {
+    font-weight: bold;
+}
+
+/* Do not highlight error in pink background */
+/* Error */
+.chroma .err, .code-inline .err {
+    background-color: inherit;
+}
+
+/* LineTable */
+.chroma .lntable, .code-inline .lntable {
+    width: auto;
+    overflow-x: auto; /* Make the code block horizontally scrollable on narrow viewports. */
+    display: block;
+}
+
+/* LineNumbersTable, LineNumbers, Line, LineHighlight */
+/* Prevent the highlight from creating a strange artifact on line numbers. */
+.chroma .lnt, .code-inline .lnt,
+.chroma .ln, .code-inline .ln,
+.chroma .line, .code-inline .line,
+.chroma .hl, .code-inline .hl {
+    display: flex;
+}
+
+/* Set the line highlight color to match the site's theme. */
+/* LineHighlight */
+.chroma .hl, .code-inline .hl {
+    background-color: var(--theme-hl2-transp-color); /* This var is set in the head.html partial. */
+}
+
+/* Do not set the background color of inline src code*/
+.chroma.inline-src, .code-inline {
+    background-color: inherit;
+}

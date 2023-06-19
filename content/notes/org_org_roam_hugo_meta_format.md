@@ -2,14 +2,56 @@
 title = "Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들"
 author = ["Junghan Kim"]
 date = 2023-06-05
-lastmod = 2023-06-16
+lastmod = 2023-06-19
 keywords = ["notes", "ox-hugo", "org-roam", "template", "export"]
 draft = false
 +++
 
 ## <span class="org-todo todo TODO">TODO</span> <code>[0/1]</code> Check Lists {#check-lists}
 
--   [ ] mermaid caption 이 안 들어 간다.
+[ ] Sidenote and book_menu are collapsed
+: after-menu.html
+
+[ ] mermaid caption 이 안 들어 간다.
+
+
+## Heading {#heading}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2023-06-19 Mon 17:51]</span></span>
+h2 은 레드 계열
+heading 은 숫자보다는 정통 별표로 가는게 예쁘다.
+
+{{< figure src="/imgs/20230619-1758-screenshot.png" caption="<span class=\"figure-number\">Figure 1: </span>modus-themes-list-colors-current for heading asterisks" width="80%" >}}
+
+
+### Heading 2 {#heading-2}
+
+헤딩 h3 yello 계열
+
+
+#### Heading 3 {#heading-3}
+
+h4 blue
+<span class="timestamp-wrapper"><span class="timestamp">[2023-06-19 Mon 17:51]</span></span>
+
+
+## Sidenote 추가 정보 {#sidenote-추가-정보}
+
+
+
+abc
+{{< sidenote >}}
+사이드 노트에 대한 나의 사랑은 엄청 납니다.
+{{< /sidenote >}} 사이드 노트 예제 입니다.
+
+사이드노트
+{{< sidenote >}}
+아직 메뉴와 겹쳐지는 문제를 해결해야 합니다. 다만 사용하는데 지장 없습니다.
+{{< /sidenote >}} 는 좋습니다.
+
+숏코드는 tempel 에 hugoside 로 만들어 두었습니다.
+
+{{< figure src="/imgs/20230619-1800-screenshot.png" caption="<span class=\"figure-number\">Figure 2: </span>사이드노트 예" width="80%" >}}
 
 
 ## Markup {#markup}

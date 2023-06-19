@@ -1,4 +1,75 @@
-@import "plugins/_numbered";
+/*
+ * junghanacs.com
+ */
+
+.sidenote {
+  font-family: sans-serif;
+  // color: var(--theme-hl1-color);
+  font-size: 90%; /* slightly smaller font for sidenote content */
+  position: relative; /* forces note to be relative its the normal position */
+}
+
+/* Wide viewport */
+@media (min-width: 900px) {
+  .sidenote {
+    float: left;
+    clear: left; /* prevent overlapping of sidenotes */
+    text-align: right;
+
+    /* https://kennethfriedman.org/thoughts/2019/marginal-notes/ */
+    // start the sidenote display a bit higher than its reference in body
+    top: -3rem;
+    width: 20vw; /* limits the width of the marginal note */
+    margin-left: -23vw; /* sets the distance of sidenote's left margin from the HTML element on right */
+    margin-top: 1rem; /* keep some space between adjacent sidenotes if they get too close */
+  }
+}
+/* Narrow viewport */
+@media (max-width: 900px) {
+  .sidenote {
+    float: left;
+    text-align: left;
+
+    width: 100%;
+    margin: 1rem 0;
+    padding-left: 15%;
+  }
+}
+/* Sidenote counter */
+body {
+  counter-reset: sidenote-counter;
+}
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+/* Counter before the sidenote in the margin. */
+.sidenote::before {
+  content: counter(sidenote-counter) ".";
+  position: relative;
+  vertical-align: baseline;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+/* Counter in the main body. */
+.sidenote-number::after {
+  content: counter(sidenote-counter);
+  vertical-align: super;
+  font-family: sans-serif;
+  font-size: 0.7em;
+  font-weight: bold;
+  // color: var(--theme-body-color);
+  display: inline;
+  margin-right: 0.2rem;
+}
+@media (min-width: 900px) {
+  /* Highlight the sidenote when mouse hovers on the sidenote number in body. */
+  .sidenote-number:hover .sidenote {
+    background-color: #efe9df;
+    // background-color: var(--theme-color-light);
+  }
+}
+
+// General Configuration
 
 .org-todo,
 .todo,
@@ -54,6 +125,8 @@ kbd {
   // 약간 효과를 더 주고 싶은데!?
 }
 
+// MY CUSTOM
+
 .markdown {
   h1,
   h2,
@@ -63,6 +136,41 @@ kbd {
   h6 {
     font-family: "Pretendard", sans-serif;
     font-weight: bold;
+  }
+
+  /* *** Org-style Headline Level Prefix / Asterisks */
+  h2::before {
+    content: "*";
+    font-size: 1.6em;
+    vertical-align: -20%; /* more negative -> goes lower */
+    margin-right: 0.25em;
+    color: #a60000;
+  }
+
+  h3::before {
+    content: "**";
+    font-size: 1.4em;
+    vertical-align: -20%; /* more negative -> goes lower */
+    margin-right: 0.25em;
+    color: #6f5500;
+  }
+
+  h4::before {
+    content: "***";
+    font-size: 1.2em;
+    vertical-align: -20%; /* more negative -> goes lower */
+    margin-right: 0.25em;
+    color: #0031a9;
+  }
+
+  h5::before {
+    margin-right: 0.25em;
+    content: "****";
+  }
+
+  h6::before {
+    margin-right: 0.25em;
+    content: "*****";
   }
 
   blockquote {
