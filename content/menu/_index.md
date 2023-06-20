@@ -13,8 +13,8 @@ weight = 10
 -   [Notes](/notes)
 -   [References](/refs)
 -   [Terms](/terms)
--   [Configs](/configs)
-    -   [emacs.d](/configs/emacs)
+-   [Dotfiles](/configs)
+    -   [dot-emacs](/configs/emacs)
 <!-- -   [All tags](/tags) -->
 
 

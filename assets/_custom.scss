@@ -64,8 +64,7 @@ body {
 @media (min-width: 900px) {
   /* Highlight the sidenote when mouse hovers on the sidenote number in body. */
   .sidenote-number:hover .sidenote {
-    background-color: #efe9df;
-    // background-color: var(--theme-color-light);
+    background-color: var(--gray-100);
   }
 }
 
@@ -83,20 +82,20 @@ body {
 }
 
 .TODO {
-  background-color: red;
+  background-color: var(--theme-color-todo);
 }
 
 .OFF {
-  background-color: gray;
+  background-color: var(--theme-color-off);
 }
 
 .DONE {
-  background-color: green;
+  background-color: var(--theme-color-done);
 }
 
 .w3-tag {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: #fff;
+  background-color: var(--theme-color-w3);
+  color: var(--body-font-color);
   display: inline-block;
   padding-left: 8px;
   padding-right: 8px;
@@ -121,7 +120,7 @@ h6 {
 kbd {
   font-family: "Iosevka", "Noto Sans KR", sans-serif;
   color: #000000;
-  background-color: #fff576;
+  background-color: var(--theme-color-kbd);
   // 약간 효과를 더 주고 싶은데!?
 }
 
@@ -144,7 +143,7 @@ kbd {
     font-size: 1.6em;
     vertical-align: -20%; /* more negative -> goes lower */
     margin-right: 0.25em;
-    color: #a60000;
+    color: var(--theme-color-h2);
   }
 
   h3::before {
@@ -152,7 +151,7 @@ kbd {
     font-size: 1.4em;
     vertical-align: -20%; /* more negative -> goes lower */
     margin-right: 0.25em;
-    color: #6f5500;
+    color: var(--theme-color-h3);
   }
 
   h4::before {
@@ -160,7 +159,7 @@ kbd {
     font-size: 1.2em;
     vertical-align: -20%; /* more negative -> goes lower */
     margin-right: 0.25em;
-    color: #0031a9;
+    color: var(--theme-color-h4);
   }
 
   h5::before {

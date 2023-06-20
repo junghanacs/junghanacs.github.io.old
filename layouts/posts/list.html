@@ -11,14 +11,14 @@
 <section>
   {{ range sort (.Paginator 10).Pages.ByLastmod.Reverse }}
   <div>
-    <h2>
+    <h3>
       <a
         data-toggle={{ partialCached "docs/post-meta" . }}
         href="{{ .RelPermalink }}">
         <span>» </span>
         {{- .Title -}}
       </a>
-    </h2>
+    </h3>
 
     <div class="date">
       {{ $dateFormat := $.Site.Params.dateFormat | default "2006-01-02" }}

@@ -2,7 +2,7 @@
 title = "jh-base layer"
 author = ["Junghan Kim"]
 date = 2023-06-12T00:00:00+09:00
-lastmod = 2023-06-14T16:34:00+09:00
+lastmod = 2023-06-20T09:37:00+09:00
 keywords = ["configs"]
 draft = false
 +++
@@ -383,7 +383,32 @@ minibuffer 와 통합한다는 것은 무슨 이점이 있을까?
 ### `dabbrev` dynamic word completion {#dabbrev-dynamic-word-completion}
 
 <span class="timestamp-wrapper"><span class="timestamp">[2023-02-13 Mon 02:50]</span></span>
-Use Dabbrev with Corfu!
+이것은 버퍼 내부의 동적/임의 텍스트 완성에 대한 Emacs 의 고유한 접근 방식입니다:
+"동적 약어" 또는 `dabbrev`. 이 메커니즘은 적절한 일치 항목을 찾기 위해 지점
+이전의 모든 텍스트를 읽는 방식으로 작동합니다. 다른 시나리오에 따라 포워드 및
+다른 버퍼를 살펴봐야 하는지 여부가 결정됩니다. 본질적으로 Dabbrev 는 이미 가지고
+있는 것을 다시 입력하는 데 도움이 됩니다.
+
+`dabbrev-expand=를 사용하여 해당 지점에서 텍스트를 완성하려고 시도합니다. 반복
+호출은 후보를 순환합니다. 피드백은 제공되지 않으며, kill-ring에서 끌어오기가
+작동하는 것과 거의 동일합니다(Emacs28의 경우 =yank-pop` on `M-y=는 이전 명령이
+=yank` on =C-y=가 아닌 경우 완성을 사용함). 마지막 성공적인 =dabbrev-expand=와
+일치하는 구를 완성하려면 빈 공간을 제공하고 명령을 다시 호출해야 합니다. 이것은
+N 단어에 대해 다음 단어와 일치합니다.
+
+반면 =dabbrev-completion=은 미니버퍼 상호 작용 및 패턴 일치 스타일의 이점을
+얻습니다(완성 프레임워크 및 추가). Corfu 의 도움으로 완료 후보가 지점 근처의 팝업
+창에 표시됩니다(버퍼 내 완료를 위한 Corfu).
+
+=dabbrev-abbrev-char-regexp=는 일반 단어와 기호(예: 하이픈으로 구분된 단어)
+모두와 일치하도록 구성됩니다. 이것은 코드와 일반 언어에 똑같이 적합합니다.
+
+`dabbrev-abbrev-skip-leading-regexp=는 =$`, `*`, `/`, `=`, `~`, `' 중 하나로
+시작하는 단어와 기호도 확장하도록 지시됩니다. =. 이 정규식은 나중에 확장될 수
+있지만 알려진 단어/기호 앞에 특수 문자가 있는 컨텍스트에서 완성을 수행할 수
+있도록 하는 것이 아이디어입니다. 예를 들어, 이 문서의 =org-mode` 버전에서 모든
+인라인 코드는 등호 사이에 배치되어야 합니다. 이제 ===를 입력한 다음 문자를
+입력하면 해당 입력을 기반으로 텍스트를 확장할 수 있습니다.
 
 ```elisp
 ;;;;; Dabbrev (dynamic word completion)
@@ -391,26 +416,16 @@ Use Dabbrev with Corfu!
 (defun jh-base/init-dabbrev ()
   (use-package dabbrev
     :demand
-    ;; :after corfu
-    ;; Swap M-/ and C-M-/
-    :bind (("M-/" . dabbrev-completion)
-           ("C-M-/" . dabbrev-expand))
-    ;; Other useful Dabbrev configurations.
     :init
-    (setq dabbrev-ignored-buffer-regexps '("\\.\\(?:pdf\\|jpe?g\\|png\\)\\'"))
-
-     ;;;; from prot -- check below
-    ;; (setq dabbrev-abbrev-char-regexp "\\sw\\|\\s_") ; default nil
-    ;; (setq dabbrev-abbrev-skip-leading-regexp "[$*/=~']") ; default nil
-    ;; (setq dabbrev-backward-only nil) ; default nil
-    ;; (setq dabbrev-case-distinction 'case-replace) ; default nil
-    ;; (setq dabbrev-case-fold-search nil) ; case-fold-search
-    ;; (setq dabbrev-case-replace 'case-replace) ; case-replace
-    ;; (setq dabbrev-upcase-means-case-search t) ; default nil
-    ;; (setq dabbrev-check-other-buffers t) ; default t
-    ;; (setq dabbrev-eliminate-newlines t) ; default t
-
-    ))
+    ;; (setq dabbrev-abbrev-char-regexp "[A-Za-z-_]"
+    (setq dabbrev-abbrev-char-regexp "\\sw\\|\\s_"
+          dabbrev-ignored-buffer-regexps '("\\.\\(?:pdf\\|jpe?g\\|png\\)\\'"))
+    (setq dabbrev-abbrev-skip-leading-regexp "[$*/=~']")
+    :config
+    (let ((map global-map))
+      (define-key map (kbd "M-/") #'dabbrev-expand)
+      (define-key map (kbd "C-M-/") #'dabbrev-completion)))
+  )
 ```
 
 

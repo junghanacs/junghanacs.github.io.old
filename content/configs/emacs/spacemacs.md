@@ -2,18 +2,19 @@
 title = "DotSpacemacs"
 author = ["Junghan Kim"]
 date = 2023-05-17
-lastmod = 2023-06-14T21:48:00+09:00
+lastmod = 2023-06-20T09:38:00+09:00
 keywords = ["configs"]
 draft = false
 +++
 
 {{< hint info >}}
-Spacemacs 닷 파일
+Spacemacs 닷 파일. 정리가 필요하다. 정리는 주석 삭제부터. noexport 를 적절히 사용
 {{< /hint >}}
 
 <!--more-->
 
 > Currently tailored for GNU Emacs 29+
+> 29.1 릴리즈가 되니까 거기에 집중한다.
 
 
 ## Prerequisites {#prerequisites}
@@ -1315,10 +1316,14 @@ minemacs 설정을 가져온다. Emacs 28 이후에 추가된 기능이 반영�
  ;; ====== Aesthetics and UI ======
  ;; Set to non-nil to flash!
  ;; visible-bell nil
+
+ ;; TODO 2023-06-19 왜 갑자기 클라이언트 프레임 사이즈가 이상하지?!
  ;; Do force frame size to be a multiple of char size
- frame-resize-pixelwise t
- ;; Emacsclient does not use full frame size (NIL 필수!)
- frame-inhibit-implied-resize nil
+ ;; frame-resize-pixelwise t
+
+ ;; ;; Emacsclient does not use full frame size (NIL 필수!)
+ ;; frame-inhibit-implied-resize nil
+
  ;; Stretch cursor to the glyph width
  x-stretch-cursor t
  ;; Show trailing whitespaces
@@ -1962,7 +1967,7 @@ However this one I use often, generally in org or text buffers.
 ;; (spacemacs/set-leader-keys "ow" 'eww)
 
 ;; Revert buffer - loads in .dir-locals.el changes
-;; (spacemacs/set-leader-keys "oR" 'revert-buffer)
+(spacemacs/set-leader-keys "oR" 'revert-buffer)
 ```
 
 <!--list-separator-->
@@ -3230,6 +3235,10 @@ command-log-mode-auto-show t)))
 
 #### <kbd>HUGO</kbd> Tunning {#hugo-tunning}
 
+사이드 노트 테스트
+{{< sidenote >}}
+ox-hugo 관련 추가 설정이다. 매우매우 중요하다.
+{{< /sidenote >}}
 ```text
 절대 export 태그 넣지 마라! shortcode 내보내기 안된다.
 ```
@@ -3242,7 +3251,7 @@ only consider things to be modified if 12 hours have passed.
   (setq org-hugo-auto-set-lastmod 't
         org-hugo-section "notes"
         org-hugo-suppress-lastmod-period 43200.0
-        org-hugo-paired-shortcodes "hint details mermaid"
+        org-hugo-paired-shortcodes "hint details mermaid sidenote"
         ;; org-hugo-front-matter-format yaml ; toml default
         )
 
@@ -3264,6 +3273,11 @@ only consider things to be modified if 12 hours have passed.
   ;; Override the default `org-hugo-export-creator-string' so that this
   ;; string is consistent in all ox-hugo tests.
   (setq org-hugo-export-creator-string "Emacs + Org mode + ox-hugo")
+
+  ;; In that normal example of the sidenote, ox-hugo trims the whitespace around
+  ;; the sidenote block. That is configured by customizing the
+  ;; org-hugo-special-block-type-properties variable:
+  (add-to-list 'org-hugo-special-block-type-properties '("sidenote" . (:trim-pre t :trim-post t)))
 
   ;; If this property is set to an empty string, this heading will not be auto-inserted.
   ;; default value is 'References'

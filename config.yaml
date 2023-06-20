@@ -47,8 +47,8 @@ markup:
     hl_Lines: ""
     lineNoStart: 1
     tabWidth: 2
-    lineNos: false
-    lineNumbersInTable: false
+    lineNos: true
+    lineNumbersInTable: true
     style: emacs
     # style: tango
     # style: modus-operandi

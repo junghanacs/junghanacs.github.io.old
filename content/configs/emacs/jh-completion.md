@@ -2,7 +2,7 @@
 title = "jh-completion layer"
 author = ["Junghan Kim"]
 date = 2023-06-12T00:00:00+09:00
-lastmod = 2023-06-14T16:49:00+09:00
+lastmod = 2023-06-20T09:37:00+09:00
 keywords = ["configs"]
 draft = false
 +++
@@ -41,7 +41,7 @@ jh-completion
 ;;; Code:
 (configuration-layer/declare-layer-dependencies
  '(
-   ;; auto-yasnippet yasnippet yasnippet-snippets))
+   ;; auto-yasnippet yasnippet yasnippet-snippets
    (auto-completion :packages (hippie-exp smartparens yasnippet))
    (compleseus :variables
                compleseus-engine 'vertico
@@ -106,7 +106,7 @@ jh-completion
 ```
 
 
-### `vectico` with orderless and marginalia {#vectico-with-orderless-and-marginalia}
+### <kbd>Compleseus Layer</kbd> vectico with orderless and marginalia {#compleseus-layer-vectico-with-orderless-and-marginalia}
 
 이거 모르면 자동완성 덕분에(?) 애먹는다. 자동완성 무시하고 입력 값만 사용!
 `M-RET`          vertico-exit-input
@@ -130,7 +130,7 @@ Compleseus 레이어 문서를 보면 vectico 패밀리 패키지가 잘 정리�
 -   vertico-grid: vertico-grid-mode to enable a grid display.
 
 
-#### Actions via embark {#actions-via-embark}
+#### Actions via <kbd>embark</kbd> {#actions-via-embark}
 
 ```elisp
 (defun jh-completion/post-init-embark ()
@@ -152,74 +152,7 @@ Compleseus 레이어 문서를 보면 vectico 패밀리 패키지가 잘 정리�
 ```
 
 
-### Consult {#consult}
-
-
-#### Turn off `auto-preview` using Consult {#turn-off-auto-preview-using-consult}
-
-preview 설정을 변경하려고 한다. 애용하는 consult-line 의 경우
-자동 preview 때문에 반응이 늦다. preview-key 를 누를 경우만 보이도록 하자.
-다음 키를 이용하면 훨씬 효율적으로 탐색할 수 있다.
-
-2023-02-01 consult-preview 엄청난 문제가 있었다. invalid-key 가
-발생하는데 해결은 minad 패키지를 모두 gnu 버전으로 pinned 했다.
-업데이트 자주 하는 게 정답이 아니다.
-
-2023-02-08 버전 업을 하면 문제가 발생했다. 아래 키 바인딩이 문제였다.
-아래와 같이 설정해서 해결했다.
-
-2023-03-06 compleseus 설정이 바뀌었다. 나의 키바인딩이 더 나은 것 같다.
-아래와 같이 일부 수정한다.
-
-2023-04-30 커스텀을 바쿤다. 기본으로
-
-```elisp
-(defun jh-completion/pre-init-consult ()
-  (spacemacs|use-package-add-hook consult
-    :post-config
-    (consult-customize
-     consult-theme
-     :preview-key '("M-." "C-SPC"
-                    :debounce 3.0 any) ; 2 seconds
-
-     ;; For `consult-line' change the prompt and specify multiple preview
-     ;; keybindings. Note that you should bind <S-up> and <S-down> in the
-     ;; `minibuffer-local-completion-map' or `vertico-map' to the commands which
-     ;; select the previous or next candidate.
-     consult-buffer
-     consult-ripgrep consult-git-grep consult-grep
-
-     consult-bookmark consult-yank-pop
-
-     ;; add more consult functions
-     consult-recent-file consult-xref
-     consult-org-heading
-     consult-outline ; 2023-05-23
-
-     ;; consult--source-recent-file consult--source-project-recent-file consult--source-bookmark
-     spacemacs/compleseus-search-auto
-     spacemacs/compleseus-search-dir
-     spacemacs/compleseus-find-file ; 2023-05-14 추가
-     ;; spacemacs/compleseus-search-project-el ; 2023-05-23
-     ;; spacemacs/compleseus-search-project-el-auto ; 2023-05-23
-     spacemacs/embark-preview ; 2023-05-23
-     spacemacs/compleseus-search-default
-     consult-line ; :prompt "Consult-line: "
-     :preview-key '("M-." "C-SPC"
-                    ;; :debounce 0.3 "C-M-j" "C-M-k" ; conflict puni
-                    :debounce 0.3 "<up>" "<down>" "C-n" "C-p"
-                    ))
-    )
-  )
-```
-
-
-### Completion UI {#completion-ui}
-
-
-
-
-#### `Corfu` Completion UI {#corfu-completion-ui}
+### <kbd>Corfu</kbd> Completion UI {#corfu-completion-ui}
 
 2023-05-04 전체적으로 튜닝
 /home/junghan/sync/man/dotsamples/vanilla/chrisbarrett-dotfiles/config.org
@@ -348,7 +281,7 @@ preview 설정을 변경하려고 한다. 애용하는 consult-line 의 경우
 ```
 
 
-#### `Cape` Completion At Point Extensions {#cape-completion-at-point-extensions}
+### <kbd>Cape</kbd> Completion At Point Extensions {#cape-completion-at-point-extensions}
 
 <span class="timestamp-wrapper"><span class="timestamp">[2023-02-13 Mon 02:48]</span></span>
 work with company backend
@@ -373,7 +306,8 @@ work with company backend
     (require 'cape-yasnippet)
 
     ;; Enhances speed on large projects, for which many buffers may be open.
-    (setq cape-dabbrev-check-other-buffers nil) ; default t
+    ;; (setq cape-dabbrev-check-other-buffers nil) ; default t
+    (setq cape-dabbrev-min-length 3)
 
     ;; 최소한으로 열어 두고 필요할 때 호출해서 확인한다.
     ;; Add `completion-at-point-functions', used by `completion-at-point'.
@@ -405,11 +339,12 @@ work with company backend
     (add-hook 'prog-mode-hook 'cape-prog-mode-setup)
 
     (define-prefix-command 'my-cape-map)
-    (define-key global-map (kbd "C-c u") 'my-cape-map)
+    (define-key global-map (kbd "M-c") 'my-cape-map)
     (let ((map my-cape-map))
       (define-key map (kbd "p") 'completion-at-point)
       (define-key map (kbd "t") 'complete-tag)
       (define-key map (kbd "d") 'cape-dabbrev)
+      (define-key map (kbd "e") 'hippie-expand)
       (define-key map (kbd "h") 'cape-history)
       (define-key map (kbd "y") 'cape-yasnippet)
       (define-key map (kbd "f") 'cape-file)
@@ -434,24 +369,6 @@ work with company backend
     )
   )
 ```
-
-<!--list-separator-->
-
--  History
-
-
-
-    ```text
-    이제야 제대로 붙었다.
-    (cape-yasnippet
-     cape-history
-     cape-file
-     cape-dabbrev
-     cape-keyword
-     cape-symbol
-     elisp-completion-at-point
-     t)
-    ```
 
 <!--list-separator-->
 
@@ -524,7 +441,7 @@ work with company backend
     ```
 
 
-#### `Tempel` Simple templates for Emacs {#tempel-simple-templates-for-emacs}
+### <kbd>Tempel</kbd> Simple templates for Emacs {#tempel-simple-templates-for-emacs}
 
 재미있는 템플릿 활용법을 알게되었다.
 [GitHub - minad/tempel: TempEl - Simple templates for Emacs](https://github.com/minad/tempel)
@@ -586,6 +503,65 @@ work with company backend
     (define-key tempel-map (kbd "RET") #'tempel-done)
     (define-key tempel-map (kbd "C-j") #'tempel-next)
     (define-key tempel-map (kbd "C-k") #'tempel-previous)
+    )
+  )
+```
+
+
+### Turn off <kbd>Auto-preview</kbd> using Consult {#turn-off-auto-preview-using-consult}
+
+preview 설정을 변경하려고 한다. 애용하는 consult-line 의 경우
+자동 preview 때문에 반응이 늦다. preview-key 를 누를 경우만 보이도록 하자.
+다음 키를 이용하면 훨씬 효율적으로 탐색할 수 있다.
+
+2023-02-01 consult-preview 엄청난 문제가 있었다. invalid-key 가
+발생하는데 해결은 minad 패키지를 모두 gnu 버전으로 pinned 했다.
+업데이트 자주 하는 게 정답이 아니다.
+
+2023-02-08 버전 업을 하면 문제가 발생했다. 아래 키 바인딩이 문제였다.
+아래와 같이 설정해서 해결했다.
+
+2023-03-06 compleseus 설정이 바뀌었다. 나의 키바인딩이 더 나은 것 같다.
+아래와 같이 일부 수정한다.
+
+2023-04-30 커스텀을 바쿤다. 기본으로
+
+```elisp
+(defun jh-completion/pre-init-consult ()
+  (spacemacs|use-package-add-hook consult
+    :post-config
+    (consult-customize
+     consult-theme
+     :preview-key '("M-." "C-SPC"
+                    :debounce 3.0 any) ; 2 seconds
+
+     ;; For `consult-line' change the prompt and specify multiple preview
+     ;; keybindings. Note that you should bind <S-up> and <S-down> in the
+     ;; `minibuffer-local-completion-map' or `vertico-map' to the commands which
+     ;; select the previous or next candidate.
+     consult-buffer
+     consult-ripgrep consult-git-grep consult-grep
+
+     consult-bookmark consult-yank-pop
+
+     ;; add more consult functions
+     consult-recent-file consult-xref
+     consult-org-heading
+     consult-outline ; 2023-05-23
+
+     ;; consult--source-recent-file consult--source-project-recent-file consult--source-bookmark
+     spacemacs/compleseus-search-auto
+     spacemacs/compleseus-search-dir
+     spacemacs/compleseus-find-file ; 2023-05-14 추가
+     ;; spacemacs/compleseus-search-project-el ; 2023-05-23
+     ;; spacemacs/compleseus-search-project-el-auto ; 2023-05-23
+     spacemacs/embark-preview ; 2023-05-23
+     spacemacs/compleseus-search-default
+     consult-line ; :prompt "Consult-line: "
+     :preview-key '("M-." "C-SPC"
+                    ;; :debounce 0.3 "C-M-j" "C-M-k" ; conflict puni
+                    :debounce 0.3 "<up>" "<down>" "C-n" "C-p"
+                    ))
     )
   )
 ```
