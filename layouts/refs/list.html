@@ -12,24 +12,18 @@
   {{ range sort (.Paginator 20).Pages.ByLastmod.Reverse }}
   <div>
     <h3>
-      <li style="padding: 3px; position:relative;">
         <a
           data-toggle={{ partialCached "docs/post-meta" . }}
           href="{{ .RelPermalink }}">
-          <time class="w3-tag"> {{- .Date.Format "2006-01-02" -}} </time>
           <span>» </span>
           {{- .Title -}}
         </a>
-        <i>
-          <time class="timestamp">
-            ({{ .Lastmod.Format "2006-01-02" -}})
-          </time>
-        </i>
-      </li>
+        <time class="w3-tag"> 📌{{- .Date.Format "2006-01-02" -}} </time>
+        <!-- <time class="lastmod">🚧{{ .Lastmod.Format "2006-01-02" -}}</time> -->
     </h3>
-    <p>
-      {{- .Summary -}}
-    </p>
+    <details class="markdown-inner">
+      {{ default .Summary .Description }}
+    </details>
 
   </div>
 

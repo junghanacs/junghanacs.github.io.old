@@ -93,13 +93,33 @@ body {
   background-color: var(--theme-color-done);
 }
 
+/* Org timestamps */
+/* Example: In Changelog */
+.lastmod {
+  background-color: var(--theme-color-lastmod);
+  color: var(--body-font-color-lastmod);
+  font-family: monospace;
+  font-size: 0.9em;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+.timestamp {
+  // background-color: var(--theme-color-lastmod);
+  color: var(--body-font-color-dim);
+  font-family: monospace;
+  font-size: 0.9em;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
 .w3-tag {
   background-color: var(--theme-color-w3);
-  color: var(--body-font-color-dim);
+  color: var(--body-font-color-w3);
   font-size: 0.9em;
-  font-family: "D2 coding", "Consolas", "Menlo", "Deja Vu Sans Mono",
-    "Bitstream Vera Sans Mono", monospace;
-  display: inline-block;
+  font-family: monospace;
   padding-left: 5px;
   padding-right: 5px;
   text-align: center;
