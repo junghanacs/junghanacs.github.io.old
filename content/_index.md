@@ -2,7 +2,7 @@
 title = "[INDEX] Home"
 author = ["Junghan Kim"]
 date = 2023-05-31T12:26:00+09:00
-lastmod = 2023-06-16
+lastmod = 2023-06-20
 draft = false
 bookToc = false
 bookComments = false
