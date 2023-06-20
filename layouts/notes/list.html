@@ -10,25 +10,30 @@
 <br>
 <hr>
 
+<!-- DEFAULT List  -->
 <section>
-  <br>
   {{ range sort (.Paginator 20).Pages.ByLastmod.Reverse }}
   <div>
-    <li style="padding: 3px; position:relative;">
-      <a
-        data-toggle={{ partialCached "docs/post-meta" . }}
-        href="{{ .RelPermalink }}">
-        <time class="w3-tag"
-              {{- printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr -}}>
-          {{- .Date.Format "2006-01-02" -}}
-        </time>
-        <span>» </span>
-        {{- .Title -}}
-      </a>
-      <i>
-        ({{ .Lastmod.Format "2006-01-02" -}})
-      </i>
-    </li>
+    <h3>
+      <li style="padding: 3px; position:relative;">
+        <a
+          data-toggle={{ partialCached "docs/post-meta" . }}
+          href="{{ .RelPermalink }}">
+          <time class="w3-tag"> {{- .Date.Format "2006-01-02" -}} </time>
+          <span>» </span>
+          {{- .Title -}}
+        </a>
+        <i>
+          <time class="timestamp">
+            ({{ .Lastmod.Format "2006-01-02" -}})
+          </time>
+        </i>
+      </li>
+    </h3>
+    <p>
+      {{- .Summary -}}
+    </p>
+
   </div>
 
   {{ end }}

@@ -1,0 +1,31 @@
+{{ define "main" }}
+<article class="markdown">
+  <h1>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </h1>
+
+  <div class="date">
+    {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
+    {{ $publishDate := .PublishDate }}
+    {{ $Date := .Date }}
+    <!-- <strong aria-hidden="true"> Author: </strong>{{ .Params.author }} <br> -->
+    <strong aria-hidden="true"> Created date: </strong>{{ $Date.Format $dateFormat }}
+    <!-- <strong aria-hidden="true">Publish date: </strong>{{ $publishDate.Format $dateFormat }} -->
+    {{ with .Lastmod }}
+    {{ if gt . $publishDate }}
+    <strong aria-hidden="true">Last updated: </strong>{{ .Format $dateFormat }}
+    {{ end }}
+    {{ end }}
+  </div>
+
+  {{ partial "docs/post-meta" . }}
+  <p>
+    {{- .Content -}}
+  </p>
+  {{ partial "docs/backlinks" . }}
+</article>
+{{ end }}
+
+{{ define "toc" }}
+{{ partial "docs/toc" . }}
+{{ end }}

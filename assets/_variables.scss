@@ -15,6 +15,7 @@
 
   --body-background: #fbf7f0;
   --body-font-color: black;
+  --body-font-color-dim: #595959;
 
   --icon-filter: none;
 
@@ -30,15 +31,11 @@
   --theme-color-off: #595959;
   --theme-color-done: #006800;
   --theme-color-w3: #dfd5cf;
+  --theme-color-lastmod: #ffe8f0;
   --theme-color-kbd: #ffcf00;
 }
 
 @mixin theme-dark {
-  // --gray-100: rgba(255, 255, 255, 0.1);
-  // --gray-200: rgba(255, 255, 255, 0.2);
-  // --gray-500: rgba(255, 255, 255, 0.5);
-
-  --gray-100: #989898;
   --gray-200: #c6daff;
   --gray-500: #4a4f69;
 
@@ -47,6 +44,7 @@
 
   --body-background: #0d0e1c;
   --body-font-color: #ffffff;
+  --body-font-color-dim: #fbf7f0;
 
   --icon-filter: brightness(0) invert(1);
 
@@ -63,5 +61,6 @@
   --theme-color-off: #989898;
   --theme-color-done: #44bc44;
   --theme-color-w3: #61647a;
+  --theme-color-lastmod: #595959;
   --theme-color-kbd: #f1e00a;
 }

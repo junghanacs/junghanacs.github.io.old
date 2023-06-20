@@ -2,17 +2,31 @@
 title = "Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들"
 author = ["Junghan Kim"]
 date = 2023-06-05
-lastmod = 2023-06-19
-keywords = ["notes", "ox-hugo", "org-roam", "template", "export"]
+lastmod = 2023-06-20
+keywords = ["notes", "ox-hugo", "org-roam", "template"]
 draft = false
 +++
 
-## <span class="org-todo todo TODO">TODO</span> <code>[0/1]</code> Check Lists {#check-lists}
+<style>details summary { color: green; }</style>
+
+<style>details .details { color: blue; }</style>
+
+{{< hint info >}}
+Org-Roam 에서 작성한 문서를 Hugo Markdown 으로 변환하기는 쉽다. 근데 각주, 인용,
+태그, 요약, 코드, 일부 내용 감추기 등을 어떻게 하는가? 여기에 대한 답을 찾는다.
+{{< /hint >}}
+
+<!--more-->
+
+ox-hugo 의 모든 예제는 다음 주소에 있다. 여기서 찾아보자.&nbsp;[^fn:1]
+
+
+## <span class="org-todo todo TODO">TODO</span> <code>[1/2]</code> Check Lists {#check-lists}
 
 [ ] Sidenote and book_menu are collapsed
 : after-menu.html
 
-[ ] mermaid caption 이 안 들어 간다.
+[X] mermaid caption 문제 -- 이미지로 넣어라.
 
 
 ## Heading {#heading}
@@ -56,8 +70,8 @@ abc
 
 ## Markup {#markup}
 
-org-mode 마크업은 다음의 주소에서 확인 바람.&nbsp;[^fn:1]
-ox-hugo 관련 내용은 다음 주소에서 확인.[^fn:2]
+org-mode 마크업은 다음의 주소에서 확인 바람.&nbsp;[^fn:2]
+ox-hugo 관련 내용은 다음 주소에서 확인.[^fn:3]
 결과를 비교하면 org-code 와 verbatim 이 다르다. 맞춰줘야 한다.
 verbatim 은 맞추기가 까다롭다. <kbd>kbd</kbd> 을 많이 사용하라!
 
@@ -123,7 +137,7 @@ Below, the "References" heading will be auto-inserted.
 
 ## Footnote 각주 관리 {#footnote-각주-관리}
 
-각주는 이렇게 들어갑니다.&nbsp;[^fn:3]
+각주는 이렇게 들어갑니다.&nbsp;[^fn:4]
 
 
 ## 코드, 인용, 예시 블록 {#코드-인용-예시-블록}
@@ -212,7 +226,7 @@ Below, the "References" heading will be auto-inserted.
 ## Shotcodes 지원 {#shotcodes-지원}
 
 <span class="timestamp-wrapper"><span class="timestamp">[2023-06-08 Thu 12:19]</span></span>
-Hugo Book 데모 페이지를 확인한다.&nbsp;[^fn:4]
+Hugo Book 데모 페이지를 확인한다.&nbsp;[^fn:5]
 
 여기에 보면 문서 편집하기 위한 여러 코드들을 제공하고 있다. 나는 마크다운으로
 편집하지 않기 때문에 각각 기능 검증이 필요하다. ox-hugo 가 있으니 문제 될 것은
@@ -282,7 +296,7 @@ stateDiagram-v2
 
 org-babel 의 이점은 org 문서에서 바로 결과를 확인할 수 있다는 점이다. 편집하면서
 바로 보고 블로그로 바로 내보내면 된다. 물론 로컬에 mermaid 를 설치해 놓아야
-한다. 물론 ob-mermaid 로 설정은 기본이다.&nbsp;[^fn:5]
+한다. 물론 ob-mermaid 로 설정은 기본이다.&nbsp;[^fn:6]
 
 ```text
 npm install -g @mermaid-js/mermaid-cli
@@ -292,7 +306,7 @@ npm install -g @mermaid-js/mermaid-cli
 
 Ob-Mermaid 이용한 결과다. png 파일의 한계.
 
-<kbd>:exports</kbd> 옵션은 code, results,  both, none&nbsp;[^fn:6]
+<kbd>:exports</kbd> 옵션은 code, results,  both, none&nbsp;[^fn:7]
 
 ```mermaid { width="80%" align="center" }
 stateDiagram-v2
@@ -391,9 +405,10 @@ Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 
 애호가가 선호하는 운영 체제에 대해 자세히 알아볼 수 있는 리소스가 될 수도
 있습니다.
 
-[^fn:1]: <https://orgmode.org/manual/Markup-for-Rich-Contents.html>
-[^fn:2]: <https://ox-hugo.scripter.co/doc/formatting>
-[^fn:3]: [How I Take Notes with Org-roam](https://jethrokuan.github.io/org-roam-guide/)
-[^fn:4]: <https://hugo-book-demo.netlify.app/docs/shortcodes/katex/>
-[^fn:5]: <https://github.com/arnm/ob-mermaid>
-[^fn:6]: <https://orgmode.org/manual/Exporting-Code-Blocks.html>
+[^fn:1]: <https://raw.githubusercontent.com/kaushalmodi/ox-hugo/main/test/site/content-org/all-posts.org>
+[^fn:2]: <https://orgmode.org/manual/Markup-for-Rich-Contents.html>
+[^fn:3]: <https://ox-hugo.scripter.co/doc/formatting>
+[^fn:4]: [How I Take Notes with Org-roam](https://jethrokuan.github.io/org-roam-guide/)
+[^fn:5]: <https://hugo-book-demo.netlify.app/docs/shortcodes/katex/>
+[^fn:6]: <https://github.com/arnm/ob-mermaid>
+[^fn:7]: <https://orgmode.org/manual/Exporting-Code-Blocks.html>

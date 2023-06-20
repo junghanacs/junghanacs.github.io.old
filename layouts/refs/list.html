@@ -7,35 +7,31 @@
 <br>
 <hr>
 
+<!-- DEFAULT List  -->
 <section>
-  {{ range sort (.Paginator 10).Pages.ByLastmod.Reverse }}
+  {{ range sort (.Paginator 20).Pages.ByLastmod.Reverse }}
   <div>
     <h3>
-      <a
-        data-toggle={{ partialCached "docs/post-meta" . }}
-        href="{{ .RelPermalink }}">
-        <span>» </span>
-        {{- .Title -}}
-      </a>
+      <li style="padding: 3px; position:relative;">
+        <a
+          data-toggle={{ partialCached "docs/post-meta" . }}
+          href="{{ .RelPermalink }}">
+          <time class="w3-tag"> {{- .Date.Format "2006-01-02" -}} </time>
+          <span>» </span>
+          {{- .Title -}}
+        </a>
+        <i>
+          <time class="timestamp">
+            ({{ .Lastmod.Format "2006-01-02" -}})
+          </time>
+        </i>
+      </li>
     </h3>
-
-    <div class="date">
-      {{ $dateFormat := $.Site.Params.dateFormat | default "2006-01-02" }}
-      {{ $publishDate := .PublishDate }}
-      {{ $Date := .Date }}
-      Created {{ $Date.Format $dateFormat }}
-      {{ with .Lastmod }}
-      {{ if gt . $publishDate }}
-      (Lastmod {{ .Format $dateFormat }})
-      {{ end }}
-      {{ end }}
-
     <p>
       {{- .Summary -}}
     </p>
-  </div>
 
-  <hr>
+  </div>
 
   {{ end }}
 </section>
