@@ -14,13 +14,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://junghanacs.com/configs/emacs/jh-navigation/" /><meta property="article:section" content="configs" />
 <meta property="article:published_time" content="2023-06-12T00:00:00+09:00" />
-<meta property="article:modified_time" content="2023-06-19T18:05:14+09:00" />
+<meta property="article:modified_time" content="2023-06-20T10:44:23+09:00" />
 <title>jh-navigation layer | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.0797e50425b499da525a4c7d3e26ece99458b64bcfaac611fe70f6836700b8e1.css" integrity="sha256-B5flBCW0mdpSWkx9Pibs6ZRYtkvPqsYR/nD2g2cAuOE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.2fc3a4ff461b914334cc632edb7d713cd28f5a03b10c5d3a79406587a36e9f05.css" integrity="sha256-L8Ok/0YbkUM0zGMu231xPNKPWgOxDF06eUBlh6NunwU=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/ko.search.min.97bdd75a9c33389e135767d2e69270251c4dd552971eceb5d446dccae56d1669.js" integrity="sha256-l73XWpwzOJ4TV2fS5pJwJRxN1VKXHs611EbcyuVtFmk=" crossorigin="anonymous"></script>
+  <script defer src="/ko.search.min.5106f921da2ce3cd7724fbb8049a38b1b1d95e8211b7d5264c63cd6b6045db1f.js" integrity="sha256-UQb5Idos4813JPu4BJo4sbHZXoIRt9UmTGPNa2BF2x8=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -81,10 +81,10 @@ https://github.com/alex-shpak/hugo-book
 <li>
   <a href="/terms/">Terms</a></li>
 <li>
-  <a href="/configs/">Configs</a>
+  <a href="/configs/">Dotfiles</a>
 <ul>
 <li>
-  <a href="/configs/emacs/">emacs.d</a></li>
+  <a href="/configs/emacs/">dot-emacs</a></li>
 </ul>
 </li>
 </ul>
@@ -212,7 +212,7 @@ https://github.com/alex-shpak/hugo-book
     
     
     
-    <strong aria-hidden="true">Last updated: </strong>Jun 19, 2023
+    <strong aria-hidden="true">Last updated: </strong>Jun 20, 2023
     
     
   </div>
@@ -242,7 +242,58 @@ https://github.com/alex-shpak/hugo-book
   Layer
   <a class="anchor" href="#layer">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Copyright (c) 2012-2023 Sylvain Benner &amp; Contributors</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
@@ -289,7 +340,9 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>           <span style="color:#b8860b">ranger-ignored-extensions</span> <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;mkv&#34;</span> <span style="color:#b44">&#34;flv&#34;</span> <span style="color:#b44">&#34;iso&#34;</span> <span style="color:#b44">&#34;mp4&#34;</span>))
 </span></span><span style="display:flex;"><span>   )
 </span></span><span style="display:flex;"><span> )
-</span></span></code></pre></div><h2 id="packages">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="packages">
   Packages
   <a class="anchor" href="#packages">#</a>
 </h2>
@@ -297,7 +350,55 @@ https://github.com/alex-shpak/hugo-book
   Packages
   <a class="anchor" href="#packages">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Copyright (c) 2012-2023 Sylvain Benner &amp; Contributors</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
@@ -341,7 +442,9 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (hydra-posframe :location (recipe :fetcher github :repo &#34;Ladicle/hydra-posframe&#34;))</span>
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>  )
-</span></span></code></pre></div><h3 id="readme-spacemacs-navigation-layer">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="readme-spacemacs-navigation-layer">
   <kbd>README</kbd> spacemacs-navigation layer
   <a class="anchor" href="#readme-spacemacs-navigation-layer">#</a>
 </h3>
@@ -360,7 +463,30 @@ smooth-scrolling, symbol-overlay, winum</p>
 </h3>
 <p>spacemacs-navigation layer 에 winum 이 들어있지만 설정이 부족하다.
 특히, 바닐라 모드 라인에 번호가 있었으면 한다.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/post-init-winum</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/post-init-winum</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/winum-assign-custom</span> ()
 </span></span><span style="display:flex;"><span>    (<span style="color:#a2f">cond</span>
 </span></span><span style="display:flex;"><span>     <span style="color:#080;font-style:italic">;; 0 treemacs, 9 goto minibuffer</span>
@@ -379,19 +505,45 @@ smooth-scrolling, symbol-overlay, winum</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#b8860b">winum-reverse-frame-list</span>          <span style="color:#800">nil</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">winum-mode</span> <span style="color:#666">1</span>)
 </span></span><span style="display:flex;"><span>  )
-</span></span></code></pre></div><h3 id="imenu-list">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="imenu-list">
   imenu-list
   <a class="anchor" href="#imenu-list">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/post-init-imenu-list</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/post-init-imenu-list</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">imenu-list-auto-resize</span> <span style="color:#800">nil</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">imenu-list-size</span> <span style="color:#666">45</span>)
 </span></span><span style="display:flex;"><span>  )
-</span></span></code></pre></div><h3 id="goto-last-change-and-evil-goto">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="goto-last-change-and-evil-goto">
   Goto-last-change and Evil-goto
   <a class="anchor" href="#goto-last-change-and-evil-goto">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-goto-last-change</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-goto-last-change</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;goto-last-change</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">global-unset-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-x ;&#34;</span>)) <span style="color:#080;font-style:italic">; default - comment-set-column</span>
 </span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">global-set-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;C-x ,&#34;</span>) <span style="color:#b8860b">&#39;goto-last-change</span>)
@@ -401,12 +553,41 @@ smooth-scrolling, symbol-overlay, winum</p>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; goto-chg 패키지에서 아래 함수 제공</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; evil-goto-last-change-reverse (g ,)</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; evil-goto-last-change (g ;)</span>
-</span></span></code></pre></div><h3 id="dumb-jump">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="dumb-jump">
   dumb-jump
   <a class="anchor" href="#dumb-jump">#</a>
 </h3>
 <p>코지 이맥스의 설정을 확인하라. consult 로 대체되면 빼고.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dumb-jump</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dumb-jump</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">dumb-jump</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:commands</span> (<span style="color:#b8860b">dumb-jump-hydra/body</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:custom</span>  (<span style="color:#b8860b">dumb-jump-selector</span> <span style="color:#b8860b">&#39;completing-read</span>)
@@ -429,14 +610,34 @@ smooth-scrolling, symbol-overlay, winum</p>
 </span></span><span style="display:flex;"><span>      (<span style="color:#b44">&#34;b&#34;</span> <span style="color:#b8860b">dumb-jump-back</span> <span style="color:#b44">&#34;Back&#34;</span>)
 </span></span><span style="display:flex;"><span>      (<span style="color:#b44">&#34;q&#34;</span> <span style="color:#800">nil</span> <span style="color:#b44">&#34;Quit&#34;</span> <span style="color:#a2f">:color</span> <span style="color:#b8860b">blue</span>))
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h3 id="burly-frame-window-bookmark">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="burly-frame-window-bookmark">
   <code>Burly</code> Frame/window Bookmark
   <a class="anchor" href="#burly-frame-window-bookmark">#</a>
 </h3>
 <p>북마크 관리 차원에서 어떻게 할지 만들자.
 
   <a href="https://github.com/alphapapa/burly.el">GitHub - alphapapa/burly.el: Save and restore frames and windows with their b&hellip;</a></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-burly</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-burly</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">burly</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">bookmark</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span>
@@ -450,12 +651,31 @@ smooth-scrolling, symbol-overlay, winum</p>
 </span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;bMo&#34;</span> <span style="color:#b8860b">&#39;burly-open-bookmark</span>)
 </span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;bMl&#34;</span> <span style="color:#b8860b">&#39;burly-open-last-bookmark</span>)
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h3 id="loccur">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="loccur">
   <span class="org-todo todo TODO">TODO</span> <code>loccur</code>
   <a class="anchor" href="#loccur">#</a>
 </h3>
 <p>테스트 필요하다.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; loccur</span>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; loccur</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-loccur</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">loccur</span>
@@ -468,7 +688,9 @@ smooth-scrolling, symbol-overlay, winum</p>
 </span></span><span style="display:flex;"><span>      <span style="color:#b44">&#34;svo&#34;</span> <span style="color:#b8860b">&#39;loccur</span>)
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>  )
-</span></span></code></pre></div><h3 id="extra-power-dired">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="extra-power-dired">
   Extra Power <code>Dired</code>
   <a class="anchor" href="#extra-power-dired">#</a>
 </h3>
@@ -480,7 +702,25 @@ smooth-scrolling, symbol-overlay, winum</p>
 <p>
   <a href="https://github.com/Fuco1/dired-hacks#dired-subtree">dired-subtree</a> is a package that enables managing Dired buffers in a tree-like
 manner. By default <code>evil-collection</code> maps <code>dired-subtree-toggle</code> to <code>TAB</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-subtree</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-subtree</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">dired-subtree</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">dired</span>
@@ -494,11 +734,26 @@ manner. By default <code>evil-collection</code> maps <code>dired-subtree-toggle<
 </span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">dired-create-empty-file</span>
 </span></span><span style="display:flex;"><span>       (<span style="color:#b8860b">read-file-name</span> <span style="color:#b44">&#34;Create empty file: &#34;</span>))))
 </span></span><span style="display:flex;"><span>  )
-</span></span></code></pre></div><h4 id="dired-open">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="dired-open">
   dired-open
   <a class="anchor" href="#dired-open">#</a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-open</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-open</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">dired-open</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">dired</span>
@@ -507,13 +762,32 @@ manner. By default <code>evil-collection</code> maps <code>dired-subtree-toggle<
 </span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">dired-open-extensions</span> <span style="color:#666">&#39;</span>((<span style="color:#b44">&#34;png&#34;</span> <span style="color:#666">.</span> <span style="color:#b44">&#34;feh&#34;</span>)
 </span></span><span style="display:flex;"><span>                                  (<span style="color:#b44">&#34;mkv&#34;</span> <span style="color:#666">.</span> <span style="color:#b44">&#34;mpv&#34;</span>)))
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h4 id="dired-git-info">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="dired-git-info">
   dired-git-info
   <a class="anchor" href="#dired-git-info">#</a>
 </h4>
 <p>Display git info, such as the last commit for file and stuff. It&rsquo;s pretty
 useful but also slows down Dired a bit, hence I don&rsquo;t turn it out by default.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-git-info</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-git-info</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">dired-git-info</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:if</span> (<span style="color:#b8860b">not</span> <span style="color:#b8860b">my/slow-ssh</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span>
@@ -526,13 +800,29 @@ useful but also slows down Dired a bit, hence I don&rsquo;t turn it out by defau
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; disabled by performance issues</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (add-hook &#39;dired-after-readin-hook &#39;dired-git-info-auto-enable)</span>
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h4 id="dired-du">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="dired-du">
   dired-du
   <a class="anchor" href="#dired-du">#</a>
 </h4>
 <p>
   <a href="https://elpa.gnu.org/packages/dired-du.html">dired-du</a> is a package that shows directory sizes</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-du</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-du</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">dired-du</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">dired</span>
@@ -542,11 +832,28 @@ useful but also slows down Dired a bit, hence I don&rsquo;t turn it out by defau
 </span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">spacemacs/set-leader-keys-for-major-mode</span> <span style="color:#b8860b">&#39;dired-mode</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#b44">&#34;D&#34;</span> <span style="color:#b8860b">&#39;dired-du-mode</span>)
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h4 id="dired-posframe">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="dired-posframe">
   dired-posframe
   <a class="anchor" href="#dired-posframe">#</a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-posframe</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-posframe</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">dired-posframe</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">dired</span>
@@ -557,12 +864,26 @@ useful but also slows down Dired a bit, hence I don&rsquo;t turn it out by defau
 </span></span><span style="display:flex;"><span>      <span style="color:#b44">&#34;P&#34;</span> <span style="color:#b8860b">&#39;dired-posframe-mode</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (define-key dired-mode-map (kbd &#34;C-*&#34;) &#39;dired-posframe-show) ; not working</span>
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h4 id="dired-narrow">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="dired-narrow">
   dired-narrow
   <a class="anchor" href="#dired-narrow">#</a>
 </h4>
 <p>vifm-like filter</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-narrow</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-narrow</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">dired-narrow</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">dired</span>
@@ -570,14 +891,65 @@ useful but also slows down Dired a bit, hence I don&rsquo;t turn it out by defau
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
 </span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">bind-key</span> <span style="color:#b44">&#34;&lt;escape&gt;&#34;</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">keyboard-quit</span> <span style="color:#b8860b">dired-narrow-map</span>)
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h4 id="dired-sidebar">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="dired-sidebar">
   dired-sidebar
   <a class="anchor" href="#dired-sidebar">#</a>
 </h4>
 <p>
   <a href="https://github.com/jojojames/dired-sidebar">dired-sidebar</a> enables opening Dired in sidebar. For me, with dired-subtree this
 makes dired a better option than Treemacs.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-sidebar</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-dired-sidebar</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">dired-sidebar</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">dired</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span>
@@ -622,7 +994,9 @@ makes dired a better option than Treemacs.</p>
 </span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;               [remap winum-select-window-8] #&#39;my/dired-sidebar-toggle)</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (define-key winum-keymap</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;               [remap winum-select-window-9] #&#39;spacemacs/treemacs-project-toggle))</span>
-</span></span></code></pre></div><h3 id="outline-mode">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="outline-mode">
   <code>Outline-Mode</code>
   <a class="anchor" href="#outline-mode">#</a>
 </h3>
@@ -630,7 +1004,22 @@ makes dired a better option than Treemacs.</p>
   Outline mode (built-in)
   <a class="anchor" href="#outline-mode--built-in">#</a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-outline</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-outline</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">outline</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:init</span>
@@ -641,7 +1030,9 @@ makes dired a better option than Treemacs.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (define-key global-map (kbd &#34;&lt;f10&gt;&#34;) #&#39;outline-minor-mode)</span>
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>  )
-</span></span></code></pre></div><h4 id="outli-simple-outline-mode">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="outli-simple-outline-mode">
   <code>Outli</code> - Simple outline mode
   <a class="anchor" href="#outli-simple-outline-mode">#</a>
 </h4>
@@ -649,7 +1040,20 @@ makes dired a better option than Treemacs.</p>
   <a href="https://github.com/jdtsmith/outli">GitHub - jdtsmith/outli: Simple comment-based outlines fo&hellip;</a></p>
 <p><kbd>outshine</kbd> 보다는 빌트인을 활용한 심플한 패키지를 선호한다.
 대체해도 문제가 없다.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-outli</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-navigation/init-outli</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">outli</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">outline</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:defer</span> <span style="color:#666">10</span>
@@ -658,17 +1062,31 @@ makes dired a better option than Treemacs.</p>
 </span></span><span style="display:flex;"><span>                (<span style="color:#b44">&#34;C-c o&#34;</span> <span style="color:#666">.</span> (<span style="color:#a2f">lambda</span> () (<span style="color:#a2f">interactive</span>) (<span style="color:#b8860b">outline-back-to-heading</span>))))
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:hook</span> ((<span style="color:#b8860b">prog-mode</span> <span style="color:#b8860b">text-mode</span>) <span style="color:#666">.</span> <span style="color:#b8860b">outli-mode</span>)) <span style="color:#080;font-style:italic">; or whichever modes you prefer</span>
 </span></span><span style="display:flex;"><span>  )
-</span></span></code></pre></div><h2 id="keybindings">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="keybindings">
   Keybindings
   <a class="anchor" href="#keybindings">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; evil-jump or better-jumper</span>
 </span></span><span style="display:flex;"><span>(<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;j.&#34;</span> <span style="color:#b8860b">&#39;evil-jump-forward</span>)
 </span></span><span style="display:flex;"><span>(<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;j,&#34;</span> <span style="color:#b8860b">&#39;evil-jump-backward</span>)
 </span></span><span style="display:flex;"><span>(<span style="color:#b8860b">global-set-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;&lt;f7&gt;&#34;</span>) <span style="color:#b8860b">&#39;imenu-list-smart-toggle</span>)
-</span></span></code></pre></div></p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
   
 
 
@@ -779,7 +1197,7 @@ makes dired a better option than Treemacs.</p>
   
   
   
-  <h3>Go to <a href="/configs/emacs/jh-misc/">random</a> page</h3>
+  <h3>Go to <a href="/configs/emacs/jh-reading/">random</a> page</h3>
   
   
 </center>
@@ -790,9 +1208,9 @@ makes dired a better option than Treemacs.</p>
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/98ce291684ad907f983efe0382e4fea3ee5ffec4" title='Last modified by junghan0611 | 2023-06-19' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/1b9d720aa30cd6ed316ee6b7ee7d6011d8f1d2d2" title='Last modified by junghan0611 | 2023-06-20' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2023-06-19</span>
+      <span>2023-06-20</span>
     </a>
   </div>
 

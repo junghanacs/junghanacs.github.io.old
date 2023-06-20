@@ -14,13 +14,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://junghanacs.com/configs/emacs/jh-misc/" /><meta property="article:section" content="configs" />
 <meta property="article:published_time" content="2023-06-12T00:00:00+09:00" />
-<meta property="article:modified_time" content="2023-06-19T18:05:14+09:00" />
+<meta property="article:modified_time" content="2023-06-20T10:44:23+09:00" />
 <title>jh-misc layer | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.0797e50425b499da525a4c7d3e26ece99458b64bcfaac611fe70f6836700b8e1.css" integrity="sha256-B5flBCW0mdpSWkx9Pibs6ZRYtkvPqsYR/nD2g2cAuOE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.2fc3a4ff461b914334cc632edb7d713cd28f5a03b10c5d3a79406587a36e9f05.css" integrity="sha256-L8Ok/0YbkUM0zGMu231xPNKPWgOxDF06eUBlh6NunwU=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/ko.search.min.97bdd75a9c33389e135767d2e69270251c4dd552971eceb5d446dccae56d1669.js" integrity="sha256-l73XWpwzOJ4TV2fS5pJwJRxN1VKXHs611EbcyuVtFmk=" crossorigin="anonymous"></script>
+  <script defer src="/ko.search.min.5106f921da2ce3cd7724fbb8049a38b1b1d95e8211b7d5264c63cd6b6045db1f.js" integrity="sha256-UQb5Idos4813JPu4BJo4sbHZXoIRt9UmTGPNa2BF2x8=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -81,10 +81,10 @@ https://github.com/alex-shpak/hugo-book
 <li>
   <a href="/terms/">Terms</a></li>
 <li>
-  <a href="/configs/">Configs</a>
+  <a href="/configs/">Dotfiles</a>
 <ul>
 <li>
-  <a href="/configs/emacs/">emacs.d</a></li>
+  <a href="/configs/emacs/">dot-emacs</a></li>
 </ul>
 </li>
 </ul>
@@ -204,7 +204,7 @@ https://github.com/alex-shpak/hugo-book
     
     
     
-    <strong aria-hidden="true">Last updated: </strong>Jun 19, 2023
+    <strong aria-hidden="true">Last updated: </strong>Jun 20, 2023
     
     
   </div>
@@ -235,7 +235,39 @@ Screenshot 등을 지원한다.</p>
   Layer
   <a class="anchor" href="#layer">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Copyright (c) 2012-2023 Sylvain Benner &amp; Contributors</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
@@ -263,7 +295,9 @@ Screenshot 등을 지원한다.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:variable</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">ledger-post-amount-alignment-column</span> <span style="color:#666">68</span>)
 </span></span><span style="display:flex;"><span>   ))
-</span></span></code></pre></div><h2 id="packages">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="packages">
   Packages
   <a class="anchor" href="#packages">#</a>
 </h2>
@@ -271,7 +305,47 @@ Screenshot 등을 지원한다.</p>
   Packages
   <a class="anchor" href="#packages">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Copyright (c) 2012-2023 Sylvain Benner &amp; Contributors</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;</span>
@@ -307,17 +381,29 @@ Screenshot 등을 지원한다.</p>
 </span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">term-keys</span> <span style="color:#a2f">:location</span> (<span style="color:#b8860b">recipe</span> <span style="color:#a2f">:fetcher</span> <span style="color:#b8860b">github</span> <span style="color:#a2f">:repo</span> <span style="color:#b44">&#34;junghan0611/term-keys&#34;</span>))
 </span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">xclip</span> <span style="color:#a2f">:toggle</span> (<span style="color:#b8860b">version&lt;</span> <span style="color:#b44">&#34;29.0.50&#34;</span> <span style="color:#b8860b">emacs-version</span>)) <span style="color:#080;font-style:italic">;; Emacs 29</span>
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h3 id="ledger-cape">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="ledger-cape">
   <span class="org-todo todo TODO">TODO</span> ledger cape
   <a class="anchor" href="#ledger-cape">#</a>
 </h3>
 <p>CAPE 로 연동해서 처리해야 한다. 뭐가 되었든간에 Spacemacs 베이스로
 가져가는게 좋겠다. company 와 연동이 되니까 잘 쓰면 좋은 일이다.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (defun finance/post-init-company ()</span>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (defun finance/post-init-company ()</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (spacemacs|add-company-backends</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     :backends company-capf</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     :modes ledger-mode))</span>
-</span></span></code></pre></div><h3 id="atomic-chrome">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="atomic-chrome">
   Atomic-chrome
   <a class="anchor" href="#atomic-chrome">#</a>
 </h3>
@@ -326,23 +412,47 @@ Screenshot 등을 지원한다.</p>
 Despite its name, it also works for Firefox with 
   <a href="https://ghosttext.fregante.com/welcome/">GhostText</a>, which is what I use.</p>
 <p>2023-05-11 엄청 편하다. 좋다.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-atomic-chrome</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-atomic-chrome</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">atomic-chrome</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:if</span> (<span style="color:#b8860b">not</span> (<span style="color:#a2f">or</span> <span style="color:#b8860b">my/remote-server</span> <span style="color:#b8860b">my/is-termux</span>))
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:defer</span> <span style="color:#666">10</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:commands</span> (<span style="color:#b8860b">atomic-chrome-start-server</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:hook</span> (<span style="color:#b8860b">after-init</span> <span style="color:#666">.</span> <span style="color:#b8860b">atomic-chrome-start-server</span>)
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h3 id="redacted">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="redacted">
   Redacted
   <a class="anchor" href="#redacted">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-redacted</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-redacted</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">redacted</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:defer</span> (<span style="color:#b8860b">spacemacs/defer</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:commands</span> (<span style="color:#b8860b">redacted-mode</span>))
 </span></span><span style="display:flex;"><span>  )
-</span></span></code></pre></div><h3 id="screencast-gif-screencast">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="screencast-gif-screencast">
   Screencast <code>gif-screencast</code>
   <a class="anchor" href="#screencast-gif-screencast">#</a>
 </h3>
@@ -353,16 +463,43 @@ the GIF result.</p>
 <p>gif-screencast-program: scrot
 gif-screencast-convert-program: convert (from the ImageMagick suite)
 Optional: gif-screencast-optimize-program: Gifsicle</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>sudo apt-get install scrot gifsicle
-</span></span></code></pre></div><p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>sudo apt-get install scrot gifsicle
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>
   <a href="https://gitlab.com/ambrevar/emacs-gif-screencast">Ambrevar / emacs-gif-screencast · GitLab</a></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-gif-screencast</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-gif-screencast</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;gif-screencast</span>))
-</span></span></code></pre></div><h3 id="frameshot-and-screenshot">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="frameshot-and-screenshot">
   frameshot and screenshot
   <a class="anchor" href="#frameshot-and-screenshot">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-frameshot</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-frameshot</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">frameshot</span> <span style="color:#a2f">:ensure</span> <span style="color:#a2f">:defer</span> <span style="color:#666">10</span>)
 </span></span><span style="display:flex;"><span>  )
 </span></span><span style="display:flex;"><span>
@@ -370,11 +507,26 @@ Optional: gif-screencast-optimize-program: Gifsicle</p>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-screenshot</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">screenshot</span> <span style="color:#a2f">:ensure</span> <span style="color:#a2f">:defer</span> <span style="color:#666">10</span>)
 </span></span><span style="display:flex;"><span>  )
-</span></span></code></pre></div><h3 id="timetracking-activity-watch-mode">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="timetracking-activity-watch-mode">
   TimeTracking <code>activity-watch-mode</code>
   <a class="anchor" href="#timetracking-activity-watch-mode">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-activity-watch-mode</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-activity-watch-mode</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">activity-watch-mode</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:defer</span> (<span style="color:#b8860b">spacemacs/defer</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
@@ -383,7 +535,9 @@ Optional: gif-screencast-optimize-program: Gifsicle</p>
 </span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">browse-url</span> <span style="color:#b44">&#34;http://localhost:5600&#34;</span>))
 </span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">global-activity-watch-mode</span> <span style="color:#666">1</span>)
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h3 id="emacs-with-kitty-terminal">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="emacs-with-kitty-terminal">
   Emacs with <code>kitty</code> terminal
   <a class="anchor" href="#emacs-with-kitty-terminal">#</a>
 </h3>
@@ -394,7 +548,20 @@ Optional: gif-screencast-optimize-program: Gifsicle</p>
   corfu-terminal
   <a class="anchor" href="#corfu-terminal">#</a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-corfu-terminal</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-corfu-terminal</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">corfu-terminal</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:unless</span> <span style="color:#00a000">window-system</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">corfu</span>
@@ -403,12 +570,26 @@ Optional: gif-screencast-optimize-program: Gifsicle</p>
 </span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;corfu-mode-hook</span> <span style="color:#b8860b">&#39;corfu-terminal-mode</span>)
 </span></span><span style="display:flex;"><span>      )
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h4 id="term-keys">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="term-keys">
   term-keys
   <a class="anchor" href="#term-keys">#</a>
 </h4>
 <p>2023-03-13 드디어 동작한다. kitty 를 활용 할 수 있다. (잘 안쓰겠지만)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-term-keys</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-term-keys</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">term-keys</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:unless</span> <span style="color:#00a000">window-system</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:ensure</span>
@@ -416,17 +597,31 @@ Optional: gif-screencast-optimize-program: Gifsicle</p>
 </span></span><span style="display:flex;"><span>    (<span style="color:#a2f">unless</span> (<span style="color:#b8860b">display-graphic-p</span>)
 </span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">term-keys-mode</span> <span style="color:#800">t</span>))
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h4 id="xclip">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="xclip">
   xclip
   <a class="anchor" href="#xclip">#</a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-xclip</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-xclip</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">xclip</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:unless</span> <span style="color:#00a000">window-system</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
 </span></span><span style="display:flex;"><span>    (<span style="color:#a2f">unless</span> (<span style="color:#b8860b">display-graphic-p</span>)
 </span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">xclip-mode</span> <span style="color:#666">1</span>))))
-</span></span></code></pre></div><h3 id="wakatime-mode">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="wakatime-mode">
   wakatime-mode
   <a class="anchor" href="#wakatime-mode">#</a>
 </h3>
@@ -434,7 +629,32 @@ Optional: gif-screencast-optimize-program: Gifsicle</p>
 이게 속편할 수 있다. 이맥스만 뽑아내면 된다면!</p>
 <p>$ python3 -c &ldquo;$(wget -q -O - 
   <a href="https://raw.githubusercontent.com/wakatime/vim-wakatime/master/scripts/install_cli.py">https://raw.githubusercontent.com/wakatime/vim-wakatime/master/scripts/install_cli.py</a>)&rdquo;</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-wakatime-mode</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-wakatime-mode</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">wakatime-mode</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:if</span> (<span style="color:#a2f">and</span> (<span style="color:#a2f">or</span>
 </span></span><span style="display:flex;"><span>              (<span style="color:#b8860b">string=</span> (<span style="color:#00a000">system-name</span>) <span style="color:#b44">&#34;jhnuc&#34;</span>)
@@ -455,11 +675,25 @@ Optional: gif-screencast-optimize-program: Gifsicle</p>
 </span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">global-wakatime-mode</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    ))
-</span></span></code></pre></div><h3 id="telega-telegram-client">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="telega-telegram-client">
   <kbd>telega</kbd> telegram client
   <a class="anchor" href="#telega-telegram-client">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-telega</span> ()
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-misc/init-telega</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">telega</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:commands</span> <span style="color:#b8860b">telega</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
@@ -467,11 +701,54 @@ Optional: gif-screencast-optimize-program: Gifsicle</p>
 </span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">telega-chat-fill-column</span> <span style="color:#666">60</span>)
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>  )
-</span></span></code></pre></div><h2 id="funcs">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="funcs">
   Funcs
   <a class="anchor" href="#funcs">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">magit-commit-generic-update</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
@@ -508,17 +785,31 @@ Optional: gif-screencast-optimize-program: Gifsicle</p>
 </span></span><span style="display:flex;"><span>                              (<span style="color:#a2f">prog1</span> (<span style="color:#a2f">with-current-buffer</span> <span style="color:#b8860b">html-buffer</span> (<span style="color:#00a000">buffer-string</span>))
 </span></span><span style="display:flex;"><span>                                (<span style="color:#00a000">kill-buffer</span> <span style="color:#b8860b">html-buffer</span>))))))
 </span></span><span style="display:flex;"><span>   (<span style="color:#a2f">or</span> <span style="color:#b8860b">port</span> <span style="color:#666">9010</span>)))
-</span></span></code></pre></div><h2 id="keybindings">
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="keybindings">
   Keybindings
   <a class="anchor" href="#keybindings">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;aW&#34;</span> <span style="color:#b8860b">&#39;spacemacs/wakatime-dashboard</span>)
 </span></span><span style="display:flex;"><span>(<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;aA&#34;</span> <span style="color:#b8860b">&#39;spacemacs/activitywatch-dashboard</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;Tr&#34;</span> <span style="color:#b8860b">&#39;redacted-mode</span>)
-</span></span></code></pre></div></p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
   
 
 
@@ -629,7 +920,7 @@ Optional: gif-screencast-optimize-program: Gifsicle</p>
   
   
   
-  <h3>Go to <a href="/configs/emacs/jh-writing/">random</a> page</h3>
+  <h3>Go to <a href="/configs/emacs/jh-org/">random</a> page</h3>
   
   
 </center>
@@ -640,9 +931,9 @@ Optional: gif-screencast-optimize-program: Gifsicle</p>
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/98ce291684ad907f983efe0382e4fea3ee5ffec4" title='Last modified by junghan0611 | 2023-06-19' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/1b9d720aa30cd6ed316ee6b7ee7d6011d8f1d2d2" title='Last modified by junghan0611 | 2023-06-20' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2023-06-19</span>
+      <span>2023-06-20</span>
     </a>
   </div>
 
