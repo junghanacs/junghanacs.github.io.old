@@ -3,20 +3,30 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="TODO [0/1] Check Lists # [ ] Sidenote and book_menu are collapsed after-menu.html [ ] mermaid caption 이 안 들어 간다. Heading # [2023-06-19 Mon 17:51] h2 은 레드 계열 heading 은 숫자보다는 정통 별표로 가는게 예쁘다. Figure 1: modus-themes-list-colors-current for heading asterisks Heading 2 # 헤딩 h3 yello 계열 Heading">
+<meta name="description" content="
+
+
+  Org-Roam 에서 작성한 문서를 Hugo Markdown 으로 변환하기는 쉽다. 근데 각주, 인용,
+태그, 요약, 코드, 일부 내용 감추기 등을 어떻게 하는가? 여기에 대한 답을 찾는다.
+">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들" />
-<meta property="og:description" content="TODO [0/1] Check Lists # [ ] Sidenote and book_menu are collapsed after-menu.html [ ] mermaid caption 이 안 들어 간다. Heading # [2023-06-19 Mon 17:51] h2 은 레드 계열 heading 은 숫자보다는 정통 별표로 가는게 예쁘다. Figure 1: modus-themes-list-colors-current for heading asterisks Heading 2 # 헤딩 h3 yello 계열 Heading" />
+<meta property="og:description" content="
+
+
+  Org-Roam 에서 작성한 문서를 Hugo Markdown 으로 변환하기는 쉽다. 근데 각주, 인용,
+태그, 요약, 코드, 일부 내용 감추기 등을 어떻게 하는가? 여기에 대한 답을 찾는다.
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://junghanacs.com/notes/org_org_roam_hugo_meta_format/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2023-06-05T00:00:00+09:00" />
-<meta property="article:modified_time" content="2023-06-20T10:44:23+09:00" />
+<meta property="article:modified_time" content="2023-06-20T12:50:33+09:00" />
 <title>Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들 | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.2fc3a4ff461b914334cc632edb7d713cd28f5a03b10c5d3a79406587a36e9f05.css" integrity="sha256-L8Ok/0YbkUM0zGMu231xPNKPWgOxDF06eUBlh6NunwU=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.2e619e5f5f4864be2eb2909fcc67e2608bb76976f3cd4c0855b915faf6704b7a.css" integrity="sha256-LmGeX19IZL4uspCfzGfiYIu3aXbzzUwIVbkV&#43;vZwS3o=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/ko.search.min.5106f921da2ce3cd7724fbb8049a38b1b1d95e8211b7d5264c63cd6b6045db1f.js" integrity="sha256-UQb5Idos4813JPu4BJo4sbHZXoIRt9UmTGPNa2BF2x8=" crossorigin="anonymous"></script>
+  <script defer src="/ko.search.min.c42d0e08fe4b0c175e945a141b1c97a68d382a0fd9e749757e72412eab15b92d.js" integrity="sha256-xC0OCP5LDBdelFoUGxyXpo04Kg/Z50l1fnJBLqsVuS0=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -148,7 +158,7 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
-        <li><a href="#check-lists"><span class="org-todo todo TODO">TODO</span> <code>[0/1]</code> Check Lists</a></li>
+        <li><a href="#check-lists"><span class="org-todo todo TODO">TODO</span> <code>[1/2]</code> Check Lists</a></li>
         <li><a href="#heading">Heading</a>
           <ul>
             <li><a href="#heading-2">Heading 2</a>
@@ -228,15 +238,23 @@ https://github.com/alex-shpak/hugo-book
 
 <hr>
 
-  <p><h2 id="check-lists">
-  <span class="org-todo todo TODO">TODO</span> <code>[0/1]</code> Check Lists
+  <p><style>details summary { color: green; }</style>
+<style>details .details { color: blue; }</style>
+<blockquote class="book-hint info">
+  Org-Roam 에서 작성한 문서를 Hugo Markdown 으로 변환하기는 쉽다. 근데 각주, 인용,
+태그, 요약, 코드, 일부 내용 감추기 등을 어떻게 하는가? 여기에 대한 답을 찾는다.
+</blockquote>
+
+<p>ox-hugo 의 모든 예제는 다음 주소에 있다. 여기서 찾아보자. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h2 id="check-lists">
+  <span class="org-todo todo TODO">TODO</span> <code>[1/2]</code> Check Lists
   <a class="anchor" href="#check-lists">#</a>
 </h2>
 <dl>
 <dt>[ ] Sidenote and book_menu are collapsed</dt>
 <dd>after-menu.html</dd>
 </dl>
-<p>[ ] mermaid caption 이 안 들어 간다.</p>
+<p>[X] mermaid caption 문제 &ndash; 이미지로 넣어라.</p>
 <h2 id="heading">
   Heading
   <a class="anchor" href="#heading">#</a>
@@ -286,8 +304,8 @@ heading 은 숫자보다는 정통 별표로 가는게 예쁘다.</p>
   Markup
   <a class="anchor" href="#markup">#</a>
 </h2>
-<p>org-mode 마크업은 다음의 주소에서 확인 바람. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
-ox-hugo 관련 내용은 다음 주소에서 확인.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
+<p>org-mode 마크업은 다음의 주소에서 확인 바람. <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
+ox-hugo 관련 내용은 다음 주소에서 확인.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>
 결과를 비교하면 org-code 와 verbatim 이 다르다. 맞춰줘야 한다.
 verbatim 은 맞추기가 까다롭다. <kbd>kbd</kbd> 을 많이 사용하라!</p>
 <blockquote class="book-hint warning">
@@ -373,7 +391,7 @@ citar 사용법을 여기서 다룰 것은 아니다. 아무튼 깔끔하게 들
   Footnote 각주 관리
   <a class="anchor" href="#footnote-%ea%b0%81%ec%a3%bc-%ea%b4%80%eb%a6%ac">#</a>
 </h2>
-<p>각주는 이렇게 들어갑니다. <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<p>각주는 이렇게 들어갑니다. <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
 <h2 id="코드-인용-예시-블록">
   코드, 인용, 예시 블록
   <a class="anchor" href="#%ec%bd%94%eb%93%9c-%ec%9d%b8%ec%9a%a9-%ec%98%88%ec%8b%9c-%eb%b8%94%eb%a1%9d">#</a>
@@ -500,7 +518,7 @@ citar 사용법을 여기서 다룰 것은 아니다. 아무튼 깔끔하게 들
   <a class="anchor" href="#shotcodes-%ec%a7%80%ec%9b%90">#</a>
 </h2>
 <p><span class="timestamp-wrapper"><span class="timestamp">[2023-06-08 Thu 12:19]</span></span>
-Hugo Book 데모 페이지를 확인한다. <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+Hugo Book 데모 페이지를 확인한다. <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
 <p>여기에 보면 문서 편집하기 위한 여러 코드들을 제공하고 있다. 나는 마크다운으로
 편집하지 않기 때문에 각각 기능 검증이 필요하다. ox-hugo 가 있으니 문제 될 것은
 없다. 오히려 이맥스의 확장성을 제한하기 때문에 선택과 집중이 필요하다.</p>
@@ -568,7 +586,7 @@ note left of State2 : This is the note to the left.
 
 <p>org-babel 의 이점은 org 문서에서 바로 결과를 확인할 수 있다는 점이다. 편집하면서
 바로 보고 블로그로 바로 내보내면 된다. 물론 로컬에 mermaid 를 설치해 놓아야
-한다. 물론 ob-mermaid 로 설정은 기본이다. <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+한다. 물론 ob-mermaid 로 설정은 기본이다. <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
 <div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -579,7 +597,7 @@ note left of State2 : This is the note to the left.
 </div>
 </div><p>단점은 명확하다. png 만 지원 된다.</p>
 <p>Ob-Mermaid 이용한 결과다. png 파일의 한계.</p>
-<p><kbd>:exports</kbd> 옵션은 code, results,  both, none <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<p><kbd>:exports</kbd> 옵션은 code, results,  both, none <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></p>
 <div class="highlight" width="80%" align="center"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -718,31 +736,34 @@ Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 
 <ol>
 <li id="fn:1">
 <p>
-  <a href="https://orgmode.org/manual/Markup-for-Rich-Contents.html">https://orgmode.org/manual/Markup-for-Rich-Contents.html</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+  <a href="https://raw.githubusercontent.com/kaushalmodi/ox-hugo/main/test/site/content-org/all-posts.org">https://raw.githubusercontent.com/kaushalmodi/ox-hugo/main/test/site/content-org/all-posts.org</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
 <p>
-  <a href="https://ox-hugo.scripter.co/doc/formatting">https://ox-hugo.scripter.co/doc/formatting</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+  <a href="https://orgmode.org/manual/Markup-for-Rich-Contents.html">https://orgmode.org/manual/Markup-for-Rich-Contents.html</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
 <p>
-  <a href="https://jethrokuan.github.io/org-roam-guide/">How I Take Notes with Org-roam</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+  <a href="https://ox-hugo.scripter.co/doc/formatting">https://ox-hugo.scripter.co/doc/formatting</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
 <p>
-  <a href="https://hugo-book-demo.netlify.app/docs/shortcodes/katex/">https://hugo-book-demo.netlify.app/docs/shortcodes/katex/</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+  <a href="https://jethrokuan.github.io/org-roam-guide/">How I Take Notes with Org-roam</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5">
 <p>
-  <a href="https://github.com/arnm/ob-mermaid">https://github.com/arnm/ob-mermaid</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+  <a href="https://hugo-book-demo.netlify.app/docs/shortcodes/katex/">https://hugo-book-demo.netlify.app/docs/shortcodes/katex/</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6">
 <p>
-  <a href="https://orgmode.org/manual/Exporting-Code-Blocks.html">https://orgmode.org/manual/Exporting-Code-Blocks.html</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+  <a href="https://github.com/arnm/ob-mermaid">https://github.com/arnm/ob-mermaid</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>
+  <a href="https://orgmode.org/manual/Exporting-Code-Blocks.html">https://orgmode.org/manual/Exporting-Code-Blocks.html</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</div>
-</p>
+</div></p>
   
 
 
@@ -849,7 +870,7 @@ Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/1b9d720aa30cd6ed316ee6b7ee7d6011d8f1d2d2" title='Last modified by junghan0611 | 2023-06-20' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/7d9b96eea6cd875107be1f19c791c81d585626c5" title='Last modified by junghan0611 | 2023-06-20' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2023-06-20</span>
     </a>
@@ -906,7 +927,7 @@ Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 
   <ul>
     <li>
       <ul>
-        <li><a href="#check-lists"><span class="org-todo todo TODO">TODO</span> <code>[0/1]</code> Check Lists</a></li>
+        <li><a href="#check-lists"><span class="org-todo todo TODO">TODO</span> <code>[1/2]</code> Check Lists</a></li>
         <li><a href="#heading">Heading</a>
           <ul>
             <li><a href="#heading-2">Heading 2</a>

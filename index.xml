@@ -295,7 +295,12 @@ you can be up and running in a moment without too much difficulty.
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0900</pubDate>
       
       <guid>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</guid>
-      <description>TODO [0/1] Check Lists # [ ] Sidenote and book_menu are collapsed after-menu.html [ ] mermaid caption 이 안 들어 간다. Heading # [2023-06-19 Mon 17:51] h2 은 레드 계열 heading 은 숫자보다는 정통 별표로 가는게 예쁘다. Figure 1: modus-themes-list-colors-current for heading asterisks Heading 2 # 헤딩 h3 yello 계열 Heading</description>
+      <description>&lt;style&gt;details summary { color: green; }&lt;/style&gt;
+&lt;style&gt;details .details { color: blue; }&lt;/style&gt;
+&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Org-Roam 에서 작성한 문서를 Hugo Markdown 으로 변환하기는 쉽다. 근데 각주, 인용,
+태그, 요약, 코드, 일부 내용 감추기 등을 어떻게 하는가? 여기에 대한 답을 찾는다.
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
