@@ -14,13 +14,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://junghanacs.com/configs/emacs/jh-base/" /><meta property="article:section" content="configs" />
 <meta property="article:published_time" content="2023-06-12T00:00:00+09:00" />
-<meta property="article:modified_time" content="2023-06-20T16:21:36+09:00" />
+<meta property="article:modified_time" content="2023-06-21T17:34:07+09:00" />
 <title>jh-base layer | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.f7c397887e4982893a0344f01206e89c7c0cb708821dd3021dcf5a221f2798ed.css" integrity="sha256-98OXiH5Jgok6A0TwEgbonHwMtwiCHdMCHc9aIh8nmO0=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.e440f5ffcda1dc4668e996a17d8836c9914fe8b6e7ef05fa839402f8c50a9c6c.css" integrity="sha256-5ED1/82h3EZo6ZahfYg2yZFP6Lbn7wX6g5QC&#43;MUKnGw=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/ko.search.min.461f5ab521dcbf53d6ddeb7cefa120a4d2053b3996c643bf6713d3bfa3ef8853.js" integrity="sha256-Rh9atSHcv1PW3et876EgpNIFOzmWxkO/ZxPTv6PviFM=" crossorigin="anonymous"></script>
+  <script defer src="/ko.search.min.0db01167e905cd6a77fe8911e0b9a631cd0c6b1c03ecb1c1d26583f1c0c1b026.js" integrity="sha256-DbARZ&#43;kFzWp3/okR4LmmMc0MaxwD7LHB0mWD8cDBsCY=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -214,7 +214,7 @@ https://github.com/alex-shpak/hugo-book
     
     
     
-    <strong aria-hidden="true">Last updated: </strong>Jun 20, 2023
+    <strong aria-hidden="true">Last updated: </strong>Jun 21, 2023
     
     
   </div>
@@ -397,6 +397,9 @@ org 모드가 없는데 좀 그렇긴 하다만. ui 도 없고. base 를
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
@@ -413,18 +416,21 @@ org 모드가 없는데 좀 그렇긴 하다만. ui 도 없고. base 를
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Commentary:</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Code:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Package Lists</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defconst</span> <span style="color:#b8860b">jh-base-packages</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#666">&#39;</span>(
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; electric</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; paren</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; spacemacs-bootstrap</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; spacemacs-bootstrap</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">which-key</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">helpful</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">time-stamp</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; spacemacs-defaults</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; spacemacs-defaults</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">recentf</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">bookmark</span>
@@ -462,13 +468,13 @@ org 모드가 없는데 좀 그렇긴 하다만. ui 도 없고. base 를
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; winner</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; zone</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Additional built-in packages</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; Additional built-in packages</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">calendar</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">tramp</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">proced</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">man</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Additional packages</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; Additional packages</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">sideline</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; gc-buffers ; too aggressive</span>
@@ -504,11 +510,15 @@ shackle 과 연동하는 시나리오에 튜닝 필요</p>
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; tshu/lisp/editor-misc.el</span>
-</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/post-init-helpful</span> ()
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Helpful</span>
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; tshu/lisp/editor-misc.el</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/post-init-helpful</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">helpful-max-buffers</span> <span style="color:#666">3</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">defun</span> <span style="color:#b8860b">helpful-reuse-window</span> (<span style="color:#b8860b">buffer-or-name</span>)
@@ -571,25 +581,9 @@ minibuffer 와 통합한다는 것은 무슨 이점이 있을까?
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (defun org/pre-init-ox-epub ()</span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (spacemacs|use-package-add-hook org :post-config (require &#39;ox-epub)))</span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (defun org/init-ox-epub ())</span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (defun treemacs/pre-init-golden-ratio ()</span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (spacemacs|use-package-add-hook golden-ratio</span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     :post-config</span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;     (add-to-list &#39;golden-ratio-exclude-buffer-regexp</span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;                  (rx &#34;*Treemacs&#34; (0+ any)))))</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Which-key</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/post-init-which-key</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">which-key-idle-delay</span> <span style="color:#666">0.4</span>)
@@ -646,9 +640,13 @@ minibuffer 와 통합한다는 것은 무슨 이점이 있을까?
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/pre-init-recentf</span> ()
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Recentf</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/pre-init-recentf</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">spacemacs|use-package-add-hook</span> <span style="color:#b8860b">recentf</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; :pre-init</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (message &#34;JH pre-init-recentf&#34;)</span>
@@ -761,10 +759,12 @@ minibuffer 와 통합한다는 것은 무슨 이점이 있을까?
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; https://systemcrafters.cc/emacs-from-scratch/effortless-file-management-with-dired/</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Dired</span>
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; https://systemcrafters.cc/emacs-from-scratch/effortless-file-management-with-dired/</span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/post-init-dired</span> ()
 </span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; -al ; spacemacs</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; Make sure to use the long name of flags when exists</span>
@@ -868,9 +868,13 @@ minibuffer 와 통합한다는 것은 무슨 이점이 있을까?
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/post-init-bookmark</span> ()
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Bookmark</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/post-init-bookmark</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">bookmark-default-file</span> (<span style="color:#00a000">concat</span> <span style="color:#b8860b">dotspacemacs-directory</span> <span style="color:#b44">&#34;var/bookmarks&#34;</span>))
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">bookmark-use-annotations</span> <span style="color:#800">nil</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">bookmark-automatically-show-annotations</span> <span style="color:#800">t</span>)
@@ -896,9 +900,13 @@ minibuffer 와 통합한다는 것은 무슨 이점이 있을까?
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/pre-init-savehist</span> ()
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Savehist</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/pre-init-savehist</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">spacemacs|use-package-add-hook</span> <span style="color:#b8860b">savehist</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:post-init</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; 기본이 100, 스페이스맥스 1000</span>
@@ -951,15 +959,15 @@ N 단어에 대해 다음 단어와 일치합니다.</p>
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; Dabbrev (dynamic word completion)</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Dabbrev : Dynamic Word Completion</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/init-dabbrev</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">dabbrev</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:init</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq dabbrev-abbrev-char-regexp &#34;[A-Za-z-_]&#34;</span>
-</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">dabbrev-abbrev-char-regexp</span> <span style="color:#b44">&#34;\\sw\\|\\s_&#34;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#b8860b">dabbrev-ignored-buffer-regexps</span> <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;\\.\\(?:pdf\\|jpe?g\\|png\\)\\&#39;&#34;</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq dabbrev-abbrev-char-regexp &#34;\\sw\\|\\s_&#34;) ; prot</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">dabbrev-abbrev-char-regexp</span> <span style="color:#b44">&#34;[A-Za-z-_]&#34;</span>) <span style="color:#080;font-style:italic">; tshu</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">dabbrev-ignored-buffer-regexps</span> <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;\\.\\(?:pdf\\|jpe?g\\|png\\)\\&#39;&#34;</span>))
 </span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">dabbrev-abbrev-skip-leading-regexp</span> <span style="color:#b44">&#34;[$*/=~&#39;]&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
 </span></span><span style="display:flex;"><span>    (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">map</span> <span style="color:#b8860b">global-map</span>))
@@ -1000,7 +1008,7 @@ C-x a i g
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; abbrev-mode</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Abbrev : Abbreviations</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/post-init-abbrev</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">abbrev-file-name</span> (<span style="color:#00a000">concat</span> <span style="color:#b8860b">dotspacemacs-directory</span> <span style="color:#b44">&#34;var/abbrev_defs&#34;</span>))
@@ -1043,9 +1051,11 @@ C-x a i g
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; Sideline</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Sideline</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/init-sideline</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">sideline</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:ensure</span>
@@ -1103,7 +1113,7 @@ C-x a i g
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; Tramp</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Tramp</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/init-tramp</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">tramp</span>
@@ -1155,9 +1165,11 @@ C-x a i g
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; man</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Man</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/init-man</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">man</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:defer</span> <span style="color:#666">10</span>
@@ -1203,9 +1215,11 @@ C-x a i g
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; Calendar</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Calendar</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/init-calendar</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">calendar</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:ensure</span> <span style="color:#800">t</span>
@@ -1242,9 +1256,11 @@ C-x a i g
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; Proced</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Proced</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/init-proced</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">proced</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:defer</span> <span style="color:#666">10</span>
@@ -1268,9 +1284,11 @@ C-x a i g
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;;; Time-Stamp</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Time-Stamp</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/init-time-stamp</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;time-stamp</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;write-file-functions</span> <span style="color:#b8860b">&#39;time-stamp</span>) <span style="color:#080;font-style:italic">; update when saving</span>
@@ -1331,9 +1349,13 @@ load smaller.</p>
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">td/bind-keys</span> (<span style="color:#b8860b">conses</span> <span style="color:#a2f">&amp;optional</span> <span style="color:#b8860b">mode-map</span>)
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Helper Functions</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">td/bind-keys</span> (<span style="color:#b8860b">conses</span> <span style="color:#a2f">&amp;optional</span> <span style="color:#b8860b">mode-map</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Bind several keybinds using a list of </span><span style="color:#b8860b">`CONSES&#39;</span><span style="color:#b44">.
 </span></span></span><span style="display:flex;"><span><span style="color:#b44">  Binds will be global unless the optional </span><span style="color:#b8860b">`MODE-MAP&#39;</span><span style="color:#b44"> is specified.&#34;</span>
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">dolist</span> (<span style="color:#b8860b">combo</span> <span style="color:#b8860b">conses</span>)
@@ -1570,9 +1592,13 @@ load smaller.</p>
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">describe-last-function</span> ()
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Extra Functions</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">describe-last-function</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">describe-function</span> <span style="color:#b8860b">last-command</span>))
 </span></span><span style="display:flex;"><span>
@@ -1809,9 +1835,13 @@ load smaller.</p>
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/open-fortune-quotes</span> ()
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Open user-files</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/open-fortune-quotes</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span> )
 </span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">find-file</span> <span style="color:#b44">&#34;~/sync/obsd/fortunes/quotes-ko.md&#34;</span>))
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/open-dotsamples-readme</span> ()
@@ -1875,9 +1905,13 @@ load smaller.</p>
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; turn off =show-smartparens-global-mode=</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Terminal mode hook</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; turn off =show-smartparens-global-mode=</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; turn off =global-page-break-lines-mode=</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; scrolling for touch devices enable the function mouse-wheel-mode</span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-base/enable-terminal-mode</span> ()
@@ -1957,9 +1991,13 @@ load smaller.</p>
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Matching.html</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Paren and Electric-pair</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Matching.html</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; 괄호, 구분자(delimiter) 쌍 강조</span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">with-eval-after-load</span> <span style="color:#b8860b">&#39;paren</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; 괄호만 강조</span>
@@ -2018,34 +2056,6 @@ load smaller.</p>
    
 
    
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
 
    
 
@@ -2053,6 +2063,40 @@ load smaller.</p>
 
    
       
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
    
 
    
@@ -2101,11 +2145,11 @@ load smaller.</p>
   jh-completion
 </blockquote></li>
        
-          <li><a href="/configs/emacs/">[INDEX] Junghanacs Emacs README</a><blockquote class="book-hint info">
+          <li><a href="/configs/emacs/">menu/Dotfiles/dot-emacs</a><blockquote class="book-hint info">
   Emacs 구성의 목표와 전체적인 소개. 상세 내용은 링크에서 확인 바랍니다.
 </blockquote></li>
        
-          <li><a href="/configs/emacs/spacemacs/">DotSpacemacs</a><blockquote class="book-hint info">
+          <li><a href="/configs/emacs/spacemacs/">Dot-Spacemacs</a><blockquote class="book-hint info">
   Spacemacs 닷 파일. 정리가 필요하다. 정리는 주석 삭제부터. noexport 를 적절히 사용
 </blockquote></li>
        
@@ -2120,7 +2164,7 @@ load smaller.</p>
   
   
   
-  <h3>Go to <a href="/configs/emacs/jh-javascript/">random</a> page</h3>
+  <h3>Go to <a href="/configs/emacs/jh-writing/">random</a> page</h3>
   
   
 </center>
@@ -2131,9 +2175,9 @@ load smaller.</p>
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/a92bc168ea4d2d7c7218ef3f0ba1c3ae9871d8e0" title='Last modified by junghan0611 | 2023-06-20' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/a726a7a5a0ef40b7ffb9b6ec14c495bcd9e52675" title='Last modified by junghan0611 | 2023-06-21' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2023-06-20</span>
+      <span>2023-06-21</span>
     </a>
   </div>
 

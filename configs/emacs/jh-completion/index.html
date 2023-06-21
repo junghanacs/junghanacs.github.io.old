@@ -14,13 +14,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://junghanacs.com/configs/emacs/jh-completion/" /><meta property="article:section" content="configs" />
 <meta property="article:published_time" content="2023-06-12T00:00:00+09:00" />
-<meta property="article:modified_time" content="2023-06-20T16:21:36+09:00" />
+<meta property="article:modified_time" content="2023-06-21T17:34:07+09:00" />
 <title>jh-completion layer | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.f7c397887e4982893a0344f01206e89c7c0cb708821dd3021dcf5a221f2798ed.css" integrity="sha256-98OXiH5Jgok6A0TwEgbonHwMtwiCHdMCHc9aIh8nmO0=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.e440f5ffcda1dc4668e996a17d8836c9914fe8b6e7ef05fa839402f8c50a9c6c.css" integrity="sha256-5ED1/82h3EZo6ZahfYg2yZFP6Lbn7wX6g5QC&#43;MUKnGw=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/ko.search.min.461f5ab521dcbf53d6ddeb7cefa120a4d2053b3996c643bf6713d3bfa3ef8853.js" integrity="sha256-Rh9atSHcv1PW3et876EgpNIFOzmWxkO/ZxPTv6PviFM=" crossorigin="anonymous"></script>
+  <script defer src="/ko.search.min.0db01167e905cd6a77fe8911e0b9a631cd0c6b1c03ecb1c1d26583f1c0c1b026.js" integrity="sha256-DbARZ&#43;kFzWp3/okR4LmmMc0MaxwD7LHB0mWD8cDBsCY=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -163,7 +163,11 @@ https://github.com/alex-shpak/hugo-book
               </ul>
             </li>
             <li><a href="#corfu-completion-ui"><kbd>Corfu</kbd> Completion UI</a></li>
-            <li><a href="#cape-completion-at-point-extensions"><kbd>Cape</kbd> Completion At Point Extensions</a></li>
+            <li><a href="#cape-completion-at-point-extensions"><kbd>Cape</kbd> Completion At Point Extensions</a>
+              <ul>
+                <li><a href="#cape-yasnippet"><span class="org-todo todo TODO">TODO</span> <code>cape-yasnippet</code></a></li>
+              </ul>
+            </li>
             <li><a href="#tempel-simple-templates-for-emacs"><kbd>Tempel</kbd> Simple templates for Emacs</a></li>
             <li><a href="#turn-off-auto-preview-using-consult">Turn off <kbd>Auto-preview</kbd> using Consult</a></li>
           </ul>
@@ -196,7 +200,7 @@ https://github.com/alex-shpak/hugo-book
     
     
     
-    <strong aria-hidden="true">Last updated: </strong>Jun 20, 2023
+    <strong aria-hidden="true">Last updated: </strong>Jun 21, 2023
     
     
   </div>
@@ -259,6 +263,7 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
@@ -275,6 +280,7 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Commentary:</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Code:</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#b8860b">configuration-layer/declare-layer-dependencies</span>
 </span></span><span style="display:flex;"><span> <span style="color:#666">&#39;</span>(
 </span></span><span style="display:flex;"><span>   <span style="color:#080;font-style:italic">;; auto-yasnippet yasnippet yasnippet-snippets</span>
@@ -342,6 +348,9 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
@@ -358,6 +367,9 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Commentary:</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; Code:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Package Lists</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defconst</span> <span style="color:#b8860b">jh-completion-packages</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#666">&#39;</span>(
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; 재정의 패키지</span>
@@ -435,9 +447,13 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/post-init-embark</span> ()
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Embark</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/post-init-embark</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">require</span> <span style="color:#b8860b">&#39;embark</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; By default, embark doesn&#39;t know how to handle org-links.  Let&#39;s provide a way.</span>
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">defun</span> <span style="color:#b8860b">ash/org-link</span> ()
@@ -583,9 +599,13 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/init-corfu</span> ()
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Corfu</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/init-corfu</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">corfu</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">evil-collection</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:demand</span> <span style="color:#800">t</span>
@@ -798,7 +818,7 @@ work with company backend
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; TODO cape with Dictionary test</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; CAPE : Completion At Point Extensions</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/init-cape-yasnippet</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">cape-yasnippet</span>)
@@ -875,10 +895,10 @@ work with company backend
 </span></span><span style="display:flex;"><span>  )
 </span></span></code></pre></td></tr></table>
 </div>
-</div><!--list-separator-->
-<ul>
-<li>
-<p><span class="org-todo todo TODO">TODO</span>  <code>cape-yasnippet</code></p>
+</div><h4 id="cape-yasnippet">
+  <span class="org-todo todo TODO">TODO</span> <code>cape-yasnippet</code>
+  <a class="anchor" href="#cape-yasnippet">#</a>
+</h4>
 <table>
 <thead>
 <tr>
@@ -1005,9 +1025,7 @@ work with company backend
 </span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (add-hook mode-hook #&#39;+cape-yasnippet--setup-h)))</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-<h3 id="tempel-simple-templates-for-emacs">
+</div><h3 id="tempel-simple-templates-for-emacs">
   <kbd>Tempel</kbd> Simple templates for Emacs
   <a class="anchor" href="#tempel-simple-templates-for-emacs">#</a>
 </h3>
@@ -1074,9 +1092,13 @@ work with company backend
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Template-based in-buffer completion (tempel.el)</span>
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Tempel</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; Template-based in-buffer completion (tempel.el)</span>
 </span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; NOTE 2023-01-19: Check the `templates&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/init-tempel</span> ()
@@ -1190,9 +1212,13 @@ work with company backend
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/pre-init-consult</span> ()
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;;; Consult</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-completion/pre-init-consult</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">spacemacs|use-package-add-hook</span> <span style="color:#b8860b">consult</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:post-config</span>
 </span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">consult-customize</span>
@@ -1286,6 +1312,10 @@ work with company backend
    
 
    
+
+   
+
+   
       
    
 
@@ -1301,6 +1331,10 @@ work with company backend
 
    
 
+   
+
+   
+      
    
 
    
@@ -1329,8 +1363,12 @@ work with company backend
     <div class="backlinks">
       <ul>
        
-          <li><a href="/configs/emacs/">[INDEX] Junghanacs Emacs README</a><blockquote class="book-hint info">
+          <li><a href="/configs/emacs/">menu/Dotfiles/dot-emacs</a><blockquote class="book-hint info">
   Emacs 구성의 목표와 전체적인 소개. 상세 내용은 링크에서 확인 바랍니다.
+</blockquote></li>
+       
+          <li><a href="/configs/emacs/spacemacs/">Dot-Spacemacs</a><blockquote class="book-hint info">
+  Spacemacs 닷 파일. 정리가 필요하다. 정리는 주석 삭제부터. noexport 를 적절히 사용
 </blockquote></li>
        
      </ul>
@@ -1344,7 +1382,7 @@ work with company backend
   
   
   
-  <h3>Go to <a href="/configs/emacs/jh-reading/">random</a> page</h3>
+  <h3>Go to <a href="/configs/emacs/jh-visual/">random</a> page</h3>
   
   
 </center>
@@ -1355,9 +1393,9 @@ work with company backend
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/a92bc168ea4d2d7c7218ef3f0ba1c3ae9871d8e0" title='Last modified by junghan0611 | 2023-06-20' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/a726a7a5a0ef40b7ffb9b6ec14c495bcd9e52675" title='Last modified by junghan0611 | 2023-06-21' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2023-06-20</span>
+      <span>2023-06-21</span>
     </a>
   </div>
 
@@ -1423,7 +1461,11 @@ work with company backend
               </ul>
             </li>
             <li><a href="#corfu-completion-ui"><kbd>Corfu</kbd> Completion UI</a></li>
-            <li><a href="#cape-completion-at-point-extensions"><kbd>Cape</kbd> Completion At Point Extensions</a></li>
+            <li><a href="#cape-completion-at-point-extensions"><kbd>Cape</kbd> Completion At Point Extensions</a>
+              <ul>
+                <li><a href="#cape-yasnippet"><span class="org-todo todo TODO">TODO</span> <code>cape-yasnippet</code></a></li>
+              </ul>
+            </li>
             <li><a href="#tempel-simple-templates-for-emacs"><kbd>Tempel</kbd> Simple templates for Emacs</a></li>
             <li><a href="#turn-off-auto-preview-using-consult">Turn off <kbd>Auto-preview</kbd> using Consult</a></li>
           </ul>

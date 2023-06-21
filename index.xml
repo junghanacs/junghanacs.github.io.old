@@ -1,23 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>[INDEX] Home on Junghanacs</title>
+    <title>Junghanacs&#39;s Home on Junghanacs</title>
     <link>https://junghanacs.com/</link>
-    <description>Recent content in [INDEX] Home on Junghanacs</description>
+    <description>Recent content in Junghanacs&#39;s Home on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About Emacs Elements (Draft)</title>
+      <title>Changes in Emacs 29 and Emacs Elements 🪴</title>
       <link>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</link>
-      <pubDate>Sat, 17 Jun 2023 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       
       <guid>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
-  Emacs Elements is a channel that focuses on getting Vanilla Emacs to work
-powerfully for you. How can I get things done in Emacs? Emacs is the world&amp;rsquo;s
-most powerful text editor, and can be overwhelming for beginners. I show you how
-you can be up and running in a moment without too much difficulty.
+  Emacs Elements 는 올해 나에게 가장 도움이 많이 된 Emacs 유튜브 채널이다.
+그 중에서도 &amp;ldquo;Changes in Emacs 29&amp;rdquo; 과 PDF 활용법, Emacs 설치 방법 등은 아주
+유용한 최신 팁이다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Jeremy Friesen :: On Storing Glossary Terms in Org Roam Nodes (2022)🌱</title>
+      <link>https://junghanacs.com/refs/StoringGlossaryTerms2022/</link>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/refs/StoringGlossaryTerms2022/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Jeremy 는 정말 뛰어난 텍스트 마스터다. 실제로도 지식 정보 관리 분야에서 일하고
+있다. 앞으로도 많이 다루겠지만 일단 샘플로 하나 시작한다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Keith Waclena :: Use GNU Emacs - The Plain Text Computing Environment🌱</title>
+      <link>https://junghanacs.com/refs/UseGNUEmacs/</link>
+      <pubDate>Tue, 20 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/refs/UseGNUEmacs/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  마스터피스! 일단 소개만 다루자. 세부 내용은 다루려면 너무 많다.
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -34,7 +56,7 @@ you can be up and running in a moment without too much difficulty.
     </item>
     
     <item>
-      <title>Daw-Ran Liou :: On Learning Emacs (2020)</title>
+      <title>Daw-Ran Liou :: On Learning Emacs (2020)🌳</title>
       <link>https://junghanacs.com/refs/LearningEmacs/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -46,13 +68,25 @@ you can be up and running in a moment without too much difficulty.
     </item>
     
     <item>
-      <title>Learning Vim and Evil on Spacemacs</title>
+      <title>Learning Vim and Evil on Spacemacs🌱</title>
       <link>https://junghanacs.com/notes/learning_spacemacs_and_vim/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
       
       <guid>https://junghanacs.com/notes/learning_spacemacs_and_vim/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
-  좋은 문서를 만났다. 잘 되었다. 스타일로 바꿔야 하는 것은 배움이 있다는 말이다.
+  간단하게 정리할 수 없는 내용이다. 근데 해야 한다. 그래서 일단 씨앗을 심었다.
+거둘 수는 없다. 가야 한다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Conversation with Junghanacs🌱</title>
+      <link>https://junghanacs.com/notes/talk_with_junghanacs/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/talk_with_junghanacs/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Junghanacs 의 가르침을 받들다.
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -266,18 +300,7 @@ you can be up and running in a moment without too much difficulty.
     </item>
     
     <item>
-      <title>Junghan 과 Junghanacs 의 대화</title>
-      <link>https://junghanacs.com/notes/talk_with_junghanacs/</link>
-      <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
-      
-      <guid>https://junghanacs.com/notes/talk_with_junghanacs/</guid>
-      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
-  Junghanacs 의 가르침을 받들다.
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Peter Prevos :: More Productive with Emacs: Writing, Researching, Publishing (2022)</title>
+      <title>Peter Prevos :: More Productive with Emacs (2022)🌳</title>
       <link>https://junghanacs.com/refs/peterprevosMoreProductiveEmacs2021/</link>
       <pubDate>Sat, 10 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -290,7 +313,18 @@ you can be up and running in a moment without too much difficulty.
     </item>
     
     <item>
-      <title>블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움 (TODO)</title>
+      <title>Tecosaur :: Org Glossary (2022)🌱</title>
+      <link>https://junghanacs.com/refs/tecosaurOrgGlossary2023/</link>
+      <pubDate>Fri, 09 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/refs/tecosaurOrgGlossary2023/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Terms, Glossary 를 다루는 전략. 가히 아름답다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움🌱</title>
       <link>https://junghanacs.com/posts/open_my_lovely_blog/</link>
       <pubDate>Wed, 07 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -303,7 +337,7 @@ you can be up and running in a moment without too much difficulty.
     </item>
     
     <item>
-      <title>Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들</title>
+      <title>Ox-Hugo Blogging Advanced Tips and Examples 🌳</title>
       <link>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</link>
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -317,7 +351,7 @@ you can be up and running in a moment without too much difficulty.
     </item>
     
     <item>
-      <title>Giovanni Crisalfi :: Start Qutebrowser Now (2022)</title>
+      <title>Giovanni Crisalfi :: Start Qutebrowser Now (2022)🌳</title>
       <link>https://junghanacs.com/refs/giovannicrisalfiStartQutebrowserNow2022/</link>
       <pubDate>Fri, 02 Jun 2023 16:55:00 +0900</pubDate>
       
@@ -330,7 +364,7 @@ you can be up and running in a moment without too much difficulty.
     </item>
     
     <item>
-      <title>DotSpacemacs</title>
+      <title>Dot-Spacemacs</title>
       <link>https://junghanacs.com/configs/emacs/spacemacs/</link>
       <pubDate>Wed, 17 May 2023 00:00:00 +0900</pubDate>
       

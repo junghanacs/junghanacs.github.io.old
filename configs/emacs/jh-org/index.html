@@ -14,13 +14,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://junghanacs.com/configs/emacs/jh-org/" /><meta property="article:section" content="configs" />
 <meta property="article:published_time" content="2023-06-12T00:00:00+09:00" />
-<meta property="article:modified_time" content="2023-06-20T16:21:36+09:00" />
+<meta property="article:modified_time" content="2023-06-21T17:34:07+09:00" />
 <title>jh-org layer | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.f7c397887e4982893a0344f01206e89c7c0cb708821dd3021dcf5a221f2798ed.css" integrity="sha256-98OXiH5Jgok6A0TwEgbonHwMtwiCHdMCHc9aIh8nmO0=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.e440f5ffcda1dc4668e996a17d8836c9914fe8b6e7ef05fa839402f8c50a9c6c.css" integrity="sha256-5ED1/82h3EZo6ZahfYg2yZFP6Lbn7wX6g5QC&#43;MUKnGw=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/ko.search.min.461f5ab521dcbf53d6ddeb7cefa120a4d2053b3996c643bf6713d3bfa3ef8853.js" integrity="sha256-Rh9atSHcv1PW3et876EgpNIFOzmWxkO/ZxPTv6PviFM=" crossorigin="anonymous"></script>
+  <script defer src="/ko.search.min.0db01167e905cd6a77fe8911e0b9a631cd0c6b1c03ecb1c1d26583f1c0c1b026.js" integrity="sha256-DbARZ&#43;kFzWp3/okR4LmmMc0MaxwD7LHB0mWD8cDBsCY=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -235,7 +235,7 @@ https://github.com/alex-shpak/hugo-book
     
     
     
-    <strong aria-hidden="true">Last updated: </strong>Jun 20, 2023
+    <strong aria-hidden="true">Last updated: </strong>Jun 21, 2023
     
     
   </div>
@@ -348,6 +348,9 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
@@ -391,10 +394,10 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-enable-org-contacts-support</span> <span style="color:#800">t</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-enable-modern-support</span> <span style="color:#800">t</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-enable-appear-support</span> <span style="color:#800">t</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-appear-trigger</span> <span style="color:#b8860b">&#39;manual</span> <span style="color:#080;font-style:italic">; for evil editing</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; should be nil</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-enable-appear-support</span> <span style="color:#800">nil</span> <span style="color:#080;font-style:italic">; 2023-06-17 nil</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; ;; org-appear-trigger &#39;manual ; for evil editing</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-enable-sticky-header</span> <span style="color:#800">nil</span> <span style="color:#080;font-style:italic">; replace with my breadcrumbs</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-todo-dependencies-strategy</span> <span style="color:#800">nil</span> <span style="color:#080;font-style:italic">; &#39;naive-auto</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-enable-valign</span> <span style="color:#800">nil</span> <span style="color:#080;font-style:italic">; performance issue, should be nil</span>
@@ -425,8 +428,11 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-download-heading-lvl</span> <span style="color:#800">nil</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-download-timestamp</span> <span style="color:#b44">&#34;%Y%m%d-%H%M-&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-download-image-dir</span> <span style="color:#b44">&#34;imgs&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-download-image-org-width</span> <span style="color:#666">640</span>
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; org-download-image-org-width 640</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-download-image-attr-list</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">&#39;</span>(<span style="color:#b44">&#34;#+attr_html: :width 100% :align center&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#b44">&#34;#+caption: &#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#b44">&#34;#+attr_org: :width 800px&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; org-cliplink-max-length 60 ; 80</span>
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>   )
@@ -510,6 +516,7 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;; -*- mode: emacs-lisp; coding: utf-8; lexical-binding: t -*-</span>
@@ -547,6 +554,7 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">ob-translate</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">ob-mermaid</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b8860b">ob-d2</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#b8860b">org-make-toc</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; toc-org</span>
 </span></span><span style="display:flex;"><span>
@@ -671,30 +679,32 @@ improve the LaTeX usage references with <code>cleveref</code>&rsquo;s <kbd>\labe
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>  (<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-org/init-org-glossary</span> ()
-</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">org-glossary</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a2f">:ensure</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a2f">:after</span> <span style="color:#b8860b">org</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a2f">:config</span>
-</span></span><span style="display:flex;"><span>      (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-glossary-collection-root</span> <span style="color:#b44">&#34;~/sync/org/roam/terms/&#34;</span>)
-</span></span><span style="display:flex;"><span>      (<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;org-mode-hook</span> <span style="color:#b8860b">&#39;org-glossary-mode</span>)
-</span></span><span style="display:flex;"><span>      ))
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-org/init-org-glossary</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">org-glossary</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:ensure</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">org</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-glossary-collection-root</span> <span style="color:#b44">&#34;~/sync/org/roam/terms/&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">;; (setq org-glossary-global-terms nil)</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">add-hook</span> <span style="color:#b8860b">&#39;org-mode-hook</span> <span style="color:#b8860b">&#39;org-glossary-mode</span>)
+</span></span><span style="display:flex;"><span>    ))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; sample from tecosaur/org-glossary</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (defun +org-glossary--latex-cdef (backend info term-entry form &amp;optional ref-index plural-p capitalized-p extra-parameters)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;   (org-glossary--export-template</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;    (if (plist-get term-entry :uses)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;        &#34;*%d*\\emsp{}%v\\ensp{}@@latex:\\labelcpageref{@@%b@@latex:}@@\n&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;      &#34;*%d*\\emsp{}%v\n&#34;)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;    backend info term-entry ref-index</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;    plural-p capitalized-p extra-parameters))</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (org-glossary-set-export-spec</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;  &#39;latex t</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;  :backref &#34;gls-%K-use-%r&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;  :backref-seperator &#34;,&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;  :definition-structure #&#39;+org-glossary--latex-cdef)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; sample from tecosaur/org-glossary</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (defun +org-glossary--latex-cdef (backend info term-entry form &amp;optional ref-index plural-p capitalized-p extra-parameters)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (org-glossary--export-template</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;    (if (plist-get term-entry :uses)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;        &#34;*%d*\\emsp{}%v\\ensp{}@@latex:\\labelcpageref{@@%b@@latex:}@@\n&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;      &#34;*%d*\\emsp{}%v\n&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;    backend info term-entry ref-index</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;    plural-p capitalized-p extra-parameters))</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (org-glossary-set-export-spec</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;  &#39;latex t</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;  :backref &#34;gls-%K-use-%r&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;  :backref-seperator &#34;,&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;  :definition-structure #&#39;+org-glossary--latex-cdef)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="org-drill">
@@ -1037,15 +1047,42 @@ Hook 로 넣지 않고, 필요할 때 수동으로 호출 한다.</p>
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-org/init-ob-mermaid</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">ob-mermaid</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:after</span> <span style="color:#b8860b">org</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:init</span> (<span style="color:#b8860b">add-to-list</span> <span style="color:#b8860b">&#39;org-babel-load-languages</span> <span style="color:#666">&#39;</span>(<span style="color:#b8860b">mermaid</span> <span style="color:#666">.</span> <span style="color:#800">t</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:ensure</span> <span style="color:#800">t</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
 </span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">ob-mermaid-cli-path</span> <span style="color:#b44">&#34;~/.asdf/shims/mmdc&#34;</span>)
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>ob-d2</p>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2023-06-16 Fri 12:47]</span></span>
+
+  <a href="https://github.com/xcapaldi/ob-d2">https://github.com/xcapaldi/ob-d2</a></p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">jh-org/init-ob-d2</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">use-package</span> <span style="color:#b8860b">ob-d2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:ensure</span> <span style="color:#800">t</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">:config</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">ob-d2-command</span> <span style="color:#b44">&#34;~/.local/bin/d2&#34;</span>)
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>  )
 </span></span></code></pre></td></tr></table>
@@ -1130,8 +1167,8 @@ Hook 로 넣지 않고, 필요할 때 수동으로 호출 한다.</p>
 </span></span><span style="display:flex;"><span>   <span style="color:#080;font-style:italic">;; org-special-ctrl-a/e t</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>   <span style="color:#080;font-style:italic">;; Org styling, hide markup etc.</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#b8860b">org-hide-emphasis-markers</span> <span style="color:#800">t</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#b8860b">org-pretty-entities</span> <span style="color:#800">t</span> <span style="color:#080;font-style:italic">; nil</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#080;font-style:italic">;; org-hide-emphasis-markers t</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#080;font-style:italic">;; org-pretty-entities t ; nil</span>
 </span></span><span style="display:flex;"><span>   )
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-modern-hide-stars</span> <span style="color:#800">nil</span>) <span style="color:#080;font-style:italic">; default -- &#39;leading</span>
@@ -1150,13 +1187,13 @@ Hook 로 넣지 않고, 필요할 때 수동으로 호출 한다.</p>
 </span></span><span style="display:flex;"><span>          (<span style="color:#b44">?-</span> <span style="color:#666">.</span> <span style="color:#b44">&#34;–&#34;</span>)
 </span></span><span style="display:flex;"><span>          (<span style="color:#b44">?*</span> <span style="color:#666">.</span> <span style="color:#b44">&#34;★&#34;</span>))) <span style="color:#080;font-style:italic">; BLACK STAR</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (setq org-modern-checkbox nil) ; conflict org-pretty-symbol</span>
-</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-modern-checkbox</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#666">&#39;</span>((<span style="color:#b44">?X</span> <span style="color:#666">.</span> <span style="color:#b44">&#34;☒&#34;</span>) <span style="color:#080;font-style:italic">; completed</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#080;font-style:italic">;; (?- . #(&#34;□–&#34; 0 2 (composition ((2)))))</span>
-</span></span><span style="display:flex;"><span>          (<span style="color:#b44">?-</span> <span style="color:#666">.</span> <span style="color:#b44">&#34;◩&#34;</span>) <span style="color:#080;font-style:italic">; progress</span>
-</span></span><span style="display:flex;"><span>          (<span style="color:#b44">?\?</span> <span style="color:#666">.</span> <span style="color:#b44">&#34;▣&#34;</span>) <span style="color:#080;font-style:italic">; hold pause</span>
-</span></span><span style="display:flex;"><span>          (<span style="color:#b44">?\s</span> <span style="color:#666">.</span> <span style="color:#b44">&#34;☐&#34;</span>))) <span style="color:#080;font-style:italic">; todo</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-modern-checkbox</span> <span style="color:#800">nil</span>) <span style="color:#080;font-style:italic">; conflict org-pretty-symbol</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (setq org-modern-checkbox</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;       &#39;((?X . &#34;☒&#34;) ; completed</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;         ;; (?- . #(&#34;□–&#34; 0 2 (composition ((2)))))</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;         (?- . &#34;◩&#34;) ; progress</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;         (?\? . &#34;▣&#34;) ; hold pause</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;;         (?\s . &#34;☐&#34;))) ; todo</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-modern-todo</span> <span style="color:#800">nil</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-modern-star</span> <span style="color:#800">nil</span>)
@@ -1401,7 +1438,7 @@ refile 에는 할일이 쌓인다. agenda 를 열면 한눈에 파악 할 수 �
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-toggle-markup</span> ()
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/org-toggle-emphasis-markers</span> ()
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-hide-emphasis-markers</span> (<span style="color:#b8860b">not</span> <span style="color:#b8860b">org-hide-emphasis-markers</span>))
 </span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">font-lock-fontify-buffer</span> <span style="color:#a2f">:interactively</span>))
@@ -1687,12 +1724,12 @@ Mode files and I need a way to quickly preview the resulting <code>.info</code> 
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a2f">unless</span> (<span style="color:#b8860b">display-graphic-p</span>) <span style="color:#080;font-style:italic">; terminal</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (setq org-level-color-stars-only t)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">;; (setq org-appear-trigger &#39;on-change) ; &#39;manual</span>
-</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-hide-emphasis-markers</span> <span style="color:#800">nil</span>)
-</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">remove-hook</span> <span style="color:#b8860b">&#39;org-mode-hook</span> <span style="color:#b8860b">&#39;org-appear-mode</span>)
-</span></span><span style="display:flex;"><span>  )
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; (unless (display-graphic-p) ; terminal</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   ;; (setq org-level-color-stars-only t)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   ;; (setq org-appear-trigger &#39;on-change) ; &#39;manual</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (setq org-hide-emphasis-markers nil)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   (remove-hook &#39;org-mode-hook &#39;org-appear-mode)</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">;;   )</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="keybindings">
@@ -1804,7 +1841,7 @@ Mode files and I need a way to quickly preview the resulting <code>.info</code> 
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#b8860b">spacemacs/set-leader-keys-for-major-mode</span> <span style="color:#b8860b">&#39;org-mode</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;TM&#34;</span> <span style="color:#b8860b">&#39;my/org-toggle-markup</span>)
-</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;tM&#34;</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">my/org-toggle-markup</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">spacemacs/set-leader-keys</span> <span style="color:#b44">&#34;tM&#34;</span> <span style="color:#00a000">#&#39;</span><span style="color:#b8860b">my/org-toggle-emphasis-markers</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(<span style="color:#b8860b">spacemacs/set-leader-keys-for-major-mode</span> <span style="color:#b8860b">&#39;org-mode</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;E&#34;</span> <span style="color:#b8860b">&#39;org-set-effort</span>)
@@ -1946,22 +1983,6 @@ Mode files and I need a way to quickly preview the resulting <code>.info</code> 
    
 
    
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
 
    
 
@@ -1969,6 +1990,28 @@ Mode files and I need a way to quickly preview the resulting <code>.info</code> 
 
    
       
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
    
 
    
@@ -2017,11 +2060,11 @@ Mode files and I need a way to quickly preview the resulting <code>.info</code> 
   노랑님의 워크플로우 기반 커스텀
 </blockquote></li>
        
-          <li><a href="/configs/emacs/">[INDEX] Junghanacs Emacs README</a><blockquote class="book-hint info">
+          <li><a href="/configs/emacs/">menu/Dotfiles/dot-emacs</a><blockquote class="book-hint info">
   Emacs 구성의 목표와 전체적인 소개. 상세 내용은 링크에서 확인 바랍니다.
 </blockquote></li>
        
-          <li><a href="/configs/emacs/spacemacs/">DotSpacemacs</a><blockquote class="book-hint info">
+          <li><a href="/configs/emacs/spacemacs/">Dot-Spacemacs</a><blockquote class="book-hint info">
   Spacemacs 닷 파일. 정리가 필요하다. 정리는 주석 삭제부터. noexport 를 적절히 사용
 </blockquote></li>
        
@@ -2036,7 +2079,7 @@ Mode files and I need a way to quickly preview the resulting <code>.info</code> 
   
   
   
-  <h3>Go to <a href="/configs/emacs/jh-pkm/">random</a> page</h3>
+  <h3>Go to <a href="/configs/emacs/jh-python/">random</a> page</h3>
   
   
 </center>
@@ -2047,9 +2090,9 @@ Mode files and I need a way to quickly preview the resulting <code>.info</code> 
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/a92bc168ea4d2d7c7218ef3f0ba1c3ae9871d8e0" title='Last modified by junghan0611 | 2023-06-20' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/a726a7a5a0ef40b7ffb9b6ec14c495bcd9e52675" title='Last modified by junghan0611 | 2023-06-21' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2023-06-20</span>
+      <span>2023-06-21</span>
     </a>
   </div>
 

@@ -7,32 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language><atom:link href="https://junghanacs.com/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About Emacs Elements (Draft)</title>
+      <title>Changes in Emacs 29 and Emacs Elements 🪴</title>
       <link>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</link>
-      <pubDate>Sat, 17 Jun 2023 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       
       <guid>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
-  Emacs Elements is a channel that focuses on getting Vanilla Emacs to work
-powerfully for you. How can I get things done in Emacs? Emacs is the world&amp;rsquo;s
-most powerful text editor, and can be overwhelming for beginners. I show you how
-you can be up and running in a moment without too much difficulty.
+  Emacs Elements 는 올해 나에게 가장 도움이 많이 된 Emacs 유튜브 채널이다.
+그 중에서도 &amp;ldquo;Changes in Emacs 29&amp;rdquo; 과 PDF 활용법, Emacs 설치 방법 등은 아주
+유용한 최신 팁이다.
 &lt;/blockquote&gt;</description>
     </item>
     
     <item>
-      <title>Learning Vim and Evil on Spacemacs</title>
+      <title>Learning Vim and Evil on Spacemacs🌱</title>
       <link>https://junghanacs.com/notes/learning_spacemacs_and_vim/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
       
       <guid>https://junghanacs.com/notes/learning_spacemacs_and_vim/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
-  좋은 문서를 만났다. 잘 되었다. 스타일로 바꿔야 하는 것은 배움이 있다는 말이다.
+  간단하게 정리할 수 없는 내용이다. 근데 해야 한다. 그래서 일단 씨앗을 심었다.
+거둘 수는 없다. 가야 한다.
 &lt;/blockquote&gt;</description>
     </item>
     
     <item>
-      <title>Junghan 과 Junghanacs 의 대화</title>
+      <title>Conversation with Junghanacs🌱</title>
       <link>https://junghanacs.com/notes/talk_with_junghanacs/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -43,7 +43,7 @@ you can be up and running in a moment without too much difficulty.
     </item>
     
     <item>
-      <title>Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들</title>
+      <title>Ox-Hugo Blogging Advanced Tips and Examples 🌳</title>
       <link>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</link>
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0900</pubDate>
       

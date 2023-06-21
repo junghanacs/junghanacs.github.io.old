@@ -7,7 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language><atom:link href="https://junghanacs.com/refs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Daw-Ran Liou :: On Learning Emacs (2020)</title>
+      <title>Jeremy Friesen :: On Storing Glossary Terms in Org Roam Nodes (2022)🌱</title>
+      <link>https://junghanacs.com/refs/StoringGlossaryTerms2022/</link>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/refs/StoringGlossaryTerms2022/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Jeremy 는 정말 뛰어난 텍스트 마스터다. 실제로도 지식 정보 관리 분야에서 일하고
+있다. 앞으로도 많이 다루겠지만 일단 샘플로 하나 시작한다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Keith Waclena :: Use GNU Emacs - The Plain Text Computing Environment🌱</title>
+      <link>https://junghanacs.com/refs/UseGNUEmacs/</link>
+      <pubDate>Tue, 20 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/refs/UseGNUEmacs/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  마스터피스! 일단 소개만 다루자. 세부 내용은 다루려면 너무 많다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Daw-Ran Liou :: On Learning Emacs (2020)🌳</title>
       <link>https://junghanacs.com/refs/LearningEmacs/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -19,7 +42,7 @@
     </item>
     
     <item>
-      <title>Peter Prevos :: More Productive with Emacs: Writing, Researching, Publishing (2022)</title>
+      <title>Peter Prevos :: More Productive with Emacs (2022)🌳</title>
       <link>https://junghanacs.com/refs/peterprevosMoreProductiveEmacs2021/</link>
       <pubDate>Sat, 10 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -32,7 +55,18 @@
     </item>
     
     <item>
-      <title>Giovanni Crisalfi :: Start Qutebrowser Now (2022)</title>
+      <title>Tecosaur :: Org Glossary (2022)🌱</title>
+      <link>https://junghanacs.com/refs/tecosaurOrgGlossary2023/</link>
+      <pubDate>Fri, 09 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/refs/tecosaurOrgGlossary2023/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Terms, Glossary 를 다루는 전략. 가히 아름답다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Giovanni Crisalfi :: Start Qutebrowser Now (2022)🌳</title>
       <link>https://junghanacs.com/refs/giovannicrisalfiStartQutebrowserNow2022/</link>
       <pubDate>Fri, 02 Jun 2023 16:55:00 +0900</pubDate>
       

@@ -5,11 +5,17 @@ Allow: /menu/
 
 Allow: /notes/emacselementsEnhancedImageFeatures2023/
 
+Allow: /refs/StoringGlossaryTerms2022/
+
+Allow: /refs/UseGNUEmacs/
+
 Allow: /posts/building_my_first_emacs_configs_for_writing_and_publishing/
 
 Allow: /refs/LearningEmacs/
 
 Allow: /notes/learning_spacemacs_and_vim/
+
+Allow: /notes/talk_with_junghanacs/
 
 Allow: /configs/emacs/jh-base/
 
@@ -49,13 +55,13 @@ Allow: /configs/emacs/jh-workspace/
 
 Allow: /configs/emacs/jh-writing/
 
-Allow: /notes/talk_with_junghanacs/
-
 Allow: /configs/emacs/
 
 Allow: /configs/
 
 Allow: /refs/peterprevosMoreProductiveEmacs2021/
+
+Allow: /refs/tecosaurOrgGlossary2023/
 
 Allow: /posts/open_my_lovely_blog/
 
