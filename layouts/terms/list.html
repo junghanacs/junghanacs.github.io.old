@@ -17,8 +17,8 @@
           <span>» </span>
           {{- .Title -}}
         <span> #{{ partial "docs/backlinkcount" .}} </span>
-        <time class="w3-tag"> 📌{{- .Date.Format "2006-01-02" -}} </time>
-        <time class="lastmod">🚧{{ .Lastmod.Format "2006-01-02" -}}</time>
+        <!-- <time class="w3-tag"> 📅{{- .Date.Format "2006-01-02" -}} </time> -->
+        <time class="lastmod"> 🔧{{ .Lastmod.Format "2006-01-02" -}}</time>
         </a>
     </h3>
   </div>

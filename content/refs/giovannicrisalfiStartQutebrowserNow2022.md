@@ -1,8 +1,8 @@
 +++
-title = "Giovanni Crisalfi :: Start Qutebrowser Now (2022)"
+title = "Giovanni Crisalfi :: Start Qutebrowser Now (2022)🌳"
 author = ["Junghan Kim"]
 date = 2023-06-02T16:55:00+09:00
-lastmod = 2023-06-15
+lastmod = 2023-06-21
 keywords = ["references"]
 draft = false
 +++

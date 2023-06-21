@@ -2,7 +2,7 @@
 title = "jh-writing layer"
 author = ["Junghan Kim"]
 date = 2023-06-12T00:00:00+09:00
-lastmod = 2023-06-14T16:51:00+09:00
+lastmod = 2023-06-21T16:26:00+09:00
 keywords = ["configs"]
 draft = false
 +++
@@ -109,7 +109,7 @@ jh-writing
                                :repo "junghan0611/guess-language.el"
                                :files ("*.el" "trigrams/*")))
 
-    (txl :location (recipe :fetcher github :repo "junghan0611/txl.el"))
+    ;; (txl :location (recipe :fetcher github :repo "junghan0611/txl.el"))
     ;; (deepl :location (recipe :fetcher github :repo "emacs-openai/deepl"))
 
     palimpsest
@@ -470,26 +470,4 @@ _home/junghan/sync/man/dotsamples/vanilla/prot-dotfiles/emacs_.emacs.d/prot-emac
 ;;   (do-something))
 ;; (add-hook 'guess-language-after-detection-functions #'my-custom-function)
 ;; (add-hook 'org-mode-hook (lambda () (guess-language-mode 1)))
-```
-
-
-### <span class="org-todo todo TODO">TODO</span> txl : deepl rest api {#txl-deepl-rest-api}
-
-[GitHub - tmalsburg/txl.el: Emacs extension providing dire...](https://github.com/tmalsburg/txl.el)
-한글 API 처리 하려니까 잘 안되는구나. 조금 다른 방법을 찾아봐야 할 것 같다.
-단, txl 코드를 참고 할 만 하다.
-
-```elisp
-(defun jh-writing/init-txl ()
-  (require 'txl)
-  (setq txl-languages '(EN-US . KO))
-
-  ;; (setq txl-deepl-api-url "https://api-free.deepl.com/v2/translate") ; free
-
-  ;; https://arca.live/b/alpaca/74925160
-  ;; gtgkjh85@naver.com https://rapidapi.com/splintPRO/api/deepl-translator
-  (setq txl-deepl-api-key "fba11761camshf62e55c2852de79p154e1bjsn570a0812878e")
-  (setq txl-deepl-api-url "https://deepl-translator.p.rapidapi.com/translate")
-  (global-set-key (kbd "C-c T .")   'txl-translate-region-or-paragraph)
-  )
 ```

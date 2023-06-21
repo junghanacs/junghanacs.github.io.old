@@ -1,8 +1,8 @@
 +++
-title = "Org-Roam/Ox-Hugo 블로깅 할 때 확인해야 할 기능들"
+title = "Ox-Hugo Blogging Advanced Tips and Examples 🌳"
 author = ["Junghan Kim"]
 date = 2023-06-05
-lastmod = 2023-06-20
+lastmod = 2023-06-21
 keywords = ["notes", "ox-hugo", "org-roam", "template"]
 draft = false
 +++

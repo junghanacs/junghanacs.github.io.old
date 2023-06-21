@@ -1,8 +1,8 @@
 +++
-title = "DotSpacemacs"
+title = "Dot-Spacemacs"
 author = ["Junghan Kim"]
 date = 2023-05-17
-lastmod = 2023-06-20T09:38:00+09:00
+lastmod = 2023-06-21T16:25:00+09:00
 keywords = ["configs"]
 draft = false
 +++
@@ -46,6 +46,8 @@ the `:mkdirp yes` argument.
 (if (eq system-type 'gnu/linux)
     (setq default-frame-alist (push '(alpha-background . 94) default-frame-alist))
   (setq default-frame-alist (push '(alpha . (95 90)) default-frame-alist)))
+
+(setq emacs-major-version-string (format "%s" emacs-major-version))
 
 ;; only for window-system
 ;; (setq default-frame-alist (push '(internal-border-width . 5) default-frame-alist))
@@ -209,7 +211,6 @@ function besides modifying the variable values.
 
 ```elisp
 ;;; Spacemacs Layer
-
 (defun dotspacemacs/layers ()
 ```
 
@@ -285,13 +286,37 @@ function besides modifying the variable values.
 Declarations of layers which spacemacs should install. When layers are called
 there are different options for how this should be done.
 [Spacemacs layers list](https://develop.spacemacs.org/layers/LAYERS.html#completion)
-28, 29 를 나눠서 레이어를 관리한다.
 
 ```elisp
 ;;;; 'Layer' Declarations
 
-(load-file (concat dotspacemacs-directory "layers/load-" emacs-version ".el"))
-;; (load-file (concat dotspacemacs-directory "layers/load-" system-name "-" emacs-version ".el"))
+;; Default Layer Configurations
+;; List of configuration layers to load.
+(setq-default
+ dotspacemacs-configuration-layers
+ '(
+   jh-base
+   jh-completion
+   jh-visual
+   jh-workspace
+   jh-editing
+   jh-navigation
+   jh-writing
+   jh-checker
+   jh-project
+   jh-utility
+   jh-coding
+   jh-org
+   jh-org-workflow
+   jh-pkm
+   jh-misc
+   jh-reading
+   ))
+
+;; Load custom-layer-filename
+(let ((custom-layer-filename (concat dotspacemacs-directory "layers/load-" emacs-major-version-string ".el")))
+  (when (file-exists-p custom-layer-filename)
+    (load-file custom-layer-filename)))
 ```
 
 
@@ -746,6 +771,7 @@ dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
 ;; performance issues, instead of calculating the frame title by
 ;; `spacemacs/title-prepare' all the time.
 ;; (default "%I@%S")
+;; dotspacemacs-frame-title-format "%f"
 dotspacemacs-frame-title-format nil
 
 ;; Format specification for setting the icon title format
@@ -841,7 +867,7 @@ you are unsure, you should try in setting them in \`dotspacemacs/user-config' fi
 
 ;; emacsclient -s ~/.cache/spacemacs-server -n
 ;; (setq server-name "spacemacs-server") ; default "server"
-(setq server-name (concat "spacemacs-server-" emacs-version))
+(setq server-name (concat "spacemacs-server-" emacs-major-version-string))
 
 ;;;;; unset keys before layers are loaded
 (global-unset-key (kbd "M-c"))  ; unset capitalize-word

@@ -1,8 +1,8 @@
 +++
-title = "Peter Prevos :: More Productive with Emacs: Writing, Researching, Publishing (2022)"
+title = "Peter Prevos :: More Productive with Emacs (2022)🌳"
 author = ["Junghan Kim"]
 date = 2023-06-10T00:00:00+09:00
-lastmod = 2023-06-20
+lastmod = 2023-06-21
 keywords = ["references"]
 draft = false
 +++
@@ -15,10 +15,10 @@ draft = false
 
 <!--more-->
 
-```text
+{{< details "About References Note" >}}
 레퍼런스 노트는 1. 원문 번역, 2. 나의 생각 으로 구성 됩니다. 번역은 기계 번역 후
 제가 이해할 만한 수준으로 수정한 것 입니다.
-```
+{{< /details >}}
 
 
 ## <span class="underline">나의 생각</span> : 훌륭하다. 초보자를 위한 3 가지 포인트. {#훌륭하다-dot-초보자를-위한-3-가지-포인트-dot}

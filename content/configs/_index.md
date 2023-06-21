@@ -1,9 +1,9 @@
 +++
-title = "Configs Index"
+title = "menu/Dotfiles"
 author = ["Junghan Kim"]
 date = 2023-06-10T00:00:00+09:00
-lastmod = 2023-06-12
-keywords = ["draft", "configs"]
+lastmod = 2023-06-21
+keywords = ["configs"]
 draft = false
 +++
 
@@ -33,6 +33,8 @@ Junghanacs 의 설정 파일 소개. 누구나 쉽게 사용할 수 있도록 �
 노력으로 바로 동작하게 해야만 한다. 폰트 까지 하나로 패키징이 되는 게 좋을 것
 같다. Snap, Flatpack, NIX 등 활용.
 
+-   상세 정보 [Dotfiles/dot-emacs]({{< relref "./emacs/_index.md" >}})
+
 
 ## Tiling Window Manager (Optional) {#tiling-window-manager--optional}
 
@@ -42,6 +44,10 @@ Junghanacs 의 설정 파일 소개. 누구나 쉽게 사용할 수 있도록 �
 
 ## Applications {#applications}
 
-...
+이맥스와 연동을 위한 설정 및 팁을 다룬다.
+
+-   PDF 관련
+-   Browser 관련
+-   SNS 관련
 
 [^fn:1]: <https://hamonikr.org/>

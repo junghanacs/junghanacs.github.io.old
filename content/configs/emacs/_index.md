@@ -1,8 +1,8 @@
 +++
-title = "[INDEX] Junghanacs Emacs README"
+title = "menu/Dotfiles/dot-emacs"
 author = ["Junghan Kim"]
 date = 2023-06-11T00:00:00+09:00
-lastmod = 2023-06-15
+lastmod = 2023-06-21
 keywords = ["configs"]
 draft = false
 +++
@@ -17,9 +17,10 @@ Emacs 구성의 목표와 전체적인 소개. 상세 내용은 링크에서 확
 ## Junghanacs: Emacs 목표 {#junghanacs-emacs-목표}
 
 {{< hint warning >}}
--   최대한 쉽게! Spacemacs 사용 경험 그대로!
--   VSpaceCode, SpaceVIM 과 함께 갈 수 있도록!
-    Spacemacs 를 사용하는 이유이기도 하다. 하나의 사용자 경험으로 가져가면 좋다!
+-   쉬운 키바인딩 : Spacemacs
+-   VSpaceCode, SpaceVIM
+    Spacemacs 를 사용하는 이유. 하나의 사용자 경험으로 가져가면 좋다!
+-   Offline First
 -   마우스를 옵션으로 활용 하도록 지원!
     입문자가 멘붕이 오지 않도록 마우스의 사용자 경험을 최대한 살려준다. (옵션)
 -   EVIL 모달 편집 기반!

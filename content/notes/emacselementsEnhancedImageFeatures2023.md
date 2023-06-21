@@ -1,16 +1,15 @@
 +++
-title = "About Emacs Elements (Draft)"
+title = "Changes in Emacs 29 and Emacs Elements 🪴"
 author = ["Junghan Kim"]
-lastmod = 2023-06-17
+lastmod = 2023-06-21
 keywords = ["references"]
 draft = false
 +++
 
 {{< hint info >}}
-Emacs Elements is a channel that focuses on getting Vanilla Emacs to work
-powerfully for you. How can I get things done in Emacs? Emacs is the world's
-most powerful text editor, and can be overwhelming for beginners. I show you how
-you can be up and running in a moment without too much difficulty.
+Emacs Elements 는 올해 나에게 가장 도움이 많이 된 Emacs 유튜브 채널이다.
+그 중에서도 "Changes in Emacs 29" 과 PDF 활용법, Emacs 설치 방법 등은 아주
+유용한 최신 팁이다.
 {{< /hint >}}
 
 <!--more-->

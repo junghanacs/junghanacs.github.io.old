@@ -2,7 +2,7 @@
 title = "jh-base layer"
 author = ["Junghan Kim"]
 date = 2023-06-12T00:00:00+09:00
-lastmod = 2023-06-20T09:37:00+09:00
+lastmod = 2023-06-21T10:26:00+09:00
 keywords = ["configs"]
 draft = false
 +++
@@ -81,18 +81,21 @@ jh-base
 ;;; Commentary:
 
 ;;; Code:
+
+;;;; Package Lists
+
 (defconst jh-base-packages
   '(
     ;; electric
     ;; paren
 
-;;;; spacemacs-bootstrap
+;;;;; spacemacs-bootstrap
     which-key
 
     helpful
     time-stamp
 
-;;;; spacemacs-defaults
+;;;;; spacemacs-defaults
 
     recentf
     bookmark
@@ -130,13 +133,13 @@ jh-base
     ;; winner
     ;; zone
 
-;;;; Additional built-in packages
+;;;;; Additional built-in packages
     calendar
     tramp
     proced
     man
 
-;;;; Additional packages
+;;;;; Additional packages
     sideline
 
     ;; gc-buffers ; too aggressive
@@ -151,9 +154,11 @@ jh-base
 shackle 과 연동하는 시나리오에 튜닝 필요
 
 ```elisp
+
+;;;; Helpful
+
 ;; tshu/lisp/editor-misc.el
 (defun jh-base/post-init-helpful ()
-
   (setq helpful-max-buffers 3)
 
   (defun helpful-reuse-window (buffer-or-name)
@@ -171,7 +176,6 @@ reuse it's window, otherwise create new one."
     (add-to-list 'ibuffer-help-buffer-modes 'helpful-mode))
 
   )
-
 ```
 
 
@@ -182,15 +186,7 @@ minibuffer 와 통합한다는 것은 무슨 이점이 있을까?
 <span class="timestamp-wrapper"><span class="timestamp">[2023-03-25 Sat 15:51]</span></span>
 
 ```elisp
-
-;; (defun org/pre-init-ox-epub ()
-;;   (spacemacs|use-package-add-hook org :post-config (require 'ox-epub)))
-;; (defun org/init-ox-epub ())
-;; (defun treemacs/pre-init-golden-ratio ()
-;;   (spacemacs|use-package-add-hook golden-ratio
-;;     :post-config
-;;     (add-to-list 'golden-ratio-exclude-buffer-regexp
-;;                  (rx "*Treemacs" (0+ any)))))
+;;;; Which-key
 
 (defun jh-base/post-init-which-key ()
   (setq which-key-idle-delay 0.4)
@@ -232,6 +228,8 @@ minibuffer 와 통합한다는 것은 무슨 이점이 있을까?
 
 
 ```elisp
+;;;; Recentf
+
 (defun jh-base/pre-init-recentf ()
   (spacemacs|use-package-add-hook recentf
     ;; :pre-init
@@ -255,8 +253,9 @@ minibuffer 와 통합한다는 것은 무슨 이점이 있을까?
 
 
 ```elisp
-;; https://systemcrafters.cc/emacs-from-scratch/effortless-file-management-with-dired/
+;;;; Dired
 
+;; https://systemcrafters.cc/emacs-from-scratch/effortless-file-management-with-dired/
 (defun jh-base/post-init-dired ()
   ;; -al ; spacemacs
   ;; Make sure to use the long name of flags when exists
@@ -351,6 +350,8 @@ minibuffer 와 통합한다는 것은 무슨 이점이 있을까?
 ### Simple `Bookmark` {#simple-bookmark}
 
 ```elisp
+;;;; Bookmark
+
 (defun jh-base/post-init-bookmark ()
   (setq bookmark-default-file (concat dotspacemacs-directory "var/bookmarks"))
   (setq bookmark-use-annotations nil)
@@ -366,6 +367,8 @@ minibuffer 와 통합한다는 것은 무슨 이점이 있을까?
 
 
 ```elisp
+;;;; Savehist
+
 (defun jh-base/pre-init-savehist ()
   (spacemacs|use-package-add-hook savehist
     :post-init
@@ -411,15 +414,15 @@ N 단어에 대해 다음 단어와 일치합니다.
 입력하면 해당 입력을 기반으로 텍스트를 확장할 수 있습니다.
 
 ```elisp
-;;;;; Dabbrev (dynamic word completion)
+;;;; Dabbrev : Dynamic Word Completion
 
 (defun jh-base/init-dabbrev ()
   (use-package dabbrev
     :demand
     :init
-    ;; (setq dabbrev-abbrev-char-regexp "[A-Za-z-_]"
-    (setq dabbrev-abbrev-char-regexp "\\sw\\|\\s_"
-          dabbrev-ignored-buffer-regexps '("\\.\\(?:pdf\\|jpe?g\\|png\\)\\'"))
+    ;; (setq dabbrev-abbrev-char-regexp "\\sw\\|\\s_") ; prot
+    (setq dabbrev-abbrev-char-regexp "[A-Za-z-_]") ; tshu
+    (setq dabbrev-ignored-buffer-regexps '("\\.\\(?:pdf\\|jpe?g\\|png\\)\\'"))
     (setq dabbrev-abbrev-skip-leading-regexp "[$*/=~']")
     :config
     (let ((map global-map))
@@ -448,7 +451,7 @@ N 단어에 대해 다음 단어와 일치합니다.
 <!--listend-->
 
 ```elisp
-;;;;; abbrev-mode
+;;;; Abbrev : Abbreviations
 
 (defun jh-base/post-init-abbrev ()
   (setq abbrev-file-name (concat dotspacemacs-directory "var/abbrev_defs"))
@@ -466,7 +469,8 @@ N 단어에 대해 다음 단어와 일치합니다.
 [GitHub - emacs-sideline/sideline: Show information on the...](https://github.com/emacs-sideline/sideline)
 
 ```elisp
-;;;;; Sideline
+;;;; Sideline
+
 (defun jh-base/init-sideline ()
   (use-package sideline
     :ensure
@@ -497,7 +501,7 @@ N 단어에 대해 다음 단어와 일치합니다.
 TRAMP 를 경험 해봐야 한다.
 
 ```elisp
-;;;;; Tramp
+;;;; Tramp
 
 (defun jh-base/init-tramp ()
   (use-package tramp
@@ -529,7 +533,8 @@ TRAMP 를 경험 해봐야 한다.
 
 
 ```elisp
-;;;;; man
+;;;; Man
+
 (defun jh-base/init-man ()
   (use-package man
     :defer 10
@@ -555,7 +560,8 @@ TRAMP 를 경험 해봐야 한다.
 ### Calendar {#calendar}
 
 ```elisp
-;;;;; Calendar
+;;;; Calendar
+
 (defun jh-base/init-calendar ()
   (use-package calendar
     :ensure t
@@ -581,7 +587,8 @@ TRAMP 를 경험 해봐야 한다.
 
 
 ```elisp
-;;;;; Proced
+;;;; Proced
+
 (defun jh-base/init-proced ()
   (use-package proced
     :defer 10
@@ -600,7 +607,8 @@ TRAMP 를 경험 해봐야 한다.
 
 
 ```elisp
-;;;;; Time-Stamp
+;;;; Time-Stamp
+
 (defun jh-base/init-time-stamp ()
   (require 'time-stamp)
   (add-hook 'write-file-functions 'time-stamp) ; update when saving
@@ -629,6 +637,8 @@ load smaller.
 Create a mode for mapping high priority keybinds early on.
 
 ```elisp
+;;; Helper Functions
+
 (defun td/bind-keys (conses &optional mode-map)
   "Bind several keybinds using a list of `CONSES'.
   Binds will be global unless the optional `MODE-MAP' is specified."
@@ -666,6 +676,8 @@ Create a mode for mapping high priority keybinds early on.
 helper loader skeeto/youtube-dl-emacs
 
 ```elisp
+;;; Extra Functions
+
 (defun describe-last-function ()
   (interactive)
   (describe-function last-command))
@@ -871,6 +883,8 @@ helper loader skeeto/youtube-dl-emacs
 ### Open user-files {#open-user-files}
 
 ```elisp
+;;; Open user-files
+
 (defun my/open-fortune-quotes ()
   (interactive )
   (find-file "~/sync/obsd/fortunes/quotes-ko.md"))
@@ -909,6 +923,8 @@ helper loader skeeto/youtube-dl-emacs
 [doomemacs/doomemacs#5167 Scrolling for touch devices - En...](https://github.com/doomemacs/doomemacs/issues/5167)
 
 ```elisp
+;;; Terminal mode hook
+
 ;; turn off =show-smartparens-global-mode=
 ;; turn off =global-page-break-lines-mode=
 ;; scrolling for touch devices enable the function mouse-wheel-mode
@@ -948,6 +964,8 @@ helper loader skeeto/youtube-dl-emacs
 [GitHub - AmaiKinono/puni: Structured editing (soft deleti...](https://github.com/AmaiKinono/puni)
 
 ```elisp
+;;; Paren and Electric-pair
+
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Matching.html
 ;; 괄호, 구분자(delimiter) 쌍 강조
 (with-eval-after-load 'paren

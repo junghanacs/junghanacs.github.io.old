@@ -2,7 +2,7 @@
 title = "jh-completion layer"
 author = ["Junghan Kim"]
 date = 2023-06-12T00:00:00+09:00
-lastmod = 2023-06-20T09:37:00+09:00
+lastmod = 2023-06-21T10:28:00+09:00
 keywords = ["configs"]
 draft = false
 +++
@@ -39,6 +39,7 @@ jh-completion
 ;;; Commentary:
 
 ;;; Code:
+
 (configuration-layer/declare-layer-dependencies
  '(
    ;; auto-yasnippet yasnippet yasnippet-snippets
@@ -74,6 +75,9 @@ jh-completion
 ;;; Commentary:
 
 ;;; Code:
+
+;;;; Package Lists
+
 (defconst jh-completion-packages
   '(
     ;; 재정의 패키지
@@ -133,6 +137,8 @@ Compleseus 레이어 문서를 보면 vectico 패밀리 패키지가 잘 정리�
 #### Actions via <kbd>embark</kbd> {#actions-via-embark}
 
 ```elisp
+;;;; Embark
+
 (defun jh-completion/post-init-embark ()
   (require 'embark)
   ;; By default, embark doesn't know how to handle org-links.  Let's provide a way.
@@ -158,6 +164,8 @@ Compleseus 레이어 문서를 보면 vectico 패밀리 패키지가 잘 정리�
 /home/junghan/sync/man/dotsamples/vanilla/chrisbarrett-dotfiles/config.org
 
 ```elisp
+;;;; Corfu
+
 (defun jh-completion/init-corfu ()
   (use-package corfu
     :after evil-collection
@@ -293,7 +301,7 @@ work with company backend
 /agzam-dot-doom/modules/custom/completion/config.el
 
 ```elisp
-;;;; TODO cape with Dictionary test
+;;;; CAPE : Completion At Point Extensions
 
 (defun jh-completion/init-cape-yasnippet ()
   (use-package cape-yasnippet)
@@ -370,75 +378,74 @@ work with company backend
   )
 ```
 
-<!--list-separator-->
 
-- <span class="org-todo todo TODO">TODO</span>  `cape-yasnippet`
+#### <span class="org-todo todo TODO">TODO</span> `cape-yasnippet` {#cape-yasnippet}
 
-    | <kbd>M-/</kbd>     | Expand a snippet if text before point ... |
-    |--------------------|-------------------------------------------|
-    | <kbd>SPC i s</kbd> | List all current yasnippets               |
+| <kbd>M-/</kbd>     | Expand a snippet if text before point ... |
+|--------------------|-------------------------------------------|
+| <kbd>SPC i s</kbd> | List all current yasnippets               |
 
-    스니펫이 제대로 동작하는가 확인해봐라.
-    _yasnippet-snippets-1.0_
-    _clojure-snippets-20220914.950_
+스니펫이 제대로 동작하는가 확인해봐라.
+_yasnippet-snippets-1.0_
+_clojure-snippets-20220914.950_
 
-    `auto-coimpletion` 레이어에 스니펫을 다 빼고 따로 넣어야 한다.
-    그리고 Tempel 로 넘어가자.
+`auto-coimpletion` 레이어에 스니펫을 다 빼고 따로 넣어야 한다.
+그리고 Tempel 로 넘어가자.
 
-    Deprecate in favour of tempel.
+Deprecate in favour of tempel.
 
-    ```elisp
-      ;; yasnippet globally on and check yas-snippet-dirs
-      ;; ("/home/junghan/.spacemacs.d/snippets"
-      ;; "/home/junghan/spacemacs/core/../private/snippets/"
-      ;; "/home/junghan/spacemacs/layers/+completion/auto-completion/local/snippets"
-      ;; "/home/junghan/spacemacs/elpa/29.0/develop/clojure-snippets-20220914.950/snippets"
-      ;; yasnippet-snippets-dir)
+```elisp
+  ;; yasnippet globally on and check yas-snippet-dirs
+  ;; ("/home/junghan/.spacemacs.d/snippets"
+  ;; "/home/junghan/spacemacs/core/../private/snippets/"
+  ;; "/home/junghan/spacemacs/layers/+completion/auto-completion/local/snippets"
+  ;; "/home/junghan/spacemacs/elpa/29.0/develop/clojure-snippets-20220914.950/snippets"
+  ;; yasnippet-snippets-dir)
 
-      ;; (use-package yasnippet
-      ;;   :config
-      ;;   (yas-reload-all)
-      ;;   (add-to-list 'yas-snippet-dirs "~/.config/emacs-vanilla/snippets")
-      ;;   (yas-global-mode 1))
+  ;; (use-package yasnippet
+  ;;   :config
+  ;;   (yas-reload-all)
+  ;;   (add-to-list 'yas-snippet-dirs "~/.config/emacs-vanilla/snippets")
+  ;;   (yas-global-mode 1))
 
-      (defun jh-completion/init-cape-yasnippet ()
-        (use-package cape-yasnippet
-          :after cape yasnippet
-          :config
+  (defun jh-completion/init-cape-yasnippet ()
+    (use-package cape-yasnippet
+      :after cape yasnippet
+      :config
 
-          (defun cape-yasnippet-setup-capf ()
-            ;; Add the Tempel Capf to `completion-at-point-functions'.
-            ;; `tempel-expand' only triggers on exact matches. Alternatively use
-            ;; `tempel-complete' if you want to see all matches, but then you
-            ;; should also configure `tempel-trigger-prefix', such that Tempel
-            ;; does not trigger too often when you don't expect it. NOTE: We add
-            ;; `tempel-expand' *before* the main programming mode Capf, such
-            ;; that it will be tried first.
+      (defun cape-yasnippet-setup-capf ()
+        ;; Add the Tempel Capf to `completion-at-point-functions'.
+        ;; `tempel-expand' only triggers on exact matches. Alternatively use
+        ;; `tempel-complete' if you want to see all matches, but then you
+        ;; should also configure `tempel-trigger-prefix', such that Tempel
+        ;; does not trigger too often when you don't expect it. NOTE: We add
+        ;; `tempel-expand' *before* the main programming mode Capf, such
+        ;; that it will be tried first.
 
-            ;; Tempel Capf를 `completion-at-point-functions'에 추가하십시오. `tempel-expand'는
-            ;; 정확히 일치하는 경우에만 트리거됩니다. 또는 모든 일치 항목을 보려면
-            ;; `tempel-complete'를 사용하지만 예상하지 못한 경우 Tempel이 너무 자주 트리거되지
-            ;; 않도록 `tempel-trigger-prefix'도 구성해야 합니다. 참고: 기본 프로그래밍 모드인
-            ;; Capf *앞에* `tempel-expand'를 추가하여 먼저 시도되도록 합니다.
-            (setq-local completion-at-point-functions
-                        (cons #'cape-yasnippet
-                              completion-at-point-functions)))
-          ;; Setup completion at point - 먼저 실행 되게 해야하는구나. 끈다.
-          ;; (defun tempel-setup-capf ()
-          ;;   (add-to-list 'completion-at-point-functions #'tempel-expand))
+        ;; Tempel Capf를 `completion-at-point-functions'에 추가하십시오. `tempel-expand'는
+        ;; 정확히 일치하는 경우에만 트리거됩니다. 또는 모든 일치 항목을 보려면
+        ;; `tempel-complete'를 사용하지만 예상하지 못한 경우 Tempel이 너무 자주 트리거되지
+        ;; 않도록 `tempel-trigger-prefix'도 구성해야 합니다. 참고: 기본 프로그래밍 모드인
+        ;; Capf *앞에* `tempel-expand'를 추가하여 먼저 시도되도록 합니다.
+        (setq-local completion-at-point-functions
+                    (cons #'cape-yasnippet
+                          completion-at-point-functions)))
+      ;; Setup completion at point - 먼저 실행 되게 해야하는구나. 끈다.
+      ;; (defun tempel-setup-capf ()
+      ;;   (add-to-list 'completion-at-point-functions #'tempel-expand))
 
-          (add-hook 'text-mode-hook 'cape-yasnippet-setup-capf)
-          (add-hook 'prog-mode-hook 'cape-yasnippet-setup-capf)
-          ))
+      (add-hook 'text-mode-hook 'cape-yasnippet-setup-capf)
+      (add-hook 'prog-mode-hook 'cape-yasnippet-setup-capf)
+      ))
 
-      ;; To avoid auto-expanding snippets
-      ;; (plist-put cape-yasnippet--properties :exit-function #'always)
-      ;; (defun +cape-yasnippet--setup-h ()
-      ;;   (when (and (bound-and-true-p yas-minor-mode))
-      ;;     (add-to-list 'completion-at-point-functions #'cape-yasnippet t)))
-      ;; (dolist (mode-hook '(prog-mode-hook text-mode-hook conf-mode-hook))
-      ;;   (add-hook mode-hook #'+cape-yasnippet--setup-h)))
-    ```
+  ;; To avoid auto-expanding snippets
+  ;; (plist-put cape-yasnippet--properties :exit-function #'always)
+  ;; (defun +cape-yasnippet--setup-h ()
+  ;;   (when (and (bound-and-true-p yas-minor-mode))
+  ;;     (add-to-list 'completion-at-point-functions #'cape-yasnippet t)))
+  ;; (dolist (mode-hook '(prog-mode-hook text-mode-hook conf-mode-hook))
+  ;;   (add-hook mode-hook #'+cape-yasnippet--setup-h)))
+```
 
 
 ### <kbd>Tempel</kbd> Simple templates for Emacs {#tempel-simple-templates-for-emacs}
@@ -447,6 +454,8 @@ work with company backend
 [GitHub - minad/tempel: TempEl - Simple templates for Emacs](https://github.com/minad/tempel)
 
 ```elisp
+;;;; Tempel
+
 ;; Template-based in-buffer completion (tempel.el)
 ;; NOTE 2023-01-19: Check the `templates'
 
@@ -527,6 +536,8 @@ preview 설정을 변경하려고 한다. 애용하는 consult-line 의 경우
 2023-04-30 커스텀을 바쿤다. 기본으로
 
 ```elisp
+;;;; Consult
+
 (defun jh-completion/pre-init-consult ()
   (spacemacs|use-package-add-hook consult
     :post-config

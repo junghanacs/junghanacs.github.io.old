@@ -186,13 +186,19 @@ kbd {
   }
 
   h5::before {
-    margin-right: 0.25em;
     content: "****";
+    font-size: 1.2em;
+    vertical-align: -20%; /* more negative -> goes lower */
+    margin-right: 0.25em;
+    color: var(--theme-color-h5);
   }
 
   h6::before {
-    margin-right: 0.25em;
     content: "*****";
+    font-size: 1.2em;
+    vertical-align: -20%; /* more negative -> goes lower */
+    margin-right: 0.25em;
+    color: var(--theme-color-h6);
   }
 
   blockquote {

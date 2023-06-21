@@ -2,7 +2,7 @@
 title = "jh-org layer"
 author = ["Junghan Kim"]
 date = 2023-06-12T00:00:00+09:00
-lastmod = 2023-06-14T16:52:00+09:00
+lastmod = 2023-06-21T16:25:00+09:00
 keywords = ["configs"]
 draft = false
 +++
@@ -63,10 +63,10 @@ org 관련 패키지들 모듬. 워크플로우는 별도로 파일 관리함.
     org-enable-org-contacts-support t
     org-enable-modern-support t
 
-    org-enable-appear-support t
-    org-appear-trigger 'manual ; for evil editing
 
     ;; should be nil
+    org-enable-appear-support nil ; 2023-06-17 nil
+    ;; ;; org-appear-trigger 'manual ; for evil editing
     org-enable-sticky-header nil ; replace with my breadcrumbs
     org-todo-dependencies-strategy nil ; 'naive-auto
     org-enable-valign nil ; performance issue, should be nil
@@ -97,8 +97,11 @@ org 관련 패키지들 모듬. 워크플로우는 별도로 파일 관리함.
     org-download-heading-lvl nil
     org-download-timestamp "%Y%m%d-%H%M-"
     org-download-image-dir "imgs"
-    org-download-image-org-width 640
-
+    ;; org-download-image-org-width 640
+    org-download-image-attr-list
+    '("#+attr_html: :width 100% :align center"
+      "#+caption: "
+      "#+attr_org: :width 800px")
     ;; org-cliplink-max-length 60 ; 80
     )
    )
@@ -147,6 +150,7 @@ org 관련 패키지들 모듬. 워크플로우는 별도로 파일 관리함.
 
     ob-translate
     ob-mermaid
+    ob-d2
     org-make-toc
     ;; toc-org
 
@@ -222,28 +226,29 @@ Other than hooking this to `org-mode`, we also want to set a collection root and
 improve the LaTeX usage references with `cleveref`'s <kbd>\labelcpageref</kbd> command.
 
 ```elisp
-  (defun jh-org/init-org-glossary ()
-    (use-package org-glossary
-      :ensure
-      :after org
-      :config
-      (setq org-glossary-collection-root "~/sync/org/roam/terms/")
-      (add-hook 'org-mode-hook 'org-glossary-mode)
-      ))
+(defun jh-org/init-org-glossary ()
+  (use-package org-glossary
+    :ensure
+    :after org
+    :config
+    (setq org-glossary-collection-root "~/sync/org/roam/terms/")
+    ;; (setq org-glossary-global-terms nil)
+    (add-hook 'org-mode-hook 'org-glossary-mode)
+    ))
 
-  ;; sample from tecosaur/org-glossary
-  ;; (defun +org-glossary--latex-cdef (backend info term-entry form &optional ref-index plural-p capitalized-p extra-parameters)
-  ;;   (org-glossary--export-template
-  ;;    (if (plist-get term-entry :uses)
-  ;;        "*%d*\\emsp{}%v\\ensp{}@@latex:\\labelcpageref{@@%b@@latex:}@@\n"
-  ;;      "*%d*\\emsp{}%v\n")
-  ;;    backend info term-entry ref-index
-  ;;    plural-p capitalized-p extra-parameters))
-  ;; (org-glossary-set-export-spec
-  ;;  'latex t
-  ;;  :backref "gls-%K-use-%r"
-  ;;  :backref-seperator ","
-  ;;  :definition-structure #'+org-glossary--latex-cdef)
+;; sample from tecosaur/org-glossary
+;; (defun +org-glossary--latex-cdef (backend info term-entry form &optional ref-index plural-p capitalized-p extra-parameters)
+;;   (org-glossary--export-template
+;;    (if (plist-get term-entry :uses)
+;;        "*%d*\\emsp{}%v\\ensp{}@@latex:\\labelcpageref{@@%b@@latex:}@@\n"
+;;      "*%d*\\emsp{}%v\n")
+;;    backend info term-entry ref-index
+;;    plural-p capitalized-p extra-parameters))
+;; (org-glossary-set-export-spec
+;;  'latex t
+;;  :backref "gls-%K-use-%r"
+;;  :backref-seperator ","
+;;  :definition-structure #'+org-glossary--latex-cdef)
 ```
 
 
@@ -458,10 +463,26 @@ Hook 로 넣지 않고, 필요할 때 수동으로 호출 한다.
     ```elisp
     (defun jh-org/init-ob-mermaid ()
       (use-package ob-mermaid
-        :after org
-        :init (add-to-list 'org-babel-load-languages '(mermaid . t))
+        :ensure t
         :config
         (setq ob-mermaid-cli-path "~/.asdf/shims/mmdc")
+        )
+      )
+    ```
+
+<!--list-separator-->
+
+-  ob-d2
+
+    <span class="timestamp-wrapper"><span class="timestamp">[2023-06-16 Fri 12:47]</span></span>
+    <https://github.com/xcapaldi/ob-d2>
+
+    ```elisp
+    (defun jh-org/init-ob-d2 ()
+      (use-package ob-d2
+        :ensure t
+        :config
+        (setq ob-d2-command "~/.local/bin/d2")
         )
       )
     ```
@@ -481,8 +502,8 @@ Hook 로 넣지 않고, 필요할 때 수동으로 호출 한다.
    ;; org-special-ctrl-a/e t
 
    ;; Org styling, hide markup etc.
-   org-hide-emphasis-markers t
-   org-pretty-entities t ; nil
+   ;; org-hide-emphasis-markers t
+   ;; org-pretty-entities t ; nil
    )
 
   (setq org-modern-hide-stars nil) ; default -- 'leading
@@ -501,13 +522,13 @@ Hook 로 넣지 않고, 필요할 때 수동으로 호출 한다.
           (?- . "–")
           (?* . "★"))) ; BLACK STAR
 
-  ;; (setq org-modern-checkbox nil) ; conflict org-pretty-symbol
-  (setq org-modern-checkbox
-        '((?X . "☒") ; completed
-          ;; (?- . #("□–" 0 2 (composition ((2)))))
-          (?- . "◩") ; progress
-          (?\? . "▣") ; hold pause
-          (?\s . "☐"))) ; todo
+  (setq org-modern-checkbox nil) ; conflict org-pretty-symbol
+  ;; (setq org-modern-checkbox
+  ;;       '((?X . "☒") ; completed
+  ;;         ;; (?- . #("□–" 0 2 (composition ((2)))))
+  ;;         (?- . "◩") ; progress
+  ;;         (?\? . "▣") ; hold pause
+  ;;         (?\s . "☐"))) ; todo
 
   (setq org-modern-todo nil)
   (setq org-modern-star nil)
@@ -656,7 +677,7 @@ refile 에는 할일이 쌓인다. agenda 를 열면 한눈에 파악 할 수 �
 ### org-toggle-markup {#org-toggle-markup}
 
 ```elisp
-(defun my/org-toggle-markup ()
+(defun my/org-toggle-emphasis-markers ()
   (interactive)
   (setq org-hide-emphasis-markers (not org-hide-emphasis-markers))
   (font-lock-fontify-buffer :interactively))
@@ -820,12 +841,12 @@ Mode files and I need a way to quickly preview the resulting `.info` files. This
 <!--listend-->
 
 ```elisp
-(unless (display-graphic-p) ; terminal
-  ;; (setq org-level-color-stars-only t)
-  ;; (setq org-appear-trigger 'on-change) ; 'manual
-  (setq org-hide-emphasis-markers nil)
-  (remove-hook 'org-mode-hook 'org-appear-mode)
-  )
+;; (unless (display-graphic-p) ; terminal
+;;   ;; (setq org-level-color-stars-only t)
+;;   ;; (setq org-appear-trigger 'on-change) ; 'manual
+;;   (setq org-hide-emphasis-markers nil)
+;;   (remove-hook 'org-mode-hook 'org-appear-mode)
+;;   )
 ```
 
 
@@ -869,7 +890,7 @@ Mode files and I need a way to quickly preview the resulting `.info` files. This
 ```elisp
 (spacemacs/set-leader-keys-for-major-mode 'org-mode
   "TM" 'my/org-toggle-markup)
-(spacemacs/set-leader-keys "tM" #'my/org-toggle-markup)
+(spacemacs/set-leader-keys "tM" #'my/org-toggle-emphasis-markers)
 
 (spacemacs/set-leader-keys-for-major-mode 'org-mode
   "E" 'org-set-effort)

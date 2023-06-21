@@ -1,14 +1,15 @@
 +++
-title = "Learning Vim and Evil on Spacemacs"
+title = "Learning Vim and Evil on Spacemacs🌱"
 author = ["Junghan Kim"]
 date = 2023-06-15T00:00:00+09:00
-lastmod = 2023-06-16
+lastmod = 2023-06-21
 keywords = ["draft", "notes"]
 draft = false
 +++
 
 {{< hint info >}}
-좋은 문서를 만났다. 잘 되었다. 스타일로 바꿔야 하는 것은 배움이 있다는 말이다.
+간단하게 정리할 수 없는 내용이다. 근데 해야 한다. 그래서 일단 씨앗을 심었다.
+거둘 수는 없다. 가야 한다.
 {{< /hint >}}
 
 <!--more-->
