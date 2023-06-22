@@ -10,7 +10,7 @@
 태그, 요약, 코드, 일부 내용 감추기 등을 어떻게 하는가? 여기에 대한 답을 찾는다.
 ">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Ox-Hugo Blogging Advanced Tips and Examples 🌳" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Ox-Hugo Blogging Advanced Tips and Examples 🌲" />
 <meta property="og:description" content="
 
 
@@ -19,14 +19,14 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://junghanacs.com/notes/org_org_roam_hugo_meta_format/" /><meta property="article:section" content="notes" />
-<meta property="article:published_time" content="2023-06-05T00:00:00+09:00" />
-<meta property="article:modified_time" content="2023-06-21T17:34:07+09:00" />
-<title>Ox-Hugo Blogging Advanced Tips and Examples 🌳 | Junghanacs</title>
+<meta property="article:published_time" content="2023-06-20T00:00:00+09:00" />
+<meta property="article:modified_time" content="2023-06-22T17:15:38+09:00" />
+<title>Ox-Hugo Blogging Advanced Tips and Examples 🌲 | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.e440f5ffcda1dc4668e996a17d8836c9914fe8b6e7ef05fa839402f8c50a9c6c.css" integrity="sha256-5ED1/82h3EZo6ZahfYg2yZFP6Lbn7wX6g5QC&#43;MUKnGw=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.860a772b53ff5fc404f1c657dcfb67d1b1f5326eaf79a632af1986e3a62b9289.css" integrity="sha256-hgp3K1P/X8QE8cZX3Ptn0bH1Mm6veaYyrxmG46Yrkok=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/ko.search.min.0db01167e905cd6a77fe8911e0b9a631cd0c6b1c03ecb1c1d26583f1c0c1b026.js" integrity="sha256-DbARZ&#43;kFzWp3/okR4LmmMc0MaxwD7LHB0mWD8cDBsCY=" crossorigin="anonymous"></script>
+  <script defer src="/ko.search.min.50a15bb4fafb50893287b502835324a1e8825962ee2dcd06e8708c9f474108ad.js" integrity="sha256-UKFbtPr7UIkyh7UCg1MkoeiCWWLuLc0G6HCMn0dBCK0=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -140,7 +140,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Ox-Hugo Blogging Advanced Tips and Examples 🌳</strong>
+  <strong>Ox-Hugo Blogging Advanced Tips and Examples 🌲</strong>
 
   <label for="toc-control">
     
@@ -193,6 +193,7 @@ https://github.com/alex-shpak/hugo-book
           </ul>
         </li>
         <li><a href="#org-translate-블록-번역">Org-translate 블록 번역</a></li>
+        <li><a href="#header-template">Header Template</a></li>
       </ul>
     </li>
   </ul>
@@ -209,7 +210,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
   <h1>
-    <a href="/notes/org_org_roam_hugo_meta_format/">Ox-Hugo Blogging Advanced Tips and Examples 🌳</a>
+    <a href="/notes/org_org_roam_hugo_meta_format/">Ox-Hugo Blogging Advanced Tips and Examples 🌲</a>
   </h1>
 
   <div class="date">
@@ -217,11 +218,11 @@ https://github.com/alex-shpak/hugo-book
     
     
     
-    <strong aria-hidden="true"> Created date: </strong>Jun 5, 2023
+    <strong aria-hidden="true"> Publish on: </strong>Jun 5, 2023
+    <strong aria-hidden="true"> Edited on: </strong>Jun 20, 2023
     
     
-    
-    <strong aria-hidden="true">Last updated: </strong>Jun 21, 2023
+    (Lastmod </strong>Jun 22, 2023)
     
     
   </div>
@@ -731,7 +732,137 @@ org 모드로 편집하기 때문에 여기서 preview 가 되는 것이 가장 
 Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 될 수도 있고 Emacs
 애호가가 선호하는 운영 체제에 대해 자세히 알아볼 수 있는 리소스가 될 수도
 있습니다.</p>
-<div class="footnotes" role="doc-endnotes">
+<h2 id="header-template">
+  Header Template
+  <a class="anchor" href="#header-template">#</a>
+</h2>
+<p>capture 를 하면 아래와 같이 노트의 타입에 맞게 헤더가 생성 된다. publish,
+lastmod 는 직접 수정 한다. 그래야 깔끔하다.</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>,:PROPERTIES:
+</span></span><span style="display:flex;"><span>,:ID:       3dcd5b7a-9e78-41a9-a3da-xxxxxxxx
+</span></span><span style="display:flex;"><span>,:END:
+</span></span><span style="display:flex;"><span>#+title: HELLO WORLD
+</span></span><span style="display:flex;"><span>#+date: &lt;2023-06-22 Thu 10:27&gt;
+</span></span><span style="display:flex;"><span>#+hugo_publishdate: &lt;2023-06-22 Thu 10:27&gt;
+</span></span><span style="display:flex;"><span>#+hugo_lastmod: &lt;2023-06-22 Thu 10:27&gt;
+</span></span><span style="display:flex;"><span>#+filetags: 🎶
+</span></span><span style="display:flex;"><span>#+HUGO_DRAFT: true
+</span></span><span style="display:flex;"><span>#+HUGO_SECTION: notes
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>노트를 캡처 하면 아래와 같다.</p>
+<figure><img src="/imgs/20230622-1048-screenshot.png"
+         alt="Figure 3: Sample notes after org-roam-capture" width="100%"/><figcaption>
+            <p><span class="figure-number">Figure 3: </span>Sample notes after <strong>org-roam-capture</strong></p>
+        </figcaption>
+</figure>
+
+<p>그 다음에 template 을 가져 온다. 자동으로 가능한 부분을 거의 다 제거 했다.
+내보내기 전에 확인하고 직접 하는 것이 노트에 대한 나의 자세가 아닐까 싶다.</p>
+<p>아 물론 SETUPFILE 을 이용해서 표준화 시킬 수 있다. 그렇게 했었다. 근데 이 또한
+섣부른 자동화가 아닐까? 하루에 1-2 개 노트를 만드는데 뭘 더 자동화 하려는
+것인가?! 귀하게 다루자. 받들어 모시자.</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(hugofront &#34;
+</span></span><span style="display:flex;"><span>,# :ROAM_ALIASES: \&#34;&gt;&gt;\&#34;
+</span></span><span style="display:flex;"><span>#+SUBTITLE:
+</span></span><span style="display:flex;"><span>#+URL:
+</span></span><span style="display:flex;"><span>#+LANGUAGE: ko
+</span></span><span style="display:flex;"><span>,# #+STARTUP: overview
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>,# == TAGS ==
+</span></span><span style="display:flex;"><span>,# 🌱 🪴 🌳
+</span></span><span style="display:flex;"><span>#+filetags: :draft:
+</span></span><span style="display:flex;"><span>#+filetags: 🌱
+</span></span><span style="display:flex;"><span>#+HUGO_TAGS:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>,# == Taxonomies ==
+</span></span><span style="display:flex;"><span>,# #+HUGO_CATEGORIES:
+</span></span><span style="display:flex;"><span>,# #+HUGO_SERIES:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>,# == Glossary ==
+</span></span><span style="display:flex;"><span>#+glossary_sources: glossary
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>,# == Front-matter ==
+</span></span><span style="display:flex;"><span>#+hugo_front_matter_key_replace: tags&gt;keywords
+</span></span><span style="display:flex;"><span>,# #+hugo_front_matter_key_replace: aliases&gt;nil
+</span></span><span style="display:flex;"><span>,# #+hugo_paired_shortcodes: hint details mermaid sidenote
+</span></span><span style="display:flex;"><span>#+EXPORT_HUGO_PANDOC_CITATIONS: t
+</span></span><span style="display:flex;"><span>,# #+print_bibliography:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>,# == Summary ==
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#+attr_shortcode: info
+</span></span><span style="display:flex;"><span>#+begin_hint&#34; n&gt; r&gt; n&gt;
+</span></span><span style="display:flex;"><span>&#34;,#+end_hint
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#+hugo: more
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>* HIDDEN :noexport:
+</span></span><span style="display:flex;"><span>* ChangeLog :noexport:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#34;)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
@@ -857,6 +988,8 @@ Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 
 
    
 
+   
+
 
 <hr>
 
@@ -870,6 +1003,10 @@ Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 
       <center>
   
   
+  
+  <h3>Go to <a href="/refs/tecosaurOrgGlossary2023/">random</a> page</h3>
+  
+  
 </center>
 
 
@@ -878,9 +1015,9 @@ Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/a726a7a5a0ef40b7ffb9b6ec14c495bcd9e52675" title='Last modified by junghan0611 | 2023-06-21' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/64b7a5512fb343d9ea2613bf652fe11b39981f0a" title='Last modified by junghan0611 | 2023-06-22' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2023-06-21</span>
+      <span>2023-06-22</span>
     </a>
   </div>
 
@@ -970,6 +1107,7 @@ Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 
           </ul>
         </li>
         <li><a href="#org-translate-블록-번역">Org-translate 블록 번역</a></li>
+        <li><a href="#header-template">Header Template</a></li>
       </ul>
     </li>
   </ul>

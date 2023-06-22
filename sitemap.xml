@@ -3,135 +3,138 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://junghanacs.com/menu/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
-  </url><url>
-    <loc>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/refs/StoringGlossaryTerms2022/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/refs/UseGNUEmacs/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
+  </url><url>
+    <loc>https://junghanacs.com/terms/glossary/</loc>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/posts/building_my_first_emacs_configs_for_writing_and_publishing/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
+  </url><url>
+    <loc>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</loc>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/refs/LearningEmacs/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/notes/learning_spacemacs_and_vim/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/notes/talk_with_junghanacs/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-base/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-checker/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-clojure/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-coding/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-completion/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-editing/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-javascript/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-misc/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-navigation/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-org/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-org-workflow/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-pkm/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-project/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-python/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-reading/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-utility/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-visual/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-workspace/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/jh-writing/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/refs/peterprevosMoreProductiveEmacs2021/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/refs/tecosaurOrgGlossary2023/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/posts/open_my_lovely_blog/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/refs/giovannicrisalfiStartQutebrowserNow2022/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/configs/emacs/spacemacs/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/terms/evil-mode/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/contact/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/posts/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/categories/</loc>
   </url><url>
     <loc>https://junghanacs.com/notes/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/refs/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url><url>
     <loc>https://junghanacs.com/series/</loc>
   </url><url>
     <loc>https://junghanacs.com/tags/</loc>
   </url><url>
     <loc>https://junghanacs.com/terms/</loc>
-    <lastmod>2023-06-21T17:34:07+09:00</lastmod>
+    <lastmod>2023-06-22T17:15:38+09:00</lastmod>
   </url>
 </urlset>

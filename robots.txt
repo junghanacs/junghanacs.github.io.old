@@ -3,13 +3,15 @@ User-agent: *
 
 Allow: /menu/
 
-Allow: /notes/emacselementsEnhancedImageFeatures2023/
-
 Allow: /refs/StoringGlossaryTerms2022/
 
 Allow: /refs/UseGNUEmacs/
 
+Allow: /terms/glossary/
+
 Allow: /posts/building_my_first_emacs_configs_for_writing_and_publishing/
+
+Allow: /notes/emacselementsEnhancedImageFeatures2023/
 
 Allow: /refs/LearningEmacs/
 

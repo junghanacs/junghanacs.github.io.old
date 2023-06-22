@@ -8,19 +8,6 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Changes in Emacs 29 and Emacs Elements 🪴</title>
-      <link>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</link>
-      <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
-      
-      <guid>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</guid>
-      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
-  Emacs Elements 는 올해 나에게 가장 도움이 많이 된 Emacs 유튜브 채널이다.
-그 중에서도 &amp;ldquo;Changes in Emacs 29&amp;rdquo; 과 PDF 활용법, Emacs 설치 방법 등은 아주
-유용한 최신 팁이다.
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
       <title>Jeremy Friesen :: On Storing Glossary Terms in Org Roam Nodes (2022)🌱</title>
       <link>https://junghanacs.com/refs/StoringGlossaryTerms2022/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
@@ -44,7 +31,18 @@
     </item>
     
     <item>
-      <title>Building my first Emacs for Writing and Publishing (TODO)</title>
+      <title>Glossary</title>
+      <link>https://junghanacs.com/terms/glossary/</link>
+      <pubDate>Sat, 17 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/terms/glossary/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  테스트 중
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Building my first Emacs for Writing and Publishing🌱</title>
       <link>https://junghanacs.com/posts/building_my_first_emacs_configs_for_writing_and_publishing/</link>
       <pubDate>Fri, 16 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -56,7 +54,20 @@
     </item>
     
     <item>
-      <title>Daw-Ran Liou :: On Learning Emacs (2020)🌳</title>
+      <title>Changes in Emacs 29 and Emacs Elements 🌿</title>
+      <link>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</link>
+      <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Emacs Elements 는 올해 나에게 가장 도움이 많이 된 Emacs 유튜브 채널이다.
+그 중에서도 &amp;ldquo;Changes in Emacs 29&amp;rdquo; 과 PDF 활용법, Emacs 설치 방법 등은 아주
+유용한 최신 팁이다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Daw-Ran Liou :: On Learning Emacs (2020)🌲</title>
       <link>https://junghanacs.com/refs/LearningEmacs/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -300,7 +311,7 @@
     </item>
     
     <item>
-      <title>Peter Prevos :: More Productive with Emacs (2022)🌳</title>
+      <title>Peter Prevos :: More Productive with Emacs (2022)🌲</title>
       <link>https://junghanacs.com/refs/peterprevosMoreProductiveEmacs2021/</link>
       <pubDate>Sat, 10 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -313,7 +324,7 @@
     </item>
     
     <item>
-      <title>Tecosaur :: Org Glossary (2022)🌱</title>
+      <title>Tecosaur :: Org Glossary (2022)🌲</title>
       <link>https://junghanacs.com/refs/tecosaurOrgGlossary2023/</link>
       <pubDate>Fri, 09 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -337,7 +348,7 @@
     </item>
     
     <item>
-      <title>Ox-Hugo Blogging Advanced Tips and Examples 🌳</title>
+      <title>Ox-Hugo Blogging Advanced Tips and Examples 🌲</title>
       <link>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</link>
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -351,7 +362,7 @@
     </item>
     
     <item>
-      <title>Giovanni Crisalfi :: Start Qutebrowser Now (2022)🌳</title>
+      <title>Giovanni Crisalfi :: Start Qutebrowser Now (2022)🌲</title>
       <link>https://junghanacs.com/refs/giovannicrisalfiStartQutebrowserNow2022/</link>
       <pubDate>Fri, 02 Jun 2023 16:55:00 +0900</pubDate>
       
