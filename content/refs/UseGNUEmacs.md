@@ -2,8 +2,8 @@
 title = "Keith Waclena :: Use GNU Emacs - The Plain Text Computing Environment🌱"
 author = ["Junghan Kim"]
 date = 2023-06-20T00:00:00+09:00
-lastmod = 2023-06-21
-keywords = ["draft", "references"]
+lastmod = 2023-06-22T17:03:00+09:00
+keywords = ["draft", "references", "seedling"]
 draft = false
 +++
 

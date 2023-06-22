@@ -1,6 +1,8 @@
 +++
-title = "Changes in Emacs 29 and Emacs Elements 🪴"
+title = "Changes in Emacs 29 and Emacs Elements 🌿"
 author = ["Junghan Kim"]
+date = 2023-06-15
+publishDate = 2023-06-15
 lastmod = 2023-06-21
 keywords = ["references"]
 draft = false

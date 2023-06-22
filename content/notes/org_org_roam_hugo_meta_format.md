@@ -1,9 +1,10 @@
 +++
-title = "Ox-Hugo Blogging Advanced Tips and Examples 🌳"
+title = "Ox-Hugo Blogging Advanced Tips and Examples 🌲"
 author = ["Junghan Kim"]
 date = 2023-06-05
+publishDate = 2023-06-20
 lastmod = 2023-06-21
-keywords = ["notes", "ox-hugo", "org-roam", "template"]
+keywords = ["evergreen", "notes", "ox-hugo", "org-roam", "template"]
 draft = false
 +++
 
@@ -404,6 +405,81 @@ Doom 은 프레임워크에 적은 프레임워크, 패키지 관리자의 약�
 Emacs 용 구성 프레임워크입니다. 자신의 구성을 위한 기초가 될 수도 있고 Emacs
 애호가가 선호하는 운영 체제에 대해 자세히 알아볼 수 있는 리소스가 될 수도
 있습니다.
+
+
+## Header Template {#header-template}
+
+
+
+capture 를 하면 아래와 같이 노트의 타입에 맞게 헤더가 생성 된다. publish,
+lastmod 는 직접 수정 한다. 그래야 깔끔하다.
+
+```text
+,:PROPERTIES:
+,:ID:       3dcd5b7a-9e78-41a9-a3da-xxxxxxxx
+,:END:
+#+title: HELLO WORLD
+#+date: <2023-06-22 Thu 10:27>
+#+hugo_publishdate: <2023-06-22 Thu 10:27>
+#+hugo_lastmod: <2023-06-22 Thu 10:27>
+#+filetags: :notes:
+#+HUGO_DRAFT: true
+#+HUGO_SECTION: notes
+```
+
+노트를 캡처 하면 아래와 같다.
+
+{{< figure src="/imgs/20230622-1048-screenshot.png" caption="<span class=\"figure-number\">Figure 3: </span>Sample notes after **org-roam-capture**" width="100%" >}}
+
+그 다음에 template 을 가져 온다. 자동으로 가능한 부분을 거의 다 제거 했다.
+내보내기 전에 확인하고 직접 하는 것이 노트에 대한 나의 자세가 아닐까 싶다.
+
+아 물론 SETUPFILE 을 이용해서 표준화 시킬 수 있다. 그렇게 했었다. 근데 이 또한
+섣부른 자동화가 아닐까? 하루에 1-2 개 노트를 만드는데 뭘 더 자동화 하려는
+것인가?! 귀하게 다루자. 받들어 모시자.
+
+```text
+
+(hugofront "
+,# :ROAM_ALIASES: \">>\"
+#+SUBTITLE:
+#+URL:
+#+LANGUAGE: ko
+,# #+STARTUP: overview
+
+,# == TAGS ==
+,# 🌱 🪴 🌳
+#+filetags: :draft:
+#+filetags: :seedling:
+#+HUGO_TAGS:
+
+,# == Taxonomies ==
+,# #+HUGO_CATEGORIES:
+,# #+HUGO_SERIES:
+
+,# == Glossary ==
+#+glossary_sources: glossary
+
+,# == Front-matter ==
+#+hugo_front_matter_key_replace: tags>keywords
+,# #+hugo_front_matter_key_replace: aliases>nil
+,# #+hugo_paired_shortcodes: hint details mermaid sidenote
+#+EXPORT_HUGO_PANDOC_CITATIONS: t
+,# #+print_bibliography:
+
+,# == Summary ==
+
+#+attr_shortcode: info
+#+begin_hint" n> r> n>
+",#+end_hint
+
+#+hugo: more
+
+* HIDDEN :noexport:
+* ChangeLog :noexport:
+
+")
+```
 
 [^fn:1]: <https://raw.githubusercontent.com/kaushalmodi/ox-hugo/main/test/site/content-org/all-posts.org>
 [^fn:2]: <https://orgmode.org/manual/Markup-for-Rich-Contents.html>

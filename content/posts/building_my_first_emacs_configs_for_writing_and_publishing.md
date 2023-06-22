@@ -1,9 +1,10 @@
 +++
-title = "Building my first Emacs for Writing and Publishing (TODO)"
+title = "Building my first Emacs for Writing and Publishing🌱"
 author = ["Junghan Kim"]
 date = 2023-06-16T00:00:00+09:00
-lastmod = 2023-06-16
-keywords = ["draft", "articles"]
+publishDate = 2023-06-17
+lastmod = 2023-06-19
+keywords = ["articles"]
 draft = false
 +++
 

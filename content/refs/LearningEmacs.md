@@ -1,9 +1,10 @@
 +++
-title = "Daw-Ran Liou :: On Learning Emacs (2020)🌳"
+title = "Daw-Ran Liou :: On Learning Emacs (2020)🌲"
 author = ["Junghan Kim"]
 date = 2023-06-15T00:00:00+09:00
-lastmod = 2023-06-21
-keywords = ["references"]
+publishDate = 2023-06-16
+lastmod = 2023-06-19
+keywords = ["references", "evergreen"]
 draft = false
 +++
 

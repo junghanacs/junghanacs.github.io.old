@@ -2,7 +2,7 @@
 title = "jh-base layer"
 author = ["Junghan Kim"]
 date = 2023-06-12T00:00:00+09:00
-lastmod = 2023-06-21T10:26:00+09:00
+lastmod = 2023-06-22T10:17:00+09:00
 keywords = ["configs"]
 draft = false
 +++
@@ -93,7 +93,6 @@ jh-base
     which-key
 
     helpful
-    time-stamp
 
 ;;;;; spacemacs-defaults
 
@@ -598,20 +597,6 @@ TRAMP 를 경험 해봐야 한다.
     (setq proced-auto-update-interval 5)
     (setq proced-descend t)
     (setq proced-filter 'user))
-  )
-```
-
-
-### Time-stamp {#time-stamp}
-
-
-
-```elisp
-;;;; Time-Stamp
-
-(defun jh-base/init-time-stamp ()
-  (require 'time-stamp)
-  (add-hook 'write-file-functions 'time-stamp) ; update when saving
   )
 ```
 

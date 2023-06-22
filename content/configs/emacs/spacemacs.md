@@ -2,7 +2,7 @@
 title = "Dot-Spacemacs"
 author = ["Junghan Kim"]
 date = 2023-05-17
-lastmod = 2023-06-21T16:25:00+09:00
+lastmod = 2023-06-22T10:20:00+09:00
 keywords = ["configs"]
 draft = false
 +++
@@ -84,9 +84,7 @@ the `:mkdirp yes` argument.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(safe-local-variable-values
-   '((eval setq-local org-export-before-parsing-functions
-           (append org-export-before-parsing-functions
-                   '(dh/org-export-before-parsing)))
+   '(
      (org-cite-export-processors
       (t csl "~/org/roam/ieee.csl"))
      (eval add-hook 'after-save-hook

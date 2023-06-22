@@ -2,7 +2,8 @@
 title = "블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움🌱"
 author = ["Junghan Kim"]
 date = 2023-06-07T00:00:00+09:00
-lastmod = 2023-06-21
+publishDate = 2023-06-15
+lastmod = 2023-06-22T16:51:00+09:00
 keywords = ["draft", "articles"]
 draft = false
 +++

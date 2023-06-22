@@ -1,9 +1,9 @@
 +++
-title = "Peter Prevos :: More Productive with Emacs (2022)🌳"
+title = "Peter Prevos :: More Productive with Emacs (2022)🌲"
 author = ["Junghan Kim"]
 date = 2023-06-10T00:00:00+09:00
-lastmod = 2023-06-21
-keywords = ["references"]
+lastmod = 2023-06-22T17:02:00+09:00
+keywords = ["references", "evergreen"]
 draft = false
 +++
 
