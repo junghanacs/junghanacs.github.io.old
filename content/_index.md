@@ -30,7 +30,7 @@ bookComments = false
 
 -   [📰 Articles]({{< relref "/posts" >}})
 -   [🗃 Notes]({{< relref "/notes" >}})
--   [📚 References]({{< relref "/refs" >}})
+-   [🏛 References]({{< relref "/refs" >}})
 -   [🏷 Terms]({{< relref "/terms" >}})
 -   [🧰 Dotfiles]({{< relref "/configs" >}})
 

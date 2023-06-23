@@ -9,15 +9,15 @@ draft = false
 +++
 
 {{< hint info >}}
-테스트 중
+분야 구분 없이 사용하는 용어 사전. 세부 분야 별 용어는 별도의 파일로 관리할 예정 입니다.
 {{< /hint >}}
 
 <!--more-->
 
-Try using Org Glossary for all your glosses, acronyms, and more within your
-favourite ML with a unicorn mascot. It attempts to provide powerful
-functionality, in keeping with the simplicity of the Org ML we all know and
-love. Org mode 는 사랑입니다.
+Try using Org Glossary for all your <a class="org-gls" href="#gls.1" id="glsr.1.1">glosses</a>, acronyms, and more within your
+favourite  (<a class="org-gls" href="#gls.4" id="glsr.4.1">ML</a>) with a <a class="org-gls" href="#gls.6" id="glsr.6.1">unicorn</a> mascot. It attempts to provide powerful
+functionality, in keeping with the simplicity of the Org <a class="org-gls" href="#gls.4" id="glsr.4.2">ML</a> we all know and
+love. <a class="org-gls" href="#gls.3" id="glsr.3.1">Org mode</a> 는 사랑입니다.
 
 {{< details "Details" >}}
 Glossary
@@ -33,14 +33,6 @@ Text Substitutions
 : The term is replaced with its definition.
 {{< /details >}}
 
-```text
-마크다운으로 이렇게 들어가네!
-## Glossary {#glossary}
-
-**<span class="org-glsdef" id="gls.2">Emacs</span>**&emsp;A lisp-based generic user-centric text manipulation environment that
-  masquerades as a text editor.&ensp;<a class="org-glsdef" href="#glsr.2.1">1</a>
-```
-
 
 ## How-to {#how-to}
 
@@ -48,3 +40,20 @@ Text Substitutions
 - TERM :: DEFINITION
 - SINGULAR KEY, PLURAL KEY = SINGULAR FORM, PLURAL FORM :: DEFINITION
 ```
+
+
+## Acronyms {#acronyms}
+
+**<span class="org-glsdef" id="gls.4">ML</span>**&emsp;&ensp;<a class="org-glsdef" href="#glsr.4.1">1</a>, <a class="org-glsdef" href="#glsr.4.2">2</a>
+
+
+## Glossary {#glossary}
+
+**<span class="org-glsdef" id="gls.1">Glosses</span>**&emsp;Brief notations, giving the meaning of a word or wording in a text.&ensp;<a class="org-glsdef" href="#glsr.1.1">1</a>
+
+**<span class="org-glsdef" id="gls.3">Org mode</span>**&emsp;A rich and versatile editing mode for the lovely Org format.&ensp;<a class="org-glsdef" href="#glsr.3.1">1</a>
+
+
+## Index {#index}
+
+<span class="org-glsdef" id="gls.6">Unicorn</span>&ensp;<a class="org-glsdef" href="#glsr.6.1">1</a>

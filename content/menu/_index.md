@@ -11,11 +11,12 @@ weight = 10
 
 -   [📰 Articles](/posts)
 -   [🗃 Notes](/notes)
--   [📚 References](/refs)
+-   [🏛 References](/refs)
 -   [🏷 Terms](/terms)
 -   [🧰 Dotfiles](/configs)
     -   [🎮 dot-emacs](/configs/emacs)
 <!-- -   [All tags](/tags) -->
+<!-- -   [📚 Docs](/docs) -->
 
 
 <!-- -   [Contact](/contact) -->
