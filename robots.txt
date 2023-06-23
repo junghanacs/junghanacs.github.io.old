@@ -3,7 +3,15 @@ User-agent: *
 
 Allow: /menu/
 
+Allow: /notes/hangul_technical_writing_for_korean/
+
+Allow: /terms/technium/
+
+Allow: /refs/WhyHowUse23/
+
 Allow: /refs/StoringGlossaryTerms2022/
+
+Allow: /notes/fortune_quotes/
 
 Allow: /refs/UseGNUEmacs/
 
@@ -62,6 +70,8 @@ Allow: /configs/emacs/
 Allow: /configs/
 
 Allow: /refs/peterprevosMoreProductiveEmacs2021/
+
+Allow: /notes/org_glossary/
 
 Allow: /refs/tecosaurOrgGlossary2023/
 

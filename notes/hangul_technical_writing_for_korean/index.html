@@ -4,15 +4,18 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  Junghanacs 의 설정 파일 소개. 누구나 쉽게 사용할 수 있도록 제공할 예정이다.
-오피스 설치 정도의 노력으로 일단! 바로 시작할 수 있어야 한다.
+  한글 기술 문서 작성 방법을 정리해보자. 나의 관점에서.
 ">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="menu/Dotfiles" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://junghanacs.com/configs/" />
-<title>menu/Dotfiles | Junghanacs🧠</title>
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Hangul Technical Writing for Korean🌱" />
+<meta property="og:description" content="
+  한글 기술 문서 작성 방법을 정리해보자. 나의 관점에서.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://junghanacs.com/notes/hangul_technical_writing_for_korean/" /><meta property="article:section" content="notes" />
+<meta property="article:published_time" content="2023-06-23T17:01:00+09:00" />
+<meta property="article:modified_time" content="2023-06-23T17:57:04+09:00" />
+<title>Hangul Technical Writing for Korean🌱 | Junghanacs🧠</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.860a772b53ff5fc404f1c657dcfb67d1b1f5326eaf79a632af1986e3a62b9289.css" integrity="sha256-hgp3K1P/X8QE8cZX3Ptn0bH1Mm6veaYyrxmG46Yrkok=" crossorigin="anonymous">
@@ -31,7 +34,6 @@ if (!doNotTrack) {
 	gtag('config', 'G-GYRB327HE6', { 'anonymize_ip': false });
 }
 </script>
-<link rel="alternate" type="application/rss+xml" href="https://junghanacs.com/configs/index.xml" title="Junghanacs🧠" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -79,7 +81,7 @@ https://github.com/alex-shpak/hugo-book
 <li>
   <a href="/terms/">🏷 Terms</a></li>
 <li>
-  <a href="/configs/"class=active>🧰 Dotfiles</a>
+  <a href="/configs/">🧰 Dotfiles</a>
 <ul>
 <li>
   <a href="/configs/emacs/">🎮 dot-emacs</a></li>
@@ -133,7 +135,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>menu/Dotfiles</strong>
+  <strong>Hangul Technical Writing for Korean🌱</strong>
 
   <label for="toc-control">
     
@@ -146,15 +148,12 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  
+
 <nav id="TableOfContents">
   <ul>
     <li>
       <ul>
-        <li><a href="#operating-system">Operating System</a></li>
-        <li><a href="#text-editor--emacs">Text Editor (Emacs)</a></li>
-        <li><a href="#tiling-window-manager--optional">Tiling Window Manager (Optional)</a></li>
-        <li><a href="#applications">Applications</a></li>
+        <li><a href="#카카오엔터-기술-글쓰기-연재-목록">카카오엔터 기술 글쓰기 연재 목록</a></li>
       </ul>
     </li>
   </ul>
@@ -169,64 +168,173 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><blockquote class="book-hint info">
-  Junghanacs 의 설정 파일 소개. 누구나 쉽게 사용할 수 있도록 제공할 예정이다.
-오피스 설치 정도의 노력으로 일단! 바로 시작할 수 있어야 한다.
+<article class="markdown">
+  <h1>
+    <a href="/notes/hangul_technical_writing_for_korean/">Hangul Technical Writing for Korean🌱</a>
+  </h1>
+
+  <div class="date">
+    
+    
+    
+    
+    <strong aria-hidden="true"> Published: </strong>Jun 23, 2023
+    <strong aria-hidden="true"> Updated: </strong>Jun 23, 2023
+    
+    
+    (Lastmod: Jun 23, 2023)
+    
+    
+  </div>
+
+  
+
+
+
+
+
+
+<div>
+ </div>
+
+<hr>
+
+  <p><blockquote class="book-hint info">
+  한글 기술 문서 작성 방법을 정리해보자. 나의 관점에서.
 </blockquote>
 
-<p>이 페이지는 닷파일 페이지의 인덱스 입니다.</p>
-<h2 id="operating-system">
-  Operating System
-  <a class="anchor" href="#operating-system">#</a>
+<h2 id="카카오엔터-기술-글쓰기-연재-목록">
+  카카오엔터 기술 글쓰기 연재 목록
+  <a class="anchor" href="#%ec%b9%b4%ec%b9%b4%ec%98%a4%ec%97%94%ed%84%b0-%ea%b8%b0%ec%88%a0-%ea%b8%80%ec%93%b0%ea%b8%b0-%ec%97%b0%ec%9e%ac-%eb%aa%a9%eb%a1%9d">#</a>
 </h2>
-<p>리눅스를 사용하는 게 좋다. 일단 비용 안 든다. 사용 자체가 배움이 된다. 무엇보다
-딴 짓을 할게 거의 없다. <code>한글</code> 매뉴얼을 제공하는 국산 리눅스 배포판 =하모니카=를
-배포판으로 선택했다 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. 잘 된다. 와! 쉽다. 컴퓨터를 처음 접하는 학생들이
-사용하면 정말 좋을 것 같다.</p>
-<h2 id="text-editor--emacs">
-  Text Editor (Emacs)
-  <a class="anchor" href="#text-editor--emacs">#</a>
-</h2>
-<p>내가 커스텀해서 사용 중인 스페이스맥스 기반 이맥스 환경이다. 아래 이맥스
-페이지에 가보면 설정 파일과 더불어 나름의 원칙을 적어 놓았다. 바로 사용 할
-수 있도록 깃허브에 정리해서 올려 놓을 예정이다. 데스크톱에 오피스 설치 정도의
-노력으로 바로 동작하게 해야만 한다. 폰트 까지 하나로 패키징이 되는 게 좋을 것
-같다. Snap, Flatpack, NIX 등 활용.</p>
-<ul>
-<li>상세 정보 
-  <a href="/configs/emacs/">Dotfiles/dot-emacs</a></li>
-</ul>
-<h2 id="tiling-window-manager--optional">
-  Tiling Window Manager (Optional)
-  <a class="anchor" href="#tiling-window-manager--optional">#</a>
-</h2>
-<p>타일링 윈도우 매니저 사용은 키보드 워크 플로우의 시작이다. 나는 i3WM 을 사용하고
-있다. 문제는 원 클릭으로 설정을 하더라도 익숙해 지려면 약간의 시간이 필요하다.</p>
-<h2 id="applications">
-  Applications
-  <a class="anchor" href="#applications">#</a>
-</h2>
-<p>이맥스와 연동을 위한 설정 및 팁을 다룬다.</p>
-<ul>
-<li>PDF 관련</li>
-<li>Browser 관련</li>
-<li>SNS 관련</li>
-</ul>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
 <p>
-  <a href="https://hamonikr.org/">https://hamonikr.org/</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div></article>
+  <a href="http://kko.to/PP2fgvsXR">http://kko.to/PP2fgvsXR</a></p>
+<p>25 개의 글이 있다.</p>
+<figure><img src="/imgs/20230623-1703-screenshot.png"
+         alt="Figure 1: 카카오엔터 기술 글쓰기 연재" width="100%"/><figcaption>
+            <p><span class="figure-number">Figure 1: </span>카카오엔터 기술 글쓰기 연재</p>
+        </figcaption>
+</figure></p>
+  
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+<hr>
+
+  <div class="bl-section">
+    <h2> No notes link to this note</h2>
+  </div>
+
+
+</article>
  
       <center>
   
   
   
-  <h3>Go to <a href="/configs/emacs/spacemacs/">random</a> page</h3>
+  <h3>Go to <a href="/terms/technium/">random</a> page</h3>
   
   
 </center>
@@ -289,15 +397,12 @@ https://github.com/alex-shpak/hugo-book
     <aside class="book-toc">
       <div class="book-toc-content">
         
-  
+
 <nav id="TableOfContents">
   <ul>
     <li>
       <ul>
-        <li><a href="#operating-system">Operating System</a></li>
-        <li><a href="#text-editor--emacs">Text Editor (Emacs)</a></li>
-        <li><a href="#tiling-window-manager--optional">Tiling Window Manager (Optional)</a></li>
-        <li><a href="#applications">Applications</a></li>
+        <li><a href="#카카오엔터-기술-글쓰기-연재-목록">카카오엔터 기술 글쓰기 연재 목록</a></li>
       </ul>
     </li>
   </ul>

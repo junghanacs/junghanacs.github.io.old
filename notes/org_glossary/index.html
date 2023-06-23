@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ko-kr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  지식 관리에서 용어를 어떻게 정의하고 있는지가 매우 중요하다. 같은 개념을 가지고
+있어야 서로 더 나은 논의를 할 수 있다. 모호 하지 않도록 나의 사전을
+만들어야 한다.
+">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Org-Glossary 사용법🌿" />
+<meta property="og:description" content="
+  지식 관리에서 용어를 어떻게 정의하고 있는지가 매우 중요하다. 같은 개념을 가지고
+있어야 서로 더 나은 논의를 할 수 있다. 모호 하지 않도록 나의 사전을
+만들어야 한다.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://junghanacs.com/notes/org_glossary/" /><meta property="article:section" content="notes" />
+<meta property="article:published_time" content="2023-06-19T00:00:00+09:00" />
+<meta property="article:modified_time" content="2023-06-23T17:57:04+09:00" />
+<title>Org-Glossary 사용법🌿 | Junghanacs🧠</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.860a772b53ff5fc404f1c657dcfb67d1b1f5326eaf79a632af1986e3a62b9289.css" integrity="sha256-hgp3K1P/X8QE8cZX3Ptn0bH1Mm6veaYyrxmG46Yrkok=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/ko.search.min.20a952660bbabdd38b8ab6a8ecbdd754087c5c5c46466a1aa55bb09550ae52f8.js" integrity="sha256-IKlSZgu6vdOLirao7L3XVAh8XFxGRmoapVuwlVCuUvg=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GYRB327HE6"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-GYRB327HE6', { 'anonymize_ip': false });
+}
+</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Junghanacs🧠</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/posts/">📰 Articles</a></li>
+<li>
+  <a href="/notes/">🗃 Notes</a></li>
+<li>
+  <a href="/refs/">🏛 References</a></li>
+<li>
+  <a href="/terms/">🏷 Terms</a></li>
+<li>
+  <a href="/configs/">🧰 Dotfiles</a>
+<ul>
+<li>
+  <a href="/configs/emacs/">🎮 dot-emacs</a></li>
+</ul>
+</li>
+</ul>
+<!-- -   [All tags](/tags) -->
+<!-- -   [📚 Docs](/docs) -->
+<!-- -   [Contact](/contact) -->
+<!-- -   [RSS](/index.xml) -->
+<!-- -   [All my links](https://links.seds.nl/) -->
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/junghanacs"  target="_blank" rel="noopener">
+        📍 Github Link
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Org-Glossary 사용법🌿</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#올바른-줄임말-사용-가이드">올바른 줄임말 사용 가이드</a></li>
+        <li><a href="#one">One</a>
+          <ul>
+            <li><a href="#one-one">One One</a></li>
+          </ul>
+        </li>
+        <li><a href="#two">Two</a>
+          <ul>
+            <li><a href="#two-two">Two Two</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+        <li><a href="#acronyms">Acronyms</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/notes/org_glossary/">Org-Glossary 사용법🌿</a>
+  </h1>
+
+  <div class="date">
+    
+    
+    
+    
+    <strong aria-hidden="true"> Published: </strong>Jun 9, 2023
+    <strong aria-hidden="true"> Updated: </strong>Jun 19, 2023
+    
+    
+    (Lastmod: Jun 23, 2023)
+    
+    
+  </div>
+
+  
+
+
+
+
+
+
+<div>
+ </div>
+
+<hr>
+
+  <p><blockquote class="book-hint info">
+  지식 관리에서 용어를 어떻게 정의하고 있는지가 매우 중요하다. 같은 개념을 가지고
+있어야 서로 더 나은 논의를 할 수 있다. 모호 하지 않도록 나의 사전을
+만들어야 한다.
+</blockquote>
+
+<p>Problem In Chair, Not In Computer
+(<a class="org-gls" href="#gls.7" id="glsr.7.1">PICNIC</a>) 가고 싶다.</p>
+<p>강력하게 추천
+(<a class="org-gls" href="#gls.11" id="glsr.11.1">강추</a>)</p>
+<p>(abstract syntax)
+(<a class="org-gls" href="#gls.13" id="glsr.13.1">추상 구문</a>)</p>
+<p>공동 구매
+(<a class="org-gls" href="#gls.12" id="glsr.12.1">공구</a>)</p>
+<p>한글 내 스타일로 바꾸고 싶은데</p>
+<h2 id="올바른-줄임말-사용-가이드">
+  올바른 줄임말 사용 가이드<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+  <a class="anchor" href="#%ec%98%ac%eb%b0%94%eb%a5%b8-%ec%a4%84%ec%9e%84%eb%a7%90-%ec%82%ac%ec%9a%a9-%ea%b0%80%ec%9d%b4%eb%93%9c">#</a>
+</h2>
+<p>여기에 따라서 표준안을 만들어야 한다.
+대박 좋은 자료가 있네. 기술 글쓰기 표준안이 있네. 카카오 엔터에서 만든 것</p>
+<h2 id="one">
+  One
+  <a class="anchor" href="#one">#</a>
+</h2>
+<p><a class="org-gls" href="#gls.3" id="glsr.3.1">Org mode</a>
+<a class="org-gls" href="#gls.2" id="glsr.2.1">Emacs</a>
+포기 패턴</p>
+<p><a class="org-gls" href="#gls.7" id="glsr.7.2">PICNIC</a></p>
+<p>Use a reference <a href="#citeproc_bib_item_1">[1]</a> and a glossary entry to the <a class="org-gls" href="#gls.4" id="glsr.4.1">PC</a> or a <a class="org-gls" href="#gls.5" id="glsr.5.1">Blog</a> in the Emacs REproducible Research Environment
+(<a class="org-gls" href="#gls.10" id="glsr.10.1">EmRE</a>).</p>
+<h3 id="one-one">
+  One One
+  <a class="anchor" href="#one-one">#</a>
+</h3>
+<p>Use another reference <a href="#citeproc_bib_item_2">[2]</a></p>
+<h2 id="two">
+  Two
+  <a class="anchor" href="#two">#</a>
+</h2>
+<p>No refs aside from the <a class="org-gls" href="#gls.4" id="glsr.4.2">PC</a> glossary entry.
+<a class="org-gls" href="#gls.2" id="glsr.2.2">Emacs</a>
+<a class="org-gls" href="#gls.7" id="glsr.7.3">PICNIC</a> 가고 싶다.</p>
+<h3 id="two-two">
+  Two Two
+  <a class="anchor" href="#two-two">#</a>
+</h3>
+<p>Hello</p>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<style>.csl-left-margin{float: left; padding-right: 0em;}
+ .csl-right-inline{margin: 0 0 0 1em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>
+    <div class="csl-left-margin">[1]</div><div class="csl-right-inline">A. Athalye, “Why and How I use ‘Org Mode’ for my writing and more,” 2023. <a href="https://www.evalapply.org/posts/why-and-how-i-use-org-mode/index.html">https://www.evalapply.org/posts/why-and-how-i-use-org-mode/index.html</a> (accessed Apr. 01, 2023).</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>
+    <div class="csl-left-margin">[2]</div><div class="csl-right-inline">C. Newport, <i>Digital Minimalism</i>. New York: Portfolio/Penguin, 2019. Available: <a href="https://www.amazon.com/Digital-Minimalism-Choosing-Focused-Noisy/dp/0525536515">https://www.amazon.com/Digital-Minimalism-Choosing-Focused-Noisy/dp/0525536515</a></div>
+  </div>
+</div>
+<h2 id="glossary">
+  Glossary
+  <a class="anchor" href="#glossary">#</a>
+</h2>
+<p><strong><span class="org-glsdef" id="gls.5">Blog</span></strong> ~ is the short form of weblog and references an online journal where an individual, a group or a corporate entity share information. <a class="org-glsdef" href="#glsr.5.1">1</a></p>
+<p><strong><span class="org-glsdef" id="gls.2">Emacs</span></strong> A lisp-based generic user-centric text manipulation environment that
+masquerades as a text editor. <a class="org-glsdef" href="#glsr.2.1">1</a>, <a class="org-glsdef" href="#glsr.2.2">2</a></p>
+<p><strong><span class="org-glsdef" id="gls.3">Org mode</span></strong> A rich and versatile editing mode for the lovely Org format. <a class="org-glsdef" href="#glsr.3.1">1</a></p>
+<p><strong><span class="org-glsdef" id="gls.4">PC</span></strong> A personal computing device. <a class="org-glsdef" href="#glsr.4.1">1</a>, <a class="org-glsdef" href="#glsr.4.2">2</a></p>
+<h2 id="acronyms">
+  Acronyms
+  <a class="anchor" href="#acronyms">#</a>
+</h2>
+<p><strong><span class="org-glsdef" id="gls.11">강추</span></strong> 강력하게 추천 <a class="org-glsdef" href="#glsr.11.1">1</a></p>
+<p><strong><span class="org-glsdef" id="gls.12">공구</span></strong> 공동 구매 <a class="org-glsdef" href="#glsr.12.1">1</a></p>
+<p><strong><span class="org-glsdef" id="gls.13">추상 구문</span></strong> (abstract syntax) <a class="org-glsdef" href="#glsr.13.1">1</a></p>
+<p><strong><span class="org-glsdef" id="gls.10">EmRE</span></strong> Emacs REproducible Research Environment <a class="org-glsdef" href="#glsr.10.1">1</a></p>
+<p><strong><span class="org-glsdef" id="gls.7">PICNIC</span></strong> Problem In Chair, Not In Computer <a class="org-glsdef" href="#glsr.7.1">1</a>, <a class="org-glsdef" href="#glsr.7.2">2</a>, <a class="org-glsdef" href="#glsr.7.3">3</a></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>
+  <a href="https://tech.kakaoenterprise.com/134">https://tech.kakaoenterprise.com/134</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div></p>
+  
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+<hr>
+
+  <div class="bl-section">
+    <h2> No notes link to this note</h2>
+  </div>
+
+
+</article>
+ 
+      <center>
+  
+  
+  
+  <h3>Go to <a href="/notes/learning_spacemacs_and_vim/">random</a> page</h3>
+  
+  
+</center>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/2a45dea8eb5a6372d60b4d34b335c91dcb6fcff5" title='Last modified by junghan0611 | 2023-06-23' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2023-06-23</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <footer class="footer">
+  <br>
+  <br>
+  <span>&copy; 2023 <a href="https://junghanacs.com/">Junghanacs🧠</a></span>
+  <span>
+    published with
+    <a href="https://www.gnu.org/software/emacs" rel="noopener noreferrer">Emacs</a> +
+    <a href="https://orgmode.org" rel="noopener noreferrer">Org-Mode</a> +
+    <a href="https://ox-hugo.scripter.co" rel="noopener noreferrer">Ox-Hugo</a> 
+  </span>
+</footer>
+
+      </footer>
+
+      
+  
+  <div class="book-comments"><script src="https://utteranc.es/client.js"
+        repo="junghanacs/junghanacs.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#올바른-줄임말-사용-가이드">올바른 줄임말 사용 가이드</a></li>
+        <li><a href="#one">One</a>
+          <ul>
+            <li><a href="#one-one">One One</a></li>
+          </ul>
+        </li>
+        <li><a href="#two">Two</a>
+          <ul>
+            <li><a href="#two-two">Two Two</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+        <li><a href="#acronyms">Acronyms</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5/dist/gumshoe.polyfills.min.js"></script>
+<script>new Gumshoe('.book-toc a', { nested: true });</script>
+<style>
+ .book-toc li.active > a {
+   font-weight: bold;
+ }
+</style>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

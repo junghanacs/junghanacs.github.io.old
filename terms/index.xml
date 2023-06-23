@@ -7,13 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language><atom:link href="https://junghanacs.com/terms/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Technium</title>
+      <link>https://junghanacs.com/terms/technium/</link>
+      <pubDate>Fri, 23 Jun 2023 16:54:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/terms/technium/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  그래 테크니움. 기술이 원하는게 이거냐!
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
       <title>Glossary</title>
       <link>https://junghanacs.com/terms/glossary/</link>
       <pubDate>Sat, 17 Jun 2023 00:00:00 +0900</pubDate>
       
       <guid>https://junghanacs.com/terms/glossary/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
-  테스트 중
+  분야 구분 없이 사용하는 용어 사전. 세부 분야 별 용어는 별도의 파일로 관리할 예정 입니다.
 &lt;/blockquote&gt;</description>
     </item>
     

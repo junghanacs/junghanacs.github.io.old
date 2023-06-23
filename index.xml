@@ -8,6 +8,40 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Hangul Technical Writing for Korean🌱</title>
+      <link>https://junghanacs.com/notes/hangul_technical_writing_for_korean/</link>
+      <pubDate>Fri, 23 Jun 2023 17:01:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/hangul_technical_writing_for_korean/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  한글 기술 문서 작성 방법을 정리해보자. 나의 관점에서.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Technium</title>
+      <link>https://junghanacs.com/terms/technium/</link>
+      <pubDate>Fri, 23 Jun 2023 16:54:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/terms/technium/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  그래 테크니움. 기술이 원하는게 이거냐!
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>  Athalye Aditya :: Why and How I Use &#34;Org Mode&#34; for My Writing and More (2022)🌱
+  </title>
+      <link>https://junghanacs.com/refs/WhyHowUse23/</link>
+      <pubDate>Thu, 22 Jun 2023 20:30:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/refs/WhyHowUse23/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  아름다운 포스팅
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
       <title>Jeremy Friesen :: On Storing Glossary Terms in Org Roam Nodes (2022)🌱</title>
       <link>https://junghanacs.com/refs/StoringGlossaryTerms2022/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
@@ -16,6 +50,18 @@
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Jeremy 는 정말 뛰어난 텍스트 마스터다. 실제로도 지식 정보 관리 분야에서 일하고
 있다. 앞으로도 많이 다루겠지만 일단 샘플로 하나 시작한다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>포춘 쿠키 관리 (Quotes)</title>
+      <link>https://junghanacs.com/notes/fortune_quotes/</link>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/fortune_quotes/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  세상에 좋은 말씀은 많다. 읽고 아아!! 하고 끝이다. 리눅스에서 애용하던 Fortune 을
+보다 적극적으로 활용하고 있다. Emacs 홈을 열면 말씀하신다! 근데 무슨 말씀인가?
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -37,7 +83,7 @@
       
       <guid>https://junghanacs.com/terms/glossary/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
-  테스트 중
+  분야 구분 없이 사용하는 용어 사전. 세부 분야 별 용어는 별도의 파일로 관리할 예정 입니다.
 &lt;/blockquote&gt;</description>
     </item>
     
@@ -320,6 +366,19 @@
   이맥스란 무엇이며 왜 사용해야 하는지, 무엇이 장점인지 설명한다. 생산성 고수의
 깔끔한 설명이 돋보인다. 특히 생산성 해킹은 키보드가 아닌 마음으로 하는 것이라는
 말은 병아리 이맥서의 심장을 때린다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Org-Glossary 사용법🌿</title>
+      <link>https://junghanacs.com/notes/org_glossary/</link>
+      <pubDate>Fri, 09 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/org_glossary/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  지식 관리에서 용어를 어떻게 정의하고 있는지가 매우 중요하다. 같은 개념을 가지고
+있어야 서로 더 나은 논의를 할 수 있다. 모호 하지 않도록 나의 사전을
+만들어야 한다.
 &lt;/blockquote&gt;</description>
     </item>
     
