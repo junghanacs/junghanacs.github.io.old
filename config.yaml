@@ -7,7 +7,7 @@ timeZone: Asia/Seoul
 hasCJKLanguage: true
 preserveTaxonomyNames: true
 
-title: Junghanacs
+title: Junghanacs🧠
 theme: book
 
 disqusShortname: junghanacs
@@ -70,7 +70,7 @@ languages:
 menu:
   # before: []
   after:
-    - name: "Github Link"
+    - name: "📍 Github Link"
       url: "https://github.com/junghanacs"
       weight: 90
     # - name: "Hugo Themes"

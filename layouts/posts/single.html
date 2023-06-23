@@ -8,14 +8,12 @@
     {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
     {{ $publishDate := .PublishDate }}
     {{ $Date := .Date }}
-
     <!-- <strong aria-hidden="true"> Author: </strong>{{ .Params.author }} <br> -->
-    <strong aria-hidden="true"> Publish on:  </strong>{{ $Date.Format $dateFormat }}
-    <strong aria-hidden="true"> Edited on: </strong>{{ $publishDate.Format $dateFormat }}
-
+    <strong aria-hidden="true"> Published:  </strong>{{ $Date.Format $dateFormat }}
+    <strong aria-hidden="true"> Updated: </strong>{{ $publishDate.Format $dateFormat }}
     {{ with .Lastmod }}
     {{ if gt . $publishDate }}
-    (Lastmod </strong>{{ .Format $dateFormat }})
+    (Lastmod: {{ .Format $dateFormat }})
     {{ end }}
     {{ end }}
   </div>

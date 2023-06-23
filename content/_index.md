@@ -1,15 +1,16 @@
 +++
-title = "Junghanacs's Home"
+title = "Home"
 author = ["Junghan Kim"]
 date = 2023-05-31T12:26:00+09:00
-lastmod = 2023-06-22T17:13:00+09:00
+publishDate = 2023-06-01
+lastmod = 2023-06-22
 draft = false
 bookToc = false
 bookComments = false
 +++
 
 {{< hint info >}}
-Don't be the best. Be the only. 최고가 되지 말고, 유일한 사람이 되세요. - Kevin Kelly
+📜 Don't be the best. Be the only. 최고가 되지 말고, 유일한 사람이 되세요. - Kevin Kelly
 {{< /hint >}}
 
 <!--more-->
@@ -27,11 +28,11 @@ Don't be the best. Be the only. 최고가 되지 말고, 유일한 사람이 되
 > 이 곳은 저의 **Digital Garden** 입니다. Junghan 님의 **Brain Dump** 이기도 하구요.
 > **메뉴** 구성은 다음과 같아요!
 
--   [Articles]({{< relref "/posts" >}})
--   [Notes]({{< relref "/notes" >}})
--   [References]({{< relref "/refs" >}})
--   [Terms]({{< relref "/terms" >}})
--   [Dotfiles]({{< relref "/configs" >}})
+-   [📰 Articles]({{< relref "/posts" >}})
+-   [🗃 Notes]({{< relref "/notes" >}})
+-   [📚 References]({{< relref "/refs" >}})
+-   [🏷 Terms]({{< relref "/terms" >}})
+-   [🧰 Dotfiles]({{< relref "/configs" >}})
 
 
 ## <span class="underline">Emacs</span> : Life Hacking System 🦾 {#life-hacking-system}
