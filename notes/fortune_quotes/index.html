@@ -16,13 +16,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://junghanacs.com/notes/fortune_quotes/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2023-06-23T17:09:00+09:00" />
-<meta property="article:modified_time" content="2023-06-23T17:57:04+09:00" />
+<meta property="article:modified_time" content="2023-06-26T07:45:27+09:00" />
 <title>포춘 쿠키 관리 (Quotes) | Junghanacs🧠</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.860a772b53ff5fc404f1c657dcfb67d1b1f5326eaf79a632af1986e3a62b9289.css" integrity="sha256-hgp3K1P/X8QE8cZX3Ptn0bH1Mm6veaYyrxmG46Yrkok=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/ko.search.min.20a952660bbabdd38b8ab6a8ecbdd754087c5c5c46466a1aa55bb09550ae52f8.js" integrity="sha256-IKlSZgu6vdOLirao7L3XVAh8XFxGRmoapVuwlVCuUvg=" crossorigin="anonymous"></script>
+  <script defer src="/ko.search.min.7df47f7f4e69ff2fed3484adf20fc6fbf54bb0dda35523d9f21c27e0d4094b82.js" integrity="sha256-ffR/f05p/y/tNISt8g/G&#43;/VLsN2jVSPZ8hwn4NQJS4I=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -157,8 +157,18 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#요즘-원픽-포춘">요즘 원픽! 포춘</a></li>
         <li><a href="#fourtune-커맨드">Fourtune 커맨드</a></li>
-        <li><a href="#문제는-내-포춘쿠키가-필요하다-dot">문제는 내 포춘쿠키가 필요하다.</a></li>
-        <li><a href="#samples">Samples</a></li>
+        <li><a href="#나를-위한-포춘-쿠키-관리">나를 위한 포춘 쿠키 관리</a>
+          <ul>
+            <li><a href="#fortune-and-format">Fortune and <span class="underline">txt2tags</span> format</a></li>
+          </ul>
+        </li>
+        <li><a href="#junghanacs-collections">Junghanacs Collections</a>
+          <ul>
+            <li><a href="#kevin-kelley-68">Kevin Kelley 68</a></li>
+            <li><a href="#kevin-kelley-99">Kevin Kelley 99</a></li>
+            <li><a href="#paul-graham-34">Paul-Graham 34</a></li>
+          </ul>
+        </li>
         <li><a href="#references">References</a></li>
       </ul>
     </li>
@@ -188,7 +198,7 @@ https://github.com/alex-shpak/hugo-book
     <strong aria-hidden="true"> Updated: </strong>Jun 23, 2023
     
     
-    (Lastmod: Jun 23, 2023)
+    (Lastmod: Jun 26, 2023)
     
     
   </div>
@@ -235,70 +245,1479 @@ https://github.com/alex-shpak/hugo-book
 
 <p>리눅스 터미널에서 실행하면 뭐 간단하게 나온다.
 문제는 추가 관리 안했다면 영어로 뭔가가 나올 것 이다. 기본 포춘 쿠키들이다.</p>
-<h2 id="문제는-내-포춘쿠키가-필요하다-dot">
-  문제는 내 포춘쿠키가 필요하다.
-  <a class="anchor" href="#%eb%ac%b8%ec%a0%9c%eb%8a%94-%eb%82%b4-%ed%8f%ac%ec%b6%98%ec%bf%a0%ed%82%a4%ea%b0%80-%ed%95%84%ec%9a%94%ed%95%98%eb%8b%a4-dot">#</a>
+<h2 id="나를-위한-포춘-쿠키-관리">
+  나를 위한 포춘 쿠키 관리
+  <a class="anchor" href="#%eb%82%98%eb%a5%bc-%ec%9c%84%ed%95%9c-%ed%8f%ac%ec%b6%98-%ec%bf%a0%ed%82%a4-%ea%b4%80%eb%a6%ac">#</a>
 </h2>
 <p><span class="timestamp-wrapper"><span class="timestamp">[2023-06-23 Fri 17:21]</span></span>
 포춘 쿠기 형식은 간단하다. 생성은 스크립트로 만들면 된다. 나는 Org 모드로
 관리하고 있다. 몇 가지 나름 목록을 가지고 있는데 사실 거의 건들지 않는다.</p>
-<p>내가 알기로 가장 멋지게 홈페이지에서 포춘을 관리하고 공개하신 분은 이분 아닐까<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.
-아무튼 내가 아끼는 리스트를 올린다.</p>
-<h2 id="samples">
-  Samples
-  <a class="anchor" href="#samples">#</a>
+<h3 id="fortune-and-format">
+  Fortune and <span class="underline">txt2tags</span> format
+  <a class="anchor" href="#fortune-and-format">#</a>
+</h3>
+<p><kbd>txt2tags</kbd> 심플 마크업 언어<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 포멧이다. 아래 컬렉션과 같이 넣어준다.
+그리고 dat 파일로 바꿔주기 위해서 다음과 같이 변경한다. 그리고 나서 적절한
+경로에 넣어주면 된다.</p>
+<p>$ fd -e t2t -x strfile {}</p>
+<h2 id="junghanacs-collections">
+  Junghanacs Collections
+  <a class="anchor" href="#junghanacs-collections">#</a>
 </h2>
-<p><span class="timestamp-wrapper"><span class="timestamp">[2023-06-23 Fri 17:36]</span></span>
-많아서 지저분해진다. 일단 간단히 3 개만 올린다.</p>
+<h3 id="kevin-kelley-68">
+  Kevin Kelley 68
+  <a class="anchor" href="#kevin-kelley-68">#</a>
+</h3>
 <p>존경하는 케빈 선생님의 말씀 <a href="#citeproc_bib_item_1">[1]</a></p>
-<p>켈리 68</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>%
-</span></span><span style="display:flex;"><span>Learn how to learn from those you disagree with, or even offend you. See if you can find the truth in what they believe.
-</span></span><span style="display:flex;"><span>- 당신이 동의하지 않거나, 심지어 당신을 기분 상하게 하는 사람에게서도 배우는 방법을 익히세요. 그들이 믿는 것에서 진실을 찾을 수 있는지 보세요.
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>켈리 99</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>%
-</span></span><span style="display:flex;"><span> That thing that made you weird as a kid could make you great as an adult — if you don’t lose it.
-</span></span><span style="display:flex;"><span>- 어렸을 적 당신을 이상하게(Weird) 했던 것들을 잃지 않는다면, 어른이 되었을 때 당신을 위대하게 만들 수 있습니다.
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>폴그레이엄</p>
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>%
-</span></span><span style="display:flex;"><span>The people I’ve met who do great work… generally feel that they’re stupid and
-</span></span><span style="display:flex;"><span>lazy, that their brain only works properly one day out of ten, and that it’s
-</span></span><span style="display:flex;"><span>only a matter of time until they’re found out.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    -- Paul Graham
-</span></span><span style="display:flex;"><span>    -- “Great Hackers” (old Version) ( http://web.archive.org/web/20040728182546/http://www.paulgraham.com/gh.html )
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="references">
+<details ><summary>Details</summary>
+  <div class="markdown-inner">
+    <p>%
+Learn how to learn from those you disagree with, or even offend you. See if you can find the truth in what they believe.</p>
+<ul>
+<li>당신이 동의하지 않거나, 심지어 당신을 기분 상하게 하는 사람에게서도 배우는 방법을 익히세요. 그들이 믿는 것에서 진실을 찾을 수 있는지 보세요.</li>
+</ul>
+<p>%
+Being enthusiastic is worth 25 IQ points.</p>
+<ul>
+<li>열정적인 것은 IQ 25 의 가치가 있습니다.</li>
+</ul>
+<p>%
+Always demand a deadline. A deadline weeds out the extraneous and the ordinary. It prevents you from trying to make it perfect, so you have to make it different. Different is better.</p>
+<ul>
+<li>항상 데드라인을 요구하세요. 데드라인은 관계없거나 평범한 것들을 제거합니다. 데드라인이 &ldquo;완벽하게&rdquo; 만들지 못하게 방해해주니까, &ldquo;다르게&rdquo; 만들어야 합니다. 다른 것이 좋습니다.</li>
+</ul>
+<p>%
+Don’t be afraid to ask a question that may sound stupid because 99%  of the time everyone else is thinking of the same question and is too embarrassed to ask it.</p>
+<ul>
+<li>99%의 사람들은 같은 질문을 생각하니까, 멍청한 질문이라고 생각되는 것이라도 두려워하지 마세요.</li>
+</ul>
+<p>%
+Being able to listen well is a superpower. While listening to someone you love keep asking them “Is there more?”, until there is no more.</p>
+<ul>
+<li>잘 들을 수 있는 것은 초능력입니다. 당신이 좋아하는 사람의 말을 들을 때, 그 사람이 더 말할 게 없을 때까지 &ldquo;더 없어?&ldquo;라고 물어보세요.</li>
+</ul>
+<p>%
+A worthy goal for a year is to learn enough about a subject so that you can’t believe how ignorant you were a year earlier.</p>
+<ul>
+<li>한해동안 가치 있을 만한 목표는 &ldquo;1 년 전에는 어쩜 이걸 몰랐을까?&rdquo; 싶은 주제에 대해 배우는 것입니다.</li>
+</ul>
+<p>%
+Gratitude will unlock all other virtues and is something you can get better at.</p>
+<ul>
+<li>감사하는 것은 다른 모든 미덕의 시작이며, 당신이 더 나아지도록 합니다.</li>
+</ul>
+<p>%
+Treating a person to a meal never fails, and is so easy to do. It’s powerful with old friends and a great way to make new friends.</p>
+<ul>
+<li>사람들에게 식사를 대접하는 것은 실행하기도 쉽고 절대 실패하지 않습니다. 오랜 친구에게도 강력하고 새로운 친구를 사귀기에도 좋은 방법입니다.</li>
+</ul>
+<p>%
+Don’t trust all-purpose glue.</p>
+<ul>
+<li>다목적 접착제는 믿지 마세요</li>
+</ul>
+<p>%
+Reading to your children regularly will bond you together and kickstart their imaginations.</p>
+<ul>
+<li>아이들에게 정기적으로 책을 읽어주면 당신과 끈끈해지고 상상력을 길러줄 수 있습니다.</li>
+</ul>
+<p>%
+Never use a credit card for credit. The only kind of credit, or debt, that is acceptable is debt to acquire something whose exchange value is extremely likely to increase, like in a home. The exchange value of most things diminishes or vanishes the moment you purchase them. Don’t be in debt to losers.</p>
+<ul>
+<li>신용카드를 사용하지 마세요. 허용 가능한 유일한 부채는 &lsquo;집&rsquo;처럼 가격이 끝내는 오를만한 것을 사려고 할 때뿐입니다. 대부분 물건의 가치는 구입순간부터 감소하거나 사라집니다. 빚지지 마세요.</li>
+</ul>
+<p>%
+Pros are just amateurs who know how to gracefully recover from their mistakes.</p>
+<ul>
+<li>전문가(Pro)는 실수로부터 우아하게 회복할 방법을 아는 아마추어일 뿐입니다.</li>
+</ul>
+<p>%
+Extraordinary claims should require extraordinary evidence to be believed.</p>
+<ul>
+<li>특별한 주장은 믿을만한 특별한 증거를 요구하는 게 좋습니다.</li>
+</ul>
+<p>%
+Don’t be the smartest person in the room. Hangout with, and learn from, people smarter than yourself. Even better, find smart people who will disagree with you.</p>
+<ul>
+<li>방에서 가장 똑똑한 사람이 되지 마세요. 자신보다 더 똑똑한 사람들과 만나고 배우세요. 더 나아가 당신에게 동의하지 않는 똑똑한 사람들을 찾으세요.</li>
+</ul>
+<p>%
+Rule of 3 in conversation. To get to the real reason, ask a person to go deeper than what they just said. Then again, and once more. The third time’s answer is close to the truth.</p>
+<ul>
+<li>대화에서의 3 의 법칙. 진짜 이유를 들으려면 누군가가 말한 것에 대해 좀 더 깊이 얘기해 달라고 하세요. 그리고 한번, 다시 한번 더. 세번째 대답이 진실에 가깝습니다.</li>
+</ul>
+<p>%
+Don’t be the best. Be the only.</p>
+<ul>
+<li>최고가 되지 말고, 유일한 사람이 되세요.</li>
+</ul>
+<p>%
+Everyone is shy. Other people are waiting for you to introduce yourself to them, they are waiting for you to send them an email, they are waiting for you to ask them on a date. Go ahead.</p>
+<ul>
+<li>모두 부끄러워합니다. 다른 사람들은 당신이 자신을 소개해주기를, 이메일을 보내주기를, 데이트를 요청해주기를 기다리고 있어요. 지금 실행하세요.</li>
+</ul>
+<p>%
+Don’t take it personally when someone turns you down. Assume they are like you: busy, occupied, distracted. Try again later. It’s amazing how often a second try works.</p>
+<ul>
+<li>누군가 당신을 거절할 때 그걸 개인적으로 받아들이지 마세요. 그들도 당신과 같다고 생각하세요. 바쁘고, 뭔가에 점유되어 있고, 산만합니다. 나중에 다시 시도하세요. 두 번째 시도가 얼마나 잘 성공하는지 놀라실걸요.</li>
+</ul>
+<p>%
+The purpose of a habit is to remove that action from self-negotiation. You no longer expend energy deciding whether to do it. You just do it. Good habits can range from telling the truth, to flossing.</p>
+<ul>
+<li>습관의 목적은 자기 자신과 타협하는 행동을 제거하는 것입니다. 할지 말지 고민하는 데 에너지를 쓰지 마세요. 그냥 하세요. 좋은 습관은 진실을 말하는 것부터 치실(flossing)을 하는 것까지 다양합니다.</li>
+</ul>
+<p>%
+Promptness is a sign of respect.</p>
+<ul>
+<li>신속함은 존중의 표시입니다.</li>
+</ul>
+<p>%
+When you are young spend at least 6 months to one year living as poor as you can, owning as little as you possibly can, eating beans and rice in a tiny room or tent, to experience what your “worst” lifestyle might be. That way any time you have to risk something in the future you won’t be afraid of the worst case scenario.</p>
+<ul>
+<li>젊었을 때 가능하다면 적어도 6 개월에서 1 년까지 아주 작은 방이나 텐트에서 콩과 쌀만 먹으며 빈곤하게 생활해보세요. &ldquo;가장 나쁜&rdquo; 생활이 어떨지 한번 경험해보세요. 그러면 미래에 뭔가 위험을 감수해야 할 때, 최악의 시나리오를 두려워하지 않을 것입니다.</li>
+</ul>
+<p>%
+Trust me: There is no “them”.</p>
+<ul>
+<li>저를 믿으세요: &ldquo;그들&quot;이란 건 없습니다. (역주: 뭔가 내 의견에 반하는 &lsquo;사람들&rsquo;이 있는게 아니고 우린 모두 다른 의견을 가진 거라고 생각하고 번역했습니다.)</li>
+</ul>
+<p>%
+The more you are interested in others, the more interesting they find you. To be interesting, be interested.</p>
+<ul>
+<li>다른 사람들에게 관심을 가질수록, 다른 사람들도 당신에게 흥미를 느끼게 됩니다. 흥미로워지려면 관심을 가지세요.</li>
+</ul>
+<p>%
+Optimize your generosity. No one on their deathbed has ever regretted giving too much away.</p>
+<ul>
+<li>관대함을 최적화하세요. 죽을 때 너무 많이 나눠줬다고 후회하는 사람은 없습니다.</li>
+</ul>
+<p>%
+To make something good, just do it. To make something great, just re-do it, re-do it, re-do it. The secret to making fine things is in remaking them.</p>
+<ul>
+<li>좋은 것을 만들려면 그냥 하세요. 위대한 것을 만들려면 다시 하고, 다시 하고, 다시 하세요. 훌륭한 것을 만드는 비결은 다시 만들어 보는 것입니다.</li>
+</ul>
+<p>%
+The Golden Rule will never fail you. It is the foundation of all other virtues.</p>
+<ul>
+<li>황금률 (The Golden Rule, 다른 사람이 해 주었으면 하는 행위를 하라 [1])은 절대 실망하게 하지 않습니다. 그것은 다른 모든 미덕의 기초입니다.</li>
+</ul>
+<p>%
+If you are looking for something in your house, and you finally find it, when you’re done with it, don’t put it back where you found it. Put it back where you first looked for it.</p>
+<ul>
+<li>집에서 뭔가를 찾고 있을 때 마침내 찾았다면 그 자리에 다시 두지 말고, 맨 처음 찾아봤던 곳에 두세요.</li>
+</ul>
+<p>%
+Saving money and investing money are both good habits. Small amounts of money invested regularly for many decades without deliberation is one path to wealth.</p>
+<ul>
+<li>돈을 절약하고 투자하는것은 좋은 습관입니다. 아주 깊이 생각지 않고, 수십년간 소량의 돈을 정기적으로 투자하는 것은 부자가 되는 방법중 하나 입니다.</li>
+</ul>
+<p>%
+To make mistakes is human. To own your mistakes is divine. Nothing elevates a person higher than quickly admitting and taking personal responsibility for the mistakes you make and then fixing them fairly. If you mess up, fess up. It’s astounding how powerful this ownership is.</p>
+<ul>
+<li>
+<p>실수를 하는 것이 인간입니다. 당신이 실수한다는 것은 매우 신성한 것입니다. 자신이 저지른 실수에 대해 신속하게 인정하고, 공정하게 바로 잡는것 보다 사람을 훌륭하게 만들어주는 것은 없습니다. 뭔가를 망쳤다면, 털어 놓으세요. 이 &ldquo;실수에 대한 소유권&quot;이 얼마나 강력한지 놀랄겁니다.</p>
+</li>
+<li>
+<p>Never get involved in a land war in Asia ( 아시아에서 내전에 관여하지 마십시오 = 분에 넘치는 일은 하지 마세요 )</p>
+</li>
+</ul>
+<p>( 역주: 몽고메리/맥아더가 썻다고 알려진 표현 입니다. 주석에 링크 달겠습니다 [2] )</p>
+<p>%
+You can obsess about serving your customers/audience/clients, or you can obsess about beating the competition. Both work, but of the two, obsessing about your customers will take you further.</p>
+<ul>
+<li>고객/청중/사용자에게 집중하거나, 경쟁에서 이기는 것에 집중할 수 있습니다. 두가지 다 동작하지만, 고객에 집중하는 것이 더 멀리 갈 수 있습니다.</li>
+</ul>
+<p>%
+Show up. Keep showing up. Somebody successful said: 99%
+of success is just showing up.</p>
+<ul>
+<li>보여주세요. 뭔가를 계속 보여주세요. 성공한 사람이 말하길: 99%</li>
+</ul>
+<p>의 성공은 그저 보여주는 것입니다. ( 역주: Show up 은 뭔가를 만들어서 보여주는 것, 어딘가에 참석해서 보여주는 것 의 의미도 있지만 [3]의 글을 참고하시면 뭔가를 시작하는 것으로도 이해할수 있습니다. 헬스장에 등록하고 가는 것도 시작, 매일 글을 쓰는 것, 수업에 참석하는 것, 프로젝트에 참여하는 등 뭔가를 시작하는 것을 보여주는 것이라고 이해하면 될 것 같습니다.)</p>
+<p>%
+Separate the processes of creation from improving. You can’t write and edit, or sculpt and polish, or make and analyze at the same time. If you do, the editor stops the creator. While you invent, don’t select. While you sketch, don’t inspect. While you write the first draft, don’t reflect. At the start, the creator mind must be unleashed from judgement.</p>
+<ul>
+<li>창작과 개선과정을 분리하세요. 쓰는것과 편집하는것, 조각하고 다듬는 것, 만들고 분석하는 것을 동시에 할수는 없습니다. 동시에 한다면 내 안의 편집자가 창작자를 막게 됩니다. 발명하는 동안 선택하지 마세요. 스케치 하는동안 검사하지 마세요. 초안 작성중에는 반영하지 마세요. 처음에는 창작자의 마음이 판단으로부터 해방되어야 합니다.</li>
+</ul>
+<p>%
+If you are not falling down occasionally, you are just coasting.</p>
+<ul>
+<li>당신이 가끔 쓰러지지 않는다면, 설렁 설렁하고 있는 것입니다.</li>
+</ul>
+<p>%
+Perhaps the most counter-intuitive truth of the universe is that the more you give to others, the more you’ll get. Understanding this is the beginning of wisdom.</p>
+<ul>
+<li>아마도 우주의 진리중 가장 반직관적인 것은 &ldquo;남에게 더 많이 줄수록, 더 많이 얻게 된다는 것&rdquo; 입니다. 이것을 이해하는 것이 지혜의 시작입니다.</li>
+</ul>
+<p>%
+Friends are better than money. Almost anything money can do, friends can do better. In so many ways a friend with a boat is better than owning a boat.</p>
+<ul>
+<li>친구가 돈보다 낫습니다. 돈이 할 수 있는 거의 모든 것은, 대부분 친구들이 더 잘합니다. 여러가지면에서 배를 소유하는 것보다, 배를 가진 친구가 낫습니다.</li>
+</ul>
+<p>%
+This is true: It’s hard to cheat an honest man.</p>
+<ul>
+<li>분명한 사실: 정직한 사람을 속이는 것은 어렵습니다.</li>
+</ul>
+<p>%
+When an object is lost, 95% of the time it is hiding within arm’s reach of where it was last seen. Search in all possible locations in that radius and you’ll find it.</p>
+<ul>
+<li>물건을 잃어버렸을 때, 95%는 마지막으로 본 곳에서 팔 닿는곳에 있습니다. 해당 반경내에서 모든 곳을 뒤져보면 찾을수 있습니다.</li>
+</ul>
+<p>%
+You are what you do. Not what you say, not what you believe, not how you vote, but what you spend your time on.</p>
+<ul>
+<li>당신은 당신이 하는 일로 표현됩니다. 당신이 하는 말이 아니라, 믿는 것이 아니라, 투표하는 방식이 아니라, 당신이 시간을 쓰는 그 것이 당신을 말해줍니다.</li>
+</ul>
+<p>%
+If you lose or forget to bring a cable, adapter or charger, check with your hotel. Most hotels now have a drawer full of cables, adapters and chargers others have left behind, and probably have the one you are missing. You can often claim it after borrowing it.</p>
+<ul>
+<li>케이블,어댑터,충전기를 잃어버리거나 안 가져왔을 때 호텔에 문의하세요. 대부분의 호텔은 누군가 놓고간 케이블, 어댑터 및 충전기로 가득찬 서랍을 가지고 있을겁니다. 당신이 잃어버린게 거기 있을지도 몰라요.</li>
+</ul>
+<p>%
+Hatred is a curse that does not affect the hated. It only poisons the hater. Release a grudge as if it was a poison.</p>
+<ul>
+<li>증오는 미움 받는 사람(the hated)에게는 영향을 주지 않는 저주입니다. 증오하는 본인(the hater)만 아프게 하는 독약과 같습니다. 독약인 것 처럼 원한을 놓아버리세요.</li>
+</ul>
+<p>%
+There is no limit on better. Talent is distributed unfairly, but there is no limit on how much we can improve what we start with.</p>
+<ul>
+<li>더 잘 하는 것 (better) 에는 제한이 없습니다. 재능은 불공평하게 분배되지만, 우리가 가지고 시작한 것을 얼마나 향상시킬 수 있는지는 제한이 없습니다.</li>
+</ul>
+<p>%
+Be prepared: When you are 90% done any large project (a house, a film, an event, an app) the rest of the myriad details will take a second 90% to complete.</p>
+<ul>
+<li>준비하세요: 큰 프로젝트 (집, 영화, 이벤트, 앱)를 90% 완료하면, 무수한 세부사항의 나머지를 완료하는데 두번째 90%가 걸립니다.</li>
+</ul>
+<p>%
+When you die you take absolutely nothing with you except your reputation.</p>
+<ul>
+<li>당신이 죽을 때 평판외에는 아무것도 가져가지 못합니다.</li>
+</ul>
+<p>%
+Before you are old, attend as many funerals as you can bear, and listen. Nobody talks about the departed’s achievements. The only thing people will remember is what kind of person you were while you were achieving.</p>
+<ul>
+<li>나이가 들기전에 가능한 많은 장례식에 참여하고 들으세요. 떠난 사람의 업적에 대해 얘기하는 사람은 없습니다. 사람들이 유일하게 기억하는 것은 당신이 업적을 달성하는 동안 어떤 사람이었나 하는 것 뿐입니다.</li>
+</ul>
+<p>%
+For every dollar you spend purchasing something substantial, expect to pay a dollar in repairs, maintenance, or disposal by the end of its life.</p>
+<ul>
+<li>뭔가 비용을 들여서 큰 것을 구매할 때마다, 그것의 수명이 다할때까지 수리, 유지보수, 폐기하는데에도 같은 비용이 들어갈 것을 예상하세요.</li>
+</ul>
+<p>%
+Anything real begins with the fiction of what could be. Imagination is therefore the most potent force in the universe, and a skill you can get better at. It’s the one skill in life that benefits from ignoring what everyone else knows.</p>
+<ul>
+<li>현실은 있을법한 허구에서 시작합니다. 그러므로 상상력은 우주에서 가장 강력한 힘이며, 당신이 더 향상시킬수 있는 기술입니다. 그건 다른 사람들이 모두 다 아는 것을 무시함으로써 혜택을 얻는 유일한 기술 입니다.</li>
+</ul>
+<p>%
+When crisis and disaster strike, don’t waste them. No problems, no progress.</p>
+<ul>
+<li>위기와 재난이 닥쳤을때, 그걸 낭비하지 마세요. 문제가 없다면 진보도 없습니다.</li>
+</ul>
+<p>%
+On vacation go to the most remote place on your itinerary first, bypassing the cities. You’ll maximize the shock of otherness in the remote, and then later you’ll welcome the familiar comforts of a city on the way back.</p>
+<ul>
+<li>휴가를 갈 땐, 도시를 벗어나 일정상 가장 먼곳으로 먼저 가세요. 멀리 떨어진 곳에서 타인이 되어보는 충격을 최대화 하면, 돌아올 때 도시의 친숙한 편안함을 즐기게 될겁니다.</li>
+</ul>
+<p>%
+When you get an invitation to do something in the future, ask yourself: would you accept this if it was scheduled for tomorrow? Not too many promises will pass that immediacy filter.</p>
+<ul>
+<li>미래에 뭔가 해달라는 초대를 받았을 때 자신에게 물어보세요: 만약 그게 내일로 예정된 것이라면 수락할 것인가요? 많은 약속들이 이 빠른 필터를 통과하지 못합니다.</li>
+</ul>
+<p>%
+Don’t say anything about someone in email you would not be comfortable saying to them directly, because eventually they will read it.</p>
+<ul>
+<li>누군가에게 직접 말하는 게 불편한 내용은 이메일에서도 언급하지 마세요. 그 사람은 결국 그걸 읽게 될테니까요.</li>
+</ul>
+<p>%
+If you desperately need a job, you are just another problem for a boss; if you can solve many of the problems the boss has right now, you are hired. To be hired, think like your boss.</p>
+<ul>
+<li>당신이 정말 직업이 필요한거라면, 보스에겐 당신은 또 다른 문제일 뿐입니다. 당신이 보스가 지금 당면한 문제들을 해결해 줄 수 있다면 당신을 뽑을 겁니다. 채용되려면 당신의 보스처럼 생각하세요.</li>
+</ul>
+<p>%
+Art is in what you leave out.</p>
+<ul>
+<li>생략한 것이 예술이 됩니다.</li>
+</ul>
+<p>%
+Acquiring things will rarely bring you deep satisfaction. But acquiring experiences will.</p>
+<ul>
+<li>물건을 얻는 것은 가끔 깊은 만족감을 주기도 합니다. 하지만 경험을 얻는 것은 항상 깊은 만족감을 줍니다.</li>
+</ul>
+<p>%
+Rule of 7 in research. You can find out anything if you are willing to go seven levels. If the first source you ask doesn’t know, ask them who you should ask next, and so on down the line. If you are willing to go to the 7th source, you’ll almost always get your answer.</p>
+<ul>
+<li>조사할 때 7 의 법칙. 7 단계를 갈 수 있다면 무엇이든 찾을 수 있습니다. 첫번째 물어본 사람이 모르면, 그 사람에게 다음으로 누구한테 물어야 할지를 물어보고 계속 하세요. 7 번째 까지 가려고 할때면 거의 항상 답을 얻을 것입니다.</li>
+</ul>
+<p>%
+How to apologize: Quickly, specifically, sincerely.</p>
+<ul>
+<li>사과 하는법 : 신속하게, 구체적으로, 진심을 담아.</li>
+</ul>
+<p>%
+Don’t ever respond to a solicitation or a proposal on the phone. The urgency is a disguise.</p>
+<ul>
+<li>전화로 오는 요청이나 제안에 응답하지 마세요. 긴급함은 위장입니다.</li>
+</ul>
+<p>%
+When someone is nasty, rude, hateful, or mean with you, pretend they have a disease. That makes it easier to have empathy toward them which can soften the conflict.</p>
+<ul>
+<li>누군가가 당신에게 불쾌하고 무례하거나 증오하고 심술맞게 굴때 그들이 병에 걸렸다고 생각하세요. 그들에게 공감하는걸 쉽게 만들어서, 갈등을 완화시키는데 도움이 됩니다.</li>
+</ul>
+<p>%
+Eliminating clutter makes room for your true treasures.</p>
+<ul>
+<li>주변의 어지러운 것들을 제거하면, 진정한 보물을 위한 공간이 만들어집니다.</li>
+</ul>
+<p>%
+You really don’t want to be famous. Read the biography of any famous person.</p>
+<ul>
+<li>당신은 진짜로 유명해지고 싶지는 않을꺼에요. 누구든 유명한 사람의 전기를 한번 읽어보세요.</li>
+</ul>
+<p>%
+Experience is overrated. When hiring, hire for aptitude, train for skills. Most really amazing or great things are done by people doing them for the first time.</p>
+<ul>
+<li>경험은 과대평가 되고 있습니다. 누군가를 고용할 때, 적성을 보고 뽑고, 기술은 가르치세요. 사람들이 하는 가장 놀랍거나 위대한 일들은 보통 처음 해보는 것들입니다.</li>
+</ul>
+<p>%
+A vacation + a disaster = an adventure.</p>
+<ul>
+<li>휴가 + 재난 = 모험</li>
+</ul>
+<p>%
+Buying tools: Start by buying the absolute cheapest tools you can find. Upgrade the ones you use a lot. If you wind up using some tool for a job, buy the very best you can afford.</p>
+<ul>
+<li>도구를 살때: 가장 싼 도구를 사서 시작하세요. 많이 쓰는 도구를 업그레이드 하세요. 만약 어떤 도구를 사용하여 일을 마무리했을 때, 당신이 감당할 수 있는 최상의 것을 사세요.</li>
+</ul>
+<p>%
+Learn how to take a 20-minute power nap without embarrassment.</p>
+<ul>
+<li>부끄러워 하지 않고 20 분동안 Power Nap(에너지를 보충하는 짧은 낮잠) 자는 법을 익히세요.</li>
+</ul>
+<p>%
+Following your bliss is a recipe for paralysis if you don’t know what you are passionate about. A better motto for most youth is “master something, anything”. Through mastery of one thing, you can drift towards extensions of that mastery that bring you more joy, and eventually discover where your bliss is.</p>
+<ul>
+<li>어떤 것에 열정을 가지고 있는지 모른 체 단순히 행복만을 좇다␜보면 무기력해지게 됩니다. 많은 젊은이들을 위한 좀 더 좋은 모토는 &ldquo;뭔가를 마스터하세요. 어떤것이라도&rdquo; 입니다. 한 가지 숙달하는 것을 통해서 더 큰 기쁨을 주는 다른 것으로 확장해 갈 수 있고, 결국엔 행복이 어디에 있는지 알게 됩니다.</li>
+</ul>
+<p>%
+I’m positive that in 100 years much of what I take to be true today will be proved to be wrong, maybe even embarrassingly wrong, and I try really hard to identify what it is that I am wrong about today.</p>
+<ul>
+<li>나는 100 년안에 오늘 내가 진실이라고 믿는 것의 대부분이 틀렸다고 밝혀지거나, 난처할 정도로 잘못한 것이 될 것임을 확신하고, 오늘 내가 틀린것이 무엇인지 확인하기 위해 열심히 노력합니다.</li>
+</ul>
+<p>%
+Over the long term, the future is decided by optimists. To be an optimist you don’t have to ignore all the many problems we create; you just have to imagine improving our capacity to solve problems.</p>
+<ul>
+<li>장기적으로 미래는 낙관론자 들에 의해 결정됩니다. 낙관론자가 되기 위해 우리가 만드는 많은 문제를 무시할 필요는 없습니다. 문제를 해결하는 능력을 향상시키도록 계속 꿈꿔야 합니다.</li>
+</ul>
+<p>%
+The universe is conspiring behind your back to make you a success. This will be much easier to do if you embrace this pronoia.</p>
+<ul>
+<li>온 우주가 당신을 성공시키기 위해 뒤에서 협력하고 있습니다. 이 낙관적 믿음(Pronoia)을 받아들이면, 훨씬 쉬워질겁니다.</li>
+</ul>
+
+  </div>
+</details>
+
+<h3 id="kevin-kelley-99">
+  Kevin Kelley 99
+  <a class="anchor" href="#kevin-kelley-99">#</a>
+</h3>
+<details ><summary>Details</summary>
+  <div class="markdown-inner">
+    <p>%
+That thing that made you weird as a kid could make you great as an adult — if you don’t lose it.</p>
+<ul>
+<li>어렸을 적 당신을 이상하게(Weird) 했던 것들을 잃지 않는다면, 어른이 되었을 때 당신을 위대하게 만들 수 있습니다.</li>
+</ul>
+<p>%
+If you have any doubt at all about being able to carry a load in one trip, do yourself a huge favor and make two trips.</p>
+<ul>
+<li>한 번에 모든짐을 다 옮길 수 있을까 고민된다면, 나 스스로를 위해서 두번에 나누어서 짐을 옮기세요.</li>
+</ul>
+<p>%
+What you get by achieving your goals is not as important as what you become by achieving your goals. At your funeral people will not recall what you did; they will only remember how you made them feel.</p>
+<ul>
+<li>목표를 달성하여 얻는 것들은 목표를 달성함으로써 당신이 무엇이 되는 지에 비해 중요하지 않습니다. 장례식에서 사람들은 당신이 한 일을 기억하지 못할 것입니다; 그들은 당신을 어떻게 느꼈는지 만을 기억할 겁니다.</li>
+</ul>
+<p>%
+Recipe for success: under-promise and over-deliver.</p>
+<ul>
+<li>성공을 위한 비법: 적게 약속하고 초과 제공하기</li>
+</ul>
+<p>%
+It’s not an apology if it comes with an excuse. It is not a compliment if it comes with a request.</p>
+<ul>
+<li>변명 거리가 있다면 사과가 아닙니다. 요청과 함께 한다면 칭찬이 아닙니다.</li>
+</ul>
+<p>%
+Jesus, Superman, and Mother Teresa never made art. Only imperfect beings can make art because art begins in what is broken.</p>
+<ul>
+<li>예수, 슈퍼맨, 마더 테레사 는 결코 예술을 만들지 않았습니다. 예술은 부서진 것에서 시작하기 때문에, 불완전한 존재만이 예술을 만들 수 있습니다.</li>
+</ul>
+<p>%
+If someone is trying to convince you it’s not a pyramid scheme, it’s a pyramid scheme.</p>
+<ul>
+<li>누군가 당신에게 피라미드 사기가 아니라는 걸 납득시키려 한다면 그건 피라미드 사기입니다.</li>
+</ul>
+<p>%
+Learn how to tie a bowline knot. Practice in the dark. With one hand. For the rest of your life you’ll use this knot more times than you would ever believe.</p>
+<ul>
+<li>Bowline 매듭 묶는 법을 배우세요. 어둠속에서 연습하세요. 한손으로 연습하세요. 남은 생애동안 믿지 못할 만큼 많이 사용하게 될 겁니다.</li>
+</ul>
+<p>%
+If something fails where you thought it would fail, that is not a failure.</p>
+<ul>
+<li>실패할 것이라고 생각했던 부분에서 실패했다면, 실패가 아닙니다.</li>
+</ul>
+<p>%
+Be governed not by the tyranny of the urgent but by the elevation of the important.</p>
+<ul>
+<li>긴급함의 폭정 보다는 중요함의 높이에 의해 다스려 지세요. (역주 : 긴급 한 것 보다는 중요한 걸 먼저 하세요)</li>
+</ul>
+<p>%
+Leave a gate behind you the way you first found it.</p>
+<ul>
+<li>문은 처음 봤을 때의 모양으로 두고 가세요.</li>
+</ul>
+<p>%
+The greatest rewards come from working on something that nobody has a name for. If you possibly can, work where there are no words for what you do.</p>
+<ul>
+<li>가장 큰 보상은 아무 이름 없는 일을 할 때 받게 됩니다. 가능하다면, 당신이 하는 일에 대해 아무런 얘기도 없는 것을 하세요.</li>
+</ul>
+<p>%
+A balcony or porch needs to be at least 6 feet (2m) deep or it won’t be used.</p>
+<ul>
+<li>발코니나 포취(문 앞에 지붕이 덮여진 공간) 는 적어도 2 미터 깊이는 되어야 합니다. 안 그러면 사용하지 않게 됩니다.</li>
+</ul>
+<p>%
+Don’t create things to make money; make money so you can create things. The reward for good work is more work.</p>
+<ul>
+<li>돈을 벌기 위해 물건을 만들지 마세요; 돈을 벌면 물건을 만들 수 있습니다. 좋은 일에 대한 보상은 더 많은 일입니다.</li>
+</ul>
+<p>%
+In all things — except love — start with the exit strategy. Prepare for the ending. Almost anything is easier to get into than out of.</p>
+<ul>
+<li>사랑을 제외한 모든 것에 출구 전략을 가지고 시작하세요. 결말을 준비하세요. 거의 모든 것들이 들어가는 것보다 나오는 게 어렵습니다.</li>
+</ul>
+<p>%
+Train employees well enough they could get another job, but treat them well enough so they never want to.</p>
+<ul>
+<li>직원들이 다른 직업을 구할 수 있을 만큼 충분히 교육하되, 그들이 나가고 싶지 않을 만큼 충분히 잘 대우하세요.</li>
+</ul>
+<p>%
+Don’t aim to have others like you; aim to have them respect you.</p>
+<ul>
+<li>다른 사람들이 당신과 같이 되기를 목표로 하지 마세요. 그들이 당신을 존중하는 걸 목표로 하세요.</li>
+</ul>
+<p>%
+The foundation of maturity: Just because it’s not your fault doesn’t mean it’s not your responsibility.</p>
+<ul>
+<li>성숙의 기초: 당신의 잘못이 아니라고 해서, 당신의 책임이 아니라는 걸 의미하지는 않습니다.</li>
+</ul>
+<p>%
+A multitude of bad ideas is necessary for one good idea.</p>
+<ul>
+<li>하나의 좋은 아이디어에는 다수의 나쁜 아이디어들이 필요합니다.</li>
+</ul>
+<p>%
+Being wise means having more questions than answers.</p>
+<ul>
+<li>현명하다는 것은 대답보다 질문이 많다는 것을 의미합니다.</li>
+</ul>
+<p>%
+Compliment people behind their back. It’ll come back to you.</p>
+<ul>
+<li>사람들의 등 뒤에서 칭찬하세요. 당신에게 돌아올 겁니다.</li>
+</ul>
+<p>%
+Most overnight successes — in fact any significant successes — take at least 5 years. Budget your life accordingly.</p>
+<ul>
+<li>대부분의 하룻밤 성공(벼락 성공) - 사실 모든 중대한 성공들 - 엔 적어도 5 년이 걸립니다. 그에 따라 삶을 계획하세요</li>
+</ul>
+<p>%
+You are only as young as the last time you changed your mind.</p>
+<ul>
+<li>당신은 마지막으로 당신의 마음을 바꿨을 때 만큼 젊습니다.</li>
+</ul>
+<p>%
+Assume anyone asking for your account information for any reason is guilty of scamming you, unless proven innocent. The way to prove innocence is to call them back, or login to your account using numbers or a website that you provide, not them. Don’t release any identifying information while they are contacting you via phone, message or email. You must control the channel.</p>
+<ul>
+<li>어떤 이유던 당신의 계정 정보를 묻는 사람이 무죄라고 입증되지 않는 한, 당신을 대상으로 사기치는 유죄라고 가정합니다. 무죄를 증명하는 방법은 그들에게 다시 전화를 걸거나, 그들이 제공한 번호나 웹사이트가 아닌 당신이 입력한 정보로 로그인 해보는 겁니다. 그들이 전화, 메시지, 이메일로 연락한다면 어떤 식별 정보도 공개하지 마세요. 당신이 채널을 통제해야 합니다.</li>
+</ul>
+<p>%
+Sustained outrage makes you stupid.</p>
+<ul>
+<li>지속적인 분노는 당신을 어리석게 만듭니다.</li>
+</ul>
+<p>%
+Be strict with yourself and forgiving of others. The reverse is hell for everyone.</p>
+<ul>
+<li>당신에게 엄격하고 다른 사람을 용서하세요. 그 반대는 모두에게 지옥입니다.</li>
+</ul>
+<p>%
+Your best response to an insult is “You’re probably right.” Often they are.</p>
+<ul>
+<li>모욕에 대한 최고의 반응은 &ldquo;당신이 옳을 수도 있어요&rdquo; 입니다. 종종 그렇습니다.</li>
+</ul>
+<p>%
+The worst evils in history have always been committed by those who truly believed they were combating evil. Beware of combating evil.</p>
+<ul>
+<li>역사상 최악의 악은 항상 자신들이 악과 싸우고 있다고 믿는 사람들이 저질러 왔습니다. 악과 싸우는 것을 조심하세요.</li>
+</ul>
+<p>%
+If you can avoid seeking approval of others, your power is limitless.</p>
+<ul>
+<li>다른 사람에게 인정 받고자 하는 것을 피할 수 있다면, 당신의 힘은 무한합니다.</li>
+</ul>
+<p>%
+When a child asks an endless string of “why?” questions, the smartest reply is, “I don’t know, what do you think?”</p>
+<ul>
+<li>아이가 &ldquo;왜?&ldquo;라는 질문을 계속할 때 현명한 대답은 &ldquo;잘 모르겠는데, 넌 어떻게 생각해?&rdquo; 입니다.</li>
+</ul>
+<p>%
+To be wealthy, accumulate all those things that money can’t buy.</p>
+<ul>
+<li>부유해지려면, 돈으로 살 수 없는 모든 것을 축적하십시오.</li>
+</ul>
+<p>%
+Be the change you wish to see.</p>
+<ul>
+<li>당신이 보고 싶은 변화가 되세요.</li>
+</ul>
+<p>%
+When brainstorming, improvising, jamming with others, you’ll go much further and deeper if you build upon each contribution with a playful “yes — and” example instead of a deflating “no — but” reply.</p>
+<ul>
+<li>다른 사람들과 브레인스토밍, 즉흥적으로 뭘 하거나(improvising), 재밍(Jamming, 즉흥연주) 등을 할 때, &ldquo;아니오, 하지만(no - but)&rdquo; 보다는 &ldquo;네 - 그리고(yes - and)&rdquo; 형태로 기여하면 더 멀리 깊게 참여 할 수 있습니다.</li>
+</ul>
+<p>%
+Work to become, not to acquire.</p>
+<ul>
+<li>얻기 위해 일하지 말고, 뭔가 가 되기 위해 일하세요.</li>
+</ul>
+<p>%
+Don’t loan money to a friend unless you are ready to make it a gift.</p>
+<ul>
+<li>선물할 게 아니라면 친구한테 돈을 빌려주지 마세요.</li>
+</ul>
+<p>%
+On the way to a grand goal, celebrate the smallest victories as if each one were the final goal. No matter where it ends you are victorious.</p>
+<ul>
+<li>위대한 목표를 향해 갈 때, 작은 승리 들을 마지막 목표 인 것처럼 축하하세요. 그것이 어디서 끝나든 당신은 승리하게 됩니다.</li>
+</ul>
+<p>%
+Calm is contagious.</p>
+<ul>
+<li>평온은 전염성이 있습니다.</li>
+</ul>
+<p>%
+Even a foolish person can still be right about most things. Most conventional wisdom is true.</p>
+<ul>
+<li>멍청한 사람도 대부분의 일에 대해서 옳을 수 있습니다. 대부분의 통념은 사실입니다.</li>
+</ul>
+<p>%
+Always cut away from yourself.</p>
+<ul>
+<li>항상 자신을 멀리하세요.</li>
+</ul>
+<p>%
+Show me your calendar and I will tell you your priorities. Tell me who your friends are, and I’ll tell you where you’re going.</p>
+<ul>
+<li>달력을 보여주시면 우선 순위를 알려드릴게요. 친구가 누구인지 말해주면, 당신이 어디로 가는지 알려드릴게요.</li>
+</ul>
+<p>%
+When hitchhiking, look like the person you want to pick you up.</p>
+<ul>
+<li>히치하이킹을 할 때는, 당신이 픽업 해 가고 싶은 사람처럼 보이세요.</li>
+</ul>
+<p>%
+Contemplating the weaknesses of others is easy; contemplating the weaknesses in yourself is hard, but it pays a much higher reward.</p>
+<ul>
+<li>다른 사람의 약점을 고민하는 것은 쉽습니다. 자신의 약점을 고민하는 것은 어렵지만 훨씬 더 많은 보상을 줍니다.</li>
+</ul>
+<p>%
+Worth repeating: measure twice, cut once.</p>
+<ul>
+<li>반복할 만한 가치가 있는 것: 두번 재고, 한번에 자릅니다.</li>
+</ul>
+<p>%
+Your passion in life should fit you exactly; but your purpose in life should exceed you. Work for something much larger than yourself.</p>
+<ul>
+<li>삶에 대한 당신의 열정은 당신에게 딱 맞아야 합니다; 하지만 당신의 삶의 목적은 당신을 능가 해야 합니다. 당신 자신보다 더 큰 무언가를 위해 일하세요.</li>
+</ul>
+<p>%
+If you can’t tell what you desperately need, it’s probably sleep.</p>
+<ul>
+<li>당신에게 절실하게 필요한 게 뭔지 알 수 없다면, 아마도 수면 일 겁니다.</li>
+</ul>
+<p>%
+When playing Monopoly, spend all you have to buy, barter, or trade for the Orange properties. Don’t bother with Utilities.</p>
+<ul>
+<li>모노폴리를 할 때, 모든 가진 것을 이용해서 오렌지색 땅을 사거나, 교환하거나, 거래하세요. 유틸리티에 신경쓰지 마세요.</li>
+</ul>
+<p>(역주 : 오렌지색 땅은 보드판 중간쯤에 있는 뉴욕/테네시/ST.James 3 개의 땅입니다. 감옥에서 탈출할 때 대부분이 이곳 땅에 방문하게 되어, 모노폴리 전체에서 평균을 냈을 때 가장 많이 방문하는 땅입니다. 가격도 비싸지 않고, 건물만 잘 지어놓는다면 최대의 수익률을 낼 수 있는 위치)</p>
+<p>%
+If you borrow something, try to return it in better shape than you received it. Clean it, sharpen it, fill it up.</p>
+<ul>
+<li>뭔가를 빌린 경우, 받았을 때 보다 더 좋은 모양으로 돌려주려고 노력해보세요. 청소하고, 날카롭게 만들고, 채워서 돌려주세요.</li>
+</ul>
+<p>%
+Even in the tropics it gets colder at night than you think. Pack warmly.</p>
+<ul>
+<li>열대 지방에서도 밤에는 생각보다 춥습니다. 따뜻하게 챙겨가세요.</li>
+</ul>
+<p>%
+To quiet a crowd or a drunk, just whisper.</p>
+<ul>
+<li>군중이나 술취한 사람을 조용하게 만들려면, 속삭이세요.</li>
+</ul>
+<p>%
+Writing down one thing you are grateful for each day is the cheapest possible therapy ever.</p>
+<ul>
+<li>매일 감사한 것 한 가지를 적는 것이 가장 저렴한 치료법입니다.</li>
+</ul>
+<p>%
+When someone tells you something is wrong, they’re usually right. When someone tells you how to fix it, they’re usually wrong.</p>
+<ul>
+<li>누군가 당신에게 뭔가 잘못되었다고 얘기한다면, 대부분 그들이 옳습니다. 누군가 그걸 고치는 방법을 얘기한다면, 대부분 그들이 틀렸습니다.</li>
+</ul>
+<p>%
+If you think you saw a mouse, you did. And, if there is one, there are more.</p>
+<ul>
+<li>쥐를 본 것 같다고 생각이 든다면, 당신이 맞습니다. 하나가 있다면, 더 있습니다.</li>
+</ul>
+<p>%
+Money is overrated. Truly new things rarely need an abundance of money. If that was so, billionaires would have a monopoly on inventing new things, and they don’t. Instead almost all breakthroughs are made by those who lack money, because they are forced to rely on their passion, persistence and ingenuity to figure out new ways. Being poor is an advantage in innovation.</p>
+<ul>
+<li>돈은 과대평가 되었습니다. 진짜로 새로운 것에는 많은 돈이 필요하지 않습니다. 만약 그렇다면, 억만장자들이 새로운 것을 개발하는 것을 독점하겠지만, 그렇지 못합니다. 대신 거의 모든 돌파구들은 돈이 없는 사람들에 의해 만들어집니다. 그들은 새로운 길을 찾기 위해 그들의 열정, 끈기, 독창성에 의존해야 하기 때문입니다. 가난은 혁신 하는데 어드밴티지를 줍니다.</li>
+</ul>
+<p>%
+Ignore what others may be thinking of you, because they aren’t.</p>
+<ul>
+<li>다른 사람들이 당신에 대해 어떻게 생각하는지 무시하세요. 그들은 그렇게 생각하지 않습니다.</li>
+</ul>
+<p>%
+Avoid hitting the snooze button. That’s just training you to oversleep.</p>
+<ul>
+<li>스누즈 버튼을 누르지 마세요. 그게 당신을 늦잠 자도록 훈련 시키는 겁니다.</li>
+</ul>
+<p>%
+Always say less than necessary.</p>
+<ul>
+<li>항상 필요한 것보다 적게 말하세요.</li>
+</ul>
+<p>%
+You are given the gift of life in order to discover what your gift <strong>in</strong> life is. You will complete your mission when you figure out what your mission is. This is not a paradox. This is the way.</p>
+<ul>
+<li>당신은 당신 삶에 선물이 뭔 지를 알아내기 위해 삶이란 선물을 받았습니다. 당신의 미션이 뭔 지 알아내면 당신은 미션을 완수하게 될 겁니다. 패러독스가 아닙니다. 이게 길이예요.</li>
+</ul>
+<p>%
+Don’t treat people as bad as they are. Treat them as good as you are.</p>
+<ul>
+<li>사람들을 있는 그대로 나쁘게 대하지 마세요. 당신처럼 그들을 잘 대우해 주세요.</li>
+</ul>
+<p>%
+It is much easier to change how you think by changing your behavior, than it is to change your behavior by changing how you think. Act out the change you seek.</p>
+<ul>
+<li>행동을 바꾸어 생각을 바꾸는 게, 생각을 바꿔 행동을 바꾸는 것보다 더 쉽습니다. 추구하는 변화를 실천하세요.</li>
+</ul>
+<p>%
+You can eat any dessert you want if you take only 3 bites.</p>
+<ul>
+<li>세 입만 먹을 수 있다면 어떤 디저트든 먹어도 됩니다.</li>
+</ul>
+<p>%
+Each time you reach out to people, bring them a blessing; then they’ll be happy to see you when you bring them a problem.</p>
+<ul>
+<li>사람들에게 다가갈 때마다 축복을 가져다 주세요; 그러면 당신이 문제를 가져갈 때도 당신을 즐겁게 맞아줄 겁니다.</li>
+</ul>
+<p>%
+Bad things can happen fast, but almost all good things happen slowly.</p>
+<ul>
+<li>나쁜 일은 빨리 일어날 수 있지만, 대부분의 좋은 일은 느리게 일어납니다.</li>
+</ul>
+<p>%
+Don’t worry how or where you begin. As long as you keep moving, your success will be far from where you start.</p>
+<ul>
+<li>어디서 어떻게 시작할지 걱정하지 마세요. 계속 움직인다면, 당신의 성공은 당신이 시작했던 곳에서 멀리 떨어져 있을꺼예요.</li>
+</ul>
+<p>%
+When you confront a stuck bolt or screw: righty tighty, lefty loosey.</p>
+<ul>
+<li>고정된 볼트 또는 나사를 만났을 때: 오른쪽으로 단단히 조이고, 왼쪽으로 느슨하게 합니다.</li>
+</ul>
+<p>%
+If you meet a jerk, overlook them. If you meet jerks everywhere everyday, look deeper into yourself.</p>
+<ul>
+<li>멍청이를 만나면 간과하세요. 멍청이를 매일 어디서나 본다면, 당신 자신을 깊게 들여다보세요.</li>
+</ul>
+<p>%
+Dance with your hips.</p>
+<ul>
+<li>엉덩이로 춤추세요.</li>
+</ul>
+<p>%
+We are not bodies that temporarily have souls. We are souls that temporarily have bodies.</p>
+<ul>
+<li>우리는 일시적으로 영혼을 가진 육체가 아닙니다. 우린 일시적으로 육체를 가진 영혼입니다.</li>
+</ul>
+<p>%
+You can reduce the annoyance of someone’s stupid belief by increasing your understanding of why they believe it.</p>
+<ul>
+<li>누군가의 어리석은 믿음에 대해서, 그들이 왜 그걸 믿는 지에 대한 이해도를 높이면 두통을 줄일 수 있습니다.</li>
+</ul>
+<p>%
+If your goal does not have a schedule, it is a dream.</p>
+<ul>
+<li>목표에 스케줄이 없다면 그건 꿈입니다.</li>
+</ul>
+<p>%
+All the greatest gains in life — in wealth, relationships, or knowledge —come from the magic of compounding interest — amplifying small steady gains. All you need for abundance is to keep adding 1%
+more than you subtract on a regular basis.</p>
+<ul>
+<li>부, 관계, 지식과 같이 인생에서 얻는 모든 중요한 것들은, 작게 꾸준히 얻는 것을 증폭시키는 복리의 마법에서 비롯됩니다. 풍요로움을 위해 필요한 것은 정기적으로 빼는 것보다 1%
+더 하는 것입니다.</li>
+</ul>
+<p>%
+The greatest breakthroughs are missed because they look like hard work.</p>
+<ul>
+<li>가장 큰 돌파구는 힘든 일처럼 보이기 때문에 놓치게 됩니다.</li>
+</ul>
+<p>%
+People can’t remember more than 3 points from a speech.</p>
+<ul>
+<li>사람들은 연설에서 3 가지 이상을 기억하지 못합니다.</li>
+</ul>
+<p>%
+I have never met a person I admired who did not read more books than I did.</p>
+<ul>
+<li>내가 읽었던 것보다 더 많은 책을 읽지 않은, 내가 존경하는 사람을 만난 적이 없습니다.</li>
+</ul>
+<p>%
+The greatest teacher is called “doing”.</p>
+<ul>
+<li>가장 위대한 교사는 &ldquo;행동하는 것&rdquo; 이라고 합니다.</li>
+</ul>
+<p>%
+Finite games are played to win or lose. Infinite games are played to keep the game going. Seek out infinite games because they yield infinite rewards.</p>
+<ul>
+<li>유한 게임은 승리 또는 패배를 위해 진행합니다. 무한 게임은 게임을 계속하기 위해 진행합니다. 무한한 보상을 주는 무한한 게임을 찾으세요.</li>
+</ul>
+<p>%
+Everything is hard before it is easy. The day before something is a breakthrough, it’s a stupid idea.</p>
+<ul>
+<li>모든 것은 쉽기 전에 어렵습니다. 무언가 돌파구가 되기 전날에는 그건 어리석은 생각입니다.</li>
+</ul>
+<p>%
+A problem that can be solved with money is not really a problem.</p>
+<ul>
+<li>돈으로 해결할 수 있는 문제는 실제로 문제가 아닙니다.</li>
+</ul>
+<p>%
+When you are stuck, sleep on it. Let your subconscious work for you.</p>
+<ul>
+<li>뭔가에 막히면, 그거 위에 잠을 자세요. 당신의 잠재의식이 당신을 위해 일하게 하세요.</li>
+</ul>
+<p>%
+Your work will be endless, but your time is finite. You cannot limit the work so you must limit your time. Hours are the only thing you can manage.</p>
+<ul>
+<li>작업은 끝이 없을 것이지만, 시간은 한정되어 있습니다. 작업을 제한할 수 없으므로 시간을 제한해야 합니다. 당신이 관리할 수 있는 건 시간뿐입니다.</li>
+</ul>
+<p>%
+To succeed, get other people to pay you; to become wealthy, help other people to succeed.</p>
+<ul>
+<li>성공하려면, 다른 사람들이 당신에게 지불하게 하세요; 부유해 지려면, 다른 사람들이 성공하도록 도와주세요.</li>
+</ul>
+<p>%
+Children totally accept — and crave — family rules. “In our family we have a rule for X” is the only excuse a parent needs for setting a family policy. In fact, “I have a rule for X” is the only excuse you need for your own personal policies.</p>
+<ul>
+<li>아이들은 가족의 규칙을 전적으로 받아들이고 필요로 합니다. &ldquo;우리 가족엔 X 에 대한 규칙이 있습니다.&ldquo;는 부모가 가족의 정책을 설정하는데 필요한 유일한 변명입니다. 사실, &ldquo;나는 X 에 대한 규칙이 있습니다&rdquo; 는 당신의 개인적인 정책에 필요한 유일한 변명입니다.</li>
+</ul>
+<p>%
+All guns are loaded.</p>
+<ul>
+<li>모든 총은 장전 되어 있습니다.</li>
+</ul>
+<p>%
+Many backward steps are made by standing still.</p>
+<ul>
+<li>많은 뒷걸음질은 가만히 서있을 때 이루어집니다.</li>
+</ul>
+<p>%
+This is the best time ever to make something. None of the greatest, coolest creations 20 years from now have been invented yet. You are not late.</p>
+<ul>
+<li>지금이 뭔가를 만들기에 가장 좋은 시기입니다. 지금으로부터 20 년 후의 가장 위대한/멋진 작품은 아직 발명 되지 않았습니다. 당신은 늦지 않았어요.</li>
+</ul>
+<p>%
+No rain, no rainbow.</p>
+<ul>
+<li>비가 오지 않으면, 무지개도 없습니다.</li>
+</ul>
+<p>%
+Every person you meet knows an amazing lot about something you know virtually nothing about. Your job is to discover what it is, and it won’t be obvious.</p>
+<ul>
+<li>당신이 만나는 모든 사람은, 당신이 거의 알지 못하는 것에 대해 놀라운 것들을 알고 있습니다. 당신의 임무는 그것이 무엇인지 발견하는 것이고, 그건 명확하진 않을 겁니다.</li>
+</ul>
+<p>%
+You don’t marry a person, you marry a family.</p>
+<ul>
+<li>사람과 결혼하는 것이 아니고, 가족과 결혼합니다.</li>
+</ul>
+<p>%
+Always give credit, take blame.</p>
+<ul>
+<li>항상 (다른 사람에게) 공로를 돌리고, 비난(책임)을 받으세요. [1]</li>
+</ul>
+<p>%
+Be frugal in all things, except in your passions splurge.</p>
+<ul>
+<li>당신의 열정이 과장된 경우를 제외하고, 모든 일에서 검소하세요.</li>
+</ul>
+<p>%
+When making something, always get a few extras — extra material, extra parts, extra space, extra finishes. The extras serve as backups for mistakes, reduce stress, and fill your inventory for the future. They are the cheapest insurance.</p>
+<ul>
+<li>뭔가를 만들 때 항상 추가 재료, 추가 부속, 추가 공간, 추가 마감 등 여분을 챙기세요. 이 여분들은 실수에 대한 백업이 되고, 스트레스를 줄이고, 미래를 위해 재고를 채워 줍니다. 가장 싼 보험이에요.</li>
+</ul>
+<p>%
+Something does not need to be perfect to be wonderful. Especially weddings.</p>
+<ul>
+<li>훌륭해 지기 위해 완벽할 필요는 없습니다. 특히 결혼식.</li>
+</ul>
+<p>%
+Don’t let your email inbox become your to-do list.</p>
+<ul>
+<li>이메일의 받은 편지함이 할 일 목록이 되지 않게 하세요.</li>
+</ul>
+<p>%
+The best way to untangle a knotty tangle is not to “untie” the knots, but to keep pulling the loops apart wider and wider. Just make the mess as big, loose and open as possible. As you open up the knots they will unravel themselves. Works on cords, strings, hoses, yarns, or electronic cables.</p>
+<ul>
+<li>엉킨 것들을 푸는 가장 좋은 방법은 매듭을 푸는 것이 아니라, 꼬인 고리들을 더 넓게 잡아 당기는 것입니다. 엉망진창인 것을 크고, 느슨하게 개방하세요. 매듭을 열면 알아서 풀릴 겁니다. 코드, 끈, 호스, 실, 또는 전기 케이블에 작동 됩니다.</li>
+</ul>
+<p>%
+Be a good ancestor. Do something a future generation will thank you for. A simple thing is to plant a tree.</p>
+<ul>
+<li>좋은 조상이 되세요. 미래 세대들이 당신에게 감사해 할 일을 하세요. 가장 간단한 것은 나무를 심는 것입니다.</li>
+</ul>
+<p>%
+To combat an adversary, become their friend.</p>
+<ul>
+<li>적과 싸우려면, 그들과 친구가 되세요.</li>
+</ul>
+<p>%
+Take one simple thing — almost anything — but take it extremely seriously, as if it was the only thing in the world, or maybe the entire world is in it — and by taking it seriously you’ll light up the sky.</p>
+<ul>
+<li>거의 모든 것들에서 단순한 것 하나를 취하되, 그걸 전세계에서 가장 유일하거나 마치 전세계가 그 안에 있는 것처럼 진지하게 받아 들이세요. 진지하게 받아들이면 하늘을 밝히게 될 겁니다.</li>
+</ul>
+<p>%
+History teaches us that in 100 years from now some of the assumptions you believed will turn out to be wrong. A good question to ask yourself today is “What might I be wrong about?”</p>
+<ul>
+<li>역사는 지금으로부터 100 년 후에 당신이 믿었던 가정 중의 일부가 잘못된 것으로 판명될 것이라고 가르칩니다. 오늘 스스로에게 물어볼 좋은 질문은 &ldquo;내가 무엇에 대해 잘못 알고 있을까?&rdquo; 입니다.</li>
+</ul>
+<p>%
+Be nice to your children because they are going to choose your nursing home.</p>
+<ul>
+<li>자녀들이 당신의 요양원을 선택할 것이기 때문에, 자녀에게 친절하게 대해주세요.</li>
+</ul>
+<p>%
+Advice like these are not laws. They are like hats. If one doesn’t fit, try another.</p>
+<ul>
+<li>이런 조언들은 법률이 아닙니다. 그들은 모자와 같습니다. 맞지 않다면 다른 걸 시도해보세요.</li>
+</ul>
+
+  </div>
+</details>
+
+<h3 id="paul-graham-34">
+  Paul-Graham 34
+  <a class="anchor" href="#paul-graham-34">#</a>
+</h3>
+<p>내가 알기로 가장 멋지게 홈페이지에서 포춘을 관리하고 공개하신 분은 이분 아닐까<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.
+그 중에서도 폴 그레이엄을 가져온다.</p>
+<details ><summary>Details</summary>
+  <div class="markdown-inner">
+    <p>%
+The people I’ve met who do great work… generally feel that they’re stupid and
+lazy, that their brain only works properly one day out of ten, and that it’s
+only a matter of time until they’re found out.</p>
+<p>&ndash; Paul Graham
+&ndash; “Great Hackers” (old Version) ( 
+  <a href="http://web.archive.org/web/20040728182546/http://www.paulgraham.com/gh.html">http://web.archive.org/web/20040728182546/http://www.paulgraham.com/gh.html</a> )</p>
+<p>%
+What they really mean is, don’t get demoralized. Don’t think that you can’t do
+what other people can. And I agree you shouldn’t underestimate your potential.
+People who’ve done great things tend to seem as if they were a race apart. And
+most biographies only exaggerate this illusion, partly due to the worshipful
+attitude biographers inevitably sink into, and partly because, knowing how the
+story ends, they can’t help streamlining the plot till it seems like the
+subject’s life was a matter of destiny, the mere unfolding of some innate
+genius. In fact I suspect if you had the sixteen year old Shakespeare or
+Einstein in school with you, they’d seem impressive, but not totally unlike
+your other friends.</p>
+<p>&ndash; Paul Graham
+&ndash; What You’ll Wish You’d Known ( 
+  <a href="http://www.paulgraham.com/hs.html">http://www.paulgraham.com/hs.html</a> )</p>
+<p>%
+It could be that in Java’s case I’m mistaken. It could be that a language
+promoted by one big company to undermine another, designed by a committee for
+a “mainstream” audience, hyped to the skies, and beloved of the DoD [=
+“Department of Defense”], happens nonetheless to be a clean, beautiful,
+powerful language that I would love programming in. It could be, but it seems
+very unlikely.</p>
+<p>&ndash; Paul Graham
+&ndash; Java’s Cover ( 
+  <a href="http://www.paulgraham.com/javacover.html">http://www.paulgraham.com/javacover.html</a> )</p>
+<p>%
+But for what it’s worth, as a sort of time capsule, here’s why I don’t like
+the look of Java:</p>
+<ol>
+<li>It has been so energetically hyped. Real standards don’t have to be</li>
+</ol>
+<p>promoted. No one had to promote C, or Unix, or HTML. A real standard tends to
+be already established by the time most people hear about it. On the hacker
+radar screen, Perl is as big as Java, or bigger, just on the strength of its
+own merits.</p>
+<p>&ndash; Paul Graham
+&ndash; Java’s Cover ( 
+  <a href="http://www.paulgraham.com/javacover.html">http://www.paulgraham.com/javacover.html</a> )</p>
+<p>%
+Bundling all these different types of work together in one department may be
+convenient administratively, but it’s confusing intellectually. That’s the
+other reason I don’t like the name “computer science.” Arguably the people in
+the middle are doing something like an experimental science. But the people at
+either end, the hackers and the mathematicians, are not actually doing
+science.</p>
+<p>The mathematicians don’t seem bothered by this. They happily set to work
+proving theorems like the other mathematicians over in the math department,
+and probably soon stop noticing that the building they work in says “computer
+science” on the outside. But for the hackers this label is a problem. If what
+they’re doing is called science, it makes them feel they ought to be acting
+scientific. So instead of doing what they really want to do, which is to
+design beautiful software, hackers in universities and research labs feel they
+ought to be writing research papers.</p>
+<p>&ndash; Paul Graham
+&ndash; “Hackers and Painters” (the Essay) ( 
+  <a href="http://www.paulgraham.com/hp.html">http://www.paulgraham.com/hp.html</a> )</p>
+<p>%
+For example, I was taught in college that one ought to figure out a program
+completely on paper before even going near a computer. I found that I did not
+program this way. I found that I liked to program sitting in front of a
+computer, not a piece of paper. Worse still, instead of patiently writing out
+a complete program and assuring myself it was correct, I tended to just spew
+out code that was hopelessly broken, and gradually beat it into shape.
+Debugging, I was taught, was a kind of final pass where you caught typos and
+oversights. The way I worked, it seemed like programming consisted of
+debugging.</p>
+<p>For a long time I felt bad about this, just as I once felt bad that I didn’t
+hold my pencil the way they taught me to in elementary school. If I had only
+looked over at the other makers, the painters or the architects, I would have
+realized that there was a name for what I was doing: sketching. As far as I
+can tell, the way they taught me to program in college was all wrong. You
+should figure out programs as you’re writing them, just as writers and
+painters and architects do.</p>
+<p>&ndash; Paul Graham
+&ndash; Hackers and Painters ( 
+  <a href="http://www.paulgraham.com/hp.html">http://www.paulgraham.com/hp.html</a> )</p>
+<p>%
+I only discovered this myself quite recently. When Yahoo bought Viaweb, they
+asked me what I wanted to do. I had never liked the business side very much,
+and said that I just wanted to hack. When I got to Yahoo, I found that what
+hacking meant to them was implementing software, not designing it. Programmers
+were seen as technicians who translated the visions (if that is the word) of
+product managers into code.</p>
+<p>This seems to be the default plan in big companies. They do it because it
+decreases the standard deviation of the outcome. Only a small percentage of
+hackers can actually design software, and it’s hard for the people running a
+company to pick these out. So instead of entrusting the future of the software
+to one brilliant hacker, most companies set things up so that it is designed
+by committee, and the hackers merely implement the design.</p>
+<p>If you want to make money at some point, remember this, because this is one of
+the reasons startups win. Big companies want to decrease the standard
+deviation of design outcomes because they want to avoid disasters. But when
+you damp oscillations, you lose the high points as well as the low. This is
+not a problem for big companies, because they don’t win by making great
+products. Big companies win by sucking less than other big companies.</p>
+<p>&ndash; Paul Graham
+&ndash; Hackers and Painters ( 
+  <a href="http://www.paulgraham.com/hp.html">http://www.paulgraham.com/hp.html</a> )</p>
+<p>%
+It’s not true that those who can’t do, teach (some of the best hackers I know
+are professors), but it is true that there are a lot of things that those who
+teach can’t do. Research imposes constraining caste restrictions. In any
+academic field there are topics that are ok to work on and others that aren’t.
+Unfortunately the distinction between acceptable and forbidden topics is
+usually based on how intellectual the work sounds when described in research
+papers, rather than how important it is for getting good results. The extreme
+case is probably literature; people studying literature rarely say anything
+that would be of the slightest use to those producing it.</p>
+<p>Though the situation is better in the sciences, the overlap between the kind
+of work you’re allowed to do and the kind of work that yields good languages
+is distressingly small. (Olin Shivers has grumbled eloquently about this.) For
+example, types seem to be an inexhaustible source of research papers, despite
+the fact that static typing seems to preclude true macros&ndash; without which, in
+my opinion, no language is worth using.</p>
+<p>&ndash; Paul Graham
+&ndash; The Hundred-Year Language ( 
+  <a href="http://www.paulgraham.com/hundred.html">http://www.paulgraham.com/hundred.html</a> )</p>
+<p>%
+To the popular press, “hacker” means someone who breaks into computers. Among
+programmers it means a good programmer. But the two meanings are connected. To
+programmers, “hacker” connotes mastery in the most literal sense: someone who
+can make a computer do what he wants&ndash; whether the computer wants to or not.</p>
+<p>To add to the confusion, the noun “hack” also has two senses. It can be either
+a compliment or an insult. It’s called a hack when you do something in an ugly
+way. But when you do something so clever that you somehow beat the system,
+that’s also called a hack. The word is used more often in the former than the
+latter sense, probably because ugly solutions are more common than brilliant
+ones.</p>
+<p>Believe it or not, the two senses of “hack” are also connected. Ugly and
+imaginative solutions have something in common: they both break the rules. And
+there is a gradual continuum between rule breaking that’s merely ugly (using
+duct tape to attach something to your bike) and rule breaking that is
+brilliantly imaginative (discarding Euclidean space).</p>
+<p>&ndash; Paul Graham
+&ndash; The Word “Hacker” ( 
+  <a href="http://www.paulgraham.com/gba.html">http://www.paulgraham.com/gba.html</a> )</p>
+<p>%
+Hacking predates computers. When he was working on the Manhattan Project,
+Richard Feynman used to amuse himself by breaking into safes containing secret
+documents. This tradition continues today. When we were in grad school, a
+hacker friend of mine who spent too much time around MIT had his own lock
+picking kit. (He now runs a hedge fund, a not unrelated enterprise.)</p>
+<p>It is sometimes hard to explain to authorities why one would want to do such
+things. Another friend of mine once got in trouble with the government for
+breaking into computers. This had only recently been declared a crime, and the
+FBI found that their usual investigative technique didn’t work. Police
+investigation apparently begins with a motive. The usual motives are few:
+drugs, money, sex, revenge. Intellectual curiosity was not one of the motives
+on the FBI’s list. Indeed, the whole concept seemed foreign to them.</p>
+<p>&ndash; Paul Graham
+&ndash; The Word “Hacker” ( 
+  <a href="http://www.paulgraham.com/gba.html">http://www.paulgraham.com/gba.html</a> )</p>
+<p>%
+When you read what the founding fathers had to say for themselves, they sound
+more like hackers. “The spirit of resistance to government,” Jefferson wrote,
+“is so valuable on certain occasions, that I wish it always to be kept alive.”</p>
+<p>Imagine an American president saying that today. Like the remarks of an
+outspoken old grandmother, the sayings of the founding fathers have
+embarrassed generations of their less confident successors. They remind us
+where we come from. They remind us that it is the people who break rules that
+are the source of America’s wealth and power.</p>
+<p>Those in a position to impose rules naturally want them to be obeyed. But be
+careful what you ask for. You might get it.</p>
+<p>&ndash; Paul Graham
+&ndash; The Word “Hacker” ( 
+  <a href="http://www.paulgraham.com/gba.html">http://www.paulgraham.com/gba.html</a> )</p>
+<p>%
+If you work your way down the Forbes 400 making an x next to the name of each
+person with an MBA, you’ll learn something important about business school.
+You don’t even hit an MBA till number 22, Phil Knight, the CEO of Nike. There
+are only four MBAs in the top 50. What you notice in the Forbes 400 are a lot
+of people with technical backgrounds. Bill Gates, Steve Jobs, Larry Ellison,
+Michael Dell, Jeff Bezos, Gordon Moore. The rulers of the technology business
+tend to come from technology, not business. So if you want to invest two years
+in something that will help you succeed in business, the evidence suggests
+you’d do better to learn how to hack than get an MBA.</p>
+<p>&ndash; Paul Graham
+&ndash; How to Start a Startup ( 
+  <a href="http://www.paulgraham.com/start.html">http://www.paulgraham.com/start.html</a> )</p>
+<p>%
+The aphorism “you can’t tell a book by its cover” originated in the times when
+books were sold in plain cardboard covers, to be bound by each purchaser
+according to his own taste. In those days, you couldn’t tell a book by its
+cover. But publishing has advanced since then: present-day publishers work
+hard to make the cover something you can tell a book by.</p>
+<p>I spend a lot of time in bookshops and I feel as if I have by now learned to
+understand everything publishers mean to tell me about a book, and perhaps a
+bit more. The time I haven’t spent in bookshops I’ve spent mostly in front of
+computers, and I feel as if I’ve learned, to some degree, to judge technology
+by its cover as well. It may be just luck, but I’ve saved myself from a few
+technologies that turned out to be real stinkers.</p>
+<p>&ndash; Paul Graham
+&ndash; Java’s Cover ( 
+  <a href="http://www.paulgraham.com/javacover.html">http://www.paulgraham.com/javacover.html</a> )</p>
+<p>%</p>
+<ol>
+<li>It’s aimed low. In the original Java white paper, Gosling explicitly says</li>
+</ol>
+<p>Java was designed not to be too difficult for programmers used to C. It was
+designed to be another C++: C plus a few ideas taken from more advanced
+languages. Like the creators of sitcoms or junk food or package tours, Java’s
+designers were consciously designing a product for people not as smart as
+them. Historically, languages designed for other people to use have been bad:
+Cobol, PL/I, Pascal, Ada, C++. The good languages have been those that were
+designed for their own creators: C, Perl, Smalltalk, Lisp.</p>
+<p>&ndash; Paul Graham
+&ndash; Java’s Cover ( 
+  <a href="http://www.paulgraham.com/javacover.html">http://www.paulgraham.com/javacover.html</a> )</p>
+<p>%
+The wrong people like it. The programmers I admire most are not, on the whole,
+captivated by Java. Who does like Java? Suits, who don’t know one language
+from another, but know that they keep hearing about Java in the press;
+programmers at big companies, who are amazed to find that there is something
+even better than C++; and plug-and-chug undergrads, who are ready to like
+anything that might get them a job (will this be on the test?). These people’s
+opinions change with every wind.</p>
+<p>&ndash; Paul Graham
+&ndash; Java’s Cover ( 
+  <a href="http://www.paulgraham.com/javacover.html">http://www.paulgraham.com/javacover.html</a> )</p>
+<p>%
+Let’s start by acknowledging one external factor that does affect the
+popularity of a programming language. To become popular, a programming
+language has to be the scripting language of a popular system. Fortran and
+Cobol were the scripting languages of early IBM mainframes. C was the
+scripting language of Unix, and so, later, was Perl. Tcl is the scripting
+language of Tk. Java and JavaScript are intended to be the scripting languages
+of web browsers.</p>
+<p>Lisp is not a massively popular language because it is not the scripting
+language of a massively popular system. What popularity it retains dates back
+to the 1960s and 1970s, when it was the scripting language of MIT. A lot of
+the great programmers of the day were associated with MIT at some point. And
+in the early 1970s, before C, MIT’s dialect of Lisp, called MacLisp, was one
+of the only programming languages a serious hacker would want to use.</p>
+<p>&ndash; Paul Graham
+&ndash; Being Popular ( 
+  <a href="http://www.paulgraham.com/popular.html">http://www.paulgraham.com/popular.html</a> )</p>
+<p>%
+One thing hackers like is brevity. Hackers are lazy, in the same way that
+mathematicians and modernist architects are lazy: they hate anything
+extraneous. It would not be far from the truth to say that a hacker about to
+write a program decides what language to use, at least subconsciously, based
+on the total number of characters he’ll have to type. If this isn’t precisely
+how hackers think, a language designer would do well to act as if it were.</p>
+<p>It is a mistake to try to baby the user with long-winded expressions that are
+meant to resemble English. Cobol is notorious for this flaw. A hacker would
+consider being asked to write</p>
+<p>add x to y giving z</p>
+<p>instead of</p>
+<p>z = x+y</p>
+<p>as something between an insult to his intelligence and a sin against God.</p>
+<p>&ndash; Paul Graham
+&ndash; Being Popular ( 
+  <a href="http://www.paulgraham.com/popular.html">http://www.paulgraham.com/popular.html</a> )</p>
+<p>%
+I think that, like species, languages will form evolutionary trees, with
+dead-ends branching off all over. We can see this happening already. Cobol,
+for all its sometime popularity, does not seem to have any intellectual
+descendants. It is an evolutionary dead-end&ndash; a Neanderthal language.</p>
+<p>I predict a similar fate for Java. People sometimes send me mail saying, “How
+can you say that Java won’t turn out to be a successful language? It’s already
+a successful language.” And I admit that it is, if you measure success by
+shelf space taken up by books on it (particularly individual books on it), or
+by the number of undergrads who believe they have to learn it to get a job.
+When I say Java won’t turn out to be a successful language, I mean something
+more specific: that Java will turn out to be an evolutionary dead-end, like
+Cobol.</p>
+<p>This is just a guess. I may be wrong. My point here is not to dis Java, but to
+raise the issue of evolutionary trees and get people asking, where on the tree
+is language X? The reason to ask this question isn’t just so that our ghosts
+can say, in a hundred years, I told you so. It’s because staying close to the
+main branches is a useful heuristic for finding languages that will be good to
+program in now.</p>
+<p>&ndash; Paul Graham
+&ndash; The Hundred-Year Language ( 
+  <a href="http://www.paulgraham.com/popular.html">http://www.paulgraham.com/popular.html</a> )</p>
+<p>%
+This isn’t just something that happens with programming languages. It’s a
+general historical trend. As technologies improve, each generation can do
+things that the previous generation would have considered wasteful. People
+thirty years ago would be astonished at how casually we make long distance
+phone calls. People a hundred years ago would be even more astonished that a
+package would one day travel from Boston to New York via Memphis.</p>
+<p>&ndash; Paul Graham
+&ndash; The Hundred-Year Language ( 
+  <a href="http://www.paulgraham.com/popular.html">http://www.paulgraham.com/popular.html</a> )</p>
+<p>%
+In the discussion about issues raised by Revenge of the Nerds on the LL1
+mailing list, Paul Prescod wrote something that stuck in my mind.</p>
+<p>&lt;&lt;&lt;</p>
+<p>Python’s goal is regularity and readability, not succinctness</p>
+<p>&gt;&gt;&gt;</p>
+<p>On the face of it, this seems a rather damning thing to claim about a
+programming language. As far as I can tell, succinctness = power. If so, then
+substituting, we get</p>
+<p>&lt;&lt;&lt;</p>
+<p>Python’s goal is regularity and readability, not power.</p>
+<p>&gt;&gt;&gt;</p>
+<p>and this doesn’t seem a tradeoff (if it is a tradeoff) that you’d want to
+make. It’s not far from saying that Python’s goal is not to be effective as a
+programming language.</p>
+<p>&ndash; Paul Graham
+&ndash; Succinctness is Power ( 
+  <a href="http://www.paulgraham.com/power.html">http://www.paulgraham.com/power.html</a> )</p>
+<p>%
+Bureaucrats by their nature are the exact opposite sort of people from startup
+investors. The idea of them making startup investments is comic. It would be
+like mathematicians running Vogue&ndash; or perhaps more accurately, Vogue editors
+running a math journal.</p>
+<p>&ndash; Paul Graham
+&ndash; How to Be Silicon Valley ( 
+  <a href="http://www.paulgraham.com/siliconvalley.html">http://www.paulgraham.com/siliconvalley.html</a> )</p>
+<p>%
+If you go to see Silicon Valley, what you’ll see are buildings. But it’s the
+people that make it Silicon Valley, not the buildings. I read occasionally
+about attempts to set up “technology parks” in other places, as if the active
+ingredient of Silicon Valley were the office space. An article about Sophia
+Antipolis bragged that companies there included Cisco, Compaq, IBM, NCR, and
+Nortel. Don’t the French realize these aren’t startups?</p>
+<p>Building office buildings for technology companies won’t get you a silicon
+valley, because the key stage in the life of a startup happens before they
+want that kind of space. The key stage is when they’re three guys operating
+out of an apartment. Wherever the startup is when it gets funded, it will
+stay. The defining quality of Silicon Valley is not that Intel or Apple or
+Google have offices there, but that they were started there.</p>
+<p>So if you want to reproduce Silicon Valley, what you need to reproduce is
+those two or three founders sitting around a kitchen table deciding to start a
+company. And to reproduce that you need those people.</p>
+<p>&ndash; Paul Graham
+&ndash; How to Be Silicon Valley ( 
+  <a href="http://www.paulgraham.com/siliconvalley.html">http://www.paulgraham.com/siliconvalley.html</a> )</p>
+<p>%
+One of the most dangerous illusions you get from school is the idea that doing
+great things requires a lot of discipline. Most subjects are taught in such a
+boring way that it’s only by discipline that you can flog yourself through
+them. So I was surprised when, early in college, I read a quote by
+Wittgenstein saying that he had no self-discipline and had never been able to
+deny himself anything, not even a cup of coffee.</p>
+<p>Now I know a number of people who do great work, and it’s the same with all of
+them. They have little discipline. They’re all terrible procrastinators and
+find it almost impossible to make themselves do anything they’re not
+interested in. One still hasn’t sent out his half of the thank-you notes from
+his wedding, four years ago. Another has 26,000 emails in her inbox.</p>
+<p>I’m not saying you can get away with zero self-discipline. You probably need
+about the amount you need to go running. I’m often reluctant to go running,
+but once I do, I enjoy it. And if I don’t run for several days, I feel ill.
+It’s the same with people who do great things. They know they’ll feel bad if
+they don’t work, and they have enough discipline to get themselves to their
+desks to start working. But once they get started, interest takes over, and
+discipline is no longer necessary.</p>
+<p>&ndash; Paul Graham
+&ndash; What You’ll Wish You’d Known ( 
+  <a href="http://www.paulgraham.com/hs.html">http://www.paulgraham.com/hs.html</a> )</p>
+<p>%
+Your teachers are always telling you to behave like adults. I wonder if they’d
+like it if you did. You may be loud and disorganized, but you’re very docile
+compared to adults. If you actually started acting like adults, it would be
+just as if a bunch of adults had been transposed into your bodies. Imagine the
+reaction of an FBI agent or taxi driver or reporter to being told they had to
+ask permission to go the bathroom, and only one person could go at a time. To
+say nothing of the things you’re taught. If a bunch of actual adults suddenly
+found themselves trapped in high school, the first thing they’d do is form a
+union and renegotiate all the rules with the administration.</p>
+<p>&ndash; Paul Graham
+&ndash; What You’ll Wish You’d Known ( 
+  <a href="http://www.paulgraham.com/hs.html#fb10">http://www.paulgraham.com/hs.html#fb10</a> )</p>
+<p>%
+I disagree with your generalization that physicists are smarter than
+professors of French Literature.</p>
+<p>Try this thought experiment. A dictator takes over the US and sends all the
+professors to re-education camps. The physicists are told they have to learn
+how to write academic articles about French literature, and the French
+literature professors are told they have to learn how to write original
+physics papers. If they fail, they’ll be shot. Which group is more worried?</p>
+<p>We have some evidence here: the famous parody that physicist Alan Sokal got
+published in Social Text. How long did it take him to master the art of
+writing deep-sounding nonsense well enough to fool the editors? A couple
+weeks?</p>
+<p>What do you suppose would be the odds of a literary theorist getting a parody
+of a physics paper published in a physics journal?</p>
+<p>&ndash; Paul Graham
+&ndash; Re: What You Can’t Say ( 
+  <a href="http://www.paulgraham.com/resay.html">http://www.paulgraham.com/resay.html</a> )</p>
+<p>%
+Imagine, for example, what would happen if the government decided to
+commission someone to write an official Great American Novel. First there’d be
+a huge ideological squabble over who to choose. Most of the best writers would
+be excluded for having offended one side or the other. Of the remainder, the
+smart ones would refuse such a job, leaving only a few with the wrong sort of
+ambition. The committee would choose one at the height of his career—that is,
+someone whose best work was behind him—and hand over the project with copious
+free advice about how the book should show in positive terms the strength and
+diversity of the American people, etc, etc.</p>
+<p>The unfortunate writer would then sit down to work with a huge weight of
+expectation on his shoulders. Not wanting to blow such a public commission,
+he’d play it safe. This book had better command respect, and the way to ensure
+that would be to make it a tragedy. Audiences have to be enticed to laugh, but
+if you kill people they feel obliged to take you seriously. As everyone knows,
+America plus tragedy equals the Civil War, so that’s what it would have to be
+about. Better stick to the standard cartoon version that the Civil War was
+about slavery; people would be confused otherwise; plus you can show a lot of
+strength and diversity. When finally completed twelve years later, the book
+would be a 900-page pastiche of existing popular novels—roughly Gone with the
+Wind plus Roots. But its bulk and celebrity would make it a best-seller for a
+few months, until blown out of the water by a talk-show host’s autobiography.
+The book would be made into a movie and thereupon forgotten, except by the
+more waspish sort of reviewers, among whom it would be a byword for bogusness
+like Milli Vanilli or Battlefield Earth.</p>
+<p>Maybe I got a little carried away with this example. And yet is this not at
+each point the way such a project would play out? The government knows better
+than to get into the novel business, but in other fields where they have a
+natural monopoly, like nuclear waste dumps, aircraft carriers, and regime
+change, you’d find plenty of projects isomorphic to this one—and indeed,
+plenty that were less successful.</p>
+<p>&ndash; Paul Graham
+&ndash; The Power of the Marginal ( 
+  <a href="http://www.paulgraham.com/marginal.html">http://www.paulgraham.com/marginal.html</a> )</p>
+<p>%
+The second big element of Web 2.0 is democracy. We now have several examples
+to prove that amateurs can surpass professionals, when they have the right
+kind of system to channel their efforts. Wikipedia may be the most famous.
+Experts have given Wikipedia middling reviews, but they miss the critical
+point: it’s good enough. And it’s free, which means people actually read it.
+On the web, articles you have to pay for might as well not exist. Even if you
+were willing to pay to read them yourself, you can’t link to them. They’re not
+part of the conversation.</p>
+<p>&ndash; Paul Graham
+&ndash; Web 2.0 ( 
+  <a href="http://www.paulgraham.com/web20.html">http://www.paulgraham.com/web20.html</a> )</p>
+<p>%
+One measure of the incompetence of newspapers is that so many still make you
+register to read stories. I have yet to find a blog that tried that.</p>
+<p>&ndash; Paul Graham
+&ndash; “What Business Can Learn from Open Source” (Footnote) ( 
+  <a href="http://www.paulgraham.com/opensource.html#f4n">http://www.paulgraham.com/opensource.html#f4n</a> )</p>
+<p>%
+And when I read, say, New York Times stories, I never reach them through the
+Times front page. Most I find through aggregators like Google News or Slashdot
+or Delicious. Aggregators show how much better you can do than the channel.
+The New York Times front page is a list of articles written by people who work
+for the New York Times. Delicious is a list of articles that are interesting.
+And it&rsquo;s only now that you can see the two side by side that you notice how
+little overlap there is.</p>
+<p>Most articles in the print media are boring. For example, the president
+notices that a majority of voters now think invading Iraq was a mistake, so he
+makes an address to the nation to drum up support. Where is the man bites dog
+in that? I didn&rsquo;t hear the speech, but I could probably tell you exactly what
+he said. A speech like that is, in the most literal sense, not news: there is
+nothing new in it.</p>
+<p>Nor is there anything new, except the names and places, in most &ldquo;news&rdquo; about
+things going wrong. A child is abducted; there&rsquo;s a tornado; a ferry sinks;
+someone gets bitten by a shark; a small plane crashes. And what do you learn
+about the world from these stories? Absolutely nothing. They&rsquo;re outlying data
+points; what makes them gripping also makes them irrelevant.</p>
+<p>As in software, when professionals produce such crap, it&rsquo;s not surprising if
+amateurs can do better. Live by the channel, die by the channel: if you depend
+on an oligopoly, you sink into bad habits that are hard to overcome when you
+suddenly get competition.</p>
+<p>&ndash; Paul Graham
+&ndash; “What Business Can Learn from Open Source” (Footnote) ( 
+  <a href="http://www.paulgraham.com/opensource.html">http://www.paulgraham.com/opensource.html</a> )</p>
+<p>%
+I&rsquo;ve thought a lot about this, actually; it was not a casual remark. I think
+the fundamental question is not whether the government pays for schools or
+medicine, but whether you allow people to get rich.</p>
+<p>In England in the 1970s, the top income tax rate was 98%. That’s what the
+Beatles&rsquo; song 
+  <a href="http://en.wikipedia.org/wiki/Taxman">“Tax Man”</a> is referring to
+when they say “one for you, nineteen for me.”</p>
+<p>Any country that makes this choice ends up losing net, because new technology
+tends to be developed by people trying to make their fortunes. It’s too much
+work for anyone to do for ordinary wages. Smart people might work on sexy
+projects like fighter planes and space rockets for ordinary wages, but
+semiconductors or light bulbs or the
+
+  <a href="http://www.paulgraham.com/road.html">plumbing</a> of e-commerce probably have to
+be developed by entrepreneurs. Life in the Soviet Union would have been even
+poorer if they hadn’t had American technologies to copy.</p>
+<p>Finland is sometimes given as an example of a prosperous socialist country,
+but apparently the combined top tax rate is 55%, only 5% higher than in
+California. So if they seem that much more socialist than the US, it is
+probably simply because they don&rsquo;t spend so much on their military.</p>
+<p>&ndash; Paul Graham
+&ndash; “Re: What You Can’t Say ( 
+  <a href="http://www.paulgraham.com/resay.html">http://www.paulgraham.com/resay.html</a> )</p>
+<p>%
+I think the most important of the new principles business has to learn is that
+people work a lot harder on stuff they like. Well, that&rsquo;s news to no one. So
+how can I claim business has to learn it? When I say business doesn&rsquo;t know
+this, I mean the structure of business doesn&rsquo;t reflect it.</p>
+<p>Business still reflects an older model, exemplified by the French word for
+working: <em>travailler</em>. It has an English cousin, travail, and what it means is
+torture.</p>
+<p>This turns out not to be the last word on work, however. As societies get
+richer, they learn something about work that&rsquo;s a lot like what they learn
+about diet. We know now that the healthiest diet is the one our peasant
+ancestors were forced to eat because they were poor. Like rich food, idleness
+only seems desirable when you don&rsquo;t get enough of it. I think we were designed
+to work, just as we were designed to eat a certain amount of fiber, and we
+feel bad if we don&rsquo;t.</p>
+<p>There&rsquo;s a name for people who work for the love of it: amateurs. The word now
+has such bad connotations that we forget its etymology, though it&rsquo;s staring us
+in the face. &ldquo;Amateur&rdquo; was originally rather a complimentary word. But the
+thing to be in the twentieth century was professional, which amateurs, by
+definition, are not.</p>
+<p>That&rsquo;s why the business world was so surprised by one lesson from open source:
+that people working for love often surpass those working for money. Users
+don&rsquo;t switch from Explorer to Firefox because they want to hack the source.
+They switch because it&rsquo;s a better browser.</p>
+<p>It&rsquo;s not that Microsoft isn&rsquo;t trying. They know controlling the browser is one
+of the keys to retaining their monopoly. The problem is the same they face in
+operating systems: they can&rsquo;t pay people enough to build something better than
+a group of inspired hackers will build for free.</p>
+<p>I suspect professionalism was always overrated&ndash; not just in the literal sense
+of working for money, but also connotations like formality and detachment.
+Inconceivable as it would have seemed in, say, 1970, I think professionalism
+was largely a fashion, driven by conditions that happened to exist in the
+twentieth century.</p>
+<p>&ndash; Paul Graham
+&ndash; “What Business Can Learn from Open Source” ( 
+  <a href="http://www.paulgraham.com/opensource.html">http://www.paulgraham.com/opensource.html</a> )</p>
+<p>%
+By conventional standards, Jobs and Wozniak were marginal people too.
+Obviously they were smart, but they can&rsquo;t have looked good on paper. They were
+at the time a pair of college dropouts with about three years of school
+between them, and hippies to boot. Their previous business experience
+consisted of making &ldquo;blue boxes&rdquo; to hack into the phone system, a business
+with the rare distinction of being both illegal and unprofitable.</p>
+<p>&ndash; Paul Graham
+&ndash; “The Power of the Marginal” ( 
+  <a href="http://www.paulgraham.com/marginal.html">http://www.paulgraham.com/marginal.html</a> )</p>
+<p>%
+Because there are 100x more drones than hackers, most new commercial
+technologies are aimed at them. You have to learn to quickly identify which
+tools are and aren&rsquo;t meant for you.</p>
+<p>Any technology that has the outward features of Java (hype, accessibility,
+committee design, ulterior commercial motives, &hellip;) is probably designed for
+drones, so avoid it for the same reason you would avoid a novel with Fabio on
+the cover, or an inn that advertises parking for trucks. They may be right for
+their target audience. They may be created by smart people. They&rsquo;re just not
+meant for you.</p>
+<p>&ndash; Trevor Blackwell
+&ndash; “Trevor Re: Java&rsquo;s Cover” ( 
+  <a href="http://paulgraham.com/trevrejavcov.html">http://paulgraham.com/trevrejavcov.html</a> )</p>
+<p>%
+One of the most powerful of those was the existence of &ldquo;channels.&rdquo;
+Revealingly, the same term was used for both products and information: there
+were distribution channels, and TV and radio channels.</p>
+<p>It was the narrowness of such channels that made professionals seem so
+superior to amateurs. There were only a few jobs as professional journalists,
+for example, so competition ensured the average journalist was fairly good.
+Whereas anyone can express opinions about current events in a bar. And so the
+average person expressing his opinions in a bar sounds like an idiot compared
+to a journalist writing about the subject.</p>
+<p>On the Web, the barrier for publishing your ideas is even lower. You don&rsquo;t
+have to buy a drink, and they even let kids in. Millions of people are
+publishing online, and the average level of what they&rsquo;re writing, as you might
+expect, is not very good. This has led some in the media to conclude that
+blogs don&rsquo;t present much of a threat&ndash; that blogs are just a fad.</p>
+<p>Actually, the fad is the word &ldquo;blog,&rdquo; at least the way the print media now use
+it. What they mean by &ldquo;blogger&rdquo; is not someone who publishes in a weblog
+format, but anyone who publishes online. That&rsquo;s going to become a problem as
+the Web becomes the default medium for publication. So I&rsquo;d like to suggest an
+alternative word for someone who publishes online. How about &ldquo;writer?&rdquo;</p>
+<p>Those in the print media who dismiss the writing online because of its low
+average quality are missing an important point: no one reads the average blog.
+In the old world of channels, it meant something to talk about average
+quality, because that&rsquo;s what you were getting whether you liked it or not. But
+now you can read any writer you want. So the average quality of writing online
+isn&rsquo;t what the print media are competing against. They&rsquo;re competing against
+the best writing online. And, like Microsoft, they&rsquo;re losing.</p>
+<p>&ndash; Paul Graham
+&ndash; “What Business Can Learn from Open Source” (Footnote) ( 
+  <a href="http://www.paulgraham.com/opensource.html">http://www.paulgraham.com/opensource.html</a> )</p>
+
+  </div>
+</details>
+
+<h2 id="references">
   References
   <a class="anchor" href="#references">#</a>
 </h2>
@@ -313,7 +1732,11 @@ https://github.com/alex-shpak/hugo-book
 <ol>
 <li id="fn:1">
 <p>
-  <a href="https://www.shlomifish.org/humour/fortunes/paul-graham">https://www.shlomifish.org/humour/fortunes/paul-graham</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+  <a href="https://txt2tags.org/markup.html">https://txt2tags.org/markup.html</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>
+  <a href="https://www.shlomifish.org/humour/fortunes/paul-graham">https://www.shlomifish.org/humour/fortunes/paul-graham</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div></p>
@@ -447,9 +1870,9 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/2a45dea8eb5a6372d60b4d34b335c91dcb6fcff5" title='Last modified by junghan0611 | 2023-06-23' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/4f90b62ce3bc59208ad6be6c52f4805172c5f17e" title='Last modified by junghan0611 | 2023-06-25' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2023-06-23</span>
+      <span>2023-06-25</span>
     </a>
   </div>
 
@@ -506,8 +1929,18 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#요즘-원픽-포춘">요즘 원픽! 포춘</a></li>
         <li><a href="#fourtune-커맨드">Fourtune 커맨드</a></li>
-        <li><a href="#문제는-내-포춘쿠키가-필요하다-dot">문제는 내 포춘쿠키가 필요하다.</a></li>
-        <li><a href="#samples">Samples</a></li>
+        <li><a href="#나를-위한-포춘-쿠키-관리">나를 위한 포춘 쿠키 관리</a>
+          <ul>
+            <li><a href="#fortune-and-format">Fortune and <span class="underline">txt2tags</span> format</a></li>
+          </ul>
+        </li>
+        <li><a href="#junghanacs-collections">Junghanacs Collections</a>
+          <ul>
+            <li><a href="#kevin-kelley-68">Kevin Kelley 68</a></li>
+            <li><a href="#kevin-kelley-99">Kevin Kelley 99</a></li>
+            <li><a href="#paul-graham-34">Paul-Graham 34</a></li>
+          </ul>
+        </li>
         <li><a href="#references">References</a></li>
       </ul>
     </li>
