@@ -211,11 +211,10 @@ kbd {
   }
 
   code {
-    font-family: "D2 coding", "Consolas", "Menlo", "Deja Vu Sans Mono",
-      "Bitstream Vera Sans Mono", monospace;
-    font-size: 0.95em;
+    /* font-family: "D2 coding", "Consolas", "Menlo", "Deja Vu Sans Mono", */
+    /*   "Bitstream Vera Sans Mono", monospace; */
+    font-family: "Iosevka", "Noto Sans KR", sans-serif;
     color: #000000;
-    // color: #8f0075;
-    // background-color: #ffffff;
+    background-color: var(--theme-color-code);
   }
 }

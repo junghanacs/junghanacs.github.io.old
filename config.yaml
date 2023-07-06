@@ -83,10 +83,11 @@ params:
   BookMenuBundle: /menu
   # BookSection: posts
   # BookSection: "*"
-  BookSearch: true
+  BookSearch: false
   BookRepo: https://github.com/junghanacs/junghanacs.com
   # BookEditPath: edit/main
   BookTheme: "light"
+  # BookTheme: "dark"
   # BookTheme: "auto"
   BookComment: true
   CommentTheme: "github-light"
