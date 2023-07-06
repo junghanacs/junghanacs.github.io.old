@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Junghanacs🧠</title>
+    <title>menu/Home on Junghanacs🧠</title>
     <link>https://junghanacs.com/</link>
-    <description>Recent content in Home on Junghanacs🧠</description>
+    <description>Recent content in menu/Home on Junghanacs🧠</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs Translation Resources (&#43; OmegaT) 🌿</title>
+      <link>https://junghanacs.com/notes/emacs_translation_resources/</link>
+      <pubDate>Tue, 27 Jun 2023 12:18:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/emacs_translation_resources/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  &lt;code&gt;한글&lt;/code&gt; 활용 관점에서 접근해야 한다. 관련 설정은 jh-writing 레이어에 반영되어
+있다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
     <item>
       <title>Hangul Technical Writing for Korean🌱</title>
       <link>https://junghanacs.com/notes/hangul_technical_writing_for_korean/</link>
@@ -54,7 +66,18 @@
     </item>
     
     <item>
-      <title>포춘 쿠키 관리 (Quotes)</title>
+      <title>에버그린 노트와 제텔카스텐 🫛</title>
+      <link>https://junghanacs.com/notes/evergreen_note/</link>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/evergreen_note/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Budding
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>포춘 쿠키 관리 (Quotes)🌿</title>
       <link>https://junghanacs.com/notes/fortune_quotes/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       
@@ -445,6 +468,17 @@
     </item>
     
     <item>
+      <title>Deno JavaScript Runtime and Deno-Bridge🫛</title>
+      <link>https://junghanacs.com/notes/deno-js-runtime-and-deno-bridge/</link>
+      <pubDate>Tue, 28 Mar 2023 11:59:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/deno-js-runtime-and-deno-bridge/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Deno: JavaScript Framework 이맥스를 확장하는 좋은 방법이다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
       <title>Evil-mode</title>
       <link>https://junghanacs.com/terms/evil-mode/</link>
       <pubDate>Sat, 15 Oct 2022 05:40:00 +0900</pubDate>
@@ -452,6 +486,29 @@
       <guid>https://junghanacs.com/terms/evil-mode/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   evil-mode 편집 방법
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>태그와 카테고리: 도대체 어떻게 구성해야 하는가🌱</title>
+      <link>https://junghanacs.com/notes/organize_tag_and_category_in_org_mode/</link>
+      <pubDate>Fri, 07 Oct 2022 14:50:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/organize_tag_and_category_in_org_mode/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  이건 정말 어마어마한 문제로다.
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>블로그 요구 사항 및 구성🌱</title>
+      <link>https://junghanacs.com/notes/my_blog_requiremets/</link>
+      <pubDate>Wed, 07 Sep 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/notes/my_blog_requiremets/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  메뉴 구성 태그 카테고리 시리즈와 더불어 각 노트가 어느 정도 작업이 되었는지 등도
+중요하다.
 &lt;/blockquote&gt;</description>
     </item>
     

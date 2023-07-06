@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko-kr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  메뉴 구성 태그 카테고리 시리즈와 더불어 각 노트가 어느 정도 작업이 되었는지 등도
+중요하다.
+">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="블로그 요구 사항 및 구성🌱" />
+<meta property="og:description" content="
+  메뉴 구성 태그 카테고리 시리즈와 더불어 각 노트가 어느 정도 작업이 되었는지 등도
+중요하다.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://junghanacs.com/notes/my_blog_requiremets/" /><meta property="article:section" content="notes" />
+<meta property="article:published_time" content="2023-07-06T00:00:00+09:00" />
+<meta property="article:modified_time" content="2023-07-06T18:36:56+09:00" />
+<title>블로그 요구 사항 및 구성🌱 | Junghanacs🧠</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.d68de62e03ebb7a8847edbe15f139f9af85ba6943e25eb090b5eaa1952c2c384.css" integrity="sha256-1o3mLgPrt6iEftvhXxOfmvhbppQ&#43;JesJC16qGVLCw4Q=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/ko.search.min.8c8dcdcf45a42ef7af80517923de914f74e0d5b68a98473fb241a91fadf4d346.js" integrity="sha256-jI3Nz0WkLvevgFF5I96RT3Tg1baKmEc/skGpH63000Y=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GYRB327HE6"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-GYRB327HE6', { 'anonymize_ip': false });
+}
+</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Junghanacs🧠</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/posts/">📰 Essays</a></li>
+<li>
+  <a href="/notes/">🗃 Notes</a></li>
+<li>
+  <a href="/refs/">🏛 References</a></li>
+<li>
+  <a href="/talks/">📢 Talks</a></li>
+<li>
+  <a href="/terms/">🏷 Terms</a></li>
+<li>
+  <a href="/configs/">🧰 DotFiles</a>
+<ul>
+<li>
+  <a href="/configs/emacs/">🎮 emacs.d</a></li>
+</ul>
+</li>
+</ul>
+<!-- -   [All tags](/tags) -->
+<!-- -   [📚 Docs](/docs) -->
+<!-- -   [Contact](/contact) -->
+<!-- -   [RSS](/index.xml) -->
+<!-- -   [All my links](https://links.seds.nl/) -->
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/junghanacs"  target="_blank" rel="noopener">
+        📍 Github Link
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>블로그 요구 사항 및 구성🌱</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#메뉴-에-무엇이-들어가야-하는가-노트의-완성도는">&lsquo;메뉴&rsquo;에 무엇이 들어가야 하는가? 노트의 완성도는?</a></li>
+        <li><a href="#에버그린노트를-참고하자면">에버그린노트를 참고하자면</a></li>
+        <li><a href="#태크-카테고리-관련">태크 카테고리 관련</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/notes/my_blog_requiremets/">블로그 요구 사항 및 구성🌱</a>
+  </h1>
+
+  <div class="date">
+    
+    
+    
+    
+    <strong aria-hidden="true"> Published: </strong>Sep 7, 2022
+    <strong aria-hidden="true"> Updated: </strong>Jul 6, 2023
+    
+    
+    (Lastmod: Jul 6, 2023)
+    
+    
+  </div>
+
+  
+
+
+
+
+
+
+<div>
+ </div>
+
+<hr>
+
+  <p><blockquote class="book-hint info">
+  메뉴 구성 태그 카테고리 시리즈와 더불어 각 노트가 어느 정도 작업이 되었는지 등도
+중요하다.
+</blockquote>
+
+<h2 id="메뉴-에-무엇이-들어가야-하는가-노트의-완성도는">
+  &lsquo;메뉴&rsquo;에 무엇이 들어가야 하는가? 노트의 완성도는?
+  <a class="anchor" href="#%eb%a9%94%eb%89%b4-%ec%97%90-%eb%ac%b4%ec%97%87%ec%9d%b4-%eb%93%a4%ec%96%b4%ea%b0%80%ec%95%bc-%ed%95%98%eb%8a%94%ea%b0%80-%eb%85%b8%ed%8a%b8%ec%9d%98-%ec%99%84%ec%84%b1%eb%8f%84%eb%8a%94">#</a>
+</h2>
+<h2 id="에버그린노트를-참고하자면">
+  에버그린노트를 참고하자면
+  <a class="anchor" href="#%ec%97%90%eb%b2%84%ea%b7%b8%eb%a6%b0%eb%85%b8%ed%8a%b8%eb%a5%bc-%ec%b0%b8%ea%b3%a0%ed%95%98%ec%9e%90%eb%a9%b4">#</a>
+</h2>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2023-06-24 Sat 07:25]</span></span>
+
+  <a href="/notes/evergreen_note/">&gt;&gt; About Evergreen Note</a></p>
+<p>
+  <a href="https://maggieappleton.com/garden">https://maggieappleton.com/garden</a></p>
+<h2 id="태크-카테고리-관련">
+  태크 카테고리 관련
+  <a class="anchor" href="#%ed%83%9c%ed%81%ac-%ec%b9%b4%ed%85%8c%ea%b3%a0%eb%a6%ac-%ea%b4%80%eb%a0%a8">#</a>
+</h2>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2023-06-24 Sat 07:26]</span></span>
+이건 다른 노트에서 다룰 것이다. 링크만 남긴다.
+
+  <a href="/notes/organize_tag_and_category_in_org_mode/">&gt;&gt; Organize Tag and Category in Org-mode for Hugo</a></p></p>
+  
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+<hr>
+
+  <div class="bl-section">
+    <h2> No notes link to this note</h2>
+  </div>
+
+
+</article>
+ 
+      <center>
+  
+  
+  
+  <h3>Go to <a href="/notes/organize_tag_and_category_in_org_mode/">random</a> page</h3>
+  
+  
+</center>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/76748f7886b942844dfec24ecc3ea73b4de434c7" title='Last modified by junghan0611 | 2023-07-06' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2023-07-06</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <footer class="footer">
+  <br>
+  <br>
+  <span>&copy; 2023 <a href="https://junghanacs.com/">Junghanacs🧠</a></span>
+  <span>
+    published with
+    <a href="https://www.gnu.org/software/emacs" rel="noopener noreferrer">Emacs</a> +
+    <a href="https://orgmode.org" rel="noopener noreferrer">Org-Mode</a> +
+    <a href="https://ox-hugo.scripter.co" rel="noopener noreferrer">Ox-Hugo</a> 
+  </span>
+</footer>
+
+      </footer>
+
+      
+  
+  <div class="book-comments"><script src="https://utteranc.es/client.js"
+        repo="junghanacs/junghanacs.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#메뉴-에-무엇이-들어가야-하는가-노트의-완성도는">&lsquo;메뉴&rsquo;에 무엇이 들어가야 하는가? 노트의 완성도는?</a></li>
+        <li><a href="#에버그린노트를-참고하자면">에버그린노트를 참고하자면</a></li>
+        <li><a href="#태크-카테고리-관련">태크 카테고리 관련</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5/dist/gumshoe.polyfills.min.js"></script>
+<script>new Gumshoe('.book-toc a', { nested: true });</script>
+<style>
+ .book-toc li.active > a {
+   font-weight: bold;
+ }
+</style>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

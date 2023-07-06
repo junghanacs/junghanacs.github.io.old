@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>menu/Dotfiles on Junghanacs🧠</title>
+    <title>menu/DotFiles on Junghanacs🧠</title>
     <link>https://junghanacs.com/configs/</link>
-    <description>Recent content in menu/Dotfiles on Junghanacs🧠</description>
+    <description>Recent content in menu/DotFiles on Junghanacs🧠</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Sat, 10 Jun 2023 00:00:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/configs/index.xml" rel="self" type="application/rss+xml" />

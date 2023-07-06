@@ -3,6 +3,12 @@ User-agent: *
 
 Allow: /menu/
 
+Allow: /refs/
+
+Allow: /talks/
+
+Allow: /notes/emacs_translation_resources/
+
 Allow: /notes/hangul_technical_writing_for_korean/
 
 Allow: /terms/technium/
@@ -10,6 +16,8 @@ Allow: /terms/technium/
 Allow: /refs/WhyHowUse23/
 
 Allow: /refs/StoringGlossaryTerms2022/
+
+Allow: /notes/evergreen_note/
 
 Allow: /notes/fortune_quotes/
 
@@ -85,7 +93,13 @@ Allow: /
 
 Allow: /configs/emacs/spacemacs/
 
+Allow: /notes/deno-js-runtime-and-deno-bridge/
+
 Allow: /terms/evil-mode/
+
+Allow: /notes/organize_tag_and_category_in_org_mode/
+
+Allow: /notes/my_blog_requiremets/
 
 Allow: /contact/
 
@@ -94,8 +108,6 @@ Allow: /posts/
 Allow: /categories/
 
 Allow: /notes/
-
-Allow: /refs/
 
 Allow: /series/
 

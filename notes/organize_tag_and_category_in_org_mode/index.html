@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ko-kr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  이건 정말 어마어마한 문제로다.
+">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="태그와 카테고리: 도대체 어떻게 구성해야 하는가🌱" />
+<meta property="og:description" content="
+  이건 정말 어마어마한 문제로다.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://junghanacs.com/notes/organize_tag_and_category_in_org_mode/" /><meta property="article:section" content="notes" />
+<meta property="article:published_time" content="2023-07-06T00:00:00+09:00" />
+<meta property="article:modified_time" content="2023-07-06T18:36:56+09:00" />
+<title>태그와 카테고리: 도대체 어떻게 구성해야 하는가🌱 | Junghanacs🧠</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.d68de62e03ebb7a8847edbe15f139f9af85ba6943e25eb090b5eaa1952c2c384.css" integrity="sha256-1o3mLgPrt6iEftvhXxOfmvhbppQ&#43;JesJC16qGVLCw4Q=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/ko.search.min.8c8dcdcf45a42ef7af80517923de914f74e0d5b68a98473fb241a91fadf4d346.js" integrity="sha256-jI3Nz0WkLvevgFF5I96RT3Tg1baKmEc/skGpH63000Y=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GYRB327HE6"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-GYRB327HE6', { 'anonymize_ip': false });
+}
+</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Junghanacs🧠</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li>
+  <a href="/posts/">📰 Essays</a></li>
+<li>
+  <a href="/notes/">🗃 Notes</a></li>
+<li>
+  <a href="/refs/">🏛 References</a></li>
+<li>
+  <a href="/talks/">📢 Talks</a></li>
+<li>
+  <a href="/terms/">🏷 Terms</a></li>
+<li>
+  <a href="/configs/">🧰 DotFiles</a>
+<ul>
+<li>
+  <a href="/configs/emacs/">🎮 emacs.d</a></li>
+</ul>
+</li>
+</ul>
+<!-- -   [All tags](/tags) -->
+<!-- -   [📚 Docs](/docs) -->
+<!-- -   [Contact](/contact) -->
+<!-- -   [RSS](/index.xml) -->
+<!-- -   [All my links](https://links.seds.nl/) -->
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/junghanacs"  target="_blank" rel="noopener">
+        📍 Github Link
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>태그와 카테고리: 도대체 어떻게 구성해야 하는가🌱</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#org-mode-tag-and-category">org-mode :: tag and category</a></li>
+        <li><a href="#refile">refile</a></li>
+        <li><a href="#document-structure">Document Structure</a>
+          <ul>
+            <li><a href="#sparse-tree">Sparse Tree</a></li>
+            <li><a href="#drawers">Drawers</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#tags">Tags</a></li>
+            <li><a href="#setupfile">Setupfile</a></li>
+            <li><a href="#plus-tags-tag1--c1--tag2--c2">‘#+TAGS: TAG1(c1) TAG2(c2)’</a></li>
+          </ul>
+        </li>
+        <li><a href="#태그-시스템-그-자체가-엄청나게-중요하고-어려운-주제다">태그 시스템 그 자체가 엄청나게 중요하고 어려운 주제다</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#태그-규칙-참고">태그 규칙 참고</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#insert-heading-categories-examples">Insert Heading categories Examples</a></li>
+        <li><a href="#tags-alist">tags-alist</a></li>
+        <li><a href="#ox-hugo-sample">Ox-Hugo Sample</a></li>
+        <li><a href="#스크린샷">스크린샷</a>
+          <ul>
+            <li><a href="#refile-journal-copy">refile - journal copy</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/notes/organize_tag_and_category_in_org_mode/">태그와 카테고리: 도대체 어떻게 구성해야 하는가🌱</a>
+  </h1>
+
+  <div class="date">
+    
+    
+    
+    
+    <strong aria-hidden="true"> Published: </strong>Oct 7, 2022
+    <strong aria-hidden="true"> Updated: </strong>Jul 6, 2023
+    
+    
+    (Lastmod: Jul 6, 2023)
+    
+    
+  </div>
+
+  
+
+
+
+
+
+
+<div>
+ </div>
+
+<hr>
+
+  <p><blockquote class="book-hint info">
+  이건 정말 어마어마한 문제로다.
+</blockquote>
+
+<h2 id="org-mode-tag-and-category">
+  org-mode :: tag and category
+  <a class="anchor" href="#org-mode-tag-and-category">#</a>
+</h2>
+<p>어떻게 태그와 카테고리로 파일을 구성 할 것인가? 그룹으로 묶어서 태그 시스템을
+단계화 하는 전략도 좋을 것 같다.</p>
+<h2 id="refile">
+  refile
+  <a class="anchor" href="#refile">#</a>
+</h2>
+<p>‘C-c C-w’ (‘org-refile’)
+Refile entry or region to a different location.  See *note Refile
+and Copy::.</p>
+<h2 id="document-structure">
+  Document Structure
+  <a class="anchor" href="#document-structure">#</a>
+</h2>
+<h3 id="sparse-tree">
+  Sparse Tree
+  <a class="anchor" href="#sparse-tree">#</a>
+</h3>
+<p>(setq org-agenda-custom-commands
+&lsquo;((&ldquo;f&rdquo; occur-tree &ldquo;FIXME&rdquo;)))</p>
+<p>defines the key ‘f’ as a shortcut for creating a sparse tree matching
+the string ‘FIXME’.</p>
+<ul>
+<li>variable ‘org-list-demote-modify-bullet’.  To get a greater difference</li>
+</ul>
+<h3 id="drawers">
+  Drawers
+  <a class="anchor" href="#drawers">#</a>
+</h3>
+<p>You can also arrange for state change notes (see *note Tracking TODO
+state changes::) and clock times (see *note Clocking Work Time::) to be
+stored in a ‘LOGBOOK’ drawer.  If you want to store a quick note there,
+in a similar way to state changes, use</p>
+<p>‘C-c C-z’
+Add a time-stamped note to the ‘LOGBOOK’ drawer.</p>
+<h3 id="categories">
+  Categories
+  <a class="anchor" href="#categories">#</a>
+</h3>
+<p>11.4.1 Categories
+The category is a broad label assigned to each agenda item.  By default,
+the category is simply derived from the file name, but you can also
+specify it with a special line in the buffer, like this:</p>
+<p>The display in the agenda buffer looks best if the category is not
+longer than 10 characters.  You can set up icons for category by
+customizing the ‘org-agenda-category-icon-alist’ variable.</p>
+<p>There are multiple ways to set the category.  One way is to set
+it in the document property drawer.  For example:</p>
+<p>:CATEGORY: ELisp</p>
+<p>Other ways to define it is as an Emacs file variable, for example</p>
+<p>or for the file to contain a special line:</p>
+<p>If the file does not specify a category, then file&rsquo;s base name
+is used instead.</p>
+<h3 id="tags">
+  Tags
+  <a class="anchor" href="#tags">#</a>
+</h3>
+<p>‘#+FILETAGS: :tag1:tag2:tag3:’
+Set tags that all entries in the file inherit from, including the top-level entries.</p>
+<h3 id="setupfile">
+  Setupfile
+  <a class="anchor" href="#setupfile">#</a>
+</h3>
+<p>‘#+SETUPFILE: file’</p>
+<p>The setup file or a URL pointing to such file is for additional in-buffer settings. Org loads this file and parses it for any settings in it only when Org opens the main file. If URL is specified, the contents are downloaded and stored in a temporary file cache. C-c C-c on the settings line parses and loads the file, and also resets the temporary file cache. Org also parses and loads the document during normal exporting process. Org parses the contents of this document as if it was included in the buffer. It can be another Org file. To visit the file—not a URL—use C-c &rsquo; while point is on the line with the file name.</p>
+<h3 id="plus-tags-tag1--c1--tag2--c2">
+  ‘#+TAGS: TAG1(c1) TAG2(c2)’
+  <a class="anchor" href="#plus-tags-tag1--c1--tag2--c2">#</a>
+</h3>
+<p>These lines (several such lines are allowed) specify the valid tags in this file, and (potentially) the corresponding fast tag selection keys. The corresponding variable is org-tag-alist.</p>
+<h2 id="태그-시스템-그-자체가-엄청나게-중요하고-어려운-주제다">
+  태그 시스템 그 자체가 엄청나게 중요하고 어려운 주제다
+  <a class="anchor" href="#%ed%83%9c%ea%b7%b8-%ec%8b%9c%ec%8a%a4%ed%85%9c-%ea%b7%b8-%ec%9e%90%ec%b2%b4%ea%b0%80-%ec%97%84%ec%b2%ad%eb%82%98%ea%b2%8c-%ec%a4%91%ec%9a%94%ed%95%98%ea%b3%a0-%ec%96%b4%eb%a0%a4%ec%9a%b4-%ec%a3%bc%ec%a0%9c%eb%8b%a4">#</a>
+</h2>
+<p>잠시만.</p>
+<h4 id="태그-규칙-참고">
+  태그 규칙 참고
+  <a class="anchor" href="#%ed%83%9c%ea%b7%b8-%ea%b7%9c%ec%b9%99-%ec%b0%b8%ea%b3%a0">#</a>
+</h4>
+<p>
+  <a href="https://karl-voit.at/2022/01/29/How-to-Use-Tags/">How to Use Tags</a> :: 아주 좋은 연구 수준에서의 아티클</p>
+<ul>
+<li>가능한 한 적은 수의 태그를 사용하십시오.</li>
+<li>자체 정의된 태그 집합으로 자신을 제한하십시오.</li>
+<li>세트 내의 태그는 겹치지 않아야 합니다.</li>
+<li>관례상 태그는 복수형입니다.</li>
+<li>태그는 소문자입니다.</li>
+<li>태그는 단일 단어입니다.</li>
+<li>일반적인 수준에서 태그를 유지합니다.</li>
+<li>명백한 태그는 생략합니다.</li>
+</ul>
+<h2 id="insert-heading-categories-examples">
+  Insert Heading categories Examples
+  <a class="anchor" href="#insert-heading-categories-examples">#</a>
+</h2>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span><span style="color:#080;font-style:italic">;; http://article.gmane.org/gmane.emacs.orgmode/10256</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-get-heading-title</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Returns the heading of the current entry as a string, without the leading stars, the TODO keyword or the tags.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">let</span> ((<span style="color:#b8860b">title-with-props</span> (<span style="color:#b8860b">org-get-heading</span> <span style="color:#800">t</span>))
+</span></span><span style="display:flex;"><span>        (<span style="color:#b8860b">keyword</span> (<span style="color:#b8860b">org-get-todo-state</span>)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#00a000">substring-no-properties</span> <span style="color:#b8860b">title-with-props</span> (<span style="color:#a2f">if</span> <span style="color:#b8860b">keyword</span> (<span style="color:#00a000">1+</span> (<span style="color:#00a000">length</span> <span style="color:#b8860b">keyword</span>))))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-insert-heading-category</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Insert a :CATEGORY: property and it&#39;s value to the PROPERTY drawer at point.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">let</span> ((<span style="color:#00a000">point</span> (<span style="color:#00a000">point</span>)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#b8860b">org-entry-put</span> <span style="color:#00a000">point</span> <span style="color:#b44">&#34;CATEGORY&#34;</span> (<span style="color:#b8860b">org-get-heading-title</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a2f">defun</span> <span style="color:#b8860b">org-insert-heading-categories-all</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;Insert :CATEGORY: properties to each headlines indented level 2.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#b8860b">org-map-entries</span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#a2f">lambda</span> ()
+</span></span><span style="display:flex;"><span>     (<span style="color:#a2f">if</span> (<span style="color:#00a000">eq</span> <span style="color:#666">2</span> (<span style="color:#b8860b">org-current-level</span>))
+</span></span><span style="display:flex;"><span>         (<span style="color:#b8860b">org-insert-heading-category</span>)))))
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="tags-alist">
+  tags-alist
+  <a class="anchor" href="#tags-alist">#</a>
+</h2>
+<p>여기에 추가해라. FILETAGS 가 될거야.</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a2f">setq</span> <span style="color:#b8860b">org-tag-alist</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#666">&#39;</span>((<span style="color:#a2f">:startgroup</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#080;font-style:italic">;; Put mutually exclusive tags here</span>
+</span></span><span style="display:flex;"><span>            (<span style="color:#a2f">:endgroup</span>)
+</span></span><span style="display:flex;"><span>            (<span style="color:#b44">&#34;@home&#34;</span> <span style="color:#666">.</span> <span style="color:#b44">?H</span>)
+</span></span><span style="display:flex;"><span>            (<span style="color:#b44">&#34;@work&#34;</span> <span style="color:#666">.</span> <span style="color:#b44">?W</span>)
+</span></span><span style="display:flex;"><span>            (<span style="color:#b44">&#34;private&#34;</span> <span style="color:#666">.</span> <span style="color:#b44">?P</span>)))
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="ox-hugo-sample">
+  Ox-Hugo Sample
+  <a class="anchor" href="#ox-hugo-sample">#</a>
+</h2>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2023-06-23 Fri 13:03]</span></span>
+/home/junghan/git/scripter.co/content-org/scripter-posts.org
+이게 무슨 스타일인가?!</p>
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#+tags: [ @emacs : @org org @elisp ]
+</span></span><span style="display:flex;"><span>#+tags: [ @web : @hugo css ]
+</span></span><span style="display:flex;"><span>,
+</span></span><span style="display:flex;"><span>#+tags: [ @org : ox_hugo ]
+</span></span><span style="display:flex;"><span>#+tags: [ @hugo : ox_hugo ]
+</span></span><span style="display:flex;"><span>,
+</span></span><span style="display:flex;"><span>#+tags: [ git : magit ]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="스크린샷">
+  스크린샷
+  <a class="anchor" href="#%ec%8a%a4%ed%81%ac%eb%a6%b0%ec%83%b7">#</a>
+</h2>
+<h3 id="refile-journal-copy">
+  refile - journal copy
+  <a class="anchor" href="#refile-journal-copy">#</a>
+</h3>
+<p>괜찮은 방법이다. 코드가 필요한가?
+그러니까. 저널에 투두가 있을 필요가 없이 refile 에서 다 끝낸다는 전략인데?!
+생각해보자. 캡처는 다 refile 로 가니까. 맞는 것 같기도하고.</p>
+<p>리파일에 다 몰아 둘거면 refile 을 잘해야 한다.</p>
+<figure><img src="/imgs/20221007-1959-screenshot.png"/>
+</figure>
+
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>  (<span style="color:#a2f">defun</span> <span style="color:#b8860b">my/copy-idlink-to-clipboard</span>() <span style="color:#b44">&#34;Copy an ID link with the
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">headline to killring, if no ID is there then create a new unique
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">ID.  This function works only in org-mode or org-agenda buffers.
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">The purpose of this function is to easily construct id:-links to
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">org-mode items. If its assigned to a key it saves you marking the
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">text and copying to the killring.&#34;</span>
+</span></span><span style="display:flex;"><span>       (<span style="color:#a2f">interactive</span>)
+</span></span><span style="display:flex;"><span>       (<span style="color:#a2f">when</span> (<span style="color:#00a000">eq</span> <span style="color:#b8860b">major-mode</span> <span style="color:#b8860b">&#39;org-agenda-mode</span>) <span style="color:#080;font-style:italic">;switch to orgmode</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#b8860b">org-agenda-show</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#b8860b">org-agenda-goto</span>))
+</span></span><span style="display:flex;"><span>       (<span style="color:#a2f">when</span> (<span style="color:#00a000">eq</span> <span style="color:#b8860b">major-mode</span> <span style="color:#b8860b">&#39;org-mode</span>) <span style="color:#080;font-style:italic">; do this only in org-mode buffers</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#a2f">setq</span> <span style="color:#b8860b">mytmphead</span> (<span style="color:#00a000">nth</span> <span style="color:#666">4</span> (<span style="color:#b8860b">org-heading-components</span>)))
+</span></span><span style="display:flex;"><span>         (<span style="color:#a2f">setq</span> <span style="color:#b8860b">mytmpid</span> (<span style="color:#00a000">funcall</span> <span style="color:#b8860b">&#39;org-id-get-create</span>))
+</span></span><span style="display:flex;"><span>     (<span style="color:#a2f">setq</span> <span style="color:#b8860b">mytmplink</span> (<span style="color:#00a000">format</span> <span style="color:#b44">&#34;[[id:%s][%s]]&#34;</span> <span style="color:#b8860b">mytmpid</span> <span style="color:#b8860b">mytmphead</span>))
+</span></span><span style="display:flex;"><span>     (<span style="color:#b8860b">kill-new</span> <span style="color:#b8860b">mytmplink</span>)
+</span></span><span style="display:flex;"><span>     (<span style="color:#00a000">message</span> <span style="color:#b44">&#34;Copied %s to killring (clipboard)&#34;</span> <span style="color:#b8860b">mytmplink</span>)
+</span></span><span style="display:flex;"><span>       ))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#b8860b">global-set-key</span> (<span style="color:#b8860b">kbd</span> <span style="color:#b44">&#34;&lt;f5&gt;&#34;</span>) <span style="color:#b8860b">&#39;my/copy-idlink-to-clipboard</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>(setq my/org-roam-function-tags &lsquo;(&ldquo;fleeting&rdquo; &ldquo;project&rdquo; &ldquo;bio&rdquo; &ldquo;literature&rdquo; &ldquo;permanent&rdquo; &ldquo;zettels&rdquo;))</p></p>
+  
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+<hr>
+
+  <div class="bl-section">
+    <h2> Links to this note</h2>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/notes/my_blog_requiremets/">블로그 요구 사항 및 구성🌱</a><blockquote class="book-hint info">
+  메뉴 구성 태그 카테고리 시리즈와 더불어 각 노트가 어느 정도 작업이 되었는지 등도
+중요하다.
+</blockquote></li>
+       
+     </ul>
+    </div>
+  </div>
+
+
+</article>
+ 
+      <center>
+  
+  
+  
+  <h3>Go to <a href="/notes/emacs_translation_resources/">random</a> page</h3>
+  
+  
+</center>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/76748f7886b942844dfec24ecc3ea73b4de434c7" title='Last modified by junghan0611 | 2023-07-06' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2023-07-06</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <footer class="footer">
+  <br>
+  <br>
+  <span>&copy; 2023 <a href="https://junghanacs.com/">Junghanacs🧠</a></span>
+  <span>
+    published with
+    <a href="https://www.gnu.org/software/emacs" rel="noopener noreferrer">Emacs</a> +
+    <a href="https://orgmode.org" rel="noopener noreferrer">Org-Mode</a> +
+    <a href="https://ox-hugo.scripter.co" rel="noopener noreferrer">Ox-Hugo</a> 
+  </span>
+</footer>
+
+      </footer>
+
+      
+  
+  <div class="book-comments"><script src="https://utteranc.es/client.js"
+        repo="junghanacs/junghanacs.com"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#org-mode-tag-and-category">org-mode :: tag and category</a></li>
+        <li><a href="#refile">refile</a></li>
+        <li><a href="#document-structure">Document Structure</a>
+          <ul>
+            <li><a href="#sparse-tree">Sparse Tree</a></li>
+            <li><a href="#drawers">Drawers</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#tags">Tags</a></li>
+            <li><a href="#setupfile">Setupfile</a></li>
+            <li><a href="#plus-tags-tag1--c1--tag2--c2">‘#+TAGS: TAG1(c1) TAG2(c2)’</a></li>
+          </ul>
+        </li>
+        <li><a href="#태그-시스템-그-자체가-엄청나게-중요하고-어려운-주제다">태그 시스템 그 자체가 엄청나게 중요하고 어려운 주제다</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#태그-규칙-참고">태그 규칙 참고</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#insert-heading-categories-examples">Insert Heading categories Examples</a></li>
+        <li><a href="#tags-alist">tags-alist</a></li>
+        <li><a href="#ox-hugo-sample">Ox-Hugo Sample</a></li>
+        <li><a href="#스크린샷">스크린샷</a>
+          <ul>
+            <li><a href="#refile-journal-copy">refile - journal copy</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@5/dist/gumshoe.polyfills.min.js"></script>
+<script>new Gumshoe('.book-toc a', { nested: true });</script>
+<style>
+ .book-toc li.active > a {
+   font-weight: bold;
+ }
+</style>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
