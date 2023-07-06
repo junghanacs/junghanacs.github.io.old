@@ -1,5 +1,5 @@
 +++
-title = "포춘 쿠키 관리 (Quotes)"
+title = "포춘 쿠키 관리 (Quotes)🌿"
 author = ["Junghan Kim"]
 date = 2023-06-21T00:00:00+09:00
 publishDate = 2023-06-23T17:09:00+09:00

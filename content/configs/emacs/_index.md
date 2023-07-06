@@ -1,8 +1,8 @@
 +++
-title = "menu/Dotfiles/dot-emacs"
+title = "menu/DotFiles/dot-emacs"
 author = ["Junghan Kim"]
 date = 2023-06-11T00:00:00+09:00
-lastmod = 2023-06-21
+lastmod = 2023-07-06T17:51:00+09:00
 keywords = ["configs"]
 draft = false
 +++

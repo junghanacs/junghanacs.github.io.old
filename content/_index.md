@@ -1,5 +1,5 @@
 +++
-title = "Home"
+title = "menu/Home"
 author = ["Junghan Kim"]
 date = 2023-05-31T12:26:00+09:00
 publishDate = 2023-06-01
@@ -28,11 +28,12 @@ bookComments = false
 > 이 곳은 저의 **Digital Garden** 입니다. Junghan 님의 **Brain Dump** 이기도 하구요.
 > **메뉴** 구성은 다음과 같아요!
 
--   [📰 Articles]({{< relref "/posts" >}})
+-   [📰 Essays]({{< relref "/posts" >}})
 -   [🗃 Notes]({{< relref "/notes" >}})
 -   [🏛 References]({{< relref "/refs" >}})
+-   [📢 Talks]({{< relref "/talks" >}})
 -   [🏷 Terms]({{< relref "/terms" >}})
--   [🧰 Dotfiles]({{< relref "/configs" >}})
+-   [🧰 DotFiles]({{< relref "/configs" >}})
 
 
 ## <span class="underline">Emacs</span> : Life Hacking System 🦾 {#life-hacking-system}

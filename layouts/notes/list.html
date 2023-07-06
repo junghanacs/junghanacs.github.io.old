@@ -4,7 +4,7 @@
 
 'Feelting Note' 보다는 'Permanent Note'가 좋다. 기존에 여러 곳에 나뉘어 있는
 메모들을 정리 정돈 할 때까지는 지저분할 것이다. Org-Roam 기반 브레인덤프는 기본.
-디지털 가든이 되기를 희망한다. 
+디지털 가든이 되기를 희망한다.
 <br>
 + Date/Title/Update
 <br>
@@ -21,8 +21,8 @@
           <span>» </span>
           {{- .Title -}}
         </a>
-        <time class="w3-tag"> 📅{{- .Date.Format "2006-01-02" -}} </time>
-        <time class="lastmod"> 🔧{{ .PublishDate.Format "2006-01-02" -}}</time>
+        <time class="w3-tag"> {{- .Date.Format "2006-01-02" -}} </time>
+        <!-- <time class="lastmod"> 🔧{{ .PublishDate.Format "2006-01-02" -}}</time> -->
     </h3>
     <details class="markdown-inner">
       {{ default .Summary .Description }}

@@ -1,10 +1,13 @@
 +++
-title = "menu/Dotfiles"
+title = "menu/DotFiles"
 author = ["Junghan Kim"]
 date = 2023-06-10T00:00:00+09:00
-lastmod = 2023-06-21
+publishDate = 2023-07-06T11:33:00+09:00
+lastmod = 2023-07-06T11:33:00+09:00
 keywords = ["configs"]
 draft = false
+bookToc = false
+bookComments = false
 +++
 
 {{< hint info >}}

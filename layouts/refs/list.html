@@ -18,8 +18,8 @@
           <span>» </span>
           {{- .Title -}}
         </a>
-        <time class="w3-tag"> 📅{{- .Date.Format "2006-01-02" -}} </time>
-        <time class="lastmod"> 🔧{{ .PublishDate.Format "2006-01-02" -}}</time>
+        <time class="w3-tag"> {{- .Date.Format "2006-01-02" -}} </time>
+        <!-- <time class="lastmod"> 🔧{{ .PublishDate.Format "2006-01-02" -}}</time> -->
     </h3>
     <details class="markdown-inner">
       {{ default .Summary .Description }}

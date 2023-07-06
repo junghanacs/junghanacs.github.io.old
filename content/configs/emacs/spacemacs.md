@@ -2,7 +2,8 @@
 title = "Dot-Spacemacs"
 author = ["Junghan Kim"]
 date = 2023-05-17
-lastmod = 2023-06-22T10:20:00+09:00
+publishDate = 2023-05-17
+lastmod = 2023-07-06
 keywords = ["configs"]
 draft = false
 +++
@@ -876,10 +877,6 @@ you are unsure, you should try in setting them in \`dotspacemacs/user-config' fi
 ;; 불필요한 Package cl is deprecated 경고 숨기기
 ;; (setq byte-compile-warnings '(not cl-functions))
 
-(when (> emacs-major-version 28) ; Emacs-29 use builtin pkgs
-  (setq org-roam-database-connector 'sqlite-builtin)
-  (setq forge-database-connector 'sqlite-builtin))
-
 ;;;;; Define stable packages
 
 (add-to-list 'package-pinned-packages '(clojure-mode . "nongnu") t)
@@ -1141,11 +1138,6 @@ Also, I sometimes need to know if a program is running inside Emacs (say, inside
 
    fixed-page-mode
 
-   fontaine
-
-   olivetti
-   logos
-
    keyfreq
    (command-log :location (recipe :fetcher github
                                   :repo "positron-solutions/command-log"))
@@ -1166,13 +1158,8 @@ Also, I sometimes need to know if a program is running inside Emacs (say, inside
    ;; (cal-korea-x :location (recipe :fetcher github :repo "cinsk/cal-korea-x"))
    ;; (typo :location (recipe :fetcher sourcehut :repo "pkal/typo")) ; TODO CHECK
 
-   ;; DICTIONARY
-   define-it
-   lexic
-   mw-thesaurus
-   sdcv
-   external-dict
-   define-word ; copy from spacemacs-language
+    (dired-preview :location (recipe :fetcher github :repo "protesilaos/dired-preview"))
+
    ))
 ```
 
@@ -1339,21 +1326,21 @@ minemacs 설정을 가져온다. Emacs 28 이후에 추가된 기능이 반영�
 
  ;; ====== Aesthetics and UI ======
  ;; Set to non-nil to flash!
- ;; visible-bell nil
+ visible-bell nil
 
  ;; TODO 2023-06-19 왜 갑자기 클라이언트 프레임 사이즈가 이상하지?!
  ;; Do force frame size to be a multiple of char size
- ;; frame-resize-pixelwise t
+ frame-resize-pixelwise t
 
  ;; ;; Emacsclient does not use full frame size (NIL 필수!)
- ;; frame-inhibit-implied-resize nil
+ frame-inhibit-implied-resize nil
 
  ;; Stretch cursor to the glyph width
  x-stretch-cursor t
  ;; Show trailing whitespaces
  show-trailing-whitespace t
  ;; Resize window combinations proportionally
- ;; window-combination-resize t
+ window-combination-resize t
  ;; Enable time in the mode-line
  ;; display-time-string-forms '((propertize (concat 24-hours ":" minutes)))
  ;; No ugly button for widgets
@@ -1361,7 +1348,7 @@ minemacs 설정을 가져온다. Emacs 28 이후에 추가된 기능이 반영�
  ;; Show unprettified symbol under cursor (when in `prettify-symbols-mode')
  ;; prettify-symbols-unprettify-at-point t
  ;; Make tooltips last a bit longer (default 10s)
- ;; tooltip-hide-delay 20
+ tooltip-hide-delay 20
  ;; Use small frames to display tooltips instead of the default OS tooltips
  use-system-tooltips nil
 
@@ -1409,7 +1396,7 @@ minemacs 설정을 가져온다. Emacs 28 이후에 추가된 기능이 반영�
  ;; compilation-skip-visited t
  ;; ;; Keep it readable
  ;; compilation-window-height 12
- )
+ ) ; end-of-setq
 
 ;; Kill minibuffer when switching by mouse to another window
 ;; Taken from: https://trey-jackson.blogspot.com/2010/04/emacs-tip-36-abort-minibuffer-when.html
@@ -1844,6 +1831,7 @@ auto-revert-interval
   "d"   "debug"
   "D"   "Diff/Compare"
   "e"   "errors"
+  ;; "E"   "Export"
   "f"   "files"
   "F"   "Frames"
   "g"   "git/vc"
@@ -1858,14 +1846,14 @@ auto-revert-interval
   "N"   "Navigation"
   "o"   "user bindings"
   "p"   "projects"
-  "P"   "Pandoc"
+  "P"   "Pandoc/export"
   "q"   "quit"
   "r"   "regs/rings"
   "s"   "search/symbol"
   "S"   "Spelling"
   "t"   "toggles"
   "T"   "Themes/UI"
-  "C-t" "toggles2"
+  "C-t" "toggles(2)"
   "C-v" "rectangles"
   "u"   "universals"
   "v"   "er/expand"
@@ -1881,14 +1869,14 @@ auto-revert-interval
 ```
 
 
-#### Spacemacs <kbd>major-mode</kbd> bindings {#spacemacs-major-mode-bindings}
+#### Spacemacs <kbd>major-mode</kbd> bindings : Org-mode {#spacemacs-major-mode-bindings-org-mode}
 
 
 
 ```elisp
 
 ;; Org-mode (citar and org-roam)
-(spacemacs/declare-prefix-for-mode 'org-mode "mB" "Bib/citar")
+(spacemacs/declare-prefix-for-mode 'org-mode "mB" "bib/citar")
 (spacemacs/set-leader-keys-for-major-mode 'org-mode
   "iT" 'bh/insert-inactive-timestamp
   "ic" 'citar-insert-citation
@@ -1896,6 +1884,8 @@ auto-revert-interval
   "Bn" 'citar-create-note
   "Bo" 'citar-open-note
   "Ba" 'citar-org-roam-ref-add
+  "er" 'org-reveal-export-to-html
+  "ep" 'org-hugo-export-wim-to-md
   )
 
 ```
@@ -1947,21 +1937,6 @@ something else, so let's change them.
 ```
 
 
-#### winner undo/redo {#winner-undo-redo}
-
-<span class="timestamp-wrapper"><span class="timestamp">[2023-05-28 Sun 20:38]</span></span>
-winner-mode allows you to navigate through window configurations.
-
-```elisp
-;; C-c <left>   winner-undo
-;; C-c <right>  winner-redo
-;; (define-key winner-mode-map (kbd "M-[") #'winner-undo)
-;; (define-key winner-mode-map (kbd "M-]") #'winner-redo)
-(define-key winner-mode-map (kbd "s-[") #'winner-undo)
-(define-key winner-mode-map (kbd "s-]") #'winner-redo)
-```
-
-
 #### projectile `C-x p` {#projectile-c-x-p}
 
 먼저 project built-in 에 의존성이 있는 패키지들을 제거한다. 예를 들어
@@ -1994,17 +1969,14 @@ However this one I use often, generally in org or text buffers.
 (spacemacs/set-leader-keys "oR" 'revert-buffer)
 ```
 
-<!--list-separator-->
+옮길 것 KEY BINDING
+<span class="timestamp-wrapper"><span class="timestamp">[2023-05-10 Wed 11:18]</span></span>
 
-- <span class="org-todo todo TODO">TODO</span>  옮길 것 KEY BINDING
-
-
-
-    ```elisp
-    (spacemacs/set-leader-keys "oo" 'outline-minor-mode)
-    (spacemacs/set-leader-keys "o1" 'fontaine-set-preset)
-    (spacemacs/set-leader-keys "o2" 'fontaine-set-face-font)
-    ```
+```elisp
+(spacemacs/set-leader-keys "oo" 'outline-minor-mode)
+(spacemacs/set-leader-keys "o1" 'fontaine-set-preset)
+(spacemacs/set-leader-keys "o2" 'fontaine-set-face-font)
+```
 
 
 #### <span class="org-todo todo TODO">TODO</span> Spacemacs <kbd>custom</kbd> bindings {#spacemacs-custom-bindings}
@@ -2542,280 +2514,6 @@ The return value is of the form: (cons pos1 pos2)."
 ```
 
 
-### Fontaine (font configurations) {#fontaine--font-configurations}
-
-
-
-```elisp
-;;;; Fontaine (font configurations)
-
-;; Read the manual: <https://protesilaos.com/emacs/fontaine>
-
-;; +------------+------------+
-;; | 일이삼사오 | 일이삼사오 |
-;; +------------+------------+
-;; | ABCDEFGHIJ | ABCDEFGHIJ |
-;; +------------+------------+
-;; | 1234567890 | 1234567890 |
-;; +------------+------------+
-;; | 일이삼사오 | 일이삼사오 |
-;; | abcdefghij | abcdefghij |
-;; +------------+------------+
-
-;; terminal-mode is nil
-;; A narrow focus package for naming font configurations and then selecting them.
-;; (defun jh-visual/init-fontaine ()
-(use-package fontaine
-  :if window-system
-  :demand
-  :init
-  ;; This is defined in Emacs C code: it belongs to font settings.
-  ;; (setq x-underline-at-descent-line nil) ; conflict with centaur-tabs
-
-  ;; And this is for Emacs28.
-  (setq-default text-scale-remap-header-line t)
-
-  ;; This is the default value.  Just including it here for
-  ;; completeness.
-  ;; (setq fontaine-latest-state-file (concat dotspacemacs-directory "var/fontaine-latest-state.eld"))
-
-  ;; | Family                       | Shapes | Spacing | Style      | Ligatures |
-  ;; |------------------------------+--------+---------+------------+-----------|
-  ;; | Sarasa UI K Nerd Font        | Sans   | Compact | Monospaced | Yes       |
-  ;; | Sarasa Term K Nerd Font      | Sans   | Compact | Monospaced | Yes       |
-  ;; | Sarasa Term Slab K Nerd Font | Slab   | Compact | Monospaced | Yes       |
-  ;; | Pretendard Variable          | Sans   |         |            | No        |
-
-  ;; Weights :: Thin ExtraLight Light Regular Medium SemiBold Bold ExtraBold Heavy
-  ;; Slopes :: Upright Oblique Italic
-  ;; Width :: Normal Extended
-
-  :config
-  (setq fontaine-presets
-        ;; 120, 136, 151, 211
-        '(
-          (birdview
-           :default-height 80)
-          (small
-           :default-height 120)
-          (regular
-           :default-height 136)
-          (large
-           :default-height 151)
-          (presentation
-           :default-height 180
-           :line-spacing 5
-           :fixed-pitch-family "Sarasa Term Slab K Nerd Font"
-           :fixed-pitch-serif-family "Sarasa Term Slab K Nerd Font"
-           :default-width extended
-           :bold-weight extrabold)
-          (presentation-large
-           :inherit presentation
-           :default-height 211)
-          (t
-           ;; Following Prot’s example, keeping these for for didactic purposes.
-           :line-spacing 3
-           :default-family "Sarasa Term K Nerd Font"
-           :default-weight regular
-           :default-height 136
-           :fixed-pitch-family nil ; "Sarasa Term Slab K Nerd Font"
-           :fixed-pitch-weight nil
-           :fixed-pitch-height nil
-           ;; :fixed-pitch-serif-family "Sarasa Term Slab K Nerd Font" ; nil falls back to :default-family
-           :fixed-pitch-serif-family nil
-           :fixed-pitch-serif-weight nil
-           :fixed-pitch-serif-height nil
-           :variable-pitch-family "Pretendard Variable"
-           :variable-pitch-weight nil
-           :variable-pitch-height nil
-           :bold-family nil
-           ;; :bold-family "Sarasa Term Slab K Nerd Font"
-           ;; :bold-weight bold
-           ;; :bold-width extended
-           :italic-family nil
-           ;; :italic-family "Sarasa Term Slab K Nerd Font"
-           :italic-slant italic)))
-
-  ;; Set last preset or fall back to desired style from `fontaine-presets'.
-  ;; (fontaine-set-preset (or (fontaine-restore-latest-preset) 'regular))
-  ;; (fontaine-set-preset 'regular)
-  ;; (set-fontset-font t 'hangul (font-spec :family (face-attribute 'default :family))) ; t or nil ?
-
-  ;; The other side of `fontaine-restore-latest-preset'.
-  ;; (add-hook 'kill-emacs-hook #'fontaine-store-latest-preset)
-
-  ;; load @ start-up
-  (defun my/fontaine-load-preset ()
-    (interactive)
-    (fontaine-set-preset 'regular)
-    ;; (fontaine-set-preset (or (fontaine-restore-latest-preset) 'regular))
-    (set-fontset-font t 'hangul (font-spec :family (face-attribute 'default :family)))
-
-    ;; load my default theme
-    (modus-themes-toggle)
-    (message "my/fontaine-load-preset")
-    )
-  (add-hook 'spacemacs-post-user-config-hook #'my/fontaine-load-preset 90)
-
-  ;; load @ theme change
-  (defun my/fontaine-apply-current-preset ()
-    (interactive)
-    (fontaine-apply-current-preset)
-    (set-fontset-font t 'hangul (font-spec :family (face-attribute 'default :family)))
-
-    (kind-icon-reset-cache)
-    (message "my/fontaine-apply-current-preset")
-    )
-  (add-hook 'spacemacs-post-theme-change-hook 'my/fontaine-apply-current-preset)
-
-  ;; (defun my/fontaine-kind-icons-reset-cache ()
-  ;;   (interactive)
-  ;;   (message "my/fontaine-kind-icons-reset-cache")
-  ;;   (kind-icon-reset-cache)
-  ;;   )
-  ;; (add-hook 'fontaine-set-preset-hook 'my/fontaine-kind-icons-reset-cache)
-  )
-;; )
-```
-
-
-### Presentation with logos {#presentation-with-logos}
-
-잘 안된다. 커스텀이 필요할듯
-<span class="timestamp-wrapper"><span class="timestamp">[2023-05-09 Tue 15:38]</span></span>
-
-```elisp
-(use-package olivetti
-  :custom
-  ;; (olivetti-body-width 0.7) ; nil
-  (olivetti-minimum-body-width 100) ; 80
-  (olivetti-recall-visual-line-mode-entry-state t))
-
-(use-package logos
-  :after olivetti
-  :demand
-  :init
-
-  ;; If you want to use outlines instead of page breaks (the ^L):
-  (setq logos-outlines-are-pages t)
-  ;; This is the default value for the outlines:
-  (setq logos-outline-regexp-alist
-        `((emacs-lisp-mode . "^;;;+ ")
-          (org-mode . "^\\*+ +")
-          (markdown-mode . "^\\#+ +")
-          (t . ,(if (boundp 'outline-regexp) outline-regexp logos--page-delimiter))))
-
-  ;; These apply when `logos-focus-mode' is enabled.  Their value is
-  ;; buffer-local.
-  (setq-default logos-hide-cursor nil)
-  (setq-default logos-hide-mode-line nil)
-  (setq-default logos-hide-buffer-boundaries t)
-  (setq-default logos-hide-fringe t)
-  (setq-default logos-variable-pitch nil) ; see my `fontaine' configurations
-  (setq-default logos-buffer-read-only nil)
-  (setq-default logos-scroll-lock nil)
-  (setq-default logos-olivetti t)
-
-  :config
-  ;; I don't need to do `with-eval-after-load' for the `modus-themes' as
-  ;; I always load them before other relevant potentially packages.
-  (add-hook 'modus-themes-after-load-theme-hook #'logos-update-fringe-in-buffers)
-
-  (let ((map global-map))
-    (define-key map [remap narrow-to-region] #'logos-narrow-dwim)
-    (define-key map [remap forward-page] #'logos-forward-page-dwim)
-    (define-key map [remap backward-page] #'logos-backward-page-dwim)
-    (define-key map (kbd "<f8>") #'logos-focus-mode)
-    (define-key map (kbd "M-]") #'logos-forward-page-dwim)
-    (define-key map (kbd "M-[") #'logos-backward-page-dwim)
-    )
-
-  (defun my/logos-presentation-toggle ()
-    (interactive)
-    (if (eq logos-focus-mode t)
-        (my/logos-presentation-off)
-      (my/logos-presentation-on)))
-
-  (defun my/logos-presentation-on ()
-    (interactive)
-    (setq-local  org-hide-emphasis-markers t)
-    ;; (call-interactively 'logos-narrow-dwim)
-    (olivetti-mode t)
-
-    (org-overview)
-    ;; (org-show-entry)
-    ;; (org-show-children)
-    (org-hide-properties)
-
-    (setq-local header-line-format nil)
-
-    ;; (setq-local face-remapping-alist '(
-    ;;                                    ;;(default (:height 1.5) variable-pitch)
-    ;;                                    ;; (header-line (:height 2.5) variable-pitch)
-    ;;                                    (org-document-title (:height 1.55) org-document-title)
-    ;;                                    (org-level-1 (:height 1.5) variable-pitch)
-    ;;                                    (org-level-2 (:height 1.25) variable-pitch)
-    ;;                                    ;; (org-code (:height 1.55) org-code)
-    ;;                                    ;; (org-verbatim (:height 1.55) org-verbatim)
-    ;;                                    ;; (org-block (:height 1.25) org-block)
-    ;;                                    ;; (org-block-begin-line (:height 0.7) org-block))
-    ;;             )
-
-    (spacemacs/toggle-mode-line-off)
-    (spacemacs/toggle-fill-column-indicator-off)
-    (spacemacs/toggle-line-numbers-off)
-
-    (tab-bar-rename-tab "PRESENTATION" 1)
-    ;; (fontaine-store-latest-preset) ; backup
-
-    (fontaine-set-preset 'presentation)
-    (git-gutter-mode -1)
-    (sideline-mode -1)
-
-    )
-
-  (defun my/logos-presentation-off ()
-    (interactive)
-    ;; (call-interactively 'widen)
-    (olivetti-mode -1)
-
-    (org-show-properties)
-    ;; (setq-local  org-hide-emphasis-markers nil)
-    (spacemacs/toggle-mode-line-on)
-    (spacemacs/toggle-fill-column-indicator-on)
-    (spacemacs/toggle-line-numbers-on)
-    ;; (display-line-numbers-mode t)
-
-    ;; (fontaine-restore-latest-preset) ; restore
-    (tab-bar-rename-tab "WORK-SPACE" 1)
-
-    ;; (setq-local face-remapping-alist '((default variable-pitch default)))
-
-    (fontaine-set-preset 'regular)
-    (git-gutter-mode t)
-    (sideline-mode t)
-    )
-
-  ;; place point at the top when changing pages, but not in `prog-mode'
-  (defun prot/logos--recenter-top ()
-    "Use `recenter' to reposition the view at the top."
-    (unless (derived-mode-p 'prog-mode)
-      (recenter 1))) ; Use 0 for the absolute top
-  (add-hook 'logos-page-motion-hook #'prot/logos--recenter-top)
-
-  ;; Also consider adding keys to `logos-focus-mode-map'.  They will take
-  ;; effect when `logos-focus-mode' is enabled.
-  ;; Make EWW look like the rest of Emacs
-  (setq shr-max-width fill-column)
-  (setq shr-use-fonts nil)
-  )
-
-(spacemacs/set-leader-keys-for-major-mode 'org-mode
-  "T1" 'my/logos-presentation-on
-  "T2" 'my/logos-presentation-off)
-```
-
-
 ### <span class="org-todo todo TODO">TODO</span> Migration the layer {#migration-the-layer}
 
 <span class="timestamp-wrapper"><span class="timestamp">[2023-04-04 Tue 18:31]</span></span>
@@ -2828,8 +2526,8 @@ elisp :tangle (if (&gt;= emacs-major-version 28) "yes" "no")
 
 ```elisp
 ;; Use built-in packages
-(if (> emacs-major-version 28)
-    (require 'emacsql-sqlite-builtin))
+;; (if (> emacs-major-version 28)
+;;     (require 'emacsql-sqlite-builtin))
 
 ;; Parentheses (show-paren-mode)
 (if (> emacs-major-version 28)
@@ -2945,141 +2643,6 @@ command-log-mode-auto-show t)))
         (with-temp-file tmp-file (insert data))
         (when (stringp outfile) (copy-file tmp-file outfile))
         (message "Screenshot saved to %s" (or outfile tmp-file))))
-    ```
-
-
-#### All the dictionaries {#all-the-dictionaries}
-
-22/12/31--16:00 :: 사전도 기능을 정리를 해야한다.
-2023-02-26 분류 해서 정리할 것
-2023-06-10 다시 설정한다.
-
-```elisp
-(require 'lexic)
-(require 'external-dict)
-
-;; extract from spacemacs-language
-(use-package define-word
-  :defer t
-  :init
-  (spacemacs/set-leader-keys
-    "xwd" 'define-word-at-point))
-
-;; agzam-dot-spacemacs/layers/ag-lang-tools/packages.el:3
-;; sdcv-mode is for browsing Stardict format dictionaries in Emacs
-;; to get Webster’s Revised Unabridged Dictionary
-;; 1) download it from https://s3.amazonaws.com/jsomers/dictionary.zip
-;; 2) unzip it twice and put into ~/.stardict/dic
-;; 3) Install sdcv, a command-line utility for accessing StarDict dictionaries
-
-(use-package mw-thesaurus
-  :defer t
-  :config
-  (define-key mw-thesaurus-mode-map [remap evil-record-macro] #'mw-thesaurus--quit)
-  ;; (add-hook 'mw-thesaurus-mode-hook 'variable-pitch-mode)
-  (spacemacs/set-leader-keys
-    "xlm" #'mw-thesaurus-lookup-dwim)
-
-  (add-to-list
-   'display-buffer-alist
-   `(,mw-thesaurus-buffer-name
-     (display-buffer-reuse-window
-      display-buffer-in-direction)
-     (direction . right)
-     (window . root)
-     (window-width . 0.3))))
-
-(defun ag/region-or-word-at-point-str ()
-  "Returns string of selected region or word at point"
-  (let* ((bds (if (use-region-p)
-                  (cons (region-beginning) (region-end))
-                (bounds-of-thing-at-point 'word)))
-         (p1 (car bds))
-         (p2 (cdr bds)))
-    (buffer-substring-no-properties p1 p2)))
-
-(use-package sdcv
-  :config
-  (add-hook 'sdcv-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
-
-  (defun sdcv-search-at-point ()
-    (interactive)
-    (sdcv-search (ag/region-or-word-at-point-str) nil nil t))
-
-  (spacemacs/set-leader-keys "xll" #'sdcv-search-at-point)
-
-  (evil-define-key 'normal sdcv-mode-map "q" #'sdcv-return-from-sdcv)
-  (evil-define-key 'normal sdcv-mode-map "n" #'sdcv-next-entry)
-  (evil-define-key 'normal sdcv-mode-map "p" #'sdcv-previous-entry)
-  (evil-define-key 'normal sdcv-mode-map (kbd "RET") #'sdcv-search-at-point)
-  (evil-define-key 'normal sdcv-mode-map "a" #'sdcv-search-at-point)
-
-  (add-to-list
-   'display-buffer-alist
-   `(,sdcv-buffer-name
-     (display-buffer-reuse-window
-      display-buffer-in-direction)
-     (direction . right)
-     (window . root)
-     (window-width . 0.25))))
-
-(use-package define-it
-  :config
-  (setq
-   define-it-show-google-translate nil
-   define-it-show-header nil)
-
-  (spacemacs/defer-until-after-user-config  ; otherwise, spacemacs-default layer would override the binding
-   (lambda ()                               ; and set it to `duplicate-line-or-region', and it's pretty useles for me
-     (spacemacs/set-leader-keys "xld" #'define-it-at-point)))
-
-  ;; it doesn't pop to the buffer automatically, when definition is fetched
-  (defun define-it--find-buffer (x)
-    (let ((buf (format define-it--buffer-name-format define-it--current-word)))
-      (pop-to-buffer buf)))
-
-  (advice-add 'define-it--in-buffer :after #'define-it--find-buffer)
-  (add-to-list
-   'display-buffer-alist
-   '("\\*define-it:"
-     (display-buffer-reuse-window
-      display-buffer-in-direction)
-     (direction . right)
-     (window . root)
-     (window-width . 0.25))))
-
-;; 확인이 필요하다.
-;; (with-eval-after-load 'ispell
-;;   ;; printing a message for every word has a negative performance impact
-;;   (setq flyspell-issue-message-flag nil)
-;;   ;; Change dictionary with the input-method
-;;   (defun change-dict-after-toggle-input (_ _)
-;;     (ispell-change-dictionary
-;;      (if (string= current-input-method "korean-hangul")
-;;          "ko"
-;;        nil)))
-;;   (advice-add 'toggle-input-method :after 'change-dict-after-toggle-input))
-```
-
-<!--list-separator-->
-
--  Redefine `global-key`
-
-    ```elisp
-    ;; 'C-c d'
-    (global-set-key (kbd "C-c d i") 'define-it-at-point)
-    (global-set-key (kbd "C-c d w") 'define-word-at-point)
-    (global-set-key (kbd "C-c d l") 'lexic-search)
-    (global-set-key (kbd "C-c d s") 'sdcv-search-at-point)
-    (global-set-key (kbd "C-c d e") 'external-dict-dwim)
-    (global-set-key (kbd "C-c d m") 'mw-thesaurus-lookup-dwim)
-    (global-set-key (kbd "C-c d d") 'dictionary-search)
-
-    ;; "xgo" 'google-translate-paragraphs-overlay
-    ;; "xgQ" 'google-translate-query-translate-reverse
-    ;; "xgq" 'google-translate-query-translate
-    ;; "xgT" 'google-translate-at-point-reverse
-    ;; "xgt" 'google-translate-at-point
     ```
 
 
@@ -3252,6 +2815,23 @@ command-log-mode-auto-show t)))
 ```
 
 
+#### dired-preview {#dired-preview}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2023-07-06 Thu 10:45]</span></span>
+정식 등록 되면 옮기자.
+
+```elisp
+  (use-package dired-preview
+    :after dired
+    :demand
+    :config
+    ;; (add-hook 'dired-mode-hook #'dired-preview-mode)
+    (spacemacs/set-leader-keys-for-major-mode 'dired-mode
+      "p" 'dired-posframe-mode)
+  )
+```
+
+
 ### <kbd>Org-mode</kbd> Customizations {#org-mode-customizations}
 
 
@@ -3272,12 +2852,10 @@ only consider things to be modified if 12 hours have passed.
 
 ```elisp
 (with-eval-after-load 'ox-hugo
-  (setq org-hugo-auto-set-lastmod 't
-        org-hugo-section "notes"
-        org-hugo-suppress-lastmod-period 43200.0
-        org-hugo-paired-shortcodes "hint details mermaid sidenote"
-        ;; org-hugo-front-matter-format yaml ; toml default
-        )
+  (setq org-hugo-auto-set-lastmod t
+        org-hugo-suppress-lastmod-period 43200.0)
+  (setq org-hugo-section "notes")
+  (setq org-hugo-paired-shortcodes "hint details mermaid sidenote")
 
   ;; https://ox-hugo.scripter.co/doc/formatting/
   ;; if org-hugo-use-code-for-kbd is non-nil
@@ -3310,7 +2888,9 @@ only consider things to be modified if 12 hours have passed.
   )
 
 ;; export this file on buffer
-(spacemacs/set-leader-keys "PP" #'org-hugo-export-wim-to-md)
+(spacemacs/set-leader-keys "Pe" #'org-export-dispatch)
+(spacemacs/set-leader-keys "Pr" #'org-reveal-export-to-html)
+(spacemacs/set-leader-keys "Pp" #'org-hugo-export-wim-to-md)
 ```
 
 
