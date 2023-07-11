@@ -9,13 +9,13 @@ headless = false
 weight = 10
 +++
 
--   [📰 Essays](/posts)
--   [🗃 Notes](/notes)
--   [🏛 References](/refs)
--   [📢 Talks](/talks)
--   [🏷 Terms](/terms)
--   [🧰 DotFiles](/configs)
-    -   [🎮 emacs.d](/configs/emacs)
+-   [Essays](/posts)
+-   [Notes](/notes)
+-   [References](/refs)
+-   [Talks](/talks)
+-   [Terms](/terms)
+-   [DotFiles](/configs)
+    -   [emacs.d](/configs/emacs)
 <!-- -   [All tags](/tags) -->
 <!-- -   [📚 Docs](/docs) -->
 

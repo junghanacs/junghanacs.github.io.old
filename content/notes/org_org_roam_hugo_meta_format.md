@@ -182,13 +182,21 @@ Below, the "References" heading will be auto-inserted.
     </div>
 
 
-## 일부 내용 숨기기 (noexport) {#일부-내용-숨기기--noexport}
+## No Export {#no-export}
 
 블로그 리포는 공개되어 있다. 여기에 Markdown 파일이 그대로 있다. 숨기고 싶은
 또는 숨겨야 하는 내용이 분명히 있을 것이다. 그렇다면 org 파일에서 아래와 같은
 방법으로 숨기면 된다. 아예 private 프로퍼티를 넣고 ox-hugo 에서 걸러주는
 방법도 있다. 나는 왠만하면 다 내용을 오픈하고자 한다. 다만 문제가 되거나
 퀄리티가 많이 부족한 부분은 `헤딩` 수준에서 숨기길 원한다.
+
+
+### PRIVATE 설정 {#private-설정}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2023-07-10 Mon 10:10] </span></span> 내보내기 할 때 연결 된 노트가 미리 내보내기 되어 있어야
+한다. 불편한 부분이다. 아직 내보내기 할 상태가 아닌데도 내보내기 할 필요가
+있을까? 그렇다면 방법은 :PRIVATE: 를 프로퍼티에 넣는다. (커스텀 수정)
+URL 이 있다면 URL 링크로 변경 되고 그게 아니라면 텍스트로 표시 된다.
 
 
 ### noexport 태그 활용 {#noexport-태그-활용}

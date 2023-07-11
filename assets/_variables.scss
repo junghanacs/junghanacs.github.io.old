@@ -1,8 +1,12 @@
-// $font-size-base: 18px;
+$font-size-base: 17px;
 
-/* $header-height: 3.5rem !default; */
-// $menu-width: 16rem;
-// $toc-width: 25rem;
+// $header-height: 3.5rem;
+$menu-width: 12rem;
+$toc-width: 14rem;
+
+// $body-min-width: 30rem; // default 20
+// $container-max-width: 80rem !default;
+$mobile-breakpoint: $menu-width + $body-min-width * 1.6 + $toc-width;
 
 // Themes
 @mixin theme-light {

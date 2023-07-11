@@ -1,5 +1,5 @@
 +++
-title = "Glossary"
+title = "glossary-general"
 author = ["Junghan Kim"]
 date = 2023-06-17T00:00:00+09:00
 publishDate = 2023-06-19
@@ -15,8 +15,9 @@ draft = false
 <!--more-->
 
 Try using Org Glossary for all your <a class="org-gls" href="#gls.1" id="glsr.1.1">glosses</a>, acronyms, and more within your
-favourite  (<a class="org-gls" href="#gls.4" id="glsr.4.1">ML</a>) with a <a class="org-gls" href="#gls.6" id="glsr.6.1">unicorn</a> mascot. It attempts to provide powerful
-functionality, in keeping with the simplicity of the Org <a class="org-gls" href="#gls.4" id="glsr.4.2">ML</a> we all know and
+favourite Markup Language
+ (<a class="org-gls" href="#gls.6" id="glsr.6.1">ML</a>) with a <a class="org-gls" href="#gls.14" id="glsr.14.1">unicorn</a> mascot. It attempts to provide powerful
+functionality, in keeping with the simplicity of the Org <a class="org-gls" href="#gls.6" id="glsr.6.2">ML</a> we all know and
 love. <a class="org-gls" href="#gls.3" id="glsr.3.1">Org mode</a> 는 사랑입니다.
 
 {{< details "Details" >}}
@@ -44,7 +45,7 @@ Text Substitutions
 
 ## Acronyms {#acronyms}
 
-**<span class="org-glsdef" id="gls.4">ML</span>**&emsp;&ensp;<a class="org-glsdef" href="#glsr.4.1">1</a>, <a class="org-glsdef" href="#glsr.4.2">2</a>
+**<span class="org-glsdef" id="gls.6">ML</span>**&emsp;Markup Language&ensp;<a class="org-glsdef" href="#glsr.6.1">1</a>, <a class="org-glsdef" href="#glsr.6.2">2</a>
 
 
 ## Glossary {#glossary}
@@ -56,4 +57,4 @@ Text Substitutions
 
 ## Index {#index}
 
-<span class="org-glsdef" id="gls.6">Unicorn</span>&ensp;<a class="org-glsdef" href="#glsr.6.1">1</a>
+<span class="org-glsdef" id="gls.14">Unicorn</span>&ensp;<a class="org-glsdef" href="#glsr.14.1">1</a>
