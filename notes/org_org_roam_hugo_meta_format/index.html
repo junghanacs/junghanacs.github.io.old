@@ -20,11 +20,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://junghanacs.com/notes/org_org_roam_hugo_meta_format/" /><meta property="article:section" content="notes" />
 <meta property="article:published_time" content="2023-06-20T00:00:00+09:00" />
-<meta property="article:modified_time" content="2023-07-06T21:10:06+09:00" />
-<title>Ox-Hugo Blogging Advanced Tips and Examples 🌲 | Junghanacs🧠</title>
+<meta property="article:modified_time" content="2023-07-11T11:14:25+09:00" />
+<title>Ox-Hugo Blogging Advanced Tips and Examples 🌲 | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.6b389c35d797929aafa8227de8b05857dd3a1a4d82cacbb5f0b40ff19bfefcb8.css" integrity="sha256-azicNdeXkpqvqCJ96LBYV906Gk2Cysu18LQP8Zv&#43;/Lg=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.c32d89bae53eb12b7a1ac6396afcfa5a548809434d8fabf340b0f3d241d20241.css" integrity="sha256-wy2JuuU&#43;sSt6GsY5avz6WlSICUNNj6vzQLDz0kHSAkE=" crossorigin="anonymous">
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYRB327HE6"></script>
@@ -52,7 +52,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Junghanacs🧠</span>
+  <a class="flex align-center" href="/"><span>Junghanacs</span>
   </a>
 </h2>
 
@@ -70,20 +70,20 @@ https://github.com/alex-shpak/hugo-book
 
   <ul>
 <li>
-  <a href="/posts/">📰 Essays</a></li>
+  <a href="/posts/">Essays</a></li>
 <li>
-  <a href="/notes/">🗃 Notes</a></li>
+  <a href="/notes/">Notes</a></li>
 <li>
-  <a href="/refs/">🏛 References</a></li>
+  <a href="/refs/">References</a></li>
 <li>
-  <a href="/talks/">📢 Talks</a></li>
+  <a href="/talks/">Talks</a></li>
 <li>
-  <a href="/terms/">🏷 Terms</a></li>
+  <a href="/terms/">Terms</a></li>
 <li>
-  <a href="/configs/">🧰 DotFiles</a>
+  <a href="/configs/">DotFiles</a>
 <ul>
 <li>
-  <a href="/configs/emacs/">🎮 emacs.d</a></li>
+  <a href="/configs/emacs/">emacs.d</a></li>
 </ul>
 </li>
 </ul>
@@ -103,7 +103,7 @@ https://github.com/alex-shpak/hugo-book
   
   <li>
     <a href="https://github.com/junghanacs"  target="_blank" rel="noopener">
-        📍 Github Link
+        Github Link
       </a>
   </li>
   
@@ -150,46 +150,39 @@ https://github.com/alex-shpak/hugo-book
 
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#check-lists"><span class="org-todo todo TODO">TODO</span> <code>[1/2]</code> Check Lists</a></li>
+    <li><a href="#heading">Heading</a>
       <ul>
-        <li><a href="#check-lists"><span class="org-todo todo TODO">TODO</span> <code>[1/2]</code> Check Lists</a></li>
-        <li><a href="#heading">Heading</a>
-          <ul>
-            <li><a href="#heading-2">Heading 2</a>
-              <ul>
-                <li><a href="#heading-3">Heading 3</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#sidenote-추가-정보">Sidenote 추가 정보</a></li>
-        <li><a href="#markup">Markup</a></li>
-        <li><a href="#summary-블록">Summary 블록</a></li>
-        <li><a href="#citation-서지-정보">Citation 서지 정보</a></li>
-        <li><a href="#references">References</a></li>
-        <li><a href="#footnote-각주-관리">Footnote 각주 관리</a></li>
-        <li><a href="#코드-인용-예시-블록">코드, 인용, 예시 블록</a></li>
-        <li><a href="#일부-내용-숨기기--noexport">일부 내용 숨기기 (noexport)</a>
-          <ul>
-            <li><a href="#noexport-태그-활용">noexport 태그 활용</a></li>
-            <li><a href="#파일-숨기기--비추">파일 숨기기 (비추)</a></li>
-          </ul>
-        </li>
-        <li><a href="#태그를-키워드로-변환">태그를 키워드로 변환</a></li>
-        <li><a href="#shotcodes-지원">Shotcodes 지원</a>
-          <ul>
-            <li><a href="#hint-and-details">hint and details</a></li>
-            <li><a href="#diagram"><span class="underline">mermaid</span> diagram</a></li>
-            <li><a href="#diagram"><span class="org-todo todo TODO">TODO</span> <span class="underline">d2</span> diagram</a></li>
-            <li><a href="#details-and-summary">Details and Summary</a></li>
-            <li><a href="#katex-and-math-typesetting"><span class="org-todo todo TODO">TODO</span> katex and math typesetting</a></li>
-            <li><a href="#결과에-caption-넣는-방법"><span class="org-todo todo TODO">TODO</span> 결과에 <kbd>caption</kbd> 넣는 방법</a></li>
-          </ul>
-        </li>
-        <li><a href="#org-translate-블록-번역">Org-translate 블록 번역</a></li>
-        <li><a href="#header-template">Header Template</a></li>
+        <li><a href="#heading-2">Heading 2</a></li>
       </ul>
     </li>
+    <li><a href="#sidenote-추가-정보">Sidenote 추가 정보</a></li>
+    <li><a href="#markup">Markup</a></li>
+    <li><a href="#summary-블록">Summary 블록</a></li>
+    <li><a href="#citation-서지-정보">Citation 서지 정보</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#footnote-각주-관리">Footnote 각주 관리</a></li>
+    <li><a href="#코드-인용-예시-블록">코드, 인용, 예시 블록</a></li>
+    <li><a href="#no-export">No Export</a>
+      <ul>
+        <li><a href="#private-설정">PRIVATE 설정</a></li>
+        <li><a href="#noexport-태그-활용">noexport 태그 활용</a></li>
+        <li><a href="#파일-숨기기--비추">파일 숨기기 (비추)</a></li>
+      </ul>
+    </li>
+    <li><a href="#태그를-키워드로-변환">태그를 키워드로 변환</a></li>
+    <li><a href="#shotcodes-지원">Shotcodes 지원</a>
+      <ul>
+        <li><a href="#hint-and-details">hint and details</a></li>
+        <li><a href="#diagram"><span class="underline">mermaid</span> diagram</a></li>
+        <li><a href="#diagram"><span class="org-todo todo TODO">TODO</span> <span class="underline">d2</span> diagram</a></li>
+        <li><a href="#details-and-summary">Details and Summary</a></li>
+        <li><a href="#katex-and-math-typesetting"><span class="org-todo todo TODO">TODO</span> katex and math typesetting</a></li>
+        <li><a href="#결과에-caption-넣는-방법"><span class="org-todo todo TODO">TODO</span> 결과에 <kbd>caption</kbd> 넣는 방법</a></li>
+      </ul>
+    </li>
+    <li><a href="#org-translate-블록-번역">Org-translate 블록 번역</a></li>
+    <li><a href="#header-template">Header Template</a></li>
   </ul>
 </nav>
 
@@ -216,7 +209,7 @@ https://github.com/alex-shpak/hugo-book
     <strong aria-hidden="true"> Updated: </strong>Jun 20, 2023
     
     
-    (Lastmod: Jul 6, 2023)
+    (Lastmod: Jul 11, 2023)
     
     
   </div>
@@ -454,15 +447,23 @@ citar 사용법을 여기서 다룰 것은 아니다. 아무튼 깔끔하게 들
 </div>
 </li>
 </ul>
-<h2 id="일부-내용-숨기기--noexport">
-  일부 내용 숨기기 (noexport)
-  <a class="anchor" href="#%ec%9d%bc%eb%b6%80-%eb%82%b4%ec%9a%a9-%ec%88%a8%ea%b8%b0%ea%b8%b0--noexport">#</a>
+<h2 id="no-export">
+  No Export
+  <a class="anchor" href="#no-export">#</a>
 </h2>
 <p>블로그 리포는 공개되어 있다. 여기에 Markdown 파일이 그대로 있다. 숨기고 싶은
 또는 숨겨야 하는 내용이 분명히 있을 것이다. 그렇다면 org 파일에서 아래와 같은
 방법으로 숨기면 된다. 아예 private 프로퍼티를 넣고 ox-hugo 에서 걸러주는
 방법도 있다. 나는 왠만하면 다 내용을 오픈하고자 한다. 다만 문제가 되거나
 퀄리티가 많이 부족한 부분은 <code>헤딩</code> 수준에서 숨기길 원한다.</p>
+<h3 id="private-설정">
+  PRIVATE 설정
+  <a class="anchor" href="#private-%ec%84%a4%ec%a0%95">#</a>
+</h3>
+<p><span class="timestamp-wrapper"><span class="timestamp">[2023-07-10 Mon 10:10] </span></span> 내보내기 할 때 연결 된 노트가 미리 내보내기 되어 있어야
+한다. 불편한 부분이다. 아직 내보내기 할 상태가 아닌데도 내보내기 할 필요가
+있을까? 그렇다면 방법은 :PRIVATE: 를 프로퍼티에 넣는다. (커스텀 수정)
+URL 이 있다면 URL 링크로 변경 되고 그게 아니라면 텍스트로 표시 된다.</p>
 <h3 id="noexport-태그-활용">
   noexport 태그 활용
   <a class="anchor" href="#noexport-%ed%83%9c%ea%b7%b8-%ed%99%9c%ec%9a%a9">#</a>
@@ -1006,6 +1007,8 @@ lastmod 는 직접 수정 한다. 그래야 깔끔하다.</p>
 
    
 
+   
+
 
 <hr>
 
@@ -1031,9 +1034,9 @@ lastmod 는 직접 수정 한다. 그래야 깔끔하다.</p>
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/27f6c9e8beb94b875fd9a48c8def46dbc0e08be7" title='Last modified by junghan0611 | 2023-07-06' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/0a2b57e601aea4f54a48c573afe61ec78c06f6d0" title='Last modified by junghan0611 | 2023-07-11' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2023-07-06</span>
+      <span>2023-07-11</span>
     </a>
   </div>
 
@@ -1051,7 +1054,7 @@ lastmod 는 직접 수정 한다. 그래야 깔끔하다.</p>
         <footer class="footer">
   <br>
   <br>
-  <span>&copy; 2023 <a href="https://junghanacs.com/">Junghanacs🧠</a></span>
+  <span>&copy; 2023 <a href="https://junghanacs.com/">Junghanacs</a></span>
   <span>
     published with
     <a href="https://www.gnu.org/software/emacs" rel="noopener noreferrer">Emacs</a> +
@@ -1086,46 +1089,39 @@ lastmod 는 직접 수정 한다. 그래야 깔끔하다.</p>
 
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#check-lists"><span class="org-todo todo TODO">TODO</span> <code>[1/2]</code> Check Lists</a></li>
+    <li><a href="#heading">Heading</a>
       <ul>
-        <li><a href="#check-lists"><span class="org-todo todo TODO">TODO</span> <code>[1/2]</code> Check Lists</a></li>
-        <li><a href="#heading">Heading</a>
-          <ul>
-            <li><a href="#heading-2">Heading 2</a>
-              <ul>
-                <li><a href="#heading-3">Heading 3</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#sidenote-추가-정보">Sidenote 추가 정보</a></li>
-        <li><a href="#markup">Markup</a></li>
-        <li><a href="#summary-블록">Summary 블록</a></li>
-        <li><a href="#citation-서지-정보">Citation 서지 정보</a></li>
-        <li><a href="#references">References</a></li>
-        <li><a href="#footnote-각주-관리">Footnote 각주 관리</a></li>
-        <li><a href="#코드-인용-예시-블록">코드, 인용, 예시 블록</a></li>
-        <li><a href="#일부-내용-숨기기--noexport">일부 내용 숨기기 (noexport)</a>
-          <ul>
-            <li><a href="#noexport-태그-활용">noexport 태그 활용</a></li>
-            <li><a href="#파일-숨기기--비추">파일 숨기기 (비추)</a></li>
-          </ul>
-        </li>
-        <li><a href="#태그를-키워드로-변환">태그를 키워드로 변환</a></li>
-        <li><a href="#shotcodes-지원">Shotcodes 지원</a>
-          <ul>
-            <li><a href="#hint-and-details">hint and details</a></li>
-            <li><a href="#diagram"><span class="underline">mermaid</span> diagram</a></li>
-            <li><a href="#diagram"><span class="org-todo todo TODO">TODO</span> <span class="underline">d2</span> diagram</a></li>
-            <li><a href="#details-and-summary">Details and Summary</a></li>
-            <li><a href="#katex-and-math-typesetting"><span class="org-todo todo TODO">TODO</span> katex and math typesetting</a></li>
-            <li><a href="#결과에-caption-넣는-방법"><span class="org-todo todo TODO">TODO</span> 결과에 <kbd>caption</kbd> 넣는 방법</a></li>
-          </ul>
-        </li>
-        <li><a href="#org-translate-블록-번역">Org-translate 블록 번역</a></li>
-        <li><a href="#header-template">Header Template</a></li>
+        <li><a href="#heading-2">Heading 2</a></li>
       </ul>
     </li>
+    <li><a href="#sidenote-추가-정보">Sidenote 추가 정보</a></li>
+    <li><a href="#markup">Markup</a></li>
+    <li><a href="#summary-블록">Summary 블록</a></li>
+    <li><a href="#citation-서지-정보">Citation 서지 정보</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#footnote-각주-관리">Footnote 각주 관리</a></li>
+    <li><a href="#코드-인용-예시-블록">코드, 인용, 예시 블록</a></li>
+    <li><a href="#no-export">No Export</a>
+      <ul>
+        <li><a href="#private-설정">PRIVATE 설정</a></li>
+        <li><a href="#noexport-태그-활용">noexport 태그 활용</a></li>
+        <li><a href="#파일-숨기기--비추">파일 숨기기 (비추)</a></li>
+      </ul>
+    </li>
+    <li><a href="#태그를-키워드로-변환">태그를 키워드로 변환</a></li>
+    <li><a href="#shotcodes-지원">Shotcodes 지원</a>
+      <ul>
+        <li><a href="#hint-and-details">hint and details</a></li>
+        <li><a href="#diagram"><span class="underline">mermaid</span> diagram</a></li>
+        <li><a href="#diagram"><span class="org-todo todo TODO">TODO</span> <span class="underline">d2</span> diagram</a></li>
+        <li><a href="#details-and-summary">Details and Summary</a></li>
+        <li><a href="#katex-and-math-typesetting"><span class="org-todo todo TODO">TODO</span> katex and math typesetting</a></li>
+        <li><a href="#결과에-caption-넣는-방법"><span class="org-todo todo TODO">TODO</span> 결과에 <kbd>caption</kbd> 넣는 방법</a></li>
+      </ul>
+    </li>
+    <li><a href="#org-translate-블록-번역">Org-translate 블록 번역</a></li>
+    <li><a href="#header-template">Header Template</a></li>
   </ul>
 </nav>
 

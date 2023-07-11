@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Terms on Junghanacs🧠</title>
+    <title>Terms on Junghanacs</title>
     <link>https://junghanacs.com/terms/</link>
-    <description>Recent content in Terms on Junghanacs🧠</description>
+    <description>Recent content in Terms on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language><atom:link href="https://junghanacs.com/terms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LangChain</title>
+      <link>https://junghanacs.com/terms/langchain/</link>
+      <pubDate>Mon, 10 Jul 2023 06:42:00 +0900</pubDate>
+      
+      <guid>https://junghanacs.com/terms/langchain/</guid>
+      <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
+  Building applications with LLMs through composability
+&lt;/blockquote&gt;</description>
+    </item>
+    
     <item>
       <title>Technium</title>
       <link>https://junghanacs.com/terms/technium/</link>
@@ -18,11 +29,11 @@
     </item>
     
     <item>
-      <title>Glossary</title>
-      <link>https://junghanacs.com/terms/glossary/</link>
+      <title>glossary-general</title>
+      <link>https://junghanacs.com/terms/glossary-general/</link>
       <pubDate>Sat, 17 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/terms/glossary/</guid>
+      <guid>https://junghanacs.com/terms/glossary-general/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   분야 구분 없이 사용하는 용어 사전. 세부 분야 별 용어는 별도의 파일로 관리할 예정 입니다.
 &lt;/blockquote&gt;</description>

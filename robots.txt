@@ -3,6 +3,8 @@ User-agent: *
 
 Allow: /menu/
 
+Allow: /terms/langchain/
+
 Allow: /refs/
 
 Allow: /talks/
@@ -23,7 +25,7 @@ Allow: /notes/fortune_quotes/
 
 Allow: /refs/UseGNUEmacs/
 
-Allow: /terms/glossary/
+Allow: /terms/glossary-general/
 
 Allow: /posts/building_my_first_emacs_configs_for_writing_and_publishing/
 

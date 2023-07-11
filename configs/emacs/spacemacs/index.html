@@ -14,11 +14,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://junghanacs.com/configs/emacs/spacemacs/" /><meta property="article:section" content="configs" />
 <meta property="article:published_time" content="2023-05-17T00:00:00+09:00" />
-<meta property="article:modified_time" content="2023-07-06T21:10:06+09:00" />
-<title>Dot-Spacemacs | Junghanacs🧠</title>
+<meta property="article:modified_time" content="2023-07-11T11:14:25+09:00" />
+<title>Dot-Spacemacs | Junghanacs</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.6b389c35d797929aafa8227de8b05857dd3a1a4d82cacbb5f0b40ff19bfefcb8.css" integrity="sha256-azicNdeXkpqvqCJ96LBYV906Gk2Cysu18LQP8Zv&#43;/Lg=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.c32d89bae53eb12b7a1ac6396afcfa5a548809434d8fabf340b0f3d241d20241.css" integrity="sha256-wy2JuuU&#43;sSt6GsY5avz6WlSICUNNj6vzQLDz0kHSAkE=" crossorigin="anonymous">
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYRB327HE6"></script>
@@ -46,7 +46,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>Junghanacs🧠</span>
+  <a class="flex align-center" href="/"><span>Junghanacs</span>
   </a>
 </h2>
 
@@ -64,20 +64,20 @@ https://github.com/alex-shpak/hugo-book
 
   <ul>
 <li>
-  <a href="/posts/">📰 Essays</a></li>
+  <a href="/posts/">Essays</a></li>
 <li>
-  <a href="/notes/">🗃 Notes</a></li>
+  <a href="/notes/">Notes</a></li>
 <li>
-  <a href="/refs/">🏛 References</a></li>
+  <a href="/refs/">References</a></li>
 <li>
-  <a href="/talks/">📢 Talks</a></li>
+  <a href="/talks/">Talks</a></li>
 <li>
-  <a href="/terms/">🏷 Terms</a></li>
+  <a href="/terms/">Terms</a></li>
 <li>
-  <a href="/configs/">🧰 DotFiles</a>
+  <a href="/configs/">DotFiles</a>
 <ul>
 <li>
-  <a href="/configs/emacs/">🎮 emacs.d</a></li>
+  <a href="/configs/emacs/">emacs.d</a></li>
 </ul>
 </li>
 </ul>
@@ -97,7 +97,7 @@ https://github.com/alex-shpak/hugo-book
   
   <li>
     <a href="https://github.com/junghanacs"  target="_blank" rel="noopener">
-        📍 Github Link
+        Github Link
       </a>
   </li>
   
@@ -144,151 +144,67 @@ https://github.com/alex-shpak/hugo-book
 
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#prerequisites">Prerequisites</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a>
-          <ul>
-            <li><a href="#spacemacs-init-dot-el">Spacemacs <kbd>init.el</kbd></a></li>
-            <li><a href="#custom-settings-emacs-custom-dot-el">Custom Settings <kbd>emacs-custom.el</kbd></a></li>
-            <li><a href="#dotfile-headers-spacemacs-dot-el">Dotfile Headers <kbd>spacemacs.el</kbd></a></li>
-            <li><a href="#reproducible-information">Reproducible information</a></li>
-          </ul>
-        </li>
-        <li><a href="#base-configuration-and-layer-declaration"><code>Base</code> Configuration and <code>Layer</code> Declaration</a>
-          <ul>
-            <li><a href="#start-dotspacemacs-layers"><code>START</code> dotspacemacs/layers ()</a></li>
-            <li><a href="#base-configurations"><code>Base</code> Configurations</a></li>
-            <li><a href="#extra-package-options"><code>Extra</code> Package Options <span class="tag"><span class="extra">extra</span></span></a></li>
-            <li><a href="#layer-declarations"><code>Layer</code> Declarations <span class="tag"><span class="declaration">declaration</span></span></a></li>
-            <li><a href="#additional-packages"><code>Additional</code> Packages <span class="tag"><span class="addition">addition</span></span></a></li>
-            <li><a href="#end-dotspacemacs-layers"><code>END</code> dotspacemacs/layers</a></li>
-          </ul>
-        </li>
-        <li><a href="#spacemacs-configuration"><code>Spacemacs</code> Configuration</a>
-          <ul>
-            <li><a href="#start-dotspacemacs-init"><code>START</code> dotspacemacs/init</a></li>
-            <li><a href="#start-and-several-functions">Start and several functions</a></li>
-            <li><a href="#configuration">Configuration</a></li>
-            <li><a href="#additional-configuration">Additional configuration</a></li>
-          </ul>
-        </li>
-        <li><a href="#user-init">User Init</a>
-          <ul>
-            <li><a href="#start-user-init"><code>START</code> user/init</a></li>
-            <li><a href="#user-initialization">User Initialization</a></li>
-            <li><a href="#user-environment">User Environment</a></li>
-          </ul>
-        </li>
-        <li><a href="#custom-helper"><span class="org-todo todo TODO">TODO</span> Custom Helper</a>
-          <ul>
-            <li><a href="#start-custom-helper"><code>START</code> Custom Helper</a></li>
-            <li><a href="#custom-functions">Custom Functions</a></li>
-            <li><a href="#check-external-tools">Check External Tools</a></li>
-            <li><a href="#custom-define-emacs-type">Custom Define <code>emacs-type</code></a></li>
-            <li><a href="#system-settings">System Settings</a>
-              <ul>
-                <li><a href="#tramp-and-slow-ssh">tramp and slow ssh</a></li>
-                <li><a href="#is-termux">is-termux</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#additional-packages">Additional-packages</a></li>
-        <li><a href="#user-config">User Config</a>
-          <ul>
-            <li><a href="#start"><code>Start</code> <span class="tag"><span class="donotmodify">donotmodify</span></span></a></li>
-            <li><a href="#profile-user-information"><code>Profile</code> USER-INFORMATION</a>
-              <ul>
-                <li><a href="#profiles">Profiles</a></li>
-              </ul>
-            </li>
-            <li><a href="#overide-spacemacs">Overide Spacemacs</a>
-              <ul>
-                <li><a href="#default-behavior">Default behavior</a></li>
-                <li><a href="#garbage-collection">Garbage collection</a></li>
-                <li><a href="#my-configurations">My configurations</a></li>
-                <li><a href="#frame-and-scroll-mode">Frame and Scroll mode</a></li>
-                <li><a href="#custom-functions">Custom Functions</a></li>
-              </ul>
-            </li>
-            <li><a href="#overide-keybindings"><kbd>OVERIDE</kbd> :: <code>Keybindings</code></a>
-              <ul>
-                <li><a href="#redefine-global-key">Redefine <code>global-key</code></a></li>
-                <li><a href="#my-commands">My Commands <span class="tag"><span class="mycustom">mycustom</span></span></a></li>
-                <li><a href="#consult-keybinding">Consult keybinding</a></li>
-                <li><a href="#spacemacs-root-bindings">Spacemacs <kbd>root</kbd> bindings</a></li>
-                <li><a href="#spacemacs-major-mode-bindings-org-mode">Spacemacs <kbd>major-mode</kbd> bindings : Org-mode</a></li>
-                <li><a href="#ace-link-conflicts-with-evil-collection">ace-link conflicts with evil-collection</a></li>
-                <li><a href="#evil-tunning">evil tunning</a></li>
-                <li><a href="#projectile-c-x-p">projectile <code>C-x p</code></a></li>
-                <li><a href="#def-custom-spacemacs-key-bindings"><code>def-custom</code> Spacemacs key bindings</a></li>
-                <li><a href="#spacemacs-custom-bindings"><span class="org-todo todo TODO">TODO</span> Spacemacs <kbd>custom</kbd> bindings</a></li>
-              </ul>
-            </li>
-            <li><a href="#hydra">HYDRA</a>
-              <ul>
-                <li><a href="#hydra-for-major-mode">Hydra for Major-mode</a></li>
-                <li><a href="#hydra-all-body">Hydra All-Body</a></li>
-                <li><a href="#hydra-jump-to-directory-and-files">Hydra Jump to directory and files</a></li>
-                <li><a href="#hydra-keybinding">Hydra keybinding</a></li>
-              </ul>
-            </li>
-            <li><a href="#korean-hangul">KOREAN HANGUL</a>
-              <ul>
-                <li><a href="#pangu-spacing">pangu-spacing</a></li>
-                <li><a href="#word-select">word-select</a></li>
-                <li><a href="#cal-korea-x"><span class="org-todo done OFF">OFF</span> cal-korea-x <span class="tag"><span class="OFF">OFF</span></span></a></li>
-              </ul>
-            </li>
-            <li><a href="#migration-the-layer"><span class="org-todo todo TODO">TODO</span> Migration the layer</a>
-              <ul>
-                <li><a href="#only-emacs-29-plus"><code>Only</code> Emacs 29+</a></li>
-                <li><a href="#useful-functions">Useful functions</a></li>
-                <li><a href="#direnv">Direnv</a></li>
-                <li><a href="#command-log">Command-log</a></li>
-                <li><a href="#keyfreq">Keyfreq</a></li>
-                <li><a href="#screenshot-png-gif">Screenshot <code>PNG GIF</code></a></li>
-              </ul>
-            </li>
-            <li><a href="#utility">Utility</a>
-              <ul>
-                <li><a href="#disk-usage">disk-usage</a></li>
-                <li><a href="#kimim-functions">kimim functions</a></li>
-                <li><a href="#search-engine-engine-mode">search-engine : engine-mode</a></li>
-                <li><a href="#conventional-changelog">conventional-changelog</a></li>
-                <li><a href="#wc-mode-word-count"><span class="org-todo done OFF">OFF</span> wc-mode  : word-count <span class="tag"><span class="OFF">OFF</span></span></a></li>
-                <li><a href="#dired-preview">dired-preview</a></li>
-              </ul>
-            </li>
-            <li><a href="#org-mode-customizations"><kbd>Org-mode</kbd> Customizations</a>
-              <ul>
-                <li><a href="#hugo-tunning"><kbd>HUGO</kbd> Tunning</a></li>
-                <li><a href="#org-breadcrumb">org-breadcrumb</a></li>
-                <li><a href="#org-attach--built-in">org-attach (built-in)</a></li>
-                <li><a href="#org-capture-goto-link"><span class="org-todo todo TODO">TODO</span> org-capture-goto-link</a></li>
-                <li><a href="#org-reverse-datetree">org-reverse-datetree</a></li>
-                <li><a href="#fixed-page-mode">fixed-page-mode</a></li>
-                <li><a href="#reveal-export">Reveal export</a></li>
-              </ul>
-            </li>
-            <li><a href="#startup-layout-and-workspace"><kbd>Startup</kbd> Layout and Workspace</a>
-              <ul>
-                <li><a href="#layout-workspace-spc-l">LAYOUT-WORKSPACE &ndash; <code>SPC l</code> <span class="tag"><span class="layout">layout</span></span></a></li>
-              </ul>
-            </li>
-            <li><a href="#macros"><span class="org-todo todo TODO">TODO</span> Macros</a>
-              <ul>
-                <li><a href="#mirror-buffer">Mirror buffer</a></li>
-                <li><a href="#save-macro">save-macro</a></li>
-              </ul>
-            </li>
-            <li><a href="#backports-emacs-29-plus">Backports Emacs 29 Plus</a></li>
-            <li><a href="#end"><code>End</code> <span class="tag"><span class="donotmodify">donotmodify</span></span></a></li>
-          </ul>
-        </li>
-        <li><a href="#local-variables">Local Variables <span class="tag"><span class="ARCHIVE">ARCHIVE</span></span></a></li>
+        <li><a href="#spacemacs-init-dot-el">Spacemacs <kbd>init.el</kbd></a></li>
+        <li><a href="#custom-settings-emacs-custom-dot-el">Custom Settings <kbd>emacs-custom.el</kbd></a></li>
+        <li><a href="#dotfile-headers-spacemacs-dot-el">Dotfile Headers <kbd>spacemacs.el</kbd></a></li>
+        <li><a href="#reproducible-information">Reproducible information</a></li>
       </ul>
     </li>
+    <li><a href="#base-configuration-and-layer-declaration"><code>Base</code> Configuration and <code>Layer</code> Declaration</a>
+      <ul>
+        <li><a href="#start-dotspacemacs-layers"><code>START</code> dotspacemacs/layers ()</a></li>
+        <li><a href="#base-configurations"><code>Base</code> Configurations</a></li>
+        <li><a href="#extra-package-options"><code>Extra</code> Package Options <span class="tag"><span class="extra">extra</span></span></a></li>
+        <li><a href="#layer-declarations"><code>Layer</code> Declarations <span class="tag"><span class="declaration">declaration</span></span></a></li>
+        <li><a href="#additional-packages"><code>Additional</code> Packages <span class="tag"><span class="addition">addition</span></span></a></li>
+        <li><a href="#end-dotspacemacs-layers"><code>END</code> dotspacemacs/layers</a></li>
+      </ul>
+    </li>
+    <li><a href="#spacemacs-configuration"><code>Spacemacs</code> Configuration</a>
+      <ul>
+        <li><a href="#start-dotspacemacs-init"><code>START</code> dotspacemacs/init</a></li>
+        <li><a href="#start-and-several-functions">Start and several functions</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#additional-configuration">Additional configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#user-init">User Init</a>
+      <ul>
+        <li><a href="#start-user-init"><code>START</code> user/init</a></li>
+        <li><a href="#user-initialization">User Initialization</a></li>
+        <li><a href="#user-environment">User Environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#custom-helper"><span class="org-todo todo TODO">TODO</span> Custom Helper</a>
+      <ul>
+        <li><a href="#start-custom-helper"><code>START</code> Custom Helper</a></li>
+        <li><a href="#custom-functions">Custom Functions</a></li>
+        <li><a href="#check-external-tools">Check External Tools</a></li>
+        <li><a href="#custom-define-emacs-type">Custom Define <code>emacs-type</code></a></li>
+        <li><a href="#system-settings">System Settings</a></li>
+      </ul>
+    </li>
+    <li><a href="#additional-packages">Additional-packages</a></li>
+    <li><a href="#user-config">User Config</a>
+      <ul>
+        <li><a href="#start"><code>Start</code> <span class="tag"><span class="donotmodify">donotmodify</span></span></a></li>
+        <li><a href="#profile-user-information"><code>Profile</code> USER-INFORMATION</a></li>
+        <li><a href="#overide-spacemacs">Overide Spacemacs</a></li>
+        <li><a href="#overide-keybindings"><kbd>OVERIDE</kbd> :: <code>Keybindings</code></a></li>
+        <li><a href="#hydra">HYDRA</a></li>
+        <li><a href="#korean-hangul">KOREAN HANGUL</a></li>
+        <li><a href="#migration-the-layer"><span class="org-todo todo TODO">TODO</span> Migration the layer</a></li>
+        <li><a href="#utility">Utility</a></li>
+        <li><a href="#org-mode-customizations"><kbd>Org-mode</kbd> Customizations</a></li>
+        <li><a href="#startup-layout-and-workspace"><kbd>Startup</kbd> Layout and Workspace</a></li>
+        <li><a href="#macros"><span class="org-todo todo TODO">TODO</span> Macros</a></li>
+        <li><a href="#backports-emacs-29-plus">Backports Emacs 29 Plus</a></li>
+        <li><a href="#end"><code>End</code> <span class="tag"><span class="donotmodify">donotmodify</span></span></a></li>
+      </ul>
+    </li>
+    <li><a href="#local-variables">Local Variables <span class="tag"><span class="ARCHIVE">ARCHIVE</span></span></a></li>
   </ul>
 </nav>
 
@@ -315,7 +231,7 @@ https://github.com/alex-shpak/hugo-book
     <strong aria-hidden="true"> Updated: </strong>May 17, 2023
     
     
-    (Lastmod: Jul 6, 2023)
+    (Lastmod: Jul 11, 2023)
     
     
   </div>
@@ -6299,6 +6215,8 @@ good idea.
    
 
    
+
+   
       
    
 
@@ -6506,9 +6424,9 @@ good idea.
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/27f6c9e8beb94b875fd9a48c8def46dbc0e08be7" title='Last modified by junghan0611 | 2023-07-06' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/junghanacs/junghanacs.com/commit/0a2b57e601aea4f54a48c573afe61ec78c06f6d0" title='Last modified by junghan0611 | 2023-07-11' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2023-07-06</span>
+      <span>2023-07-11</span>
     </a>
   </div>
 
@@ -6526,7 +6444,7 @@ good idea.
         <footer class="footer">
   <br>
   <br>
-  <span>&copy; 2023 <a href="https://junghanacs.com/">Junghanacs🧠</a></span>
+  <span>&copy; 2023 <a href="https://junghanacs.com/">Junghanacs</a></span>
   <span>
     published with
     <a href="https://www.gnu.org/software/emacs" rel="noopener noreferrer">Emacs</a> +
@@ -6561,151 +6479,67 @@ good idea.
 
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#prerequisites">Prerequisites</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a>
-          <ul>
-            <li><a href="#spacemacs-init-dot-el">Spacemacs <kbd>init.el</kbd></a></li>
-            <li><a href="#custom-settings-emacs-custom-dot-el">Custom Settings <kbd>emacs-custom.el</kbd></a></li>
-            <li><a href="#dotfile-headers-spacemacs-dot-el">Dotfile Headers <kbd>spacemacs.el</kbd></a></li>
-            <li><a href="#reproducible-information">Reproducible information</a></li>
-          </ul>
-        </li>
-        <li><a href="#base-configuration-and-layer-declaration"><code>Base</code> Configuration and <code>Layer</code> Declaration</a>
-          <ul>
-            <li><a href="#start-dotspacemacs-layers"><code>START</code> dotspacemacs/layers ()</a></li>
-            <li><a href="#base-configurations"><code>Base</code> Configurations</a></li>
-            <li><a href="#extra-package-options"><code>Extra</code> Package Options <span class="tag"><span class="extra">extra</span></span></a></li>
-            <li><a href="#layer-declarations"><code>Layer</code> Declarations <span class="tag"><span class="declaration">declaration</span></span></a></li>
-            <li><a href="#additional-packages"><code>Additional</code> Packages <span class="tag"><span class="addition">addition</span></span></a></li>
-            <li><a href="#end-dotspacemacs-layers"><code>END</code> dotspacemacs/layers</a></li>
-          </ul>
-        </li>
-        <li><a href="#spacemacs-configuration"><code>Spacemacs</code> Configuration</a>
-          <ul>
-            <li><a href="#start-dotspacemacs-init"><code>START</code> dotspacemacs/init</a></li>
-            <li><a href="#start-and-several-functions">Start and several functions</a></li>
-            <li><a href="#configuration">Configuration</a></li>
-            <li><a href="#additional-configuration">Additional configuration</a></li>
-          </ul>
-        </li>
-        <li><a href="#user-init">User Init</a>
-          <ul>
-            <li><a href="#start-user-init"><code>START</code> user/init</a></li>
-            <li><a href="#user-initialization">User Initialization</a></li>
-            <li><a href="#user-environment">User Environment</a></li>
-          </ul>
-        </li>
-        <li><a href="#custom-helper"><span class="org-todo todo TODO">TODO</span> Custom Helper</a>
-          <ul>
-            <li><a href="#start-custom-helper"><code>START</code> Custom Helper</a></li>
-            <li><a href="#custom-functions">Custom Functions</a></li>
-            <li><a href="#check-external-tools">Check External Tools</a></li>
-            <li><a href="#custom-define-emacs-type">Custom Define <code>emacs-type</code></a></li>
-            <li><a href="#system-settings">System Settings</a>
-              <ul>
-                <li><a href="#tramp-and-slow-ssh">tramp and slow ssh</a></li>
-                <li><a href="#is-termux">is-termux</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#additional-packages">Additional-packages</a></li>
-        <li><a href="#user-config">User Config</a>
-          <ul>
-            <li><a href="#start"><code>Start</code> <span class="tag"><span class="donotmodify">donotmodify</span></span></a></li>
-            <li><a href="#profile-user-information"><code>Profile</code> USER-INFORMATION</a>
-              <ul>
-                <li><a href="#profiles">Profiles</a></li>
-              </ul>
-            </li>
-            <li><a href="#overide-spacemacs">Overide Spacemacs</a>
-              <ul>
-                <li><a href="#default-behavior">Default behavior</a></li>
-                <li><a href="#garbage-collection">Garbage collection</a></li>
-                <li><a href="#my-configurations">My configurations</a></li>
-                <li><a href="#frame-and-scroll-mode">Frame and Scroll mode</a></li>
-                <li><a href="#custom-functions">Custom Functions</a></li>
-              </ul>
-            </li>
-            <li><a href="#overide-keybindings"><kbd>OVERIDE</kbd> :: <code>Keybindings</code></a>
-              <ul>
-                <li><a href="#redefine-global-key">Redefine <code>global-key</code></a></li>
-                <li><a href="#my-commands">My Commands <span class="tag"><span class="mycustom">mycustom</span></span></a></li>
-                <li><a href="#consult-keybinding">Consult keybinding</a></li>
-                <li><a href="#spacemacs-root-bindings">Spacemacs <kbd>root</kbd> bindings</a></li>
-                <li><a href="#spacemacs-major-mode-bindings-org-mode">Spacemacs <kbd>major-mode</kbd> bindings : Org-mode</a></li>
-                <li><a href="#ace-link-conflicts-with-evil-collection">ace-link conflicts with evil-collection</a></li>
-                <li><a href="#evil-tunning">evil tunning</a></li>
-                <li><a href="#projectile-c-x-p">projectile <code>C-x p</code></a></li>
-                <li><a href="#def-custom-spacemacs-key-bindings"><code>def-custom</code> Spacemacs key bindings</a></li>
-                <li><a href="#spacemacs-custom-bindings"><span class="org-todo todo TODO">TODO</span> Spacemacs <kbd>custom</kbd> bindings</a></li>
-              </ul>
-            </li>
-            <li><a href="#hydra">HYDRA</a>
-              <ul>
-                <li><a href="#hydra-for-major-mode">Hydra for Major-mode</a></li>
-                <li><a href="#hydra-all-body">Hydra All-Body</a></li>
-                <li><a href="#hydra-jump-to-directory-and-files">Hydra Jump to directory and files</a></li>
-                <li><a href="#hydra-keybinding">Hydra keybinding</a></li>
-              </ul>
-            </li>
-            <li><a href="#korean-hangul">KOREAN HANGUL</a>
-              <ul>
-                <li><a href="#pangu-spacing">pangu-spacing</a></li>
-                <li><a href="#word-select">word-select</a></li>
-                <li><a href="#cal-korea-x"><span class="org-todo done OFF">OFF</span> cal-korea-x <span class="tag"><span class="OFF">OFF</span></span></a></li>
-              </ul>
-            </li>
-            <li><a href="#migration-the-layer"><span class="org-todo todo TODO">TODO</span> Migration the layer</a>
-              <ul>
-                <li><a href="#only-emacs-29-plus"><code>Only</code> Emacs 29+</a></li>
-                <li><a href="#useful-functions">Useful functions</a></li>
-                <li><a href="#direnv">Direnv</a></li>
-                <li><a href="#command-log">Command-log</a></li>
-                <li><a href="#keyfreq">Keyfreq</a></li>
-                <li><a href="#screenshot-png-gif">Screenshot <code>PNG GIF</code></a></li>
-              </ul>
-            </li>
-            <li><a href="#utility">Utility</a>
-              <ul>
-                <li><a href="#disk-usage">disk-usage</a></li>
-                <li><a href="#kimim-functions">kimim functions</a></li>
-                <li><a href="#search-engine-engine-mode">search-engine : engine-mode</a></li>
-                <li><a href="#conventional-changelog">conventional-changelog</a></li>
-                <li><a href="#wc-mode-word-count"><span class="org-todo done OFF">OFF</span> wc-mode  : word-count <span class="tag"><span class="OFF">OFF</span></span></a></li>
-                <li><a href="#dired-preview">dired-preview</a></li>
-              </ul>
-            </li>
-            <li><a href="#org-mode-customizations"><kbd>Org-mode</kbd> Customizations</a>
-              <ul>
-                <li><a href="#hugo-tunning"><kbd>HUGO</kbd> Tunning</a></li>
-                <li><a href="#org-breadcrumb">org-breadcrumb</a></li>
-                <li><a href="#org-attach--built-in">org-attach (built-in)</a></li>
-                <li><a href="#org-capture-goto-link"><span class="org-todo todo TODO">TODO</span> org-capture-goto-link</a></li>
-                <li><a href="#org-reverse-datetree">org-reverse-datetree</a></li>
-                <li><a href="#fixed-page-mode">fixed-page-mode</a></li>
-                <li><a href="#reveal-export">Reveal export</a></li>
-              </ul>
-            </li>
-            <li><a href="#startup-layout-and-workspace"><kbd>Startup</kbd> Layout and Workspace</a>
-              <ul>
-                <li><a href="#layout-workspace-spc-l">LAYOUT-WORKSPACE &ndash; <code>SPC l</code> <span class="tag"><span class="layout">layout</span></span></a></li>
-              </ul>
-            </li>
-            <li><a href="#macros"><span class="org-todo todo TODO">TODO</span> Macros</a>
-              <ul>
-                <li><a href="#mirror-buffer">Mirror buffer</a></li>
-                <li><a href="#save-macro">save-macro</a></li>
-              </ul>
-            </li>
-            <li><a href="#backports-emacs-29-plus">Backports Emacs 29 Plus</a></li>
-            <li><a href="#end"><code>End</code> <span class="tag"><span class="donotmodify">donotmodify</span></span></a></li>
-          </ul>
-        </li>
-        <li><a href="#local-variables">Local Variables <span class="tag"><span class="ARCHIVE">ARCHIVE</span></span></a></li>
+        <li><a href="#spacemacs-init-dot-el">Spacemacs <kbd>init.el</kbd></a></li>
+        <li><a href="#custom-settings-emacs-custom-dot-el">Custom Settings <kbd>emacs-custom.el</kbd></a></li>
+        <li><a href="#dotfile-headers-spacemacs-dot-el">Dotfile Headers <kbd>spacemacs.el</kbd></a></li>
+        <li><a href="#reproducible-information">Reproducible information</a></li>
       </ul>
     </li>
+    <li><a href="#base-configuration-and-layer-declaration"><code>Base</code> Configuration and <code>Layer</code> Declaration</a>
+      <ul>
+        <li><a href="#start-dotspacemacs-layers"><code>START</code> dotspacemacs/layers ()</a></li>
+        <li><a href="#base-configurations"><code>Base</code> Configurations</a></li>
+        <li><a href="#extra-package-options"><code>Extra</code> Package Options <span class="tag"><span class="extra">extra</span></span></a></li>
+        <li><a href="#layer-declarations"><code>Layer</code> Declarations <span class="tag"><span class="declaration">declaration</span></span></a></li>
+        <li><a href="#additional-packages"><code>Additional</code> Packages <span class="tag"><span class="addition">addition</span></span></a></li>
+        <li><a href="#end-dotspacemacs-layers"><code>END</code> dotspacemacs/layers</a></li>
+      </ul>
+    </li>
+    <li><a href="#spacemacs-configuration"><code>Spacemacs</code> Configuration</a>
+      <ul>
+        <li><a href="#start-dotspacemacs-init"><code>START</code> dotspacemacs/init</a></li>
+        <li><a href="#start-and-several-functions">Start and several functions</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#additional-configuration">Additional configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#user-init">User Init</a>
+      <ul>
+        <li><a href="#start-user-init"><code>START</code> user/init</a></li>
+        <li><a href="#user-initialization">User Initialization</a></li>
+        <li><a href="#user-environment">User Environment</a></li>
+      </ul>
+    </li>
+    <li><a href="#custom-helper"><span class="org-todo todo TODO">TODO</span> Custom Helper</a>
+      <ul>
+        <li><a href="#start-custom-helper"><code>START</code> Custom Helper</a></li>
+        <li><a href="#custom-functions">Custom Functions</a></li>
+        <li><a href="#check-external-tools">Check External Tools</a></li>
+        <li><a href="#custom-define-emacs-type">Custom Define <code>emacs-type</code></a></li>
+        <li><a href="#system-settings">System Settings</a></li>
+      </ul>
+    </li>
+    <li><a href="#additional-packages">Additional-packages</a></li>
+    <li><a href="#user-config">User Config</a>
+      <ul>
+        <li><a href="#start"><code>Start</code> <span class="tag"><span class="donotmodify">donotmodify</span></span></a></li>
+        <li><a href="#profile-user-information"><code>Profile</code> USER-INFORMATION</a></li>
+        <li><a href="#overide-spacemacs">Overide Spacemacs</a></li>
+        <li><a href="#overide-keybindings"><kbd>OVERIDE</kbd> :: <code>Keybindings</code></a></li>
+        <li><a href="#hydra">HYDRA</a></li>
+        <li><a href="#korean-hangul">KOREAN HANGUL</a></li>
+        <li><a href="#migration-the-layer"><span class="org-todo todo TODO">TODO</span> Migration the layer</a></li>
+        <li><a href="#utility">Utility</a></li>
+        <li><a href="#org-mode-customizations"><kbd>Org-mode</kbd> Customizations</a></li>
+        <li><a href="#startup-layout-and-workspace"><kbd>Startup</kbd> Layout and Workspace</a></li>
+        <li><a href="#macros"><span class="org-todo todo TODO">TODO</span> Macros</a></li>
+        <li><a href="#backports-emacs-29-plus">Backports Emacs 29 Plus</a></li>
+        <li><a href="#end"><code>End</code> <span class="tag"><span class="donotmodify">donotmodify</span></span></a></li>
+      </ul>
+    </li>
+    <li><a href="#local-variables">Local Variables <span class="tag"><span class="ARCHIVE">ARCHIVE</span></span></a></li>
   </ul>
 </nav>
 
