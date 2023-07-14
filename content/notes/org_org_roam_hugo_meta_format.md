@@ -1,9 +1,9 @@
 +++
-title = "Ox-Hugo Blogging Advanced Tips and Examples 🌲"
+title = "Ox-Hugo 블로깅 : 변환 문법 및 팁 🌲"
 author = ["Junghan Kim"]
 date = 2023-06-05
-publishDate = 2023-06-20
-lastmod = 2023-06-21
+publishDate = 2023-07-14
+lastmod = 2023-07-10
 keywords = ["evergreen", "notes", "ox-hugo", "org-roam", "template"]
 draft = false
 +++
@@ -20,6 +20,18 @@ Org-Roam 에서 작성한 문서를 Hugo Markdown 으로 변환하기는 쉽다.
 <!--more-->
 
 ox-hugo 의 모든 예제는 다음 주소에 있다. 여기서 찾아보자.&nbsp;[^fn:1]
+
+
+## Add Org-Roam to Org-Agenda {#add-org-roam-to-org-agenda}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2023-07-14 Fri 15:56]</span></span>
+롬 문서에서 어젠다 연결. 모든 문서를 다 연결하는 것은 오버헤드. 정책 위배.
+파일 태그가 있는 노트만 어젠다로 등록.
+
+```text
+#+CATEGORY: 🍋Notes
+#+filetags: :AGENDA:
+```
 
 
 ## <span class="org-todo todo TODO">TODO</span> <code>[1/2]</code> Check Lists {#check-lists}
@@ -141,6 +153,42 @@ Below, the "References" heading will be auto-inserted.
 각주는 이렇게 들어갑니다.&nbsp;[^fn:4]
 
 
+## No Export {#no-export}
+
+블로그 리포는 공개되어 있다. 여기에 Markdown 파일이 그대로 있다. 숨기고 싶은
+또는 숨겨야 하는 내용이 분명히 있을 것이다. 그렇다면 org 파일에서 아래와 같은
+방법으로 숨기면 된다. 아예 private 프로퍼티를 넣고 ox-hugo 에서 걸러주는
+방법도 있다. 나는 왠만하면 다 내용을 오픈하고자 한다. 다만 문제가 되거나
+퀄리티가 많이 부족한 부분은 `헤딩` 수준에서 숨기길 원한다.
+
+
+### PRIVATE 설정 {#private-설정}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2023-07-10 Mon 10:10] </span></span> 내보내기 할 때 연결 된 노트가 미리 내보내기 되어 있어야
+한다. 불편한 부분이다. 아직 내보내기 할 상태가 아닌데도 내보내기 할 필요가
+있을까? 그렇다면 방법은 :PRIVATE: 를 프로퍼티에 넣는다. (커스텀 수정)
+URL 이 있다면 URL 링크로 변경 되고 그게 아니라면 텍스트로 표시 된다.
+
+
+### noexport 태그 활용 {#noexport-태그-활용}
+
+아래 헤딩은 안보입니다. 뭔가 더 있는데 안보이죠? 그럼 된겁니다.
+
+```text
+* 숨기고 싶은 헤딩이라면 태그를 달아라 :noexport:
+```
+
+
+### 파일 숨기기 (비추) {#파일-숨기기--비추}
+
+연결 된 노트를 작성하는 경우라면 좋지 않은 방법이다. 링크를 블록하는
+처리를 해줘야 한다.
+
+```text
+,:EXPORT_FILE_NAME: excluded-post
+```
+
+
 ## 코드, 인용, 예시 블록 {#코드-인용-예시-블록}
 
 -   ':' 을 애용한다. 1 라인 블록.
@@ -180,42 +228,6 @@ Below, the "References" heading will be auto-inserted.
     위에 요약문의 분량입니다. 대략 2.5 줄 정도 입니다. 한글로.<br />
 
     </div>
-
-
-## No Export {#no-export}
-
-블로그 리포는 공개되어 있다. 여기에 Markdown 파일이 그대로 있다. 숨기고 싶은
-또는 숨겨야 하는 내용이 분명히 있을 것이다. 그렇다면 org 파일에서 아래와 같은
-방법으로 숨기면 된다. 아예 private 프로퍼티를 넣고 ox-hugo 에서 걸러주는
-방법도 있다. 나는 왠만하면 다 내용을 오픈하고자 한다. 다만 문제가 되거나
-퀄리티가 많이 부족한 부분은 `헤딩` 수준에서 숨기길 원한다.
-
-
-### PRIVATE 설정 {#private-설정}
-
-<span class="timestamp-wrapper"><span class="timestamp">[2023-07-10 Mon 10:10] </span></span> 내보내기 할 때 연결 된 노트가 미리 내보내기 되어 있어야
-한다. 불편한 부분이다. 아직 내보내기 할 상태가 아닌데도 내보내기 할 필요가
-있을까? 그렇다면 방법은 :PRIVATE: 를 프로퍼티에 넣는다. (커스텀 수정)
-URL 이 있다면 URL 링크로 변경 되고 그게 아니라면 텍스트로 표시 된다.
-
-
-### noexport 태그 활용 {#noexport-태그-활용}
-
-아래 헤딩은 안보입니다. 뭔가 더 있는데 안보이죠? 그럼 된겁니다.
-
-```text
-* 숨기고 싶은 헤딩이라면 태그를 달아라 :noexport:
-```
-
-
-### 파일 숨기기 (비추) {#파일-숨기기--비추}
-
-연결 된 노트를 작성하는 경우라면 좋지 않은 방법이다. 링크를 블록하는
-처리를 해줘야 한다.
-
-```text
-,:EXPORT_FILE_NAME: excluded-post
-```
 
 
 ## 태그를 키워드로 변환 {#태그를-키워드로-변환}
@@ -449,7 +461,7 @@ lastmod 는 직접 수정 한다. 그래야 깔끔하다.
 ```text
 
 (hugofront "
-,# :ROAM_ALIASES: \">>\"
+,# :ROAM_ALIASES: \"==\"
 #+SUBTITLE:
 #+URL:
 #+LANGUAGE: ko
@@ -466,7 +478,7 @@ lastmod 는 직접 수정 한다. 그래야 깔끔하다.
 ,# #+HUGO_SERIES:
 
 ,# == Glossary ==
-#+glossary_sources: glossary
+#+glossary_sources: glossary-general
 
 ,# == Front-matter ==
 #+hugo_front_matter_key_replace: tags>keywords

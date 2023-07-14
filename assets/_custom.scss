@@ -136,6 +136,19 @@ h6 {
   font-weight: bold;
 }
 
+h1 {
+    font-size: 1.5em; // defaul 2em
+    margin: 0.67em 0;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+// h3 {
+//     font-size: 1.3em;
+// }
+
 .book-menu {
   font-family: "Pretendard", sans-serif;
   font-size: $font-size-16;
@@ -164,15 +177,15 @@ kbd {
   /* *** Org-style Headline Level Prefix / Asterisks */
   h2::before {
     content: "*";
-    font-size: 1.6em;
-    vertical-align: -20%; /* more negative -> goes lower */
+    font-size: 1.5em;
+    vertical-align: -25%; /* more negative -> goes lower */
     margin-right: 0.25em;
     color: var(--theme-color-h2);
   }
 
   h3::before {
     content: "**";
-    font-size: 1.4em;
+    font-size: 1.3em;
     vertical-align: -20%; /* more negative -> goes lower */
     margin-right: 0.25em;
     color: var(--theme-color-h3);
