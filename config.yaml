@@ -1,4 +1,4 @@
-baseurl: "https://junghanacs.com/"
+baseurl: "https://junghanacs.github.io"
 defaultContentLanguage: ko
 languageCode: ko-kr
 languageName: Korean
@@ -11,7 +11,7 @@ title: Junghanacs
 theme: book
 
 disqusShortname: junghanacs
-googleAnalytics: G-GYRB327HE6
+# googleAnalytics: G-GYRB327HE6
 
 # Book configuration
 disablePathToLower: true
@@ -84,7 +84,7 @@ params:
   # BookSection: posts
   # BookSection: "*"
   BookSearch: false
-  BookRepo: https://github.com/junghanacs/junghanacs.com
+  BookRepo: https://github.com/junghanacs/junghanacs.github.io
   # BookEditPath: edit/main
   BookTheme: "light"
   # BookTheme: "dark"
