@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>menu/Talks on Junghanacs</title>
-    <link>https://junghanacs.com/talks/</link>
+    <link>https://junghanacs.github.io/talks/</link>
     <description>Recent content in menu/Talks on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 06 Jul 2023 11:33:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/talks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jul 2023 11:33:00 +0900</lastBuildDate><atom:link href="https://junghanacs.github.io/talks/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

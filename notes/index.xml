@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on Junghanacs</title>
-    <link>https://junghanacs.com/notes/</link>
+    <link>https://junghanacs.github.io/notes/</link>
     <description>Recent content in Notes on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language><atom:link href="https://junghanacs.com/notes/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko-kr</language><atom:link href="https://junghanacs.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs Translation Resources (&#43; OmegaT) 🌿</title>
-      <link>https://junghanacs.com/notes/emacs_translation_resources/</link>
+      <link>https://junghanacs.github.io/notes/emacs_translation_resources/</link>
       <pubDate>Tue, 27 Jun 2023 12:18:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/emacs_translation_resources/</guid>
+      <guid>https://junghanacs.github.io/notes/emacs_translation_resources/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   &lt;code&gt;한글&lt;/code&gt; 활용 관점에서 접근해야 한다. 관련 설정은 jh-writing 레이어에 반영되어
 있다.
@@ -20,10 +20,10 @@
     
     <item>
       <title>Hangul Technical Writing for Korean🌱</title>
-      <link>https://junghanacs.com/notes/hangul_technical_writing_for_korean/</link>
+      <link>https://junghanacs.github.io/notes/hangul_technical_writing_for_korean/</link>
       <pubDate>Fri, 23 Jun 2023 17:01:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/hangul_technical_writing_for_korean/</guid>
+      <guid>https://junghanacs.github.io/notes/hangul_technical_writing_for_korean/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   한글 기술 문서 작성 방법을 정리해보자. 나의 관점에서.
 &lt;/blockquote&gt;</description>
@@ -31,10 +31,10 @@
     
     <item>
       <title>에버그린 노트와 제텔카스텐 🫛</title>
-      <link>https://junghanacs.com/notes/evergreen_note/</link>
+      <link>https://junghanacs.github.io/notes/evergreen_note/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/evergreen_note/</guid>
+      <guid>https://junghanacs.github.io/notes/evergreen_note/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Budding
 &lt;/blockquote&gt;</description>
@@ -42,10 +42,10 @@
     
     <item>
       <title>포춘 쿠키 관리 (Quotes)🌿</title>
-      <link>https://junghanacs.com/notes/fortune_quotes/</link>
+      <link>https://junghanacs.github.io/notes/fortune_quotes/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/fortune_quotes/</guid>
+      <guid>https://junghanacs.github.io/notes/fortune_quotes/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   세상에 좋은 말씀은 많다. 읽고 아아!! 하고 끝이다. 리눅스에서 애용하던 Fortune 을
 보다 적극적으로 활용하고 있다. Emacs 홈을 열면 말씀하신다! 근데 무슨 말씀인가?
@@ -54,10 +54,10 @@
     
     <item>
       <title>Changes in Emacs 29 and Emacs Elements 🌿</title>
-      <link>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</link>
+      <link>https://junghanacs.github.io/notes/emacselementsEnhancedImageFeatures2023/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</guid>
+      <guid>https://junghanacs.github.io/notes/emacselementsEnhancedImageFeatures2023/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Emacs Elements 는 올해 나에게 가장 도움이 많이 된 Emacs 유튜브 채널이다.
 그 중에서도 &amp;ldquo;Changes in Emacs 29&amp;rdquo; 과 PDF 활용법, Emacs 설치 방법 등은 아주
@@ -67,10 +67,10 @@
     
     <item>
       <title>Learning Vim and Evil on Spacemacs🌱</title>
-      <link>https://junghanacs.com/notes/learning_spacemacs_and_vim/</link>
+      <link>https://junghanacs.github.io/notes/learning_spacemacs_and_vim/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/learning_spacemacs_and_vim/</guid>
+      <guid>https://junghanacs.github.io/notes/learning_spacemacs_and_vim/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   간단하게 정리할 수 없는 내용이다. 근데 해야 한다. 그래서 일단 씨앗을 심었다.
 거둘 수는 없다. 가야 한다.
@@ -79,10 +79,10 @@
     
     <item>
       <title>Conversation with Junghanacs🌱</title>
-      <link>https://junghanacs.com/notes/talk_with_junghanacs/</link>
+      <link>https://junghanacs.github.io/notes/talk_with_junghanacs/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/talk_with_junghanacs/</guid>
+      <guid>https://junghanacs.github.io/notes/talk_with_junghanacs/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Junghanacs 의 가르침을 받들다.
 &lt;/blockquote&gt;</description>
@@ -90,10 +90,10 @@
     
     <item>
       <title>Org-Glossary 사용법🌿</title>
-      <link>https://junghanacs.com/notes/org_glossary/</link>
+      <link>https://junghanacs.github.io/notes/org_glossary/</link>
       <pubDate>Fri, 09 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/org_glossary/</guid>
+      <guid>https://junghanacs.github.io/notes/org_glossary/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   지식 관리에서 용어를 어떻게 정의하고 있는지가 매우 중요하다. 같은 개념을 가지고
 있어야 서로 더 나은 논의를 할 수 있다. 모호 하지 않도록 나의 사전을
@@ -103,10 +103,10 @@
     
     <item>
       <title>Ox-Hugo 블로깅 : 변환 문법 및 팁 🌲</title>
-      <link>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</link>
+      <link>https://junghanacs.github.io/notes/org_org_roam_hugo_meta_format/</link>
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</guid>
+      <guid>https://junghanacs.github.io/notes/org_org_roam_hugo_meta_format/</guid>
       <description>&lt;style&gt;details summary { color: green; }&lt;/style&gt;
 &lt;style&gt;details .details { color: blue; }&lt;/style&gt;
 &lt;blockquote class=&#34;book-hint info&#34;&gt;
@@ -117,10 +117,10 @@
     
     <item>
       <title>Deno JavaScript Runtime and Deno-Bridge🫛</title>
-      <link>https://junghanacs.com/notes/deno-js-runtime-and-deno-bridge/</link>
+      <link>https://junghanacs.github.io/notes/deno-js-runtime-and-deno-bridge/</link>
       <pubDate>Tue, 28 Mar 2023 11:59:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/deno-js-runtime-and-deno-bridge/</guid>
+      <guid>https://junghanacs.github.io/notes/deno-js-runtime-and-deno-bridge/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Deno: JavaScript Framework 이맥스를 확장하는 좋은 방법이다.
 &lt;/blockquote&gt;</description>
@@ -128,10 +128,10 @@
     
     <item>
       <title>태그와 카테고리: 도대체 어떻게 구성해야 하는가🌱</title>
-      <link>https://junghanacs.com/notes/organize_tag_and_category_in_org_mode/</link>
+      <link>https://junghanacs.github.io/notes/organize_tag_and_category_in_org_mode/</link>
       <pubDate>Fri, 07 Oct 2022 14:50:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/organize_tag_and_category_in_org_mode/</guid>
+      <guid>https://junghanacs.github.io/notes/organize_tag_and_category_in_org_mode/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   이건 정말 어마어마한 문제로다.
 &lt;/blockquote&gt;</description>
@@ -139,10 +139,10 @@
     
     <item>
       <title>블로그 요구 사항 및 구성🌱</title>
-      <link>https://junghanacs.com/notes/my_blog_requiremets/</link>
+      <link>https://junghanacs.github.io/notes/my_blog_requiremets/</link>
       <pubDate>Wed, 07 Sep 2022 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/my_blog_requiremets/</guid>
+      <guid>https://junghanacs.github.io/notes/my_blog_requiremets/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   메뉴 구성 태그 카테고리 시리즈와 더불어 각 노트가 어느 정도 작업이 되었는지 등도
 중요하다.

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Articles on Junghanacs</title>
-    <link>https://junghanacs.com/posts/</link>
+    <link>https://junghanacs.github.io/posts/</link>
     <description>Recent content in Articles on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language><atom:link href="https://junghanacs.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko-kr</language><atom:link href="https://junghanacs.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building my first Emacs for Writing and Publishing🌱</title>
-      <link>https://junghanacs.com/posts/building_my_first_emacs_configs_for_writing_and_publishing/</link>
+      <link>https://junghanacs.github.io/posts/building_my_first_emacs_configs_for_writing_and_publishing/</link>
       <pubDate>Fri, 16 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/posts/building_my_first_emacs_configs_for_writing_and_publishing/</guid>
+      <guid>https://junghanacs.github.io/posts/building_my_first_emacs_configs_for_writing_and_publishing/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   이맥스 미니멀리즘. 한 자리에서 이맥스 설치부터 블로깅까지 한 번에. 설정도 다
 걷어 내고 직접 다룰 수 있는 수준의 것만 본인이 직접 다 해보도록. 따라해보기!
@@ -20,10 +20,10 @@
     
     <item>
       <title>블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움🌱</title>
-      <link>https://junghanacs.com/posts/open_my_lovely_blog/</link>
+      <link>https://junghanacs.github.io/posts/open_my_lovely_blog/</link>
       <pubDate>Wed, 07 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/posts/open_my_lovely_blog/</guid>
+      <guid>https://junghanacs.github.io/posts/open_my_lovely_blog/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   드디어 블로그를 오픈했다. 아무것도 아닌 이 일이 나에게 왜 이렇게 큰 기쁨을 주는
 것일까? 아직 아무것도 없는 이 공간을 만들기까지 많은 고민이 있었다. 이제 글쓰는

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>menu/Home on Junghanacs</title>
-    <link>https://junghanacs.com/</link>
+    <link>https://junghanacs.github.io/</link>
     <description>Recent content in menu/Home on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 May 2023 12:26:00 +0900</lastBuildDate><atom:link href="https://junghanacs.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LangChain</title>
-      <link>https://junghanacs.com/terms/langchain/</link>
+      <link>https://junghanacs.github.io/terms/langchain/</link>
       <pubDate>Mon, 10 Jul 2023 06:42:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/terms/langchain/</guid>
+      <guid>https://junghanacs.github.io/terms/langchain/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Building applications with LLMs through composability
 &lt;/blockquote&gt;</description>
@@ -20,10 +20,10 @@
     
     <item>
       <title>Emacs Translation Resources (&#43; OmegaT) 🌿</title>
-      <link>https://junghanacs.com/notes/emacs_translation_resources/</link>
+      <link>https://junghanacs.github.io/notes/emacs_translation_resources/</link>
       <pubDate>Tue, 27 Jun 2023 12:18:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/emacs_translation_resources/</guid>
+      <guid>https://junghanacs.github.io/notes/emacs_translation_resources/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   &lt;code&gt;한글&lt;/code&gt; 활용 관점에서 접근해야 한다. 관련 설정은 jh-writing 레이어에 반영되어
 있다.
@@ -32,10 +32,10 @@
     
     <item>
       <title>Hangul Technical Writing for Korean🌱</title>
-      <link>https://junghanacs.com/notes/hangul_technical_writing_for_korean/</link>
+      <link>https://junghanacs.github.io/notes/hangul_technical_writing_for_korean/</link>
       <pubDate>Fri, 23 Jun 2023 17:01:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/hangul_technical_writing_for_korean/</guid>
+      <guid>https://junghanacs.github.io/notes/hangul_technical_writing_for_korean/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   한글 기술 문서 작성 방법을 정리해보자. 나의 관점에서.
 &lt;/blockquote&gt;</description>
@@ -43,10 +43,10 @@
     
     <item>
       <title>Technium</title>
-      <link>https://junghanacs.com/terms/technium/</link>
+      <link>https://junghanacs.github.io/terms/technium/</link>
       <pubDate>Fri, 23 Jun 2023 16:54:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/terms/technium/</guid>
+      <guid>https://junghanacs.github.io/terms/technium/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   그래 테크니움. 기술이 원하는게 이거냐!
 &lt;/blockquote&gt;</description>
@@ -54,10 +54,10 @@
     
     <item>
       <title>Why and How I Use &#39;Org-mode&#39; for My Writing and More</title>
-      <link>https://junghanacs.com/refs/WhyHowUse23/</link>
+      <link>https://junghanacs.github.io/refs/WhyHowUse23/</link>
       <pubDate>Thu, 22 Jun 2023 20:30:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/refs/WhyHowUse23/</guid>
+      <guid>https://junghanacs.github.io/refs/WhyHowUse23/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   아름다운 포스팅
 &lt;/blockquote&gt;</description>
@@ -65,10 +65,10 @@
     
     <item>
       <title>Jeremy Friesen :: On Storing Glossary Terms in Org Roam Nodes (2022)🌱</title>
-      <link>https://junghanacs.com/refs/StoringGlossaryTerms2022/</link>
+      <link>https://junghanacs.github.io/refs/StoringGlossaryTerms2022/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/refs/StoringGlossaryTerms2022/</guid>
+      <guid>https://junghanacs.github.io/refs/StoringGlossaryTerms2022/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Jeremy 는 정말 뛰어난 텍스트 마스터다. 실제로도 지식 정보 관리 분야에서 일하고
 있다. 앞으로도 많이 다루겠지만 일단 샘플로 하나 시작한다.
@@ -77,10 +77,10 @@
     
     <item>
       <title>에버그린 노트와 제텔카스텐 🫛</title>
-      <link>https://junghanacs.com/notes/evergreen_note/</link>
+      <link>https://junghanacs.github.io/notes/evergreen_note/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/evergreen_note/</guid>
+      <guid>https://junghanacs.github.io/notes/evergreen_note/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Budding
 &lt;/blockquote&gt;</description>
@@ -88,10 +88,10 @@
     
     <item>
       <title>포춘 쿠키 관리 (Quotes)🌿</title>
-      <link>https://junghanacs.com/notes/fortune_quotes/</link>
+      <link>https://junghanacs.github.io/notes/fortune_quotes/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/fortune_quotes/</guid>
+      <guid>https://junghanacs.github.io/notes/fortune_quotes/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   세상에 좋은 말씀은 많다. 읽고 아아!! 하고 끝이다. 리눅스에서 애용하던 Fortune 을
 보다 적극적으로 활용하고 있다. Emacs 홈을 열면 말씀하신다! 근데 무슨 말씀인가?
@@ -100,10 +100,10 @@
     
     <item>
       <title>Keith Waclena :: Use GNU Emacs - The Plain Text Computing Environment🌱</title>
-      <link>https://junghanacs.com/refs/UseGNUEmacs/</link>
+      <link>https://junghanacs.github.io/refs/UseGNUEmacs/</link>
       <pubDate>Tue, 20 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/refs/UseGNUEmacs/</guid>
+      <guid>https://junghanacs.github.io/refs/UseGNUEmacs/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   마스터피스! 일단 소개만 다루자. 세부 내용은 다루려면 너무 많다.
 &lt;/blockquote&gt;</description>
@@ -111,10 +111,10 @@
     
     <item>
       <title>glossary-general</title>
-      <link>https://junghanacs.com/terms/glossary-general/</link>
+      <link>https://junghanacs.github.io/terms/glossary-general/</link>
       <pubDate>Sat, 17 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/terms/glossary-general/</guid>
+      <guid>https://junghanacs.github.io/terms/glossary-general/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   분야 구분 없이 사용하는 용어 사전. 세부 분야 별 용어는 별도의 파일로 관리할 예정 입니다.
 &lt;/blockquote&gt;</description>
@@ -122,10 +122,10 @@
     
     <item>
       <title>Building my first Emacs for Writing and Publishing🌱</title>
-      <link>https://junghanacs.com/posts/building_my_first_emacs_configs_for_writing_and_publishing/</link>
+      <link>https://junghanacs.github.io/posts/building_my_first_emacs_configs_for_writing_and_publishing/</link>
       <pubDate>Fri, 16 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/posts/building_my_first_emacs_configs_for_writing_and_publishing/</guid>
+      <guid>https://junghanacs.github.io/posts/building_my_first_emacs_configs_for_writing_and_publishing/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   이맥스 미니멀리즘. 한 자리에서 이맥스 설치부터 블로깅까지 한 번에. 설정도 다
 걷어 내고 직접 다룰 수 있는 수준의 것만 본인이 직접 다 해보도록. 따라해보기!
@@ -134,10 +134,10 @@
     
     <item>
       <title>Changes in Emacs 29 and Emacs Elements 🌿</title>
-      <link>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</link>
+      <link>https://junghanacs.github.io/notes/emacselementsEnhancedImageFeatures2023/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/emacselementsEnhancedImageFeatures2023/</guid>
+      <guid>https://junghanacs.github.io/notes/emacselementsEnhancedImageFeatures2023/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Emacs Elements 는 올해 나에게 가장 도움이 많이 된 Emacs 유튜브 채널이다.
 그 중에서도 &amp;ldquo;Changes in Emacs 29&amp;rdquo; 과 PDF 활용법, Emacs 설치 방법 등은 아주
@@ -147,10 +147,10 @@
     
     <item>
       <title>Daw-Ran Liou :: On Learning Emacs (2020)🌲</title>
-      <link>https://junghanacs.com/refs/LearningEmacs/</link>
+      <link>https://junghanacs.github.io/refs/LearningEmacs/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/refs/LearningEmacs/</guid>
+      <guid>https://junghanacs.github.io/refs/LearningEmacs/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   이맥스는 단순한 텍스트 편집기 그 이상이다. 배움에 왕도는 따로 없다. 장기적으로
 보자면 도구가 지닌 가치는 시작하며 드는 노력을 능가한다.
@@ -159,10 +159,10 @@
     
     <item>
       <title>Learning Vim and Evil on Spacemacs🌱</title>
-      <link>https://junghanacs.com/notes/learning_spacemacs_and_vim/</link>
+      <link>https://junghanacs.github.io/notes/learning_spacemacs_and_vim/</link>
       <pubDate>Thu, 15 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/learning_spacemacs_and_vim/</guid>
+      <guid>https://junghanacs.github.io/notes/learning_spacemacs_and_vim/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   간단하게 정리할 수 없는 내용이다. 근데 해야 한다. 그래서 일단 씨앗을 심었다.
 거둘 수는 없다. 가야 한다.
@@ -171,10 +171,10 @@
     
     <item>
       <title>Conversation with Junghanacs🌱</title>
-      <link>https://junghanacs.com/notes/talk_with_junghanacs/</link>
+      <link>https://junghanacs.github.io/notes/talk_with_junghanacs/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/talk_with_junghanacs/</guid>
+      <guid>https://junghanacs.github.io/notes/talk_with_junghanacs/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Junghanacs 의 가르침을 받들다.
 &lt;/blockquote&gt;</description>
@@ -182,10 +182,10 @@
     
     <item>
       <title>jh-base layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-base/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-base/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-base/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-base/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-base
 &lt;/blockquote&gt;</description>
@@ -193,10 +193,10 @@
     
     <item>
       <title>jh-checker layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-checker/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-checker/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-checker/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-checker/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-checker
 &lt;/blockquote&gt;</description>
@@ -204,10 +204,10 @@
     
     <item>
       <title>jh-clojure layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-clojure/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-clojure/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-clojure/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-clojure/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-clojure
 &lt;/blockquote&gt;</description>
@@ -215,10 +215,10 @@
     
     <item>
       <title>jh-coding layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-coding/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-coding/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-coding/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-coding/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-coding
 &lt;/blockquote&gt;</description>
@@ -226,10 +226,10 @@
     
     <item>
       <title>jh-completion layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-completion/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-completion/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-completion/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-completion/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-completion
 &lt;/blockquote&gt;</description>
@@ -237,10 +237,10 @@
     
     <item>
       <title>jh-editing layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-editing/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-editing/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-editing/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-editing/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-editing
 &lt;/blockquote&gt;</description>
@@ -248,10 +248,10 @@
     
     <item>
       <title>jh-javascript layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-javascript/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-javascript/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-javascript/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-javascript/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-javascript
 &lt;/blockquote&gt;</description>
@@ -259,10 +259,10 @@
     
     <item>
       <title>jh-misc layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-misc/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-misc/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-misc/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-misc/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-misc
 &lt;/blockquote&gt;</description>
@@ -270,10 +270,10 @@
     
     <item>
       <title>jh-navigation layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-navigation/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-navigation/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-navigation/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-navigation/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-navigation
 &lt;/blockquote&gt;</description>
@@ -281,10 +281,10 @@
     
     <item>
       <title>jh-org layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-org/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-org/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-org/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-org/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-org
 &lt;/blockquote&gt;</description>
@@ -292,10 +292,10 @@
     
     <item>
       <title>jh-org-workflow</title>
-      <link>https://junghanacs.com/configs/emacs/jh-org-workflow/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-org-workflow/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-org-workflow/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-org-workflow/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   노랑님의 워크플로우 기반 커스텀
 &lt;/blockquote&gt;</description>
@@ -303,10 +303,10 @@
     
     <item>
       <title>jh-pkm layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-pkm/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-pkm/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-pkm/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-pkm/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   PKM (Personal Knowledge Manager)
 &lt;/blockquote&gt;</description>
@@ -314,10 +314,10 @@
     
     <item>
       <title>jh-project layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-project/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-project/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-project/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-project/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   스페이스맥스의 Git, Version-Control, Spacemacs-Project 를 기반으로 레이어 구성.
 &lt;/blockquote&gt;</description>
@@ -325,10 +325,10 @@
     
     <item>
       <title>jh-python layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-python/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-python/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-python/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-python/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-python
 &lt;/blockquote&gt;</description>
@@ -336,10 +336,10 @@
     
     <item>
       <title>jh-reading layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-reading/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-reading/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-reading/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-reading/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-reading
 &lt;/blockquote&gt;</description>
@@ -347,10 +347,10 @@
     
     <item>
       <title>jh-utility layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-utility/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-utility/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-utility/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-utility/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-utility
 &lt;/blockquote&gt;</description>
@@ -358,10 +358,10 @@
     
     <item>
       <title>jh-visual layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-visual/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-visual/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-visual/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-visual/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-visual
 &lt;/blockquote&gt;</description>
@@ -369,10 +369,10 @@
     
     <item>
       <title>jh-workspace layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-workspace/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-workspace/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-workspace/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-workspace/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-workspace
 &lt;/blockquote&gt;</description>
@@ -380,10 +380,10 @@
     
     <item>
       <title>jh-writing layer</title>
-      <link>https://junghanacs.com/configs/emacs/jh-writing/</link>
+      <link>https://junghanacs.github.io/configs/emacs/jh-writing/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/jh-writing/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/jh-writing/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   jh-writing
 &lt;/blockquote&gt;</description>
@@ -391,10 +391,10 @@
     
     <item>
       <title>Peter Prevos :: More Productive with Emacs (2022)🌲</title>
-      <link>https://junghanacs.com/refs/peterprevosMoreProductiveEmacs2021/</link>
+      <link>https://junghanacs.github.io/refs/peterprevosMoreProductiveEmacs2021/</link>
       <pubDate>Sat, 10 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/refs/peterprevosMoreProductiveEmacs2021/</guid>
+      <guid>https://junghanacs.github.io/refs/peterprevosMoreProductiveEmacs2021/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   이맥스란 무엇이며 왜 사용해야 하는지, 무엇이 장점인지 설명한다. 생산성 고수의
 깔끔한 설명이 돋보인다. 특히 생산성 해킹은 키보드가 아닌 마음으로 하는 것이라는
@@ -404,10 +404,10 @@
     
     <item>
       <title>Org-Glossary 사용법🌿</title>
-      <link>https://junghanacs.com/notes/org_glossary/</link>
+      <link>https://junghanacs.github.io/notes/org_glossary/</link>
       <pubDate>Fri, 09 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/org_glossary/</guid>
+      <guid>https://junghanacs.github.io/notes/org_glossary/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   지식 관리에서 용어를 어떻게 정의하고 있는지가 매우 중요하다. 같은 개념을 가지고
 있어야 서로 더 나은 논의를 할 수 있다. 모호 하지 않도록 나의 사전을
@@ -417,10 +417,10 @@
     
     <item>
       <title>Tecosaur :: Org Glossary (2022)🌲</title>
-      <link>https://junghanacs.com/refs/tecosaurOrgGlossary2023/</link>
+      <link>https://junghanacs.github.io/refs/tecosaurOrgGlossary2023/</link>
       <pubDate>Fri, 09 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/refs/tecosaurOrgGlossary2023/</guid>
+      <guid>https://junghanacs.github.io/refs/tecosaurOrgGlossary2023/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Terms, Glossary 를 다루는 전략. 가히 아름답다.
 &lt;/blockquote&gt;</description>
@@ -428,10 +428,10 @@
     
     <item>
       <title>블로그 오픈 : 텍스트로 삶을 채워 가는 즐거움🌱</title>
-      <link>https://junghanacs.com/posts/open_my_lovely_blog/</link>
+      <link>https://junghanacs.github.io/posts/open_my_lovely_blog/</link>
       <pubDate>Wed, 07 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/posts/open_my_lovely_blog/</guid>
+      <guid>https://junghanacs.github.io/posts/open_my_lovely_blog/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   드디어 블로그를 오픈했다. 아무것도 아닌 이 일이 나에게 왜 이렇게 큰 기쁨을 주는
 것일까? 아직 아무것도 없는 이 공간을 만들기까지 많은 고민이 있었다. 이제 글쓰는
@@ -441,10 +441,10 @@
     
     <item>
       <title>Ox-Hugo 블로깅 : 변환 문법 및 팁 🌲</title>
-      <link>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</link>
+      <link>https://junghanacs.github.io/notes/org_org_roam_hugo_meta_format/</link>
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/org_org_roam_hugo_meta_format/</guid>
+      <guid>https://junghanacs.github.io/notes/org_org_roam_hugo_meta_format/</guid>
       <description>&lt;style&gt;details summary { color: green; }&lt;/style&gt;
 &lt;style&gt;details .details { color: blue; }&lt;/style&gt;
 &lt;blockquote class=&#34;book-hint info&#34;&gt;
@@ -455,10 +455,10 @@
     
     <item>
       <title>Giovanni Crisalfi :: Start Qutebrowser Now (2022)🌲</title>
-      <link>https://junghanacs.com/refs/giovannicrisalfiStartQutebrowserNow2022/</link>
+      <link>https://junghanacs.github.io/refs/giovannicrisalfiStartQutebrowserNow2022/</link>
       <pubDate>Fri, 02 Jun 2023 16:55:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/refs/giovannicrisalfiStartQutebrowserNow2022/</guid>
+      <guid>https://junghanacs.github.io/refs/giovannicrisalfiStartQutebrowserNow2022/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   저자에게 파이어폭스는 마우스를 사용하게 만드는 유일한 소프트웨어였다. 빔 관련
 플러그인만으로는 만족할 수 없었다. 그래서 결국 정착한 녀석이 Qutebrowser 이다.
@@ -468,10 +468,10 @@
     
     <item>
       <title>Dot-Spacemacs</title>
-      <link>https://junghanacs.com/configs/emacs/spacemacs/</link>
+      <link>https://junghanacs.github.io/configs/emacs/spacemacs/</link>
       <pubDate>Wed, 17 May 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/configs/emacs/spacemacs/</guid>
+      <guid>https://junghanacs.github.io/configs/emacs/spacemacs/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Spacemacs 닷 파일. 정리가 필요하다. 정리는 주석 삭제부터. noexport 를 적절히 사용
 &lt;/blockquote&gt;</description>
@@ -479,10 +479,10 @@
     
     <item>
       <title>Deno JavaScript Runtime and Deno-Bridge🫛</title>
-      <link>https://junghanacs.com/notes/deno-js-runtime-and-deno-bridge/</link>
+      <link>https://junghanacs.github.io/notes/deno-js-runtime-and-deno-bridge/</link>
       <pubDate>Tue, 28 Mar 2023 11:59:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/deno-js-runtime-and-deno-bridge/</guid>
+      <guid>https://junghanacs.github.io/notes/deno-js-runtime-and-deno-bridge/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Deno: JavaScript Framework 이맥스를 확장하는 좋은 방법이다.
 &lt;/blockquote&gt;</description>
@@ -490,10 +490,10 @@
     
     <item>
       <title>Evil-mode</title>
-      <link>https://junghanacs.com/terms/evil-mode/</link>
+      <link>https://junghanacs.github.io/terms/evil-mode/</link>
       <pubDate>Sat, 15 Oct 2022 05:40:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/terms/evil-mode/</guid>
+      <guid>https://junghanacs.github.io/terms/evil-mode/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   evil-mode 편집 방법
 &lt;/blockquote&gt;</description>
@@ -501,10 +501,10 @@
     
     <item>
       <title>태그와 카테고리: 도대체 어떻게 구성해야 하는가🌱</title>
-      <link>https://junghanacs.com/notes/organize_tag_and_category_in_org_mode/</link>
+      <link>https://junghanacs.github.io/notes/organize_tag_and_category_in_org_mode/</link>
       <pubDate>Fri, 07 Oct 2022 14:50:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/organize_tag_and_category_in_org_mode/</guid>
+      <guid>https://junghanacs.github.io/notes/organize_tag_and_category_in_org_mode/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   이건 정말 어마어마한 문제로다.
 &lt;/blockquote&gt;</description>
@@ -512,10 +512,10 @@
     
     <item>
       <title>블로그 요구 사항 및 구성🌱</title>
-      <link>https://junghanacs.com/notes/my_blog_requiremets/</link>
+      <link>https://junghanacs.github.io/notes/my_blog_requiremets/</link>
       <pubDate>Wed, 07 Sep 2022 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/notes/my_blog_requiremets/</guid>
+      <guid>https://junghanacs.github.io/notes/my_blog_requiremets/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   메뉴 구성 태그 카테고리 시리즈와 더불어 각 노트가 어느 정도 작업이 되었는지 등도
 중요하다.

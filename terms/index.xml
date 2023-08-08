@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terms on Junghanacs</title>
-    <link>https://junghanacs.com/terms/</link>
+    <link>https://junghanacs.github.io/terms/</link>
     <description>Recent content in Terms on Junghanacs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language><atom:link href="https://junghanacs.com/terms/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko-kr</language><atom:link href="https://junghanacs.github.io/terms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LangChain</title>
-      <link>https://junghanacs.com/terms/langchain/</link>
+      <link>https://junghanacs.github.io/terms/langchain/</link>
       <pubDate>Mon, 10 Jul 2023 06:42:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/terms/langchain/</guid>
+      <guid>https://junghanacs.github.io/terms/langchain/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   Building applications with LLMs through composability
 &lt;/blockquote&gt;</description>
@@ -19,10 +19,10 @@
     
     <item>
       <title>Technium</title>
-      <link>https://junghanacs.com/terms/technium/</link>
+      <link>https://junghanacs.github.io/terms/technium/</link>
       <pubDate>Fri, 23 Jun 2023 16:54:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/terms/technium/</guid>
+      <guid>https://junghanacs.github.io/terms/technium/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   그래 테크니움. 기술이 원하는게 이거냐!
 &lt;/blockquote&gt;</description>
@@ -30,10 +30,10 @@
     
     <item>
       <title>glossary-general</title>
-      <link>https://junghanacs.com/terms/glossary-general/</link>
+      <link>https://junghanacs.github.io/terms/glossary-general/</link>
       <pubDate>Sat, 17 Jun 2023 00:00:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/terms/glossary-general/</guid>
+      <guid>https://junghanacs.github.io/terms/glossary-general/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   분야 구분 없이 사용하는 용어 사전. 세부 분야 별 용어는 별도의 파일로 관리할 예정 입니다.
 &lt;/blockquote&gt;</description>
@@ -41,10 +41,10 @@
     
     <item>
       <title>Evil-mode</title>
-      <link>https://junghanacs.com/terms/evil-mode/</link>
+      <link>https://junghanacs.github.io/terms/evil-mode/</link>
       <pubDate>Sat, 15 Oct 2022 05:40:00 +0900</pubDate>
       
-      <guid>https://junghanacs.com/terms/evil-mode/</guid>
+      <guid>https://junghanacs.github.io/terms/evil-mode/</guid>
       <description>&lt;blockquote class=&#34;book-hint info&#34;&gt;
   evil-mode 편집 방법
 &lt;/blockquote&gt;</description>
